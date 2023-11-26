@@ -1,0 +1,12 @@
+@media screen and (max-width: 940px) {
+    #Nav_3,
+    #Nav_4,
+    #Nav_5,
+    #Nav_6,
+    #Nav_7 {
+        display: none;
+    }
+
+
+    
+}

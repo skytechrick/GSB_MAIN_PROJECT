@@ -1,4 +1,3 @@
-html,
 body {
     margin: 0px;
     padding: 0px;
@@ -52,7 +51,6 @@ body {
 #Nav_1_Img_Big {
     position: relative;
     width: 48px;
-    /* height: 40px; */
 }
 
 #Nav_1_Img_Big_A {
@@ -60,7 +58,6 @@ body {
     left: 0px;
     text-decoration: none;
     cursor: pointer;
-
 }
 
 
@@ -81,7 +78,6 @@ body {
     font-size: 26px;
     font-style: italic;
     font-weight: bold;
-    /* color: rgb(13, 69, 255); */
     color: rgb(247, 0, 255);
 }
 
@@ -89,14 +85,11 @@ body {
     display: block;
     font-style: italic;
     font-weight: bold;
-    /* color: rgb(117, 12, 255); */
     color: rgb(117, 12, 255);
     position: relative;
     text-decoration: underline;
     top: -4px;
 }
-
-
 
 #Nav_2 {
     border-radius: 50px;
@@ -107,7 +100,6 @@ body {
     position: relative;
     top: 0px;
     border: 1px solid rgb(247, 0, 255);
-    /* padding: 1px; */
     height: 45px;
 }
 
@@ -117,16 +109,10 @@ body {
     width: 600px;
     position: relative;
     top: 0px;
-    /* border: 1px solid red; */
     display: flex;
     align-items: center;
 
 }
-
-
-
-
-
 
 #All {
     height: 45px;
@@ -149,15 +135,12 @@ body {
 
 #All:active {
     background-color: rgb(225, 101, 230);
-
 }
 
 #All_Down {
     position: relative;
     left: 14px;
-    /* border: 1px solid red; */
     font-size: 17px;
-
 }
 
 #All_Down_Arrow {
@@ -165,20 +148,11 @@ body {
     position: relative;
     bottom: 1px;
     left: 14px;
-
 }
-
-
-
-
-
-
-
 
 @keyframes Up_Down_All {
     from {
         height: 0px;
-
     }
 
     to {
@@ -194,14 +168,8 @@ body {
 
     to {
         height: 0px;
-        /* display: none; */
     }
 }
-
-
-
-
-
 
 #All_ARROW {
     animation-name: A;
@@ -241,19 +209,13 @@ body {
     border: none;
     cursor: pointer;
     border-bottom: 1px solid #dadada;
-
 }
-
 
 .All_Down:hover {
     border: 1px solid rgb(247, 0, 255);
-
 }
 
-
-
 #Search_Main {
-    /* border: 1px solid red; */
     display: inline-block;
     width: 100%;
     height: 100%;
@@ -269,13 +231,11 @@ body {
     background-color: transparent;
     font-size: 16px;
     padding-left: 10px;
-    /* color: white; */
 
 }
 
 #Reset_Div {
     height: 100%;
-    /* background-color: rebeccapurple; */
     display: flex;
     align-items: center;
 
@@ -305,7 +265,6 @@ body {
     height: 100%;
     display: flex;
     align-items: center;
-    /* background-color: gray; */
     border: 0px;
 }
 
@@ -342,19 +301,12 @@ body {
 
 #Searched_Button_Button_Span {
     padding-left: 10px;
-    /* position: relative; */
     font-size: 24px;
-    /* right: 5px; */
 }
-
-
-
-
 
 #Nav_3 {
     position: relative;
     top: 0px;
-    /* border: 1px solid red; */
     height: 35px;
     padding-left: 2px;
     cursor: pointer;
@@ -379,12 +331,9 @@ body {
     right: 5px;
 }
 
-
-
 #Nav_4 {
     position: relative;
     top: 0px;
-    /* border: 1px solid red; */
     background-color: white;
     height: 35px;
     padding-left: 2px;
@@ -395,7 +344,6 @@ body {
 #Nav_4:hover {
     text-shadow: 0px 0px 1px rgb(247, 0, 255);
     border: 1px solid rgb(247, 0, 255);
-    /* border-bottom: 1px solid white; */
 }
 
 #Profile_Logo {
@@ -411,17 +359,10 @@ body {
     right: 5px;
 }
 
-
-
-
-
-
 @keyframes Up_Down_Profile {
     from {
         height: 0px;
-
     }
-
     to {
         height: 270px;
     }
@@ -432,23 +373,14 @@ body {
         height: 270px;
         display: flex;
     }
-
     to {
         height: 0px;
-        /* display: none; */
     }
 }
 
-
-
-
-
-
 #Profile_Down {
-
     animation-duration: 0.2s;
     animation-iteration-count: 1;
-
     position: absolute;
     top: 35px;
     left: -1px;
@@ -480,22 +412,17 @@ body {
     padding-left: 3px;
 }
 
-
-
 .Profile_Options:hover {
     border: 1px solid rgb(247, 0, 255);
-
 }
 
 #Nav_5 {
     position: relative;
     top: 0px;
-    /* border: 1px solid red; */
     height: 35px;
     padding-left: 2px;
     cursor: pointer;
     border: 1px solid transparent;
-
 }
 
 #Nav_5:hover {
@@ -516,15 +443,10 @@ body {
     right: 5px;
 }
 
-
-
-
 @keyframes Up_Down_More {
     from {
         height: 0px;
-
     }
-
     to {
         height: 240px;
     }
@@ -535,15 +457,10 @@ body {
         height: 240px;
         display: flex;
     }
-
     to {
         height: 0px;
-        /* display: none; */
     }
 }
-
-
-
 
 #More_Down {
     animation-duration: 0.2s;
@@ -565,11 +482,6 @@ body {
     overflow-y: hidden;
 }
 
-
-
-
-
-
 .More_Options {
     border-bottom: 1px solid #dadada;
     font-size: 15px;
@@ -582,7 +494,6 @@ body {
     padding: 2px;
     text-decoration: none;
     padding-left: 3px;
-
 }
 
 .More_Options:hover {
@@ -590,16 +501,10 @@ body {
 
 }
 
-
-
-
-
-
 #Nav_6 {
     position: relative;
     top: 0px;
     border: 1px solid transparent;
-    /* border: 1px solid red; */
     height: 35px;
     padding-left: 2px;
     cursor: pointer;
@@ -623,17 +528,13 @@ body {
     right: 5px;
 }
 
-
-
 #Nav_7 {
     position: relative;
     top: 0px;
-    /* border: 1px solid red; */
     height: 35px;
     padding-left: 2px;
     cursor: pointer;
     border: 1px solid transparent;
-
 }
 
 #Nav_7:hover {
@@ -669,8 +570,6 @@ body {
     border-radius: 50%;
 }
 
-
-
 #Background_Blur_50 {
     display: none;
     position: absolute;
@@ -681,14 +580,6 @@ body {
     z-index: 99;
     background-color: rgba(240, 240, 240, 0.3);
 }
-
-
-
-
-
-
-
-
 
 #Search_Options {
     display: none;
@@ -709,33 +600,21 @@ body {
     width: 593px;
     margin: auto;
     border-bottom: 1px solid #aaa;
-    /* border-top: 1px solid #aaa; */
     height: 40px;
-
-
 }
-
-
 
 .Options:hover {
     background-color: rgb(233, 233, 233);
     cursor: pointer;
 }
 
-
-
-
 .Options_Icons {
     position: absolute;
     top: 0px;
     left: 0px;
-    /* border: 1px solid red; */
-    /* width: 40px; */
-    /* height: 100%; */
     text-align: center;
     padding: 7px;
     width: 30px;
-
 }
 
 .Options_Sen {
@@ -749,13 +628,10 @@ body {
     height: 100%;
     font-size: 16px;
     overflow: hidden;
-
-    /* border: 1px solid red; */
     padding-left: 5px;
 }
 
 .Options_Arrow {
-
     position: absolute;
     top: 0px;
     right: 0px;
@@ -766,7 +642,6 @@ body {
     align-items: center;
     text-decoration: none;
     background-color: transparent;
-    /* border: 1px solid red; */
 }
 
 .Option_Arrow_Span {
@@ -791,7 +666,6 @@ body {
 }
 
 #Product_Head {
-    /* border: 1px solid red; */
     display: block;
     width: 100%;
     height: 40px;
@@ -799,7 +673,6 @@ body {
 }
 
 #Product_Center {
-    /* border: 1px solid red; */
     height: 100%;
     margin: auto;
     width: 1500px;
@@ -811,7 +684,6 @@ body {
 
 
 #Showing_Result {
-    /* border: 1px solid red; */
     display: inline-block;
     margin-left: 50px;
 }
@@ -823,7 +695,6 @@ body {
 
 #Showing_Result_Sentence {
     font-size: 16px;
-
 }
 
 #Filter_Left:hover {
@@ -843,7 +714,6 @@ body {
 }
 
 #Filter_Word {
-    /* border: 1px solid red; */
     font-size: 17px;
     position: relative;
     top: 2px;
@@ -869,154 +739,4 @@ body {
     font-size: 17px;
     position: relative;
     top: 2px;
-    /* border: 1px solid red; */
 }
-
-#Section_1 {
-    /* border: 1px solid #aaa; */
-    width: 1500px;
-    margin: auto;
-    padding: 5px;
-    /* box-shadow: 0px 0px 20px rgb(233, 238, 245); */
-    padding-top: 0;
-}
-
-
-#Section__1 {
-    padding: 20px;
-    /* margin-top: 8px; */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 310px;
-    /* border: 1px solid red; */
-    border-radius: 9px;
-    background-color: white;
-    height: 280px;
-}
-
-.Section_First {
-    width: 350px;
-    height: 290px;
-    /* border: 1px solid red; */
-    /* margin: 5px; */
-    /* cursor: pointer; */
-}
-
-.Section_First:hover {
-    box-shadow: 0px 0px 10px #d3d3d3;
-}
-
-.Img_Box {
-    /* width: 280px; */
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* border: 1px solid red; */
-    margin-bottom: 8px;
-    cursor: pointer;
-
-}
-
-.SECTION_IMG_01 {
-    width: 100%;
-    margin: auto;
-}
-.Details_Products {
-    width: 325px;
-    margin: auto;
-    height: 61px;
-    padding: 10px;
-    padding-top: 0;
-    /* border: 1px solid rebeccapurple; */
-}
-
-.Product_Title {
-    text-decoration: none;
-    margin: 1px;
-    font-size: 16px;
-    cursor: pointer;
-    color: #242424;
-    text-shadow: 0px 0px 1px rgb(223, 223, 223);
-    cursor: pointer;
-}
-
-.Product_Title:hover {
-    color: black;
-    text-shadow: 0px 0px 2px rgb(148, 148, 148);
-}
-
-.Product_Price {
-    font-weight: bold;
-    cursor: auto;
-    font-size: 18px;
-
-    margin: 1px;
-}
-
-.Product_Price_OFF {
-    color: rgb(0, 182, 0);
-}
-
-.Product_Description {
-    cursor: auto;
-    color: rgb(66, 66, 66);
-    font-size: 14px;
-    margin: 1px;
-}
-
-
-.Price_Strike {
-    color: rgb(82, 82, 82);
-    font-weight: lighter;
-}
-
-
-#Filter_Side {
-    /* background-color: white; */
-    width: 190px;
-    height: 90vh;
-    /* border: 1px solid rebeccapurple; */
-    position: fixed;
-    top: 63px;
-    z-index: 100;
-    /* overflow-x: hidden; */
-}
-
-#End_No_Product {
-    display: block;
-    text-align: center;
-    text-decoration: underline;
-}
-
-#Filter_SideR {
-    /* background-color: white; */
-    width: 190px;
-    height: 90vh;
-    /* border: 1px solid rebeccapurple; */
-    position: fixed;
-    top: 63px;
-    right: 0px;
-    z-index: 100;
-}
-
-
-
-
-#Virat_Home {
-    display: block;
-    margin: auto;
-    width: 79%;
-}
-
-
-
-
-
-
-
-
-
-
-
