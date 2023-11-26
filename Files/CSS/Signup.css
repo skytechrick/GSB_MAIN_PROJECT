@@ -1,0 +1,338 @@
+body {
+    background-color: #afffff;
+}
+.Main_Container {
+    height: 100%;
+    width: 100%;
+    background-color: white;    
+}
+
+
+.Main_Container_01 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 900px;
+}
+
+.Main_Container_02 {
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    /* border: 1px solid var(--Outline-Color); */
+    box-sizing: border-box;
+    /* box-shadow: 0px 0px 15px var(--Outline-Color); */
+    box-shadow: 0px 0px 5px #aaa;
+    width: 480px;
+    height: 750px;
+    padding: 60px;
+    padding-top: 60px;
+    margin: auto;
+}
+
+#Upper{
+    height: 80px;
+    width: 100%;
+    background-color: transparent;    
+}
+
+
+.Heading01 {
+    /* background-color: wheat; */
+    color: deeppink;
+    padding: 20px;
+    font-weight: bolder;
+    font-size: 25px;
+    display: block;
+    text-align: center;
+    font-family: Roboto, Arial, sans-serif;
+    border-bottom: 1px solid #aaa;
+    /* border-radius: 4px; */
+    /* text-shadow: 0px 1px 1px var(--Outline-Color); */
+    padding-top: 5px;
+}
+
+
+#Signup {
+    background-color: white;
+}
+
+
+
+#Signup_001 {
+    padding: 20px;
+    padding-bottom: 0px;
+    font-weight: bold;
+    font-size: 20px;
+    display: block;
+    text-align: center;
+    font-family: Roboto, Arial, sans-serif;
+}
+#WelcomeP{
+    display: block;
+    font-size: 14px;
+    font-family: Roboto, Arial, sans-serif;
+    text-align: center;
+    padding-top: 8px;
+    margin: 0px;
+}
+
+#CreateP{
+    display: block;
+    font-size: 14px;
+    font-family: Roboto, Arial, sans-serif;
+    text-align: center;
+    padding-bottom: 14px;
+    padding-top: 5px;
+    margin: 0px;
+}
+
+form {
+    font-family: Roboto, Arial, sans-serif;
+    /* border: 1px solid red; */
+    margin: auto;
+    /* background-color: aqua; */
+    height: 510px;
+}
+
+#First_Last_Name {
+    margin-bottom: 15px;
+}
+
+
+#First_Name_Box, #Last_Name_Box{
+    /* border: 1px solid blue; */
+    width: 176px;
+    display: inline-block;
+}
+
+#First_Name_Box{
+    width: 179px;
+}
+#Last_Name_Box{
+    width: 174px;
+}
+#First_Name {
+    width: 155px;
+}
+#Last_Name {
+    width: 153px;
+}
+
+#First_Name_P, #Last_Name_P {
+    font-size: 12px;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.Input_All {
+    width: 336px;
+}
+
+
+#Email_P, #Mobile_Number_P, #Create_Password_P {
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 15px;
+    font-size: 12px;
+
+}
+
+
+
+
+input{
+    outline: none;
+    padding: 10px;
+    font-size: 13px;
+    border: 1px solid var(--Outline-Color);
+}
+
+#Submit_Button{
+    width: 358px;
+    background-color: #ff3af5;
+    color: white;
+    border: 1px solid #be007f;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 2px;
+    outline: none;
+    
+}
+
+#Submit_Button:hover {
+    background-color: #ff00c8;
+}
+
+#Submit_Button:active {
+    background-color: #ff00aa;
+    text-decoration: underline;
+}
+
+#Input_Check_Box {
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 4px;
+}
+
+#Show_Password {
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 11px;
+    font-size: 12px;
+    position: relative;
+    top: -2px;
+    left: -2px;
+}
+
+
+
+#DoesNotMatch {
+    padding: 0px;
+    margin: 0px;
+    font-size: 12px;
+}
+
+#Cookies_Note {
+    font-size: 11.4px;
+    margin: 0px;
+    padding: 0px;
+    padding-top: 4px;
+}
+
+#Already_Account {
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 13px;
+    margin-top: 5px;
+    background-color: rgb(92, 255, 255);
+    text-align: center;
+    padding: 10px;
+    width: 358px;
+    border: 1px solid #be007f;
+    cursor: pointer;
+
+}
+#Already_Account:hover {
+    background-color: rgb(0, 240, 240);
+}
+
+#Already_Account:active{
+    background-color: rgb(0, 224, 224);
+    text-decoration: underline;
+}
+
+#terms_and_conditionss {
+    font-size: 12px;
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    text-align: right;
+    color: #424242;
+    /* color: rgb(43, 92, 255); */
+    text-decoration: none;
+}
+#terms_and_conditionss:hover {
+    text-decoration: underline;
+}
+
+#OR {
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+    padding: 0px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Last_Main {
+    width: 450px;
+    height: 16px;
+    margin: auto;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+}
+
+
+.count {
+    color: #424242;
+    text-decoration: none;
+    font-family: Roboto, Arial, sans-serif;
+
+
+}
+
+.count:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: transparent;
+    z-index: 0;
+}
+:root {
+    --Outline-Color: #ff00f2;
+    --Box-Shadow-Color-Bottom: #ff3bf5;
+    --Header_Logo_Size: 60px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

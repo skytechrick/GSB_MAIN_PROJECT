@@ -1,0 +1,302 @@
+#body {
+    font-family: Roboto, Arial, sans-serif;
+    background-color: rgb(255, 175, 242);
+    margin: 0px;
+    padding: 0px;
+}
+.container {
+    width: 100vw;
+    height: 150px;
+}
+
+#center{
+    height: 470px;
+    width: 400px;
+    margin: auto;
+    border: 1px solid var(--Outline-Color);
+    background-color: white;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 20px rgb(255, 104, 230);
+    padding: 60px;
+}
+
+#Headdd {
+    margin: auto;
+    font-size: 25px;
+    text-align: center;
+    border-bottom: 1px solid #aaa;
+}
+
+
+#Login_Center {
+    font-size: 17px;
+    text-align: center;
+    border-bottom: 1px solid #aaa;
+}
+
+#Sell_Products {
+    font-size: 12px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Selection {
+    background-color: white;
+    /* height: 40px; */
+    width: 279px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: auto;
+    padding: 0px;
+    margin-top: 10px;
+}
+label:hover {
+    /* background-color: rgb(215, 246, 255); */
+    border: 1px solid rgb(108, 223, 255);
+}
+label:nth-child(1) {
+    
+    background-color: rgb(215, 246, 255);
+}
+
+label {
+    font-family: Roboto, Arial, sans-serif;
+    background-color: white;
+    width: 120px;
+    font-size: 15px;
+    display: inline-block;
+    padding: 8px;
+    margin: 0px;
+    text-align: center;
+    cursor: pointer;
+    /* border: 1px solid var(--Outline-Color); */
+}
+
+input {
+    outline: none;
+}
+
+#Email_Top {
+    padding: 10px 15px;
+    margin-top: 5px;
+    padding-bottom: 4px;
+}
+
+
+#User_Login {
+    margin: 0px;
+    border-bottom: 1px solid var(--Outline-Color);
+    position: relative;
+    top: 0px;
+    margin-top: 14px;
+}
+
+#Span_Person {
+    color: deepskyblue;
+    font-size: 26px;
+    background-color: white;
+    height: 32px;
+    padding-top: 3px;
+}
+
+#Email {
+
+    padding: 10px;
+    font-size: 13px;
+    position: absolute;
+    left: 30px;
+    border: none;
+    width: 242px;
+    padding-left: 5px;
+}
+
+#User_Login_P {
+    padding: 0px;
+    margin: 0px;
+    font-size: 12px;
+    position: relative;
+    top: 2px;
+    margin-bottom: 7px;
+}
+
+#Password_Top {
+
+    padding: 10px 15px;
+    margin-top: 5px;
+    padding-bottom: 4px;
+}
+
+#User_Password {
+    margin: 0px;
+    border-bottom: 1px solid var(--Outline-Color);
+    position: relative;
+    top: 0px;
+}
+
+#Span_Password {
+
+    color: deepskyblue;
+    font-size: 24px;
+    background-color: white;
+    height: 30px;
+    padding-top: 5px;
+}
+
+#Password {
+
+    padding: 10px;
+    font-size: 13px;
+    position: absolute;
+    left: 30px;
+    border: none;
+    width: 242px;
+    padding-left: 5px;
+}
+
+#User_Password_P {
+
+    padding: 0px;
+    margin: 0px;
+    font-size: 12px;
+    position: relative;
+    top: 2px;
+    margin-bottom: 7px;
+
+}
+
+
+#Submit_Button {
+    width: 278px;
+    padding: 7px;
+    font-size: 15px;
+    display: block;
+    margin: auto;
+
+    background-color: #ff3af5;
+    color: white;
+    border: 1px solid #be007f;
+}
+
+#Submit_Button:hover {
+    background-color: #ff00c8;
+
+}
+
+#Submit_Button:active {
+    background-color: #ff00aa;
+    text-decoration: underline;
+
+}
+
+
+#forgot_passowrd {
+    display: block;
+    font-size: 14px;
+    margin: 0px;
+    text-align: right;
+}
+
+#Donothaveaaccount {
+    display: block;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 13px;
+    margin: 0px;
+    background-color: rgb(92, 255, 255);
+    text-align: center;
+    padding: 10px;
+    width: 256px;
+    border: 1px solid #be007f;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+#Donothaveaaccount:hover {
+    background-color: rgb(0, 240, 240);
+}
+
+#Donothaveaaccount:active {
+    background-color: rgb(0, 224, 224);
+    text-decoration: underline;
+}
+
+#OR {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+#Terms {
+    display: block;
+    text-align: right;
+    color: black;
+    text-decoration: none;
+    font-size: 12px;
+}
+#Terms:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

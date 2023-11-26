@@ -1,0 +1,28 @@
+{
+  "name": "getskybuy",
+  "version": "1.0.1",
+  "description": "Online shopping platform for local products",
+  "main": "app.js",
+  "scripts": {
+    "test": "Backend"
+  },
+  "keywords": [
+    "GET_SKY_BUY",
+    "getskybuy",
+    "get-sky-buy",
+    "gsb",
+    "skytechrick",
+    "rick"
+  ],
+  "author": "GET-SKY-BUY",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "mongoose": "^7.6.2",
+    "nodemon": "^3.0.1",
+    "path": "^0.12.7",
+    "pug": "^3.0.2"
+  }
+}
