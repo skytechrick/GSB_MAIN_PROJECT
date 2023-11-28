@@ -1,12 +1,48 @@
-@media screen and (max-width: 940px) {
-    #Nav_3,
-    #Nav_4,
-    #Nav_5,
-    #Nav_6,
-    #Nav_7 {
+@media screen and (max-width: 1550px) {
+    #Nav_3 {
+        display: none;
+    } 
+}
+
+
+@media screen and (max-width: 1430px) {
+    #Nav_4 {
+        display: none;
+    } 
+}
+
+
+
+@media screen and (max-width: 1320px) {
+    #Nav_5 {
+        display: none;
+    } 
+}
+
+
+@media screen and (max-width: 1160px) {
+    #Nav_6 {
+        display: none;
+    } 
+}
+
+@media screen and (max-width: 1080px) {
+    #Nav {
+        width: 92vw;
+        justify-content: space-between;
+    }
+    #nav_7 {
+        position: absolute;
+        right: 0px;
+        width: 26px;
+        margin-left: 9px;
+    }
+    #Cart_Word {
         display: none;
     }
-
-
-    
+}
+@media screen and (max-width: 945px) {
+    #Nav_1 {
+        display: none;
+    } 
 }
