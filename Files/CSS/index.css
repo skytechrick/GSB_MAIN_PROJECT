@@ -106,7 +106,7 @@ body {
 #Nav_2_Form {
     border-radius: 50px;
     height: 45px;
-    width: 600px;
+    width: 100%;
     position: relative;
     top: 0px;
     display: flex;
@@ -740,3 +740,57 @@ body {
     position: relative;
     top: 2px;
 }
+
+
+#Nav_990 {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Nav_2nd {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+    height: 42px;
+    width: 100vw;
+
+    background-color: aqua;
+}
+

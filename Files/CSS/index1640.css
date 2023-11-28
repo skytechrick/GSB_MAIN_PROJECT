@@ -28,21 +28,89 @@
 
 @media screen and (max-width: 1080px) {
     #Nav {
-        width: 92vw;
+        width: 95vw;
         justify-content: space-between;
     }
-    #nav_7 {
-        position: absolute;
+    #Nav_7 {
+        /* position: absolute;
         right: 0px;
-        width: 26px;
-        margin-left: 9px;
+        width: 26px; */
+        margin-left: 15px;
     }
-    #Cart_Word {
+    /* #Cart_Word {
         display: none;
-    }
+    } */
 }
-@media screen and (max-width: 945px) {
-    #Nav_1 {
+@media screen and (max-width: 990px) {
+    #Nav {
+        width: 96vw;
+        justify-content: initial;
+    }
+    #Nav_1_A {
         display: none;
     } 
+    #Nav_1_1 {
+        width: 122px;
+    } 
+
+    #Nav_7 {
+        display: none;
+    }
+    #Nav_990 {
+        display: inline-block;
+        /* word-spacing: -1px; */
+        font-size: 26px;
+        font-style: italic;
+        font-weight: bold;
+        color: rgb(247, 0, 255);
+        position: relative;
+        top: 6px;
+        font-size: 31px;
+    }
+    #Nav_2 {
+        width: 798px;
+    }
+    #Nav_2_Form {
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 910px) {
+    #Nav_990 {
+        font-size: 27px;
+        top: 9px;
+    }
+}
+
+@media screen and (max-width: 830px) {
+    #Nav_990 {
+        font-size: 25px;
+        top: 9px;
+    }
+}
+
+@media screen and (max-width: 815px) {
+    #Nav_990 {
+        display: none;
+    }
+    #Nav_1_1 {
+        width: 54px;
+    }
+}
+
+
+@media screen and (max-width: 790px) {
+    #Nav_1_1 {
+        display: none;
+    }
+
+    #Nav_2 {
+        width: 750px;
+    }
+}
+@media screen and (max-width: 798px) {
+    #Nav_1_1 {
+        display: none;
+    }
 }

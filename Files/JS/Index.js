@@ -71,3 +71,23 @@ function Search_Click() {
     })    
 }
 Search_Click();
+
+
+let Profile_Hovera = () =>{
+    let Nav_2nd_3 = document.getElementsByid("Nav2_3");
+    let Profile_Down = document.getElementsByid("Profile_Down2");
+    let Background_Blur_50 = document.getElementById("Background_Blur_50");
+    Nav_2nd_3.addEventListener("mouseover",() => {
+        Profile_Down.style.display = "flex";
+        Background_Blur_50.style.display = "block";
+        Profile_Down.style.animationName = "Up_Down_Profile";
+        Profile_Down.style.animationFillMode = "forward";
+    })
+    Nav_2nd_3.addEventListener("mouseout",() => {
+        Profile_Down.style.display = "none";
+        Background_Blur_50.style.display = "none";
+        Profile_Down.style.animationName = "Down_Up_Profile";
+        Profile_Down.style.animationFillMode = "forward";
+    })
+}
+Profile_Hovera();
