@@ -37,16 +37,24 @@
 
     <div id="Head_Top">
         <div id="Head_Top_Center">
-            <button class="Hamburger_Icon_Button" type="button">
+            <button class="Hamburger_Icon_Button" onclick="Hamburger_Open()" type="button">
                 <span class="material-symbols-outlined Hamburger_Icon">menu</span>
             </button>
+            
+            
+            <div id="User_Greeting">
+                <a href="/login">
+                    <span class="material-symbols-outlined Greet_Icon">person</span>
+
+                    <span class="Greeting_Log_Not">Login</span>
+                </a>
+            </div>
 
 
             <div id="Cart_Top">
                 <a href="/cart">
                     <span class="material-symbols-outlined Cart_Top_Icon">shopping_cart</span>
                 </a>
-
             </div>
 
         </div>
@@ -257,9 +265,52 @@
 
         <div class="Nav_22 Nav_2nd_8" title="T&C apply">
             <a class="Nav2" href="/terms_and_condition">T&C apply</a>
-
-        
+        </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="Hamburger_BG"></div>
+
+    <div id="Aside_Hamburger">
+        <div class="Hamburger_Icon_Close_Div">
+            <button onclick="Hamburger_Close()" class="Hamburger_Icon_Close_Div_Btn" type="button">
+                <span class="material-symbols-outlined Hamburger_Icon_Close">close</span>
+            </button>
+        </div>
+
+        <div>
+            | GET-SKY-BUY
+        </div>
+    </div>
+
+
+
+
+
+
+
+
     
     <!-- <img id="Virat_Home" src="https://i.gadgets360cdn.com/large/Vivo_V21e_poster_specs_leak_1623911420279.jpg" alt="Virat"> -->
     <script src="/files/js/Index.js"></script>

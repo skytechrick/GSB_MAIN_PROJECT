@@ -112,3 +112,30 @@ let More_Hovera = () =>{
     })
 }
 More_Hovera();
+
+
+
+
+function Hamburger_Open() {
+    let Aside_Hamburger = document.getElementById("Aside_Hamburger");
+    Aside_Hamburger.style.animationName = "Left_Right_Hamburger";
+    document.getElementById("Hamburger_BG").style.display = "block";
+    
+}
+function Hamburger_Close() {
+    let Aside_Hamburger = document.getElementById("Aside_Hamburger");
+    Aside_Hamburger.style.animationName = "Right_Left_Hamburger";
+    document.getElementById("Hamburger_BG").style.display = "none";
+    
+}
+
+function Hamburger_BG_Click() {
+    document.getElementById("Hamburger_BG").addEventListener("click", () => {
+        Aside_Hamburger.style.animationName = "Right_Left_Hamburger";
+        document.getElementById("Hamburger_BG").style.display = "none";
+
+    });
+    
+}
+
+Hamburger_BG_Click();

@@ -120,5 +120,8 @@
     #Nav_2 {
         width: 95%;
     }
+    #Head_Top {
+        display: flex;
+    }
     
 }
