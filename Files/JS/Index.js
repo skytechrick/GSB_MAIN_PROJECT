@@ -74,20 +74,41 @@ Search_Click();
 
 
 let Profile_Hovera = () =>{
-    let Nav_2nd_3 = document.getElementsByid("Nav2_3");
-    let Profile_Down = document.getElementsByid("Profile_Down2");
-    let Background_Blur_50 = document.getElementById("Background_Blur_50");
+    let Nav_2nd_3 = document.getElementById("Nav2_3");
+    let Profile_Down = document.getElementById("Profile_Down2");
+    let Background_Blur_50 = document.getElementById("Back_Nav_2");
     Nav_2nd_3.addEventListener("mouseover",() => {
-        Profile_Down.style.display = "flex";
+        Profile_Down.style.display = "block";
         Background_Blur_50.style.display = "block";
-        Profile_Down.style.animationName = "Up_Down_Profile";
+        Profile_Down.style.animationName = "Up_Down_Profile2";
         Profile_Down.style.animationFillMode = "forward";
     })
     Nav_2nd_3.addEventListener("mouseout",() => {
         Profile_Down.style.display = "none";
         Background_Blur_50.style.display = "none";
-        Profile_Down.style.animationName = "Down_Up_Profile";
+        Profile_Down.style.animationName = "Down_Up_Profile2";
+        // Profile_Down.style.animationFillMode = "forward";
         Profile_Down.style.animationFillMode = "forward";
     })
 }
 Profile_Hovera();
+
+let More_Hovera = () =>{
+    let Nav_5 = document.getElementById("Nav2_4");
+    let More_Down = document.getElementById("More_Down2");
+    let Background_Blur_50 = document.getElementById("Back_Nav_2");
+    Nav_5.addEventListener("mouseover",() => {
+        More_Down.style.display = "block";
+        Background_Blur_50.style.display = "block";
+        More_Down.style.animationName = "Up_Down_Morea";
+        More_Down.style.animationFillMode = "forward";
+
+    })
+    Nav_5.addEventListener("mouseout",() => {
+        More_Down.style.display = "none";
+        Background_Blur_50.style.display = "none";
+        More_Down.style.animationName = "Down_Up_Morea";
+        More_Down.style.animationFillMode = "forward";
+    })
+}
+More_Hovera();

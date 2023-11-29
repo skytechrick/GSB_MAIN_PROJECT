@@ -1,7 +1,16 @@
+@media screen and (min-width: 1550px) {
+    
+    #Nav_2nd {
+        display: none;
+    }
+}
 @media screen and (max-width: 1550px) {
     #Nav_3 {
         display: none;
     } 
+    .Nav_2nd_2 {
+        display: inline-block;
+    }
 }
 
 
@@ -9,6 +18,9 @@
     #Nav_4 {
         display: none;
     } 
+    .Nav_2nd_3 {
+        display: inline-block;
+    }
 }
 
 
@@ -17,6 +29,9 @@
     #Nav_5 {
         display: none;
     } 
+    .Nav_2nd_4 {
+        display: inline-block;
+    }
 }
 
 
@@ -24,6 +39,10 @@
     #Nav_6 {
         display: none;
     } 
+    
+    .Nav_2nd_5 {
+        display: inline-block;
+    }
 }
 
 @media screen and (max-width: 1080px) {
@@ -31,6 +50,7 @@
         width: 95vw;
         justify-content: space-between;
     }
+    
     #Nav_7 {
         /* position: absolute;
         right: 0px;
@@ -42,30 +62,23 @@
     } */
 }
 @media screen and (max-width: 990px) {
+    .Nav_2nd_6 {
+        display: inline-block;
+    }
+    #Nav_1_1 {
+        width: 47px;
+    }
+
     #Nav {
-        width: 96vw;
-        justify-content: initial;
+        width: 98vw;
+        justify-content: center;
     }
     #Nav_1_A {
         display: none;
-    } 
-    #Nav_1_1 {
-        width: 122px;
-    } 
+    }
 
     #Nav_7 {
         display: none;
-    }
-    #Nav_990 {
-        display: inline-block;
-        /* word-spacing: -1px; */
-        font-size: 26px;
-        font-style: italic;
-        font-weight: bold;
-        color: rgb(247, 0, 255);
-        position: relative;
-        top: 6px;
-        font-size: 31px;
     }
     #Nav_2 {
         width: 798px;
@@ -76,41 +89,36 @@
 }
 
 
-@media screen and (max-width: 910px) {
-    #Nav_990 {
-        font-size: 27px;
-        top: 9px;
+@media screen and (max-width: 955px) {
+    .Nav_2nd_8 {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 860px) {
+    #Nav_1_1 {
+        display: none;
+    }
+    
+    #Nav_2 {
+        width: 85%;
     }
 }
 
 @media screen and (max-width: 830px) {
-    #Nav_990 {
-        font-size: 25px;
-        top: 9px;
-    }
-}
-
-@media screen and (max-width: 815px) {
-    #Nav_990 {
+    .Nav_2nd_7 {
         display: none;
-    }
-    #Nav_1_1 {
-        width: 54px;
     }
 }
 
 
-@media screen and (max-width: 790px) {
-    #Nav_1_1 {
+@media screen and (max-width: 768px) {
+    #Nav_2nd {
         display: none;
     }
-
     #Nav_2 {
-        width: 750px;
+        width: 95%;
     }
-}
-@media screen and (max-width: 798px) {
-    #Nav_1_1 {
-        display: none;
-    }
+    
 }
