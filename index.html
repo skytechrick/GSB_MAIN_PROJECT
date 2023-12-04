@@ -1,73 +1,1985 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<section id="Section_1">
-    <div id="Section__1">
-        <div class="Section_First" id="Section_01">
-            <a target="_blank" title="Product_01" href="/product/001" class="Img_Box">
-                <img class="SECTION_IMG_01" src="https://th.bing.com/th/id/OIP.yhGOCsT6vhIx2kA728bo8wHaEK?pid=ImgDet&rs=1" alt="">
-            </a>
-            <div class="Details_Products">
-                <a target="_blank" title="Product_01" href="/product/001" class="Product_Title">
-                |    Realme 10 pro plus 5G
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping Site in India | GET-SKY-BUY</title>
+    <link rel="shortcut icon" href="/files/img/GSB_logo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="/files/css/Index.css">
+    <link rel="stylesheet" href="/files/css/index1640.css"">
+
+
+
+    <link rel=" stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            font-family: sans-serif;
+            background-color: rgb(241, 243, 246);
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        #Header {
+            z-index: 100;
+            border-bottom: 1px solid rgb(247, 0, 255);
+            box-shadow: 0px 0px 2px rgb(247, 0, 255);
+            display: flex;
+            align-items: center;
+            height: 62px;
+            position: sticky;
+            top: 0px;
+            background-color: white;
+        }
+
+        #Nav {
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            width: 90vw;
+            align-items: center;
+        }
+
+        .Nav {
+            position: relative;
+            border-radius: 2px;
+            text-decoration: none;
+            color: black;
+        }
+
+        #Nav_1_1 {
+            width: 225px;
+            height: 45px;
+            position: relative;
+            top: 0px;
+            text-decoration: none;
+        }
+
+        #Nav_1 {
+            cursor: pointer;
+            position: absolute;
+            left: 46px;
+            display: inline-block;
+        }
+
+        #Nav_1_Img_Big {
+            position: relative;
+            width: 48px;
+        }
+
+        #Nav_1_Img_Big_A {
+            position: absolute;
+            left: 0px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+
+        #Nav_1_Img {
+            position: relative;
+            top: 3px;
+            width: 16px;
+            height: 16px;
+        }
+
+        #Nav_1_A {
+            text-decoration: none;
+        }
+
+        #H1_Heading {
+            word-spacing: -1px;
+            display: inline-block;
+            font-size: 26px;
+            font-style: italic;
+            font-weight: bold;
+            color: rgb(247, 0, 255);
+
+            text-shadow: 0px 0px 4px #aaa;
+        }
+
+        #Explore_Box {
+            display: block;
+            font-style: italic;
+            font-weight: bold;
+            color: rgb(117, 12, 255);
+            position: relative;
+            text-decoration: underline;
+            top: -4px;
+        }
+
+        #Nav_2 {
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            width: 600px;
+            background-color: white;
+            position: relative;
+            top: 0px;
+            border: 1px solid rgb(247, 0, 255);
+            height: 45px;
+        }
+
+        #Nav_2_Form {
+            border-radius: 50px;
+            height: 45px;
+            width: 100%;
+            position: relative;
+            top: 0px;
+            display: flex;
+            align-items: center;
+
+        }
+
+        #All {
+            height: 45px;
+            position: relative;
+            top: 0px;
+            left: 0px;
+            border-right: 1px solid rgb(247, 0, 255);
+            display: flex;
+            align-items: center;
+            width: 64px;
+            border-bottom-left-radius: 50%;
+            border-top-left-radius: 50%;
+            cursor: pointer;
+            background-color: rgb(251, 197, 255);
+        }
+
+        #All:hover {
+            background-color: rgb(251, 140, 255);
+        }
+
+        #All:active {
+            background-color: rgb(225, 101, 230);
+        }
+
+        #All_Down {
+            position: relative;
+            left: 14px;
+            font-size: 17px;
+        }
+
+        #All_Down_Arrow {
+            font-size: 15px;
+            position: relative;
+            bottom: 1px;
+            left: 14px;
+        }
+
+        @keyframes Up_Down_All {
+            from {
+                height: 0px;
+            }
+
+            to {
+                height: 300px;
+            }
+        }
+
+        @keyframes Down_Up_All {
+            from {
+                height: 300px;
+                display: flex;
+            }
+
+            to {
+                height: 0px;
+            }
+        }
+
+        #All_ARROW {
+            animation-name: A;
+            animation-duration: 0.2s;
+            animation-fill-mode: F;
+            animation-iteration-count: 1;
+            z-index: 101;
+            position: absolute;
+            top: 45px;
+            left: -1px;
+            display: none;
+            flex-direction: column;
+            border: 1px solid rgb(247, 0, 255);
+            overflow: auto;
+            width: 140px;
+            padding: 3px;
+            background-color: white;
+            border-radius: 12px;
+            border-top-left-radius: 0px;
+            box-shadow: 1px 2px 20px rgba(78, 78, 78, 0.5);
+            border-top-right-radius: 0px;
+            overflow-y: hidden;
+        }
+
+        .All_Down {
+            font-size: 15px;
+            font-weight: bold;
+            color: black;
+            text-align: left;
+            font-family: 'Titillium Web', sans-serif;
+            background-color: white;
+            margin: 1px 0;
+            padding: 2px;
+            text-decoration: none;
+            padding-left: 3px;
+            background-color: white;
+            border: none;
+            cursor: pointer;
+            border-bottom: 1px solid #dadada;
+        }
+
+        .All_Down:hover {
+            border: 1px solid rgb(247, 0, 255);
+        }
+
+        #Search_Main {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+        }
+
+        #Search_Main_Box {
+            height: 100%;
+            width: 97%;
+            outline: none;
+            border: 0px;
+            padding: 0px;
+            margin: 0px;
+            background-color: transparent;
+            font-size: 14px;
+            padding-left: 10px;
+
+        }
+
+        #Reset_Div {
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+        }
+
+        #Reset_Div_Button {
+            text-align: center;
+            font-size: 24px;
+            outline: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: none;
+            background-color: white;
+            cursor: pointer;
+            padding: 0px;
+        }
+
+        #Reset_Div_Button:hover {
+            background-color: rgb(233, 233, 233);
+        }
+
+        #Searched_Button {
+            width: 62px;
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            border: 0px;
+        }
+
+
+
+        #Searched_Button_Button {
+            padding: 0px;
+            margin: 0px;
+            text-align: center;
+            font-size: 24px;
+            outline: none;
+            width: 100%;
+            height: 100%;
+            border: none;
+            background-color: white;
+            cursor: pointer;
+            padding: 0px;
+            border-left: 1px solid rgb(247, 0, 255);
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+            display: flex;
+            align-items: center;
+            background-color: rgb(251, 197, 255);
+        }
+
+        #Searched_Button_Button:hover {
+            background-color: rgb(251, 140, 255);
+        }
+
+        #Searched_Button_Button:active {
+            background-color: rgb(225, 101, 230);
+
+        }
+
+        #Searched_Button_Button_Span {
+            padding-left: 10px;
+            font-size: 24px;
+        }
+
+        #Nav_3 {
+            position: relative;
+            top: 0px;
+            height: 35px;
+            padding-left: 2px;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        #Nav_3:hover {
+            text-shadow: 0px 0px 1px rgb(247, 0, 255);
+            border: 1px solid rgb(247, 0, 255);
+        }
+
+        #Store_Logo {
+            display: inline-block;
+            position: relative;
+            top: 5px;
+        }
+
+        #Store_Word {
+            display: inline-block;
+            position: relative;
+            top: 1px;
+            right: 5px;
+        }
+
+        #Nav_4 {
+            position: relative;
+            top: 0px;
+            background-color: white;
+            height: 35px;
+            padding-left: 2px;
+            cursor: pointer;
+            border: 1px solid white;
+        }
+
+        #Nav_4:hover {
+            text-shadow: 0px 0px 1px rgb(247, 0, 255);
+            border: 1px solid rgb(247, 0, 255);
+        }
+
+        #Profile_Logo {
+            display: inline-block;
+            position: relative;
+            top: 5px;
+        }
+
+        #Profile_Word {
+            display: inline-block;
+            position: relative;
+            top: 1px;
+            right: 5px;
+        }
+
+        @keyframes Up_Down_Profile {
+            from {
+                height: 0px;
+            }
+
+            to {
+                height: 270px;
+            }
+        }
+
+        @keyframes Down_Up_Profile {
+            from {
+                height: 270px;
+                display: flex;
+            }
+
+            to {
+                height: 0px;
+            }
+        }
+
+        #Profile_Down {
+            animation-duration: 0.2s;
+            animation-iteration-count: 1;
+            position: absolute;
+            top: 35px;
+            left: -1px;
+            display: none;
+            flex-direction: column;
+            border: 1px solid rgb(247, 0, 255);
+            overflow: auto;
+            width: 140px;
+            padding: 3px;
+            background-color: white;
+            text-shadow: 0 0 0 transparent;
+            border-radius: 12px;
+            border-top-left-radius: 0px;
+            box-shadow: 1px 2px 20px rgba(78, 78, 78, 0.5);
+            overflow-y: hidden;
+        }
+
+        .Profile_Options {
+            border-bottom: 1px solid #dadada;
+            font-size: 15px;
+            font-weight: bold;
+            color: black;
+            text-align: left;
+            font-family: 'Titillium Web', sans-serif;
+            background-color: white;
+            margin: 1px 0;
+            padding: 2px;
+            text-decoration: none;
+            padding-left: 3px;
+        }
+
+        .Profile_Options:hover {
+            border: 1px solid rgb(247, 0, 255);
+        }
+
+        #Nav_5 {
+            position: relative;
+            top: 0px;
+            height: 35px;
+            padding-left: 2px;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        #Nav_5:hover {
+            text-shadow: 0px 0px 1px rgb(247, 0, 255);
+            border: 1px solid rgb(247, 0, 255);
+        }
+
+        #More_Logo {
+            display: inline-block;
+            position: relative;
+            top: 7px;
+        }
+
+        #More_Word {
+            display: inline-block;
+            position: relative;
+            top: 1px;
+            right: 5px;
+        }
+
+        @keyframes Up_Down_More {
+            from {
+                height: 0px;
+            }
+
+            to {
+                height: 240px;
+            }
+        }
+
+        @keyframes Down_Up_More {
+            from {
+                height: 240px;
+                display: flex;
+            }
+
+            to {
+                height: 0px;
+            }
+        }
+
+        #More_Down {
+            animation-duration: 0.2s;
+            animation-iteration-count: 1;
+            position: absolute;
+            top: 35px;
+            left: -1px;
+            display: none;
+            flex-direction: column;
+            border: 1px solid rgb(247, 0, 255);
+            overflow: auto;
+            width: 140px;
+            padding: 3px;
+            background-color: white;
+            text-shadow: 0 0 0 transparent;
+            border-radius: 12px;
+            border-top-left-radius: 0px;
+            box-shadow: 1px 2px 20px rgba(78, 78, 78, 0.5);
+            overflow-y: hidden;
+        }
+
+        .More_Options {
+            border-bottom: 1px solid #dadada;
+            font-size: 15px;
+            font-weight: bold;
+            color: black;
+            text-align: left;
+            font-family: 'Titillium Web', sans-serif;
+            background-color: white;
+            margin: 1px 0;
+            padding: 2px;
+            text-decoration: none;
+            padding-left: 3px;
+        }
+
+        .More_Options:hover {
+            border: 1px solid rgb(247, 0, 255);
+
+        }
+
+        #Nav_6 {
+            position: relative;
+            top: 0px;
+            border: 1px solid transparent;
+            height: 35px;
+            padding-left: 2px;
+            cursor: pointer;
+        }
+
+        #Nav_6:hover {
+            text-shadow: 0px 0px 1px rgb(247, 0, 255);
+            border: 1px solid rgb(247, 0, 255);
+        }
+
+        #Favorite_Logo {
+            display: inline-block;
+            position: relative;
+            top: 5px;
+        }
+
+        #Favorite_Word {
+            display: inline-block;
+            position: relative;
+            top: 1px;
+            right: 5px;
+        }
+
+        #Nav_7 {
+            position: relative;
+            top: 0px;
+            height: 35px;
+            padding-left: 2px;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        #Nav_7:hover {
+            text-shadow: 0px 0px 1px rgb(247, 0, 255);
+            border: 1px solid rgb(247, 0, 255);
+        }
+
+        #Cart_Logo {
+            display: inline-block;
+            position: relative;
+            top: 5px;
+        }
+
+        #Cart_Word {
+            display: inline-block;
+            position: relative;
+            top: 2px;
+            right: 5px;
+        }
+
+        #Cart_Number {
+            display: inline-block;
+            position: absolute;
+            top: 1px;
+            left: 8px;
+            font-size: 13px;
+            background-color: red;
+            width: 13px;
+            height: 13px;
+            text-align: center;
+            color: white;
+            border: 0px;
+            border-radius: 50%;
+        }
+
+        #Background_Blur_50 {
+            display: none;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100vw;
+            height: 100vh;
+            z-index: 99;
+            background-color: rgba(240, 240, 240, 0.3);
+        }
+
+        #Search_Options {
+            display: none;
+            z-index: 99;
+            width: 600px;
+            position: absolute;
+            top: 45px;
+            left: -1px;
+            border: 1px solid rgb(247, 0, 255);
+            border-radius: 22px;
+            background-color: white;
+            padding: 5px 0;
+        }
+
+        .Options {
+            position: relative;
+            top: 0%;
+            width: 598px;
+            margin: auto;
+            border-bottom: 1px solid #aaa;
+            height: 40px;
+        }
+
+        .Options:hover {
+            background-color: rgb(233, 233, 233);
+            cursor: pointer;
+        }
+
+        .Options_Icons {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            text-align: center;
+            padding: 7px;
+            width: 30px;
+        }
+
+        .Options_Sen {
+            position: absolute;
+            top: 0px;
+            left: 45px;
+            width: 82.9%;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            height: 100%;
+            font-size: 16px;
+            overflow: hidden;
+            padding-left: 5px;
+        }
+
+        .Options_Arrow {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            background-color: transparent;
+        }
+
+        .Option_Arrow_Span {
+            background-color: transparent;
+            border-radius: 50%;
+            padding: 4px;
+            cursor: pointer;
+        }
+
+        .Option_Arrow_Span:hover {
+            background-color: rgb(209, 209, 209);
+        }
+
+        #Search_Option_1 {
+            border-top-right-radius: 17px;
+            border-top-left-radius: 17px;
+        }
+
+        .Options:nth-last-child(1) {
+            border-bottom-right-radius: 15px;
+            border-bottom-left-radius: 15px;
+        }
+
+        #Product_Head {
+            display: block;
+            width: 100%;
+            height: 40px;
+            margin-top: 5px;
+        }
+
+        #Product_Center {
+            height: 100%;
+            margin: auto;
+            width: 1500px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            top: 0px;
+        }
+
+
+        #Showing_Result {
+            display: inline-block;
+            margin-left: 50px;
+        }
+
+        #Showing_Result_Word {
+            font-size: 17px;
+            font-weight: bolder;
+        }
+
+        #Showing_Result_Sentence {
+            font-size: 16px;
+        }
+
+        #Filter_Left:hover {
+            text-shadow: 0px 0px 0.5px rgb(247, 0, 255);
+            border: 1px solid rgb(247, 0, 255);
+            border-radius: 2px;
+        }
+
+        #Filter_Left {
+            cursor: pointer;
+            border: 1px solid transparent;
+            width: 65px;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            right: 10px;
+        }
+
+        #Filter_Word {
+            font-size: 17px;
+            position: relative;
+            top: 2px;
+        }
+
+        #Sort_Left:hover {
+            border: 1px solid rgb(247, 0, 255);
+            border-radius: 2px;
+            text-shadow: 0px 0px 0.5px rgb(247, 0, 255);
+        }
+
+        #Sort_Left {
+            cursor: pointer;
+            border: 1px solid transparent;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            right: 120px;
+            width: 59px;
+        }
+
+        #Sort_Word {
+            font-size: 17px;
+            position: relative;
+            top: 2px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #Nav_2nd {
+            z-index: 95;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid red; */
+            height: 42px;
+            width: 100vw;
+            position: relative;
+            top: 0px;
+            background-color: aqua;
+        }
+
+        #Nav_2nd a {
+            color: black;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .Nav_22:hover {
+            text-decoration: underline;
+        }
+
+        .Nav_22 {
+            padding: 5px 10px 5px 10px;
+            /* border: 1px solid red; */
+            width: 80px;
+            margin: 0px 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #Nav2_3 {
+
+            position: relative;
+            top: 0px;
+
+        }
+
+        #Nav2_4 {
+
+            position: relative;
+            top: 0px;
+
+        }
+
+        .Nav_2nd_Home_Word {
+            /* position: absolute; */
+            /* top: 0px; */
+            font-weight: 600;
+            /* border: 1px solid red; */
+
+        }
+
+
+
+        @keyframes Up_Down_Profile2 {
+            from {
+                height: 0px;
+                /* display: none; */
+            }
+
+            to {
+                height: 292px;
+            }
+        }
+
+        @keyframes Down_Up_Profile2 {
+            from {
+                height: 292px;
+                display: block;
+            }
+
+            to {
+                height: 0px;
+                /* display: none; */
+            }
+        }
+
+
+
+
+        #Profile_Down2 {
+            overflow: hidden;
+            animation-name: A;
+            animation-duration: 0.2s;
+            animation-fill-mode: d;
+            animation-iteration-count: 1;
+            position: absolute;
+            top: 28px;
+            left: -19px;
+            width: 130px;
+            background-color: white;
+            border: 1px solid rgb(247, 0, 255);
+            height: 292px;
+            padding: 3px;
+            border-radius: 13px;
+            display: none;
+        }
+
+        .Profile_Options_Nav2 {
+            font-weight: 100;
+            border: 0px solid #dadada;
+            border-bottom: 1px solid #dadada;
+            font-size: 15px;
+            font-weight: bold;
+            color: black;
+            text-align: left;
+            font-family: 'Titillium Web', sans-serif;
+            background-color: white;
+            margin: 1px 0;
+            padding: 2px;
+            text-decoration: none;
+            padding-left: 3px;
+            display: block;
+        }
+
+        .Profile_Options_Nav2:hover {
+
+            border: 1px solid rgb(247, 0, 255);
+        }
+
+
+
+        #More_Down2 {
+            overflow: hidden;
+            animation-name: A;
+            animation-duration: 0.2s;
+            animation-fill-mode: d;
+            animation-iteration-count: 1;
+            position: absolute;
+            top: 28px;
+            left: -23px;
+            width: 140px;
+            background-color: white;
+            border: 1px solid rgb(247, 0, 255);
+            height: 235px;
+            padding: 3px;
+            border-radius: 13px;
+            display: none;
+
+        }
+
+
+        .More_Options2 {
+            font-weight: normal;
+            border: 0px solid #dadada;
+            border-bottom: 1px solid #dadada;
+            font-size: 15px;
+            font-weight: bold;
+            color: black;
+            text-align: left;
+            font-family: 'Titillium Web', sans-serif;
+            background-color: white;
+            margin: 1px 0;
+            padding: 2px;
+            text-decoration: none;
+            padding-left: 3px;
+            display: block;
+
+
+        }
+
+        .More_Options2:hover {
+            border: 1px solid rgb(247, 0, 255);
+        }
+
+        #Back_Nav_2 {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-color: rgba(11, 51, 230, 0.5);
+            z-index: 94;
+            display: none;
+        }
+
+
+        @keyframes Up_Down_Morea {
+            from {
+                height: 0px;
+            }
+
+            to {
+                height: 240px;
+            }
+        }
+
+        @keyframes Down_Up_Morea {
+            from {
+                height: 240px;
+                display: block;
+            }
+
+            to {
+                height: 0px;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        header {
+
+            -webkit-user-select: none;
+            /* Safari */
+            -ms-user-select: none;
+            /* IE 10 and IE 11 */
+            user-select: none;
+            /* Standard syntax */
+        }
+
+
+
+
+
+
+
+
+
+        .Nav_2nd_2 {
+            display: none;
+        }
+
+        .Nav_2nd_3 {
+            display: none;
+        }
+
+        .Nav_2nd_4 {
+            display: none;
+        }
+
+        .Nav_2nd_5 {
+            display: none;
+        }
+
+        .Nav_2nd_6 {
+            display: none;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #Head_Top {
+            width: 100vw;
+            height: 50px;
+            display: none;
+            align-items: center;
+            background-color: white;
+
+            -webkit-user-select: none;
+            /* Safari */
+            -ms-user-select: none;
+            /* IE 10 and IE 11 */
+            user-select: none;
+            /* Standard syntax */
+            /* border: 1px solid red; */
+            /* padding: 1px; */
+        }
+
+        #Head_Top_Center {
+            /* display: block; */
+            width: 97%;
+            /* border: 1px solid red; */
+            height: 48px;
+            margin: auto;
+
+            position: relative;
+            top: 0px;
+            display: flex;
+            align-items: center;
+        }
+
+
+
+        .Hamburger_Icon_Button {
+            /* border: 1px solid blue; */
+            outline: none;
+            background-color: white;
+            border: none;
+            padding: 2px;
+            position: relative;
+            left: 5px;
+            cursor: pointer;
+
+        }
+
+        .Hamburger_Icon {
+            border: 0px solid none;
+            background-color: white;
+            padding: 8px;
+            border-radius: 50%;
+            /* position: absolute; */
+            /* top: 0px; */
+            /* left: 10px; */
+
+        }
+
+        .Hamburger_Icon:hover {
+            background-color: #dadada;
+
+        }
+
+
+        .Hamburger_Icon:active {
+            background-color: #cccccc;
+
+        }
+
+
+
+
+
+
+
+
+
+        #Cart_Top {
+            position: absolute;
+            right: 10px;
+            border: 0px solid none;
+            background-color: white;
+            padding: 4px;
+            border-radius: 50%;
+            cursor: pointer;
+
+        }
+
+        #Cart_Top a {
+            color: black;
+        }
+
+        .Cart_Top_Icon {
+            padding: 4px;
+        }
+
+        #Cart_Top:hover {
+            background-color: #dadada;
+
+        }
+
+
+        #Cart_Top:active {
+            background-color: #cccccc;
+
+        }
+
+
+
+
+
+
+        #User_Greeting {
+            width: 90px;
+            /* border: 1px solid red; */
+            position: absolute;
+            right: 50px;
+
+        }
+
+        #User_Greeting a {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            color: black;
+            text-decoration: none;
+        }
+
+        .Greet_Icon {
+            border: none;
+            border-right: 1px solid black;
+            color: black;
+
+        }
+
+        .Greeting_Log_Not {
+            position: relative;
+            left: -4px;
+            top: 2px;
+            /* border: 1px solid red; */
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        @keyframes Left_Right_Hamburger {
+            0% {
+                left: -200px;
+            }
+
+            100% {
+                left: 0px;
+
+            }
+        }
+
+        @keyframes Right_Left_Hamburger {
+            0% {
+                left: 0px;
+            }
+
+            100% {
+                left: -200px;
+
+            }
+        }
+
+        #Aside_Hamburger {
+            animation-name: a;
+            overflow-y: scroll;
+            animation-iteration-count: 1;
+            animation-duration: 0.4s;
+            animation-fill-mode: forwards;
+            z-index: 150;
+            /* opacity: 0.6; */
+            position: absolute;
+            top: 0px;
+            left: -200px;
+            height: 100vh;
+            width: 195px;
+            background-color: white;
+        }
+
+
+        .Hamburger_Icon_Close_Div {
+            height: 48px;
+            width: 100%;
+            /* border: 1px solid red; */
+            position: relative;
+            right: 0px;
+            /* background-color: #dadada; */
+
+        }
+
+        .Hamburger_Icon_Close_Div_Btn {
+            cursor: pointer;
+            position: absolute;
+            right: 7px;
+            top: 9px;
+            background-color: white;
+            border: none;
+            outline: none;
+        }
+
+        .Hamburger_Icon_Close {
+            /* border: 1px solid red; */
+            padding: 4px;
+            border-radius: 50%;
+        }
+
+
+        .Hamburger_Icon_Close:hover {
+            background-color: #dadada;
+
+        }
+
+
+        .Hamburger_Icon_Close:active {
+            background-color: #cccccc;
+
+        }
+
+        #Hamburger_BG {
+            position: absolute;
+            top: 0px;
+            width: 100vw;
+            height: 100vh;
+            background-color: #dadada;
+            z-index: 149;
+            display: none;
+            opacity: 0.5;
+        }
+
+        #Top_Nav_1_1 {
+            width: 225px;
+            height: 45px;
+            position: relative;
+            top: 0px;
+            left: 8px;
+            text-decoration: none;
+        }
+
+        #Top_Nav_1_Img_Big_A {
+            position: absolute;
+            left: 0px;
+            text-decoration: none;
+            cursor: pointer;
+
+        }
+
+        #Top_Nav_1_Img_Big {
+
+            position: relative;
+            width: 44px;
+        }
+
+        #Top_Nav_1 {
+            cursor: pointer;
+            position: absolute;
+            left: 46px;
+            display: inline-block;
+
+        }
+
+        #Top_Nav_1_A {
+            text-decoration: none;
+        }
+
+        #Top_H1_Heading {
+
+            text-shadow: 0px 0px 4px #aaa;
+            word-spacing: -1px;
+            display: inline-block;
+            font-size: 24px;
+            font-style: italic;
+            font-weight: bold;
+            color: rgb(247, 0, 255);
+            position: relative;
+            top: 1px;
+
+        }
+
+        #Top_Explore_Box {
+            font-size: 14px;
+            display: block;
+            font-style: italic;
+            font-weight: bold;
+            color: rgb(117, 12, 255);
+            position: relative;
+            text-decoration: underline;
+            top: -2px;
+        }
+
+        #Top_Nav_1_Img {
+            position: relative;
+            top: 3px;
+            width: 12px;
+            height: 12px;
+        }
+
+        #TOP____ {
+            /* word-spacing: 12px; */
+            display: inline-block;
+            font-size: 34px;
+            font-style: italic;
+            font-weight: bold;
+            color: rgb(247, 0, 255);
+            text-shadow: 0px 0px 3px #aaa;
+            position: absolute;
+            left: 44px;
+            top: -19px;
+            display: none;
+        }
+
+        #TOP____A {
+            text-decoration: none;
+            color: rgb(247, 0, 255);
+        }
+
+        @media screen and (min-width: 1550px) {
+
+            #Nav_2nd {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 1550px) {
+            #Nav_3 {
+                display: none;
+            }
+
+            .Nav_2nd_2 {
+                display: inline-block;
+            }
+        }
+
+
+        @media screen and (max-width: 1430px) {
+            #Nav_4 {
+                display: none;
+            }
+
+            .Nav_2nd_3 {
+                display: inline-block;
+            }
+        }
+
+
+
+        @media screen and (max-width: 1320px) {
+            #Nav_5 {
+                display: none;
+            }
+
+            .Nav_2nd_4 {
+                display: inline-block;
+            }
+        }
+
+
+        @media screen and (max-width: 1160px) {
+            #Nav_6 {
+                display: none;
+            }
+
+            .Nav_2nd_5 {
+                display: inline-block;
+            }
+        }
+
+        @media screen and (max-width: 1080px) {
+            #Nav {
+                width: 95vw;
+                justify-content: space-between;
+            }
+
+            #Nav_7 {
+                /* position: absolute;
+        right: 0px;
+        width: 26px; */
+                margin-left: 15px;
+            }
+
+            /* #Cart_Word {
+        display: none;
+    } */
+        }
+
+        @media screen and (max-width: 990px) {
+            .Nav_2nd_6 {
+                display: inline-block;
+            }
+
+            #Nav_1_1 {
+                width: 47px;
+            }
+
+            #Nav {
+                width: 98vw;
+                justify-content: center;
+            }
+
+            #Nav_1_A {
+                display: none;
+            }
+
+            #Nav_7 {
+                display: none;
+            }
+
+            #Nav_2 {
+                width: 798px;
+            }
+
+            #Nav_2_Form {
+                width: 100%;
+            }
+        }
+
+
+        @media screen and (max-width: 955px) {
+            .Nav_2nd_8 {
+                display: none;
+            }
+        }
+
+
+        @media screen and (max-width: 860px) {
+            #Nav_1_1 {
+                display: none;
+            }
+
+            #Nav_2 {
+                width: 85%;
+            }
+        }
+
+        @media screen and (max-width: 830px) {
+            .Nav_2nd_7 {
+                display: none;
+            }
+        }
+
+
+        @media screen and (max-width: 768px) {
+            #Nav_2nd {
+                display: none;
+            }
+
+            #Nav_2 {
+                width: 95%;
+            }
+
+            #Head_Top {
+                display: flex;
+            }
+
+            #Header {
+                border-bottom: 1px solid #aaa;
+                box-shadow: none;
+                height: 54px;
+            }
+
+            #Nav {
+                margin-top: 0px;
+                margin-bottom: 7px;
+            }
+
+
+        }
+
+        @media screen and (max-width: 432px) {
+
+            #TOP____ {
+                display: inline-block;
+            }
+
+            #Top_Nav_1 {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body dir="ltr">
+    <div id="Background_Blur_50"></div>
+
+    <div id="Head_Top">
+        <div id="Head_Top_Center">
+            <button class="Hamburger_Icon_Button" onclick="Hamburger_Open()" type="button">
+                <span class="material-symbols-outlined Hamburger_Icon">menu</span>
+            </button>
+            <div id="Top_Nav_1_1">
+                <a href="/" title="GET-SKY-BUY" id="Top_Nav_1_Img_Big_A">
+                    <img id="Top_Nav_1_Img_Big" src="/files/img/GSB_logo.png" alt="Logo">
                 </a>
-
-                <div class="Product_Price">
-                |    ₹24,999  <strike class="Price_Strike"> (₹26,999)</strike> <span class="Product_Price_OFF">8% Off</span>
+                <div title="GET-SKY-BUY" class="Nav" id="Top_Nav_1">
+                    <a id="Top_Nav_1_A" href="/">
+                        <div id="Top_H1_Heading">GET SKY BUY</div>
+                        <div id="Top_Explore_Box">Explore now<img id="Top_Nav_1_Img" src="/files/img/GSB_logo.png"
+                                alt="Logo"></div>
+                    </a>
                 </div>
-                <div class="Product_Description">
-                |    8GB RAM | 120Hz Display 108MP Camera
-                </div>
+                <h1 id="TOP____">
+                    <a id="TOP____A" href="/">GSB</a>
+                </h1>
             </div>
-        </div>
-        <div class="Section_First" id="Section_01">
-            <a target="_blank" title="Product_01" href="/product/001" class="Img_Box">
-                <img class="SECTION_IMG_01" src="https://img.etimg.com/thumb/msid-98998778,width-300,height-225,imgsize-119912,,resizemode-75/6-best-samsung-mobile-phones-under-15000-in-india-2023.jpg" alt="">
-            </a>
-            <div class="Details_Products">
-                <a target="_blank" title="Product_01" href="/product/001" class="Product_Title">
-                |    Realme 10 pro plus 5G
+            <div id="User_Greeting">
+                <a href="/login">
+                    <span class="material-symbols-outlined Greet_Icon">person</span>
+                    <span class="Greeting_Log_Not">Login</span>
                 </a>
-
-                <div class="Product_Price">
-                |    ₹24,999  <strike class="Price_Strike"> (₹26,999)</strike> <span class="Product_Price_OFF">8% Off</span>
-                </div>
-                <div class="Product_Description">
-                |    8GB RAM | 120Hz Display 108MP Camera
-                </div>
             </div>
-        </div>
-        <div class="Section_First" id="Section_01">
-            <a target="_blank" title="Product_01" href="/product/001" class="Img_Box">
-                <img class="SECTION_IMG_01" src="https://img.etimg.com/thumb/msid-98897778,width-300,height-225,imgsize-35708,,resizemode-75/6-latest-mobile-phones-with-12gb-ram-in-india.jpg" alt="">
-            </a>
-            <div class="Details_Products">
-                <a target="_blank" title="Product_01" href="/product/001" class="Product_Title">
-                |    Realme 10 pro plus 5G
+            <div id="Cart_Top">
+                <a href="/cart">
+                    <span class="material-symbols-outlined Cart_Top_Icon">shopping_cart</span>
                 </a>
-
-                <div class="Product_Price">
-                |    ₹24,999  <strike class="Price_Strike"> (₹26,999)</strike> <span class="Product_Price_OFF">8% Off</span>
-                </div>
-                <div class="Product_Description">
-                |    8GB RAM | 120Hz Display 108MP Camera
-                </div>
-            </div>
-        </div>
-        <div class="Section_First" id="Section_01">
-            <a target="_blank" title="Product_01" href="/product/001" class="Img_Box">
-                <img class="SECTION_IMG_01" src="https://www.reliancedigital.in/wp-content/uploads/2022/03/cover_new_mobiles.jpg" alt="">
-            </a>
-            <div class="Details_Products">
-                <a target="_blank" title="Product_01" href="/product/001" class="Product_Title">
-                |    Realme 10 pro plus 5G
-                </a>
-
-                <div class="Product_Price">
-                |    ₹24,999  <strike class="Price_Strike"> (₹26,999)</strike> <span class="Product_Price_OFF">8% Off</span>
-                </div>
-                <div class="Product_Description">
-                |    8GB RAM | 120Hz Display 108MP Camera
-                </div>
             </div>
         </div>
     </div>
-</section>
+    <header id="Header">
+        <nav id="Nav">
+            <div id="Nav_1_1">
+                <a href="/" title="GET-SKY-BUY" id="Nav_1_Img_Big_A">
+                    <img id="Nav_1_Img_Big" src="/files/img/GSB_logo.png" alt="Logo">
+                </a>
+                <div title="GET-SKY-BUY" class="Nav" id="Nav_1">
+                    <a id="Nav_1_A" href="/">
+                        <div id="H1_Heading">GET SKY BUY</div>
+                        <div id="Explore_Box">Explore now<img id="Nav_1_Img" src="/files/img/GSB_logo.png" alt="Logo">
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="Nav" id="Nav_2">
+                <form id="Nav_2_Form" action="/search_results" method="get">
+                    <div id="All">
+                        <span id="All_Down">All</span>
+                        <span class="material-symbols-outlined" id="All_Down_Arrow">arrow_drop_down</span>
+                        <div id="All_ARROW">
+                            <button type="button" onclick="All_Arrow('All');" class="All_Down"
+                                id="All_Down-1">All</button>
+                            <button type="button" onclick="All_Arrow('Dress');" class="All_Down"
+                                id="All_Down-2">Dress</button>
+                            <button type="button" onclick="All_Arrow('Home appliance');" class="All_Down"
+                                id="All_Down-3">Home appliance</button>
+                            <button type="button" onclick="All_Arrow('Laptop');" class="All_Down"
+                                id="All_Down-4">Laptop</button>
+                            <button type="button" onclick="All_Arrow('Mobile');" class="All_Down"
+                                id="All_Down-5">Mobile</button>
+                            <button type="button" onclick="All_Arrow('Kitchen');" class="All_Down"
+                                id="All_Down-6">Kitchen</button>
+                            <button type="button" onclick="All_Arrow('Electronics');" class="All_Down"
+                                id="All_Down-7">Electronics</button>
+                            <button type="button" onclick="All_Arrow('Robotics');" class="All_Down"
+                                id="All_Down-8">Robotics</button>
+                            <button type="button" onclick="All_Arrow('Sports');" class="All_Down"
+                                id="All_Down-9">Sports</button>
+                            <button type="button" onclick="All_Arrow('Other');" class="All_Down"
+                                id="All_Down-10">Other</button>
+                        </div>
+                    </div>
+                    <div id="Search_Main">
+                        <input title="Search" autocomplete="off" spellcheck="false" name="searched" type="text"
+                            id="Search_Main_Box" placeholder="Search for products, shop and many more" onfocus>
+                        <div id="Search_Options">
+                            <div class="Options" id="Search_Option_1"><span
+                                    class="material-symbols-outlined Options_Icons" id="Options_Icon_1">search</span>
+                                <span class="Options_Sen" id="Options_Sen_1">
+                                    | Search_1
+                                </span>
+                                <span class="Options_Arrow" id="Options_Arrow_1"><span
+                                        class="material-symbols-outlined Option_Arrow_Span">north_west</span></span>
+                            </div>
+                            <div class="Options" id="Search_Option_2"><span
+                                    class="material-symbols-outlined Options_Icons" id="Options_Icon_2">search</span>
+                                <span class="Options_Sen" id="Options_Sen_2">
+                                    | Search_2
+                                </span>
+                                <span class="Options_Arrow" id="Options_Arrow_2"><span
+                                        class="material-symbols-outlined Option_Arrow_Span">north_west</span></span>
+                            </div>
+                            <div class="Options" id="Search_Option_3"><span
+                                    class="material-symbols-outlined Options_Icons" id="Options_Icon_3">search</span>
+                                <span class="Options_Sen" id="Options_Sen_3">
+                                    | Search_3
+                                </span>
+                                <span class="Options_Arrow" id="Options_Arrow_3"><span
+                                        class="material-symbols-outlined Option_Arrow_Span">north_west</span></span>
+                            </div>
+                            <div class="Options" id="Search_Option_4"><span
+                                    class="material-symbols-outlined Options_Icons" id="Options_Icon_4">search</span>
+                                <span class="Options_Sen" id="Options_Sen_4">
+                                    | Search_4
+                                </span>
+                                <span class="Options_Arrow" id="Options_Arrow_4"><span
+                                        class="material-symbols-outlined Option_Arrow_Span">north_west</span></span>
+                            </div>
+                            <div class="Options" id="Search_Option_5"><span
+                                    class="material-symbols-outlined Options_Icons" id="Options_Icon_5">search</span>
+                                <span class="Options_Sen" id="Options_Sen_5">
+                                    | Search_5
+                                </span>
+                                <span class="Options_Arrow" id="Options_Arrow_5"><span
+                                        class="material-symbols-outlined Option_Arrow_Span">north_west</span></span>
+                            </div>
+                            <div class="Options" id="Search_Option_6"><span
+                                    class="material-symbols-outlined Options_Icons" id="Options_Icon_6">search</span>
+                                <span class="Options_Sen" id="Options_Sen_6">
+                                    | Search_6
+                                </span>
+                                <span class="Options_Arrow" id="Options_Arrow_6"><span
+                                        class="material-symbols-outlined Option_Arrow_Span">north_west</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Reset_Div">
+                        <button id="Reset_Div_Button" class="material-symbols-outlined" type="reset">close</button>
+                    </div>
+                    <div id="Searched_Button">
+                        <button title="Search" id="Searched_Button_Button" type="submit"><span
+                                id="Searched_Button_Button_Span"
+                                class="material-symbols-outlined">search</span></button>
+                    </div>
+                </form>
+            </div>
+            <div id="Nav_3">
+                <a class="Nav" href="/s.html" title="Store/Shop">
+                    <span id="Store_Logo" class="material-symbols-outlined">store</span>
+                    <span id="Store_Word">Store/Shop</span>
+                </a>
+            </div>
+            <div class="Nav" id="Nav_4">
+                <div id="Profile_Logo" class="material-symbols-outlined">person</div>
+                <div id="Profile_Word">Profile</div>
+                <div id="Profile_Down">
+                    <a href="/profile" class="Profile_Options">Profile</a>
+                    <a href="/signup" class="Profile_Options">Signup</a>
+                    <a href="/orders" class="Profile_Options">Orders/Returns</a>
+                    <a href="/favorite" class="Profile_Options">Favorite</a>
+                    <a href="/cart" class="Profile_Options">Cart</a>
+                    <a href="/sb_coins" class="Profile_Options">SB Coins</a>
+                    <a href="/notification" class="Profile_Options">Notification</a>
+                    <a href="/help_center" class="Profile_Options">Help center</a>
+                    <a href="/contact_us" class="Profile_Options">Contact us</a>
+                    <a href="/logout" class="Profile_Options">Logout</a>
+                </div>
+            </div>
+            <div class="Nav" id="Nav_5">
+                <div id="More_Logo" class="material-symbols-outlined">expand_more</div>
+                <div id="More_Word">More</div>
+                <div id="More_Down">
+                    <a href="/download_app" class="More_Options">Download app</a>
+                    <a href="/improve_us" class="More_Options">Improve us</a>
+                    <a href="/register_a_complaint" class="More_Options">Register a complaint</a>
+                    <a href="/customer_care" class="More_Options">Customer care</a>
+                    <a href="/setting" class="More_Options">Setting</a>
+                    <a href="/privacy_and_policy" class="More_Options">Privacy and policy</a>
+                    <a href="/terms_and_conditions" class="More_Options">Terms and conditions</a>
+                    <a href="/report_a_problem" class="More_Options">Report a problem</a>
+                </div>
+            </div>
+            <div id="Nav_6">
+                <a class="Nav" href="/favorite" title="Favorite">
+                    <span id="Favorite_Logo" class="material-symbols-outlined">favorite</span>
+                    <span id="Favorite_Word">Favorite</span>
+                </a>
+            </div>
+            <div id="Nav_7">
+                <a class="Nav" id="Nav_7_1" href="/cart" title="Cart">
+                    <span id="Cart_Logo" class="material-symbols-outlined">shopping_cart</span>
+                    <span id="Cart_Word">Cart</span>
+                    <span id="Cart_Number">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <div id="Back_Nav_2"></div>
+    <div id="Nav_2nd">
+        <div class="Nav_22 Nav_2nd_1" title="Home">
+            <a class="Nav2" href="/">Home</a>
+        </div>
+        <div class="Nav_22 Nav_2nd_2" title="Shop/Store">
+            <a class="Nav2" href="/store_shop">Store/Shop</a>
+        </div>
+        <div class="Nav_22 Nav_2nd_3" id="Nav2_3" title="Profile">
+            <span class="Nav_2nd_Home_Word">Profile</span>
+            <span id="Profile_Down2">
+                <a href="/profile" class="Profile_Options_Nav2">Profile</a>
+                <a href="/signup" class="Profile_Options_Nav2">Signup</a>
+                <a href="/orders" class="Profile_Options_Nav2">Orders/Returns</a>
+                <a href="/favorite" class="Profile_Options_Nav2">Favorite</a>
+                <a href="/cart" class="Profile_Options_Nav2">Cart</a>
+                <a href="/sb_coins" class="Profile_Options_Nav2">SB Coins</a>
+                <a href="/notification" class="Profile_Options_Nav2">Notification</a>
+                <a href="/help_center" class="Profile_Options_Nav2">Help center</a>
+                <a href="/contact_us" class="Profile_Options_Nav2">Contact us</a>
+                <a href="/logout" class="Profile_Options_Nav2">Logout</a>
+            </span>
+        </div>
+        <div class="Nav_22 Nav_2nd_4" id="Nav2_4" title="More">
+            <span class="Nav_2nd_Home_Word">More</span>
+            <span id="More_Down2">
+                <a href="/download_app" class="More_Options2">Download app</a>
+                <a href="/improve_us" class="More_Options2">Improve us</a>
+                <a href="/register_a_complaint" class="More_Options2">Register a complaint</a>
+                <a href="/customer_care" class="More_Options2">Customer care</a>
+                <a href="/setting" class="More_Options2">Setting</a>
+                <a href="/privacy_and_policy" class="More_Options2">Privacy and policy</a>
+                <a href="/terms_and_conditions" class="More_Options2">Terms and conditions</a>
+                <a href="/report_a_problem" class="More_Options2">Report a problem</a>
+            </span>
+        </div>
+        <div class="Nav_22 Nav_2nd_5" title="Favorite">
+            <a class="Nav2" href="/favorite">Favorite</a>
+        </div>
+        <div class="Nav_22 Nav_2nd_6" title="Cart">
+            <a class="Nav2" href="/cart">Cart</a>
+        </div>
+        <div class="Nav_22 Nav_2nd_7" title="Setting">
+            <a class="Nav2" href="/setting">Setting</a>
+        </div>
+        <div class="Nav_22 Nav_2nd_8" title="T&C apply">
+            <a class="Nav2" href="/terms_and_condition">T&C apply</a>
+        </div>
+    </div>
+    <div id="Hamburger_BG"></div>
+
+    <div id="Aside_Hamburger">
+        <div class="Hamburger_Icon_Close_Div">
+            <button onclick="Hamburger_Close()" class="Hamburger_Icon_Close_Div_Btn" type="button">
+                <span class="material-symbols-outlined Hamburger_Icon_Close">close</span>
+            </button>
+        </div>
+
+        <div>
+            | GET-SKY-BUY
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script>
+        let Profile_Hover = () => {
+            let Nav_4 = document.getElementById("Nav_4");
+            let Profile_Down = document.getElementById("Profile_Down");
+            let Background_Blur_50 = document.getElementById("Background_Blur_50");
+            Nav_4.addEventListener("mouseover", () => {
+                Profile_Down.style.display = "flex";
+                Background_Blur_50.style.display = "block";
+                Profile_Down.style.animationName = "Up_Down_Profile";
+                Profile_Down.style.animationFillMode = "forward";
+            })
+            Nav_4.addEventListener("mouseout", () => {
+                Profile_Down.style.display = "none";
+                Background_Blur_50.style.display = "none";
+                Profile_Down.style.animationName = "Down_Up_Profile";
+                Profile_Down.style.animationFillMode = "forward";
+            })
+        }
+        Profile_Hover();
+        let More_Hover = () => {
+            let Nav_5 = document.getElementById("Nav_5");
+            let More_Down = document.getElementById("More_Down");
+            let Background_Blur_50 = document.getElementById("Background_Blur_50");
+            Nav_5.addEventListener("mouseover", () => {
+                More_Down.style.display = "flex";
+                Background_Blur_50.style.display = "block";
+                More_Down.style.animationName = "Up_Down_More";
+                More_Down.style.animationFillMode = "forward";
+
+            })
+            Nav_5.addEventListener("mouseout", () => {
+                More_Down.style.display = "none";
+                Background_Blur_50.style.display = "none";
+                More_Down.style.animationName = "Down_Up_More";
+                More_Down.style.animationFillMode = "forward";
+            })
+        }
+        More_Hover();
+        let All_Hover = () => {
+            let All = document.getElementById("All");
+            let Nav_2 = document.getElementById("Nav_2");
+            let All_ARROW = document.getElementById("All_ARROW");
+            let Background_Blur_50 = document.getElementById("Background_Blur_50");
+            All.addEventListener("mouseover", () => {
+                Background_Blur_50.style.display = "block";
+                All.style.borderBottomLeftRadius = "0px";
+                Nav_2.style.borderBottomLeftRadius = "0px";
+                All_ARROW.style.display = "flex";
+                All_ARROW.style.animationName = "Up_Down_All";
+                All_ARROW.style.animationFillMode = "forward";
+            })
+            All.addEventListener("mouseout", () => {
+                Background_Blur_50.style.display = "none";
+                All.style.borderBottomLeftRadius = "50%";
+                Nav_2.style.borderBottomLeftRadius = "50px";
+                All_ARROW.style.animationName = "Down_Up_All";
+                All_ARROW.style.animationFillMode = "forward";
+                All_ARROW.style.display = "none";
+            })
+        }
+
+        All_Hover();
+        function Search_Click() {
+            let Search_Main_Box = document.getElementById('Search_Main_Box');
+            Search_Main_Box.addEventListener('input', () => {
+                let Search_Options = document.getElementById('Search_Options');
+                Search_Options.style.display = 'block';
+            });
+            document.addEventListener('click', () => {
+                let Search_Options = document.getElementById('Search_Options');
+                Search_Options.style.display = 'none';
+            })
+        }
+        Search_Click();
+
+
+        let Profile_Hovera = () => {
+            let Nav_2nd_3 = document.getElementById("Nav2_3");
+            let Profile_Down = document.getElementById("Profile_Down2");
+            let Background_Blur_50 = document.getElementById("Back_Nav_2");
+            Nav_2nd_3.addEventListener("mouseover", () => {
+                Profile_Down.style.display = "block";
+                Background_Blur_50.style.display = "block";
+                Profile_Down.style.animationName = "Up_Down_Profile2";
+                Profile_Down.style.animationFillMode = "forward";
+            })
+            Nav_2nd_3.addEventListener("mouseout", () => {
+                Profile_Down.style.display = "none";
+                Background_Blur_50.style.display = "none";
+                Profile_Down.style.animationName = "Down_Up_Profile2";
+                // Profile_Down.style.animationFillMode = "forward";
+                Profile_Down.style.animationFillMode = "forward";
+            })
+        }
+        Profile_Hovera();
+
+        let More_Hovera = () => {
+            let Nav_5 = document.getElementById("Nav2_4");
+            let More_Down = document.getElementById("More_Down2");
+            let Background_Blur_50 = document.getElementById("Back_Nav_2");
+            Nav_5.addEventListener("mouseover", () => {
+                More_Down.style.display = "block";
+                Background_Blur_50.style.display = "block";
+                More_Down.style.animationName = "Up_Down_Morea";
+                More_Down.style.animationFillMode = "forward";
+
+            })
+            Nav_5.addEventListener("mouseout", () => {
+                More_Down.style.display = "none";
+                Background_Blur_50.style.display = "none";
+                More_Down.style.animationName = "Down_Up_Morea";
+                More_Down.style.animationFillMode = "forward";
+            })
+        }
+        More_Hovera();
+
+
+
+
+        function Hamburger_Open() {
+            let Aside_Hamburger = document.getElementById("Aside_Hamburger");
+            Aside_Hamburger.style.animationName = "Left_Right_Hamburger";
+            document.getElementById("Hamburger_BG").style.display = "block";
+
+        }
+        function Hamburger_Close() {
+            let Aside_Hamburger = document.getElementById("Aside_Hamburger");
+            Aside_Hamburger.style.animationName = "Right_Left_Hamburger";
+            document.getElementById("Hamburger_BG").style.display = "none";
+
+        }
+
+        function Hamburger_BG_Click() {
+            document.getElementById("Hamburger_BG").addEventListener("click", () => {
+                Aside_Hamburger.style.animationName = "Right_Left_Hamburger";
+                document.getElementById("Hamburger_BG").style.display = "none";
+
+            });
+
+        }
+
+        Hamburger_BG_Click();
+
+
+
+    </script>
+</body>
+
+</html>
