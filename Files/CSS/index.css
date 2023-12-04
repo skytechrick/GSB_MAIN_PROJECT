@@ -81,6 +81,8 @@ body {
     font-style: italic;
     font-weight: bold;
     color: rgb(247, 0, 255);
+    
+    text-shadow: 0px 0px 4px #aaa;
 }
 
 #Explore_Box {
@@ -599,7 +601,7 @@ body {
 .Options {
     position: relative;
     top: 0%;
-    width: 593px;
+    width: 598px;
     margin: auto;
     border-bottom: 1px solid #aaa;
     height: 40px;
@@ -1269,3 +1271,87 @@ header {
     opacity: 0.5;
 }
 
+#Top_Nav_1_1 {
+    width: 225px;
+    height: 45px;
+    position: relative;
+    top: 0px;
+    left: 8px;
+    text-decoration: none;
+}
+
+#Top_Nav_1_Img_Big_A {
+    position: absolute;
+    left: 0px;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+#Top_Nav_1_Img_Big {
+    
+    position: relative;
+    width: 44px;
+}
+
+#Top_Nav_1 {
+    cursor: pointer;
+    position: absolute;
+    left: 46px;
+    display: inline-block;
+
+}
+#Top_Nav_1_A {
+    text-decoration: none;
+}
+
+#Top_H1_Heading {
+    
+    text-shadow: 0px 0px 4px #aaa;
+    word-spacing: -1px;
+    display: inline-block;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: bold;
+    color: rgb(247, 0, 255);
+    position: relative;
+    top: 1px;
+
+}
+
+#Top_Explore_Box {
+    font-size: 14px;
+    display: block;
+    font-style: italic;
+    font-weight: bold;
+    color: rgb(117, 12, 255);
+    position: relative;
+    text-decoration: underline;
+    top: -2px;
+}
+
+#Top_Nav_1_Img {
+    position: relative;
+    top: 3px;
+    width: 12px;
+    height: 12px;
+}
+
+#TOP____ {
+    /* word-spacing: 12px; */
+    display: inline-block;
+    font-size: 34px;
+    font-style: italic;
+    font-weight: bold;
+    color: rgb(247, 0, 255);
+    text-shadow: 0px 0px 3px #aaa;
+    position: absolute;
+    left: 44px;
+    top: -19px;
+    display: none;
+}
+
+#TOP____A {
+    text-decoration: none;
+    color: rgb(247, 0, 255);
+}

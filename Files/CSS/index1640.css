@@ -123,5 +123,34 @@
     #Head_Top {
         display: flex;
     }
+    #Header {
+        border-bottom: 1px solid #aaa;
+        box-shadow: none;
+        height: 54px;
+    }
+    #Nav {
+        margin-top: 0px;
+        margin-bottom: 7px;
+    }
+    
     
 }
+
+@media screen and (max-width: 432px) {
+    
+    #TOP____ {
+        display: inline-block;
+    }
+    #Top_Nav_1 {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
