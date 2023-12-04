@@ -123,8 +123,8 @@ app.get("/seller_profile", (req, res) => {
     res.status(200).render("Seller_Profile");
 });
 
-app.get("/product", (req, res) => {
-    res.status(200).render("Product");
+app.get("/product_page", (req, res) => {
+    res.status(200).render("Product_Page");
 });
 
 app.get("/gsb_products/:")
