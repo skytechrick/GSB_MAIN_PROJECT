@@ -10,6 +10,7 @@ app.set("views", path.join(__dirname, "../Files/PUG_01"));
 app.use('/files/css', express.static('../Files/CSS'));
 app.use('/files/js', express.static('../Files/JS'));
 app.use('/files/img', express.static('../Files/Img'));
+app.use('/product/img', express.static('../Products_Images/Product_1'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
