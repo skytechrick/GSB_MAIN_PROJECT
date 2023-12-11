@@ -5,12 +5,28 @@ const mongoose = require('mongoose');
 const Product_URL_Generator = require("./product_url_generator.js");
 const bodyParser = require("body-parser");
 
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, '../Products_Images/Product_2');
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + '-' + file.originalname);
+    }
+});
+
+const upload = multer({ storage: storage });
+
+
+
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "../Files/PUG_01"));
 app.use('/files/css', express.static('../Files/CSS'));
 app.use('/files/js', express.static('../Files/JS'));
 app.use('/files/img', express.static('../Files/Img'));
-app.use('/product/img', express.static('../Products_Images/Product_1'));
+
+app.use('/product/img', express.static('../Products_Images/Product_2'));
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -128,52 +144,83 @@ app.get("/product_page", (req, res) => {
     res.status(200).render("Product_Page");
 });
 
-app.get("/gsb_products/:")
-
-
-
-app.get('/random-url/:i/:r', (req, res) => {
-    const randomUrl1 = req.params.i;
-    const randomUrl2 = req.params.r;
-    const K = req.query.plus;
-    res.send(`Requested Random URL: ${randomUrl1} ____      ${randomUrl2} _______   ${K}`);
-});
 
 
 
 
+app.get("/seller_add_product", (req, res) => {
+    res.status(200).render("Seller_Add_Product")
+
+})
 
 
-app.post('/product_Details', (req,res) => {
 
-    while (true){
-        let Product_URL = Product_URL_Generator();
-        break
-        // if (Product_URL ==){
-        //     break
-        // }
-    } 
 
-    const DATA = {
-        _id: Product_URL,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+app.post("/seller_add_product",upload.single('fileToUpload'), (req, res) => {
+    
+    const data = {
         Title: req.body.Title,
-        Description: req.body.Description,
+        Sub_Title: req.body.Sub_Title,
         MRP: req.body.MRP,
-        SELLING: req.body.SELLING,
-        Keywords: req.body.Keywords,
-        About: req.body.About,
-        Table: req.body.Table
+        Selling_Price: req.body.Selling_Price,
+        Quantity_Available: req.body.Quantity_Available,
+        Description: req.body.Description,
+
+        PD1: req.body.Product_Details_1,
+        PD1V: req.body.Product_Details_1V,
+
+        PD2: req.body.Product_Details_2,
+        PD2V: req.body.Product_Details_2V,
+
+        PD3: req.body.Product_Details_3,
+        PD3V: req.body.Product_Details_3V,
+
+        PD4: req.body.Product_Details_4,
+        PD4V: req.body.Product_Details_4V,
+
+        PD5: req.body.Product_Details_5,
+        PD5V: req.body.Product_Details_5V,
+
+        PD6: req.body.Product_Details_6,
+        PD6V: req.body.Product_Details_6V,
+
+        Keywords: req.body.Keywords
     }
-    console.log(DATA);
+    res.status(200).send(data);
 
-    let New_Enter = new Signup_model(DATA);
-    New_Enter.save().then( ()=>{res.status(200).send("DONE")});
+})
 
-});
-
-
-
-
+// ../Products_Images/Product_2
+// /product/img
 
 
 
