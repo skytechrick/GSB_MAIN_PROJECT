@@ -19,10 +19,11 @@
 
     <fieldset>
         <legend>Add you product</legend>
-        <form action="/seller_add_product" method="post">
+        <form action="/seller_add_product" method="post" enctype="multipart/form-data">
             <center>
                 
                 <label for="Title_ID">Title:</label>
+                
                 <input autocomplete="off" spellcheck="false" placeholder="Main title" type="text" name="Title" id="Title_ID" required><br>
 
                 <label for="Sub_Title">Sub title:</label>

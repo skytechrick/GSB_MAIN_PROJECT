@@ -4,6 +4,7 @@ const app = express();
 const mongoose = require('mongoose');
 const Product_URL_Generator = require("./product_url_generator.js");
 const bodyParser = require("body-parser");
+const multer = require("multer");
 
 
 const storage = multer.diskStorage({
@@ -11,11 +12,11 @@ const storage = multer.diskStorage({
         cb(null, '../Products_Images/Product_2');
     },
     filename: (req, file, cb) => {
-        cb(null, Date.now() + '-' + file.originalname);
+        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
     }
 });
 
-const upload = multer({ storage: storage });
+const Photo_Upload = multer({ storage: storage });
 
 
 
@@ -74,7 +75,7 @@ const PRO_DAT = new mongoose.Schema({
     Table:{
         type:String
     }
-})
+});
 
 const Signupa = new mongoose.Schema({
 
@@ -93,13 +94,13 @@ const Signupa = new mongoose.Schema({
     Confirm_Password:{
         type:String
     }
-})
+});
 
 
 const Sign = mongoose.model("user", Signupa)
 
 
-const Signup_model = mongoose.model('PRODUCTS_Details',PRO_DAT);
+const Signup_model = mongoose.model('PRODUCTS_Details', PRO_DAT);
 
 
 
@@ -185,7 +186,16 @@ app.get("/seller_add_product", (req, res) => {
 
 
 
-app.post("/seller_add_product",upload.single('fileToUpload'), (req, res) => {
+app.post("/seller_add_product", Photo_Upload.fields([
+    { name: 'file1', maxCount: 1 },
+    { name: 'file2', maxCount: 1 },
+    { name: 'file3', maxCount: 1 },
+    { name: 'file4', maxCount: 1 },
+    { name: 'file5', maxCount: 1 },
+    { name: 'file6', maxCount: 1 },
+])
+
+    ,(req, res) => {
     
     const data = {
         Title: req.body.Title,
@@ -215,6 +225,13 @@ app.post("/seller_add_product",upload.single('fileToUpload'), (req, res) => {
 
         Keywords: req.body.Keywords
     }
+    const formData = req.body;
+    const files = req.files;
+    console.log('Form Data:', formData);
+    Object.keys(files).forEach(key => {
+        const file = files[key][0];
+        console.log(`Received file (${key}): ${file.originalname}, size: ${file.size} bytes`);
+    });
     res.status(200).send(data);
 
 })
