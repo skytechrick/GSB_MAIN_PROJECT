@@ -187,12 +187,14 @@ app.get("/seller_add_product", (req, res) => {
 
 
 app.post("/seller_add_product", Photo_Upload.fields([
-    { name: 'file1', maxCount: 1 },
-    { name: 'file2', maxCount: 1 },
-    { name: 'file3', maxCount: 1 },
-    { name: 'file4', maxCount: 1 },
-    { name: 'file5', maxCount: 1 },
-    { name: 'file6', maxCount: 1 },
+    { name: 'File_1', maxCount: 1 },
+    { name: 'File_2', maxCount: 1 },
+    { name: 'File_3', maxCount: 1 },
+    { name: 'File_4', maxCount: 1 },
+    { name: 'File_5', maxCount: 1 },
+    { name: 'File_6', maxCount: 1 },
+    { name: 'File_7', maxCount: 1 },
+    { name: 'File_8', maxCount: 1 },
 ])
 
     ,(req, res) => {
