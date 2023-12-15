@@ -12,7 +12,7 @@ const storage = multer.diskStorage({
         cb(null, '../Products_Images/Product_2');
     },
     filename: (req, file, cb) => {
-        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+        cb(null, file.fieldname + '-' + "Rick" + path.extname(file.originalname));
     }
 });
 
@@ -198,6 +198,8 @@ app.post("/seller_add_product", Photo_Upload.fields([
 ])
 
     ,(req, res) => {
+    const formData = req.body;
+    const files = req.files;
     
     const data = {
         Title: req.body.Title,
@@ -227,13 +229,14 @@ app.post("/seller_add_product", Photo_Upload.fields([
 
         Keywords: req.body.Keywords
     }
-    const formData = req.body;
-    const files = req.files;
     console.log('Form Data:', formData);
     Object.keys(files).forEach(key => {
         const file = files[key][0];
-        console.log(`Received file (${key}): ${file.originalname}, size: ${file.size} bytes`);
+        let file_name = file.fieldname + '-' + "Rick" + path.extname(file.originalname);
+        data[`Photo_${key}_URL`] = `/product/img/${file_name}`;
+        console.log(`Received file ${file_name}, size: ${file.size} bytes`);
     });
+    console.log('Form JSON:', data);
     res.status(200).send(data);
 
 })
