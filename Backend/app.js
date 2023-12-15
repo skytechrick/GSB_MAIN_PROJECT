@@ -195,6 +195,7 @@ app.post("/seller_add_product", Photo_Upload.fields([
     { name: 'File_6', maxCount: 1 },
     { name: 'File_7', maxCount: 1 },
     { name: 'File_8', maxCount: 1 },
+    { name: 'File_9', maxCount: 1 }
 ])
 
     ,(req, res) => {
@@ -240,10 +241,6 @@ app.post("/seller_add_product", Photo_Upload.fields([
     res.status(200).send(data);
 
 })
-
-// ../Products_Images/Product_2
-// /product/img
-
 
 
 
