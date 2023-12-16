@@ -279,20 +279,19 @@ app.get("/seller_add_product", (req, res) => {
 
 
 
-app.post("/seller_add_product", Photo_Upload.fields([
-    { name: 'File_1', maxCount: 1 },
-    { name: 'File_2', maxCount: 1 },
-    { name: 'File_3', maxCount: 1 },
-    { name: 'File_4', maxCount: 1 },
-    { name: 'File_5', maxCount: 1 },
-    { name: 'File_6', maxCount: 1 },
-    { name: 'File_7', maxCount: 1 },
-    { name: 'File_8', maxCount: 1 },
-    { name: 'File_9', maxCount: 1 }
-])
-
-    ,(req, res) => {
-    const formData = req.body;
+app.post("/seller_add_product",
+    Photo_Upload.fields([
+        { name: 'File_1', maxCount: 1 },
+        { name: 'File_2', maxCount: 1 },
+        { name: 'File_3', maxCount: 1 },
+        { name: 'File_4', maxCount: 1 },
+        { name: 'File_5', maxCount: 1 },
+        { name: 'File_6', maxCount: 1 },
+        { name: 'File_7', maxCount: 1 },
+        { name: 'File_8', maxCount: 1 },
+        { name: 'File_9', maxCount: 1 }
+    ]),
+    (req, res) => {
     const files = req.files;
     
     const data = {
