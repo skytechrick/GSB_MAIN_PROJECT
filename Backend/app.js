@@ -31,7 +31,7 @@ app.use('/product/img', express.static('../Products_Images/Product_2'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://127.0.0.1:27017/STR', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://127.0.0.1:27017/Test_GSB', {useNewUrlParser: true, useUnifiedTopology: true});
 
 const db = mongoose.connection;
 
@@ -97,7 +97,100 @@ const Signupa = new mongoose.Schema({
 });
 
 
+
+const Product_Add_Schema = new mongoose.Schema({
+    
+        Title:{
+            type:String
+        },
+        Sub_Title:{
+            type:String
+        },
+        MRP:{
+            type:String
+        },
+        Selling_Price:{
+            type:String
+        },
+        Quantity_Available:{
+            type:String
+        },
+        Description:{
+            type:String
+        },
+        PD1:{
+            type:String
+        },
+        PD1V:{
+            type:String
+        },
+        PD2:{
+            type:String
+        },
+        PD2V:{
+            type:String
+        },
+        PD3:{
+            type:String
+        },
+        PD3V:{
+            type:String
+        },
+        PD4:{
+            type:String
+        },
+        PD4V:{
+            type:String
+        },
+        PD5:{
+            type:String
+        },
+        PD5V:{
+            type:String
+        },
+        PD6:{
+            type:String
+        },
+        PD6V:{
+            type:String
+        },
+        Keywords:{
+            type:String
+        },
+        Photo_File_1_URL: {
+            type:String
+        },
+        Photo_File_2_URL: {
+            type:String
+        },
+        Photo_File_3_URL: {
+            type:String
+        },
+        Photo_File_4_URL: {
+            type:String
+        },
+        Photo_File_5_URL: {
+            type:String
+        },
+        Photo_File_6_URL: {
+            type:String
+        },
+        Photo_File_7_URL: {
+            type:String
+        },
+        Photo_File_8_URL: {
+            type:String
+        },
+        Photo_File_9_URL: {
+            type:String
+        }
+
+});
+
+
 const Sign = mongoose.model("user", Signupa)
+
+const Product_Model = mongoose.model("Products", Product_Add_Schema)
 
 
 const Signup_model = mongoose.model('PRODUCTS_Details', PRO_DAT);
@@ -230,7 +323,7 @@ app.post("/seller_add_product", Photo_Upload.fields([
 
         Keywords: req.body.Keywords
     }
-    console.log('Form Data:', formData);
+    // console.log('Form Data:', formData);
     Object.keys(files).forEach(key => {
         const file = files[key][0];
         let file_name = file.fieldname + '-' + "Rick" + path.extname(file.originalname);
@@ -238,8 +331,14 @@ app.post("/seller_add_product", Photo_Upload.fields([
         console.log(`Received file ${file_name}, size: ${file.size} bytes`);
     });
     console.log('Form JSON:', data);
-    res.status(200).send(data);
 
+
+    let New_Enter = new Product_Model(data);
+    New_Enter.save().then( ()=>{
+        
+        res.status(200).send("Product added successfully...");
+    });
+    
 })
 
 
@@ -274,7 +373,7 @@ app.post("/signup_user_create_account/gsb", (req, res) => {
     console.log(Signup_Details);
     let New_Enter = new Sign(Signup_Details);
     New_Enter.save().then( ()=>{res.status(200).redirect("/login")});
-    ;
+    
 });
 
 app.listen(1111, () => {
