@@ -12,7 +12,9 @@ const storage = multer.diskStorage({
         cb(null, '../Products_Images/Product_2');
     },
     filename: (req, file, cb) => {
-        cb(null, file.fieldname + '-' + "Rick" + path.extname(file.originalname));
+        let a = req.body.Title;
+        let b = req.body.MRP;
+        cb(null, a + "_" +file.fieldname + '-' + b + path.extname(file.originalname));
     }
 });
 
@@ -187,12 +189,12 @@ const Product_Add_Schema = new mongoose.Schema({
 
 });
 
-
-const Sign = mongoose.model("user", Signupa)
-
-const Product_Model = mongoose.model("Products", Product_Add_Schema)
+const Product_Model = mongoose.model("Products", Product_Add_Schema);
 
 
+
+
+const Sign = mongoose.model("user", Signupa);
 const Signup_model = mongoose.model('PRODUCTS_Details', PRO_DAT);
 
 
@@ -293,12 +295,51 @@ app.post("/seller_add_product",
     ]),
     (req, res) => {
     const files = req.files;
+
+    while (true) {
+        let Url_1 = Product_URL_Generator();
+        console.log(Url_1);
+        let dataURL = Product_Model.find();
+        
+        console.log("dataURL");
+        console.log(dataURL);
+        break;
+
+        // if (dataURL===null || dataURL == null || dataURL == ""){
+        //     break;
+        // }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     
     const data = {
+        
+        // Product_A_URL: Url_1,
+
         Title: req.body.Title,
         Sub_Title: req.body.Sub_Title,
+
         MRP: req.body.MRP,
         Selling_Price: req.body.Selling_Price,
+
         Quantity_Available: req.body.Quantity_Available,
         Description: req.body.Description,
 
@@ -325,7 +366,10 @@ app.post("/seller_add_product",
     // console.log('Form Data:', formData);
     Object.keys(files).forEach(key => {
         const file = files[key][0];
-        let file_name = file.fieldname + '-' + "Rick" + path.extname(file.originalname);
+        
+        let a = req.body.Title;
+        let b = req.body.MRP;
+        let file_name = a + "_" +file.fieldname + '-' + b + path.extname(file.originalname);
         data[`Photo_${key}_URL`] = `/product/img/${file_name}`;
         console.log(`Received file ${file_name}, size: ${file.size} bytes`);
     });
@@ -338,11 +382,18 @@ app.post("/seller_add_product",
         res.status(200).send("Product added successfully...");
     });
     
+    
 })
 
 
 
 
+app.get("/a", (req, res) => {
+    let a = Product_Model.findOne({});
+    console.log(a);
+    res.end(a);
+
+})
 
 
 
