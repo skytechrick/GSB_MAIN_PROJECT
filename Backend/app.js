@@ -388,12 +388,12 @@ app.post("/seller_add_product",
 
 
 
-app.get("/a", (req, res) => {
-    let a = Product_Model.findOne({});
-    console.log(a);
-    res.end(a);
+// app.get("/a", async (req, res) => {
+//     let a = await Product_Model.find({});
+//     console.log(a);
+//     res.json(a);
 
-})
+// })
 
 
 
