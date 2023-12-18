@@ -238,10 +238,6 @@ app.get("/seller_profile", (req, res) => {
     res.status(200).render("Seller_Profile");
 });
 
-app.get("/product_page", (req, res) => {
-    res.status(200).render("Product_Page");
-});
-
 
 
 
@@ -374,26 +370,32 @@ app.post("/seller_add_product",
 
 
 app.get("/product/:product_url", async (req, res) => {
-    // res.json(a);
-    // console.log(a);
-    
     let req_url = req.params.product_url;
-    
-    
     let dataURL = await Product_Model.find({});
-
     let TP = "None";
-
+    let ele = "None";
     for (let i = 0; i < dataURL.length; i++) {
-        const ele = dataURL[i];
+        ele = dataURL[i];
         let T = ele.Product_A_URL;
         if (T == req_url) {
             TP = ele.Title;
             break;
         }
     };
-    console.log(TP);
-    res.send(TP);
+    let Photo_File_1_URL = ele.Photo_File_1_URL
+    let Photo_File_4_URL = ele.Photo_File_4_URL
+    let Photo_File_5_URL = ele.Photo_File_5_URL
+    res.status(200).render("Product_Page",{
+        Title: TP,
+        Product_Image1:`<img id="Product_longList-B-1" class="Product_longList-B" src="${Photo_File_1_URL}" alt="${Photo_File_1_URL}">`,
+        Product_Image2:`<img id="Product_longList-B-2" class="Product_longList-B" src="${Photo_File_5_URL}" alt="${Photo_File_5_URL}">`,
+        Product_Image3:`<img id="Product_longList-B-3" class="Product_longList-B" src="${Photo_File_4_URL}" alt="${Photo_File_4_URL}">`,
+        Product_Image4:`<img id="Product_longList-B-4" class="Product_longList-B" src="${Photo_File_1_URL}" alt="${Photo_File_1_URL}">`,
+        Product_Image5:`<img id="Product_longList-B-5" class="Product_longList-B" src="${Photo_File_5_URL}" alt="${Photo_File_5_URL}">`
+
+    });
+    // console.log(TP);
+    // res.send(TP);
 
 })
 
@@ -422,6 +424,82 @@ app.post("/signup", (req, res) => {
     let New_Enter = new Sign(Signup_Details);
     New_Enter.save().then( ()=>{res.status(200).redirect("/login")});
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// app.get("/product_page", (req, res) => {
+//     res.status(200).render("Product_Page",{
+//         Title:"This is Rick"
+//     });
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 app.listen(1111, () => {
     console.log("We are connected to server at port 1111");

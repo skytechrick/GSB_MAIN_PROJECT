@@ -1,9 +1,13 @@
+main {
+    margin-top: 20px;
+}
 .Section1 {
     box-shadow: 0px 0px 5px#aaa;
     width: 90vw;
     /* height:max-content; */
     margin: auto;
     background-color: white;
+    padding: 40px 0 0 0 ;
 }
 
 .Section_In1 {
@@ -14,12 +18,6 @@
     /* height: 1000px; */
 }
 
-.Product_In_Top {
-    padding: 12px;
-    background-color: antiquewhite;
-    width: 400px;
-    margin: auto;
-}
 
 .Product_Main {
     width: 100%;
@@ -28,20 +26,85 @@
 }
 
 .Product_Img_Sec {
+    border-right: 1px solid #aaa;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 40%;
     height: 700px;
-    background-color: rgb(214, 214, 214);
+    background-color: white;
 }
 
-.Product_Img_Details_T {
-    display: inline-block;
-    width: 60%;
-    /* height: 2000px; */
-    background-color: chartreuse;
+.Product_Img_Sec_1 {
+    width: 98%;
+    height: 98%;
+    /* border: 1px solid red; */
+    background-color: aqua;
+    background-color: white;
+    position: relative;
+    top: 0px;
 }
+
+.Product_longList {
+    width: 100px;
+    height: 540px;
+    /* border: 1px solid red; */
+    display: inline-block;
+    background-color: white;
+}
+
+
+
+
+.Product_longList-A {
+    border-bottom: 1px solid red;
+    border-top: 1px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 100px;
+    border: none;
+}
+
+
+.Product_longList-B {
+    cursor: pointer;
+    border: 1px solid rgb(247, 0, 255);
+    box-shadow: 0px 0px 3px #7a7a7a;
+    display: block;
+    border-radius: 16px;
+    width: 90px;
+    /* margin: auto; */
+}
+
+
+
+.ProperImg {
+    width: 525px;
+    height: 525px;
+    /* border: 1px solid red; */
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    left: 108px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+
+.ProperImg-A {
+    box-shadow: 0px 0px 3px #7a7a7a;
+    width: 500px;
+    border: 1px solid rgb(247, 0, 255);
+}
+
+
+
+
+
 
 .Product_Down_details {
     border-top: 1px solid red;
@@ -50,22 +113,11 @@
     background-color: cyan;
 }
 
-.Product_Img_Sec_1 {
-    width: 95%;
-    height: 95%;
-    border: 1px solid red;
-}
 
-.Product_longList {
-    width: 100px;
-    height: 500px;
-    border: 1px solid red;
-    display: inline-block;
-}
 
-.ProperImg {
-    width: 515px;
-    height: 500px;
-    border: 1px solid red;
+.Product_Img_Details_T {
     display: inline-block;
+    width: 60%;
+    /* height: 2000px; */
+    background-color: chartreuse;
 }
