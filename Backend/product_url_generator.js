@@ -3,7 +3,7 @@ function Product_URL_Generator() {
     let name = "";
     let varrr = 0;
     let getRandom = 0;
-    while (varrr <= 35){
+    while (varrr <= 24){
         getRandom = Math.floor(Math.random() * 61);
         name = name + character[getRandom];
         varrr = varrr + 1;
@@ -12,4 +12,6 @@ function Product_URL_Generator() {
 
 };
 
-module.exports = Product_URL_Generator;
+console.log(Product_URL_Generator());
+
+// module.exports = Product_URL_Generator;

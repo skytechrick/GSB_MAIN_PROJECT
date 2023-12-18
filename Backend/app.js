@@ -12,8 +12,8 @@ const storage = multer.diskStorage({
         cb(null, '../Products_Images/Product_2');
     },
     filename: (req, file, cb) => {
-        let a = req.body.Title;
-        let b = req.body.MRP;
+        let a = req.body.MRP;
+        let b = req.body.Selling_Price;
         cb(null, a + "_" +file.fieldname + '-' + b + path.extname(file.originalname));
     }
 });
@@ -55,7 +55,7 @@ db.once
 
 
 const PRO_DAT = new mongoose.Schema({
-
+    
     Title:{
         type:String
     },
@@ -101,91 +101,93 @@ const Signupa = new mongoose.Schema({
 
 
 const Product_Add_Schema = new mongoose.Schema({
-    
-        Title:{
-            type:String
-        },
-        Sub_Title:{
-            type:String
-        },
-        MRP:{
-            type:String
-        },
-        Selling_Price:{
-            type:String
-        },
-        Quantity_Available:{
-            type:String
-        },
-        Description:{
-            type:String
-        },
-        PD1:{
-            type:String
-        },
-        PD1V:{
-            type:String
-        },
-        PD2:{
-            type:String
-        },
-        PD2V:{
-            type:String
-        },
-        PD3:{
-            type:String
-        },
-        PD3V:{
-            type:String
-        },
-        PD4:{
-            type:String
-        },
-        PD4V:{
-            type:String
-        },
-        PD5:{
-            type:String
-        },
-        PD5V:{
-            type:String
-        },
-        PD6:{
-            type:String
-        },
-        PD6V:{
-            type:String
-        },
-        Keywords:{
-            type:String
-        },
-        Photo_File_1_URL: {
-            type:String
-        },
-        Photo_File_2_URL: {
-            type:String
-        },
-        Photo_File_3_URL: {
-            type:String
-        },
-        Photo_File_4_URL: {
-            type:String
-        },
-        Photo_File_5_URL: {
-            type:String
-        },
-        Photo_File_6_URL: {
-            type:String
-        },
-        Photo_File_7_URL: {
-            type:String
-        },
-        Photo_File_8_URL: {
-            type:String
-        },
-        Photo_File_9_URL: {
-            type:String
-        }
+    Product_A_URL:{
+        type:String
+    },
+    Title:{
+        type:String
+    },
+    Sub_Title:{
+        type:String
+    },
+    MRP:{
+        type:String
+    },
+    Selling_Price:{
+        type:String
+    },
+    Quantity_Available:{
+        type:String
+    },
+    Description:{
+        type:String
+    },
+    PD1:{
+        type:String
+    },
+    PD1V:{
+        type:String
+    },
+    PD2:{
+        type:String
+    },
+    PD2V:{
+        type:String
+    },
+    PD3:{
+        type:String
+    },
+    PD3V:{
+        type:String
+    },
+    PD4:{
+        type:String
+    },
+    PD4V:{
+        type:String
+    },
+    PD5:{
+        type:String
+    },
+    PD5V:{
+        type:String
+    },
+    PD6:{
+        type:String
+    },
+    PD6V:{
+        type:String
+    },
+    Keywords:{
+        type:String
+    },
+    Photo_File_1_URL: {
+        type:String
+    },
+    Photo_File_2_URL: {
+        type:String
+    },
+    Photo_File_3_URL: {
+        type:String
+    },
+    Photo_File_4_URL: {
+        type:String
+    },
+    Photo_File_5_URL: {
+        type:String
+    },
+    Photo_File_6_URL: {
+        type:String
+    },
+    Photo_File_7_URL: {
+        type:String
+    },
+    Photo_File_8_URL: {
+        type:String
+    },
+    Photo_File_9_URL: {
+        type:String
+    }
 
 });
 
@@ -293,46 +295,31 @@ app.post("/seller_add_product",
         { name: 'File_8', maxCount: 1 },
         { name: 'File_9', maxCount: 1 }
     ]),
-    (req, res) => {
+    async (req, res) => {
     const files = req.files;
-
-    while (true) {
-        let Url_1 = Product_URL_Generator();
-        console.log(Url_1);
-        let dataURL = Product_Model.find();
-        
-        console.log("dataURL");
-        console.log(dataURL);
-        break;
-
-        // if (dataURL===null || dataURL == null || dataURL == ""){
-        //     break;
-        // }
+    let lp = 0;
+    let dataURL = await Product_Model.find();
+    function DF() {
+        let Url_1 = "TIME_PASS";
+        while (true) {
+            Url_1 = Product_URL_Generator();
+            for (let i = 0; i < dataURL.length; i++) {
+                const ele = dataURL[i];
+                let T = ele.Product_A_URL;
+                if (T == Url_1){
+                    lp = 1;
+                    break;
+                }
+            };
+            if (lp==0) {
+                break;
+            }
+        }
+        return Url_1;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
+    let Final_URL = DF();
     const data = {
-        
-        // Product_A_URL: Url_1,
+        Product_A_URL: Final_URL,
 
         Title: req.body.Title,
         Sub_Title: req.body.Sub_Title,
@@ -363,12 +350,10 @@ app.post("/seller_add_product",
 
         Keywords: req.body.Keywords
     }
-    // console.log('Form Data:', formData);
     Object.keys(files).forEach(key => {
         const file = files[key][0];
-        
-        let a = req.body.Title;
-        let b = req.body.MRP;
+        let a = req.body.MRP;
+        let b = req.body.Selling_Price;
         let file_name = a + "_" +file.fieldname + '-' + b + path.extname(file.originalname);
         data[`Photo_${key}_URL`] = `/product/img/${file_name}`;
         console.log(`Received file ${file_name}, size: ${file.size} bytes`);
@@ -388,12 +373,33 @@ app.post("/seller_add_product",
 
 
 
-// app.get("/a", async (req, res) => {
-//     let a = await Product_Model.find({});
-//     console.log(a);
-//     res.json(a);
+app.get("/product/:product_url", async (req, res) => {
+    // res.json(a);
+    // console.log(a);
+    
+    let req_url = req.params.product_url;
+    
+    
+    let dataURL = await Product_Model.find({});
 
-// })
+    let TP = "None";
+
+    for (let i = 0; i < dataURL.length; i++) {
+        const ele = dataURL[i];
+        let T = ele.Product_A_URL;
+        if (T == req_url) {
+            TP = ele.Title;
+            break;
+        }
+    };
+    console.log(TP);
+    res.send(TP);
+
+})
+
+
+
+// /product/XvfuEmHqU1iImuLRiGxI0LhAi
 
 
 
@@ -404,11 +410,7 @@ app.post("/seller_add_product",
 
 
 
-
-
-
-
-app.post("/signup_user_create_account/gsb", (req, res) => {
+app.post("/signup", (req, res) => {
     const Signup_Details ={
         First_Name: req.body.First_Name,
         Last_Name: req.body.Last_Name,
@@ -416,14 +418,9 @@ app.post("/signup_user_create_account/gsb", (req, res) => {
         Email: req.body.Email,
         Confirm_Password: req.body.Confirm_Password
     }
-
-
-    
-
     console.log(Signup_Details);
     let New_Enter = new Sign(Signup_Details);
     New_Enter.save().then( ()=>{res.status(200).redirect("/login")});
-    
 });
 
 app.listen(1111, () => {
