@@ -12,6 +12,6 @@ function Product_URL_Generator() {
 
 };
 
-console.log(Product_URL_Generator());
+// console.log(Product_URL_Generator());
 
-// module.exports = Product_URL_Generator;
+module.exports = Product_URL_Generator;
