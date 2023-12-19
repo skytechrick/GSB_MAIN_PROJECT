@@ -382,16 +382,17 @@ app.get("/product/:product_url", async (req, res) => {
             break;
         }
     };
-    let Photo_File_1_URL = ele.Photo_File_1_URL
-    let Photo_File_4_URL = ele.Photo_File_4_URL
-    let Photo_File_5_URL = ele.Photo_File_5_URL
+    let Photo_File_1_URL = ele.Photo_File_1_URL;
+    let Photo_File_4_URL = ele.Photo_File_4_URL;
+    let Photo_File_5_URL = ele.Photo_File_5_URL;
     res.status(200).render("Product_Page",{
         Title: TP,
-        Product_Image1:`<img id="Product_longList-B-1" class="Product_longList-B" src="${Photo_File_1_URL}" alt="${Photo_File_1_URL}">`,
-        Product_Image2:`<img id="Product_longList-B-2" class="Product_longList-B" src="${Photo_File_5_URL}" alt="${Photo_File_5_URL}">`,
-        Product_Image3:`<img id="Product_longList-B-3" class="Product_longList-B" src="${Photo_File_4_URL}" alt="${Photo_File_4_URL}">`,
-        Product_Image4:`<img id="Product_longList-B-4" class="Product_longList-B" src="${Photo_File_1_URL}" alt="${Photo_File_1_URL}">`,
-        Product_Image5:`<img id="Product_longList-B-5" class="Product_longList-B" src="${Photo_File_5_URL}" alt="${Photo_File_5_URL}">`
+
+        Product_Image1: `<img id="Product_longList-B-1" class="Product_longList-B" src="${Photo_File_1_URL}" alt="${ele.Title}">`,
+        Product_Image2: `<img id="Product_longList-B-2" class="Product_longList-B" src="${Photo_File_5_URL}" alt="${ele.Title}">`,
+        Product_Image3: `<img id="Product_longList-B-3" class="Product_longList-B" src="${Photo_File_1_URL}" alt="${ele.Title}">`,
+        Product_Image4: `<img id="Product_longList-B-4" class="Product_longList-B" src="${Photo_File_4_URL}" alt="${ele.Title}">`,
+        Product_Image5: `<img id="Product_longList-B-5" class="Product_longList-B" src="${Photo_File_5_URL}" alt="${ele.Title}">`
 
     });
     // console.log(TP);
@@ -402,7 +403,7 @@ app.get("/product/:product_url", async (req, res) => {
 
 
 // /product/XvfuEmHqU1iImuLRiGxI0LhAi
-
+// http://127.0.0.1:1111/product/XvfuEmHqU1iImuLRiGxI0LhAi
 
 
 

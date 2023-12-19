@@ -26,7 +26,7 @@ main {
 }
 
 .Product_Img_Sec {
-    border-right: 1px solid #aaa;
+    /* border-right: 1px solid #aaa; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -106,12 +106,18 @@ main {
 
 
 
-.Product_Down_details {
-    border-top: 1px solid red;
-    width: 100%;
-    height: 300px;
-    background-color: cyan;
-}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -119,5 +125,165 @@ main {
     display: inline-block;
     width: 60%;
     /* height: 2000px; */
-    background-color: chartreuse;
+    /* background-color: chartreuse; */
+}
+
+
+
+
+
+
+
+#Double_Split {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+}
+
+#First_Split {
+    border-right: 1px solid red;
+    border-bottom: 1px solid red;
+    width: 65%;
+    /* height: 100px; */
+    border: none;
+}
+
+
+#Second_Split {
+    /* border: 1px solid blue; */
+    width: 35%;
+    /* height: 100px; */
+}
+
+
+
+#Title_Heading {
+    font-weight: normal;
+    font-family: Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    /* border-bottom: 1px solid #aaa; */
+    font-size: 24px;
+    padding: 5px 16px 5px 16px;
+    margin-top: 12px;
+    /* height: 400px; */
+}
+
+
+/* .Under_Title_Div {
+} */
+
+
+
+.Under_Title {
+    padding-left: 16px;
+}
+
+
+.Under_Title a {
+    
+    color: rgb(247, 0, 255);
+    
+}
+
+
+
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+
+
+
+
+
+
+
+
+
+
+.Rating_Under_Title_Div {
+    /* border: 1px solid red; */
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 8px 16px;
+    display: flex;
+
+}
+
+
+
+
+.Rating_Under_Title {
+    color: white;
+    width: 55px;
+    /* height: 20px; */
+    background-color: rgb(0, 202, 0);
+    
+    /* padding: 9px; */
+    border-radius: 13px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none;
+}
+
+#Rating_Title {
+    font-size: 15px;
+    font-weight: bold;
+    padding: 9px;
+    /* padding-left: 16px; */
+    padding-right: 0px;
+
+    /* margin: 5px; */
+}
+
+
+
+#Rating_Title_Icon {
+    width: 13px;
+    padding-left: 4px;
+    /* font-size: 21px; */
+    /* position: relative; */
+    /* top: -2px; */
+    /* left: 2px; */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.Product_Down_details {
+    /* border-top: 1px solid red; */
+    width: 100%;
+    height: 300px;
+    background-color: cyan;
+}
+
+
+.Rating_Member {
+    display: inline-block;
+    padding: 9px;
+    font-weight: bold;
+    font-size: 13px;
+    color: #7a7a7a;
+    padding-left: 6px;
 }
