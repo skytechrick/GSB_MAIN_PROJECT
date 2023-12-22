@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const Product_URL_Generator = require("./product_url_generator.js");
 const bodyParser = require("body-parser");
 const multer = require("multer");
+const fs = require("fs");
 
 
 const storage = multer.diskStorage({
@@ -374,30 +375,49 @@ app.get("/product/:product_url", async (req, res) => {
     let dataURL = await Product_Model.find({});
     let TP = "None";
     let ele = "None";
+    let f = 0;
     for (let i = 0; i < dataURL.length; i++) {
         ele = dataURL[i];
         let T = ele.Product_A_URL;
         if (T == req_url) {
             TP = ele.Title;
+            f = 0;
             break;
+        }else{
+            ele = {};
+            f = 1;
         }
     };
     let Photo_File_1_URL = ele.Photo_File_1_URL;
     let Photo_File_4_URL = ele.Photo_File_4_URL;
     let Photo_File_5_URL = ele.Photo_File_5_URL;
-    res.status(200).render("Product_Page",{
-        Title: TP,
 
-        Product_Image1: `<img id="Product_longList-B-1" class="Product_longList-B" src="${Photo_File_1_URL}" alt="${ele.Title}">`,
-        Product_Image2: `<img id="Product_longList-B-2" class="Product_longList-B" src="${Photo_File_5_URL}" alt="${ele.Title}">`,
-        Product_Image3: `<img id="Product_longList-B-3" class="Product_longList-B" src="${Photo_File_1_URL}" alt="${ele.Title}">`,
-        Product_Image4: `<img id="Product_longList-B-4" class="Product_longList-B" src="${Photo_File_4_URL}" alt="${ele.Title}">`,
-        Product_Image5: `<img id="Product_longList-B-5" class="Product_longList-B" src="${Photo_File_5_URL}" alt="${ele.Title}">`
+    let Selling_Price_Get = ele.Selling_Price;
+    let MRP_Get = ele.MRP;
 
-    });
-    // console.log(TP);
-    // res.send(TP);
 
+    if (f ==0) {
+        
+        res.status(200).render("Product_Page",{
+            Title: TP,
+            
+            Product_Image1: `<img id="Product_longList-B-1" class="Product_longList-B" src="${Photo_File_1_URL}" alt="${ele.Title}">`,
+            Product_Image2: `<img id="Product_longList-B-2" class="Product_longList-B" src="${Photo_File_5_URL}" alt="${ele.Title}">`,
+            Product_Image3: `<img id="Product_longList-B-3" class="Product_longList-B" src="${Photo_File_1_URL}" alt="${ele.Title}">`,
+            Product_Image4: `<img id="Product_longList-B-4" class="Product_longList-B" src="${Photo_File_4_URL}" alt="${ele.Title}">`,
+            Product_Image5: `<img id="Product_longList-B-5" class="Product_longList-B" src="${Photo_File_5_URL}" alt="${ele.Title}">`,
+            Selling_Price: Selling_Price_Get,
+            MRP: MRP_Get
+
+            
+        });
+    }
+    else{
+        res.status(404).send("Page not found");
+    }
+        // console.log(TP);
+        // res.send(TP);
+        
 })
 
 
@@ -410,6 +430,17 @@ app.get("/product/:product_url", async (req, res) => {
 
 
 
+app.get("/s", (req, res) => {
+    // const newFolderPath = `Product_Images`;
+    const newFolderPath = `../Products_Images/Product_44`;
+    fs.mkdir(newFolderPath, (err) => {
+      if (err) {
+        console.error('Error creating folder:', err);
+      } else {
+        console.log(`Folder created successfully inside`);
+      }
+    });
+});
 
 
 

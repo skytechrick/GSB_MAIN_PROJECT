@@ -39,3 +39,66 @@ function A1() {
 }
 
 A1();
+
+
+function Percentage_Off() {
+    let a = document.getElementsByClassName("Rupee_Sumbol_Price")[0].innerHTML;
+    let d = a.split(",")
+    let el = "";
+    d.forEach(element => {
+        el = el + element;
+    });
+    let Selling_Price_Fun = eval(el);
+    
+    
+    let aa = document.getElementsByClassName("MRP_Price")[0].innerHTML;
+    let dd = aa.split(",");
+    
+    let s = dd[0]
+    let news = s.slice(1);
+    for (let i = 1; i < dd.length; i++) {
+        const ele = dd[i];
+        news = news + ele 
+        
+    }
+    
+    let MRP_Price_Fun = eval(news);
+    console.log(MRP_Price_Fun);
+
+
+    let OFF_Value = ((MRP_Price_Fun - Selling_Price_Fun)/MRP_Price_Fun)*100;
+
+
+    let g = "-" + String(Math.floor(OFF_Value)) + "%";
+
+    document.getElementsByClassName("MRP_OFF")[0].innerHTML = g;
+
+    
+
+    
+
+}
+
+Percentage_Off();
+
+
+
+
+
+function ADD_TO_CART_MAIN(){
+    window.location.href = "google.com"
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
