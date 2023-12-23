@@ -108,10 +108,10 @@ form {
 }
 
 #First_Name_Box{
-    width: 179px;
+    width: 178px;
 }
 #Last_Name_Box{
-    width: 174px;
+    width: 173px;
 }
 #First_Name {
     width: 155px;
@@ -321,6 +321,14 @@ body{
     --Header_Logo_Size: 60px;
 }
 
+h1, h2 { 
+    margin: 0px;
+    padding: 0px;
+}
+
+#Cookies_Note {
+    color: #6b6b6b;
+}
 
 
 
@@ -336,3 +344,240 @@ body{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:650px) {
+    .Main_Container_02 {
+        width: 405px;
+        height: 765px;
+    }
+
+
+    .Input_All {
+
+        width: 261px;
+    }
+
+
+    #Submit_Button{
+        width: 283px;
+    }
+
+    #Already_Account {
+        width: 283px;
+    }
+
+
+    #Last_Main {
+        width: 405px;
+    }
+    
+
+
+
+    #First_Name_Box {
+        width: 139px;
+    }
+
+    #First_Name {
+        width: 118px ;
+    }
+
+
+    #Last_Name_Box {
+        width: 139px;
+    }
+
+    #Last_Name {
+        width: 119px;
+    }
+
+
+
+
+
+}
+body {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none;
+}
+
+
+@media screen and (max-width:450px) {
+    .Main_Container_02 {
+        width: 100vw;
+    }
+
+    #Last_Main {
+        width: 100%;
+        flex-direction: column;
+        
+    }
+    #Last_Main a {
+        text-align: center;
+        padding: 10px;
+    }
+
+
+    #Upper {
+        display: none;
+    }
+
+
+
+    
+    .Input_All {
+
+        width: 93%;
+    }
+
+
+    #Submit_Button{
+        width: 100%;
+    }
+
+    #Already_Account {
+        width: 100%;
+    }
+    
+    #Last_Main {
+        width: 100vw;
+    }
+
+    #First_Last_Name {
+        width: 100%;
+    }
+
+
+
+
+    #First_Name_Box{
+        width: 49%;
+    }
+
+    #First_Name {
+        width: 86%;
+    }
+
+    #Last_Name_Box {
+        width: 49%;
+    }
+
+    #Last_Name {
+        width: 87%;
+    }
+
+
+}
+
+
+
+
+@media screen and (max-width:401px){
+    .Main_Container_02 {
+        /* width: 405px; */
+        height: 770px;
+    }
+    
+}
+
+
+@media screen and (max-width:381px){
+    .Main_Container_02 {
+        /* width: 405px; */
+        height: 800px;
+    }
+
+    #First_Last_Name {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+
+
+    #First_Name_Box, #Last_Name_Box {
+        display: block;
+        width: 100%;
+    }
+
+    #First_Name {
+        width: 91%;
+    }
+    #Last_Name {
+        width: 91%;
+    }
+
+    #First_Name_P {
+        margin-bottom: 15px;
+    }
+
+    .Main_Container_02 {
+        height: 865px;
+ 
+    }
+    .Input_All {
+        width: 91%;
+    }
+
+
+}
+
+
+@media screen and (max-width: 335px) {
+    .Heading01 {
+        font-size: 22px;
+        padding: 10px;
+        padding-top: 0px;
+    }
+    .Main_Container_02 {
+        height: 870px;
+ 
+    }
+    
+    
+}

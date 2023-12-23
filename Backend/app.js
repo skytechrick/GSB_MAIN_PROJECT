@@ -7,6 +7,13 @@ const bodyParser = require("body-parser");
 const multer = require("multer");
 const fs = require("fs");
 
+const cookieParser = require('cookie-parser');
+
+
+
+const Signup_Post = require("./Signup_Post");
+const Signup_Get = require("./Signup_Get");
+
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -23,6 +30,15 @@ const Photo_Upload = multer({ storage: storage });
 
 
 
+
+
+
+
+
+
+
+
+
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "../Files/PUG_01"));
 app.use('/files/css', express.static('../Files/CSS'));
@@ -33,8 +49,22 @@ app.use('/product/img', express.static('../Products_Images/Product_2'));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cookieParser());
 
-mongoose.connect('mongodb://127.0.0.1:27017/Test_GSB');
+
+
+
+
+
+
+
+
+
+
+
+
+
+mongoose.connect('mongodb://127.0.0.1:27017/CLIENT_SIDE');
 
 const db = mongoose.connection;
 
@@ -79,26 +109,6 @@ const PRO_DAT = new mongoose.Schema({
         type:String
     }
 });
-
-const Signupa = new mongoose.Schema({
-
-    First_Name:{
-        type:String
-    },
-    Last_Name:{
-        type:String
-    },
-    Mobile_Number:{
-        type: Number
-    },
-    Email:{
-        type:String
-    },
-    Confirm_Password:{
-        type:String
-    }
-});
-
 
 
 const Product_Add_Schema = new mongoose.Schema({
@@ -193,12 +203,214 @@ const Product_Add_Schema = new mongoose.Schema({
 });
 
 const Product_Model = mongoose.model("Products", Product_Add_Schema);
-
-
-
-
-const Sign = mongoose.model("user", Signupa);
 const Signup_model = mongoose.model('PRODUCTS_Details', PRO_DAT);
+
+
+
+
+
+
+
+
+
+app.get("/signup", (req, res) => {
+    Signup_Get(req, res);
+});
+
+
+
+app.post("/signup", (req, res) => {
+
+    Signup_Post(req, res);
+    
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -228,9 +440,6 @@ app.get("/seller_signup", (req, res) => {
 });
 app.get("/seller_login", (req, res) => {
     res.status(200).render("Seller_Login");
-});
-app.get("/signup", (req, res) => {
-    res.status(200).render("Signup");
 });
 app.get("/login", (req, res) => {
     res.status(200).render("Login");
@@ -370,6 +579,84 @@ app.post("/seller_add_product",
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 app.get("/product/:product_url", async (req, res) => {
     let req_url = req.params.product_url;
     let dataURL = await Product_Model.find({});
@@ -444,18 +731,128 @@ app.get("/s", (req, res) => {
 
 
 
-app.post("/signup", (req, res) => {
-    const Signup_Details ={
-        First_Name: req.body.First_Name,
-        Last_Name: req.body.Last_Name,
-        Mobile_Number: req.body.Mobile_Number,
-        Email: req.body.Email,
-        Confirm_Password: req.body.Confirm_Password
-    }
-    console.log(Signup_Details);
-    let New_Enter = new Sign(Signup_Details);
-    New_Enter.save().then( ()=>{res.status(200).redirect("/login")});
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
