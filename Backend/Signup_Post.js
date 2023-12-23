@@ -64,7 +64,7 @@ function Signup_Post(req, res) {
         if(tID == undefined || tID == null || tID == ""){
             res.cookie("Temp_ID", Get_Auth, {
                 httpOnly: true,
-                path: "/signup",
+                path: "/login",
                 expires: new Date(Date.now() + 600000),
                 secure: false
             });
@@ -73,7 +73,7 @@ function Signup_Post(req, res) {
             res.clearCookie("Temp_ID");
             res.cookie("Temp_ID", Get_Auth, {
                 httpOnly: true,
-                path: "/signup",
+                path: "/login",
                 expires: new Date(Date.now() + 600000),
                 secure: false
             });
@@ -81,18 +81,6 @@ function Signup_Post(req, res) {
         return Get_Auth;
     }
 
-
-    
-
-
-
-    
-    
-    
-    
-    
-    
-    
     
     let Final_OTP = GET_OTP();
     let Final_Auth = Set_Get_Auth();
@@ -111,47 +99,45 @@ function Signup_Post(req, res) {
         },
         Verification: "No",
     }
+
+    let KK = req.cookies.New_User;
+
     console.log(Signup_Details);
 
-
-    let OTP_Mail = Signup_Details.Email;
-    let New_User_Signup = new Signup_Model(Signup_Details);
-
-    
-    
-    
-    
-    
-    
-    const mailOptions = {
-        from: 'getskybuy@gmail.com',
-        to: OTP_Mail,
-        subject: 'Your OTP for creating GSB account is here',
-        html: `
-        <hr>
-        <p>This is a <strong>test</strong> email sent from <em>Node.js</em> with HTML content.</p>
-        <hr>
-        <h1>Your OTP is ${Final_OTP}</h1>
-        <hr>
-        `
-    };
-    
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.error('Error:', error);
-        } else {
-            console.log('Email sent:', info.response);
-        }
-    });
-    
-    
-    New_User_Signup.save().then(()=>{
-        res.status(200).redirect("/login");
-    });
-    
-    
-    
-    
+    if(KK == "Yes"){
+        res.clearCookie(New_User);
+        let OTP_Mail = Signup_Details.Email;
+        let New_User_Signup = new Signup_Model(Signup_Details);
+        const mailOptions = {
+            from: 'GET SKY BUY <getskybuy@gmail.com>',
+            to: OTP_Mail,
+            subject: 'Your OTP for creating GSB account is here',
+            html: `
+            <hr>
+            <p>This is a <strong>test</strong> email sent from <em>Node.js</em> with HTML content.</p>
+            <hr>
+            <h1>Your OTP is ${Final_OTP}</h1>
+            <hr>
+            `
+        };
+        
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.error('Error:', error);
+            } else {
+                console.log('Email sent:', info.response);
+            }
+        });
+        
+        
+        New_User_Signup.save().then(()=>{
+            res.status(200).redirect("/login");
+        });
+        
+        
+        
+        
+    }
 }
     
 module.exports = Signup_Post;
