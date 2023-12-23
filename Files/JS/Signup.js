@@ -8,14 +8,10 @@ function Checked() {
             document.getElementById("Confirm_Password").type = "password";
         }
     };
-
 }
 function Login(){
     window.location.href = "/login";
 }
-
-
-
 function FL_Names(){
     let first = document.getElementById('First_Name');
     let last = document.getElementById('Last_Name');
@@ -221,80 +217,6 @@ function A() {
         }
     })
 };
-
-
-function Submited_Clicked(){
-    // window.location.href = "";
-    FL_Names()
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function Submited_Clicked(){FL_Names()};
 A();
 Checked();
