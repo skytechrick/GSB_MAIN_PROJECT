@@ -1,3 +1,126 @@
+function Timer() {
+    let Min_2_T = document.getElementsByClassName("Min_2_T")[0];
+    
+    let min = "04";
+    let sec = "59";
+
+    let min_sec = '';
+    
+    let a = 0;
+    let b = 0;
+
+
+    setInterval(() => {
+        min_sec = min + ":" + sec;
+        Min_2_T.innerHTML();
+
+        a = eval(min);
+        b = eval(sec);
+
+        
+
+        
+        b = b-1;
+        if(b<10){
+            sec = "0" + String(b)            
+        }else{
+            
+            sec = String(b);
+        }
+
+        if(b <= 0){
+            
+            a = a-1;
+            min = "0" + String(a);
+            b = 59;
+        }
+        if (a==0) {
+            // stop 
+        }
+            
+        }
+        
+        
+
+
+
+    }, 1000);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function Checked() {
     document.getElementById('Input_Check_Box').onclick = function () {
         if (this.checked) {

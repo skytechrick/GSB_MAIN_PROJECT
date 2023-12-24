@@ -5,7 +5,6 @@ const mongoose = require("mongoose");
 const Auth_Token = require("./Auth_Token.js");
 const GET_OTP = require("./OTP_Generator.js");
 
-// const { json } = require("body-parser");
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -42,9 +41,6 @@ const Signup_Schema = new mongoose.Schema({
     }
 });
 
-
-
-
 const Signup_Model = mongoose.model("Main_User", Signup_Schema);
 
 
@@ -64,7 +60,7 @@ function Signup_Post(req, res) {
         if(tID == undefined || tID == null || tID == ""){
             res.cookie("Temp_ID", Get_Auth, {
                 httpOnly: true,
-                path: "/login",
+                path: "/signup",
                 expires: new Date(Date.now() + 600000),
                 secure: false
             });
@@ -73,7 +69,7 @@ function Signup_Post(req, res) {
             res.clearCookie("Temp_ID");
             res.cookie("Temp_ID", Get_Auth, {
                 httpOnly: true,
-                path: "/login",
+                path: "/signup",
                 expires: new Date(Date.now() + 600000),
                 secure: false
             });
@@ -111,14 +107,8 @@ function Signup_Post(req, res) {
         const mailOptions = {
             from: 'GET SKY BUY <getskybuy@gmail.com>',
             to: OTP_Mail,
-            subject: 'Your OTP for creating GSB account is here',
-            html: `
-            <hr>
-            <p>This is a <strong>test</strong> email sent from <em>Node.js</em> with HTML content.</p>
-            <hr>
-            <h1>Your OTP is ${Final_OTP}</h1>
-            <hr>
-            `
+            subject: 'GET-SKY-BUY | Email verification | OTP',
+            html: `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>One-Time Password</title><style>body {font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f4f4f4;}.container { width: 100%; max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);}h1 { border-bottom: 1px solid #aaa; } h2 { color: #333333; } p { color: #666666; } .otp { font-size: 26px; color: #4CAF50; margin: 20px 0; text-align: center; } .footer { margin-top: 20px; text-align: center; color: #999999; } .footer p { margin: 0px; } .footer p:nth-child(1) { margin-bottom: 10px; } .Links { font-size: 14px; }.Links span{ font-weight: bold; } .Links a{ font-weight: bold; color: rgb(0, 185, 0);}</style></head><body dir="ltr"><div class="container"><h1>GET SKY BUY | Email Verfication - Creating GSB account.</h1><h2>Your OTP for creating GSB account is here.</h2><p>If you haven't created a <strong>GSB account</strong>, please refrain from sharing this email or <strong>OTP</strong> with anyone, and kindly disregard it..</p><p>Your <strong>One Time Password</strong> is:</p><p title="OTP" class="otp"><span>${Final_OTP}</span></p><p>This password is valid for <strong>5 minutes</strong>. Do not share it with others.</p><div title="GET-SKY-BUY" class="Links"><span>Official Website: </span><a href="https://www.getskybuy.com">GET SKY BUY</a></div><hr><div class="footer"><p>Thank you for using our service!</p><p title="Team GSB">Team GSB!</p></div></div></body></html>`
         };
         
         transporter.sendMail(mailOptions, (error, info) => {
