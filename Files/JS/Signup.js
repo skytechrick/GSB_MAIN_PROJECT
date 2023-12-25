@@ -9,45 +9,42 @@ function Timer() {
     let a = 0;
     let b = 0;
 
+    while (true) {
+        setTimeout(() => {
+            min_sec = min + ":" + sec;
+            Min_2_T.innerHTML = min_sec;
+            // Min_2_T.innerHTML();
+            a = eval(min);
+            b = eval(sec);
+                    if (b==0) {
+                        b = 60;
+                    }
+            b = b-1;
+            if(b<10){
+                sec = "0" + String(b)            
+            }else{
+                sec = String(b)
+            }
+            if(b == 59){
+                a = a-1;
+                min = "0" + a;
+            }
+        }, 1000);
 
-    setInterval(() => {
-        min_sec = min + ":" + sec;
-        Min_2_T.innerHTML();
-
-        a = eval(min);
-        b = eval(sec);
-
-        
-
-        
-        b = b-1;
-        if(b<10){
-            sec = "0" + String(b)            
-        }else{
-            
-            sec = String(b);
-        }
-
-        if(b <= 0){
-            
-            a = a-1;
-            min = "0" + String(a);
-            b = 59;
-        }
-        if (a==0) {
-            // stop 
-        }
-            
+        if(min_sec == "00:00"){
+            break;
         }
         
-        
-
-
-
-    }, 1000);
-
-
 }
+        
+        
+        
+        
+        
+}
+
+Timer();
+
 
 
 
