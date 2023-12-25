@@ -15,6 +15,10 @@ const Signup_Post = require("./Signup_Post");
 const Signup_Get = require("./Signup_Get");
 
 
+const OTP_GET_Signup_Post = require("./OTP_GET_Signup_Post.js")
+const OTP_POST_Signup_Post = require("./OTP_POST_Signup_Post.js")
+
+
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, '../Products_Images/Product_2');
@@ -225,6 +229,17 @@ app.post("/signup", (req, res) => {
     
 });
 
+app.get("/signup/otp/verification", (req, res) => {
+
+    OTP_GET_Signup_Post(req, res);
+});
+
+app.post("/signup/otp/verification", async(req, res) => {
+
+    OTP_POST_Signup_Post(req, res);
+    
+});
+// /signup/otp/verification
 
 
 
