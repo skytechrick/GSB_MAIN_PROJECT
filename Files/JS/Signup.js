@@ -1,3 +1,70 @@
+function A() {
+    let first = document.getElementById('First_Name');
+    let last = document.getElementById('Last_Name');
+    let mobno = document.getElementById('Mobile_Number');
+    let email = document.getElementById('Email');
+    let Create_Password = document.getElementById('Create_Password');
+    let Confirm_Password = document.getElementById('Confirm_Password');
+    first.addEventListener('input',()=>{
+        document.getElementById('First_Name_P').innerHTML = "Letters and spaces only";
+        document.getElementById('First_Name_P').style.color = "black";
+        first.style.border ='1px solid var(--Outline-Color)';
+    });
+    last.addEventListener('input',()=>{
+        document.getElementById('Last_Name_P').innerHTML = "Letters and spaces only";
+        document.getElementById('Last_Name_P').style.color = "black";
+        last.style.border ='1px solid var(--Outline-Color)';
+    })
+    mobno.addEventListener('input',()=>{
+        document.getElementById('Mobile_Number_P').innerHTML = "Mobile number (9876543210)";
+        document.getElementById('Mobile_Number_P').style.color = "black";
+        mobno.style.border ='1px solid var(--Outline-Color)';
+    })
+    email.addEventListener('input',()=>{
+        document.getElementById('Email_P').innerHTML = "Email address (example@gmail.com)";
+        document.getElementById('Email_P').style.color = "black";
+        email.style.border ='1px solid var(--Outline-Color)';
+    })
+    Create_Password.addEventListener('input',()=>{
+        document.getElementById('Create_Password_P').innerHTML = "Include, uppercase, lowercase, symbol and numbers <br> (Minimum 8 character)";
+        document.getElementById('Create_Password_P').style.color = "black";
+        Create_Password.style.border ='1px solid var(--Outline-Color)';
+        if (Create_Password.value.length>=8){
+            if(Confirm_Password.value === Create_Password.value){
+                document.getElementById('DoesNotMatch').innerHTML = "Password matched";
+                document.getElementById('DoesNotMatch').style.color = "rgb(0, 160, 120)";
+                document.getElementById('DoesNotMatch').style.fontWeight = "bold";
+                Confirm_Password.style.border ='1px solid var(--Outline-Color)';
+            }
+            else if(Confirm_Password.value != Create_Password.value && Confirm_Password.value.length>=8){
+                document.getElementById('DoesNotMatch').innerHTML = "Password do not match";
+                document.getElementById('DoesNotMatch').style.color = "red";
+                document.getElementById('DoesNotMatch').style.fontWeight = "100";
+                Confirm_Password.style.border ='1px solid red';
+            }
+        }
+    })
+    Confirm_Password.addEventListener('input',()=>{
+        document.getElementById('DoesNotMatch').innerHTML = "Re-enter your password";
+        document.getElementById('DoesNotMatch').style.color = "black";
+        Confirm_Password.style.border ='1px solid var(--Outline-Color)';
+        if (Confirm_Password.value.length>=8){
+            if(Confirm_Password.value === Create_Password.value){
+                document.getElementById('DoesNotMatch').innerHTML = "Password matched";
+                document.getElementById('DoesNotMatch').style.color = "rgb(0, 160, 120)";
+                document.getElementById('DoesNotMatch').style.fontWeight = "bold";
+                Confirm_Password.style.border ='1px solid var(--Outline-Color)';
+            }
+            else if(Confirm_Password.value != Create_Password.value && Create_Password.value.length>=8){
+                document.getElementById('DoesNotMatch').innerHTML = "Password do not match";
+                document.getElementById('DoesNotMatch').style.color = "red";
+                document.getElementById('DoesNotMatch').style.fontWeight = "100";
+                Confirm_Password.style.border ='1px solid red';
+            }
+        }
+    })
+};
+
 function Checked() {
     document.getElementById('Input_Check_Box').onclick = function () {
         if (this.checked) {
@@ -9,9 +76,13 @@ function Checked() {
         }
     };
 }
+
 function Login(){
     window.location.href = "/login";
 }
+
+
+
 function FL_Names(){
     let first = document.getElementById('First_Name');
     let last = document.getElementById('Last_Name');
@@ -19,27 +90,32 @@ function FL_Names(){
     let email = document.getElementById('Email');
     let Create_Password = document.getElementById('Create_Password');
     let Confirm_Password = document.getElementById('Confirm_Password');
-
     let firstt = first.value;
     let lastt = last.value;
     let mobnoo = mobno.value;
     let emaill = email.value;
     let Create_Passwordd = Create_Password.value;
     let Confirm_Passwordd = Confirm_Password.value;
-    
     let PP = 0
+
     if (firstt == "" || firstt == null){
         document.getElementById('First_Name_P').innerHTML = "Please enter your first name";
         document.getElementById('First_Name_P').style.color = "red";
         first.style.border ='1px solid red';
         PP=1
     }
+
+
+    
     if (lastt == "" || lastt == null){
         document.getElementById('Last_Name_P').innerHTML = "Please enter your last name";
         document.getElementById('Last_Name_P').style.color = "red";
         last.style.border ='1px solid red';
         PP=1
     }
+
+
+
     if (mobnoo == "" || mobnoo == null){
         document.getElementById('Mobile_Number_P').innerHTML = "Please enter your mobile number";
         document.getElementById('Mobile_Number_P').style.color = "red";
@@ -52,7 +128,7 @@ function FL_Names(){
         mobno.style.border ='1px solid red';
         pp=1
     }
-    else if(true){
+    else{
         let p = 0
         for (let index = 0; index < mobnoo.length; index++) {
             const element = mobnoo[index];
@@ -71,6 +147,16 @@ function FL_Names(){
             PP=1
         }
     }
+
+
+
+
+
+
+
+
+
+
     if (emaill == "" || emaill == null){
         document.getElementById('Email_P').innerHTML = "Please enter your email";
         document.getElementById('Email_P').style.color = "red";
@@ -107,6 +193,19 @@ function FL_Names(){
             PP = 1
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
     if (Create_Passwordd == "" || Create_Passwordd == null){
         document.getElementById('Create_Password_P').innerHTML = "Please create your password";
         document.getElementById('Create_Password_P').style.color = "red";
@@ -119,6 +218,16 @@ function FL_Names(){
         Create_Password.style.border ='1px solid red';
         PP=1
     }
+
+
+
+
+
+
+
+
+
+
     if (Confirm_Passwordd == "" || Create_Passwordd == null){
         document.getElementById('DoesNotMatch').innerHTML = "Please re-enter your password";
         document.getElementById('DoesNotMatch').style.color = "red";
@@ -139,6 +248,16 @@ function FL_Names(){
     }
 
 
+
+
+
+
+
+
+
+
+
+
     setTimeout(() => {
         if(PP==0){
 
@@ -150,6 +269,10 @@ function FL_Names(){
             form_Data.forEach((value,key) => {
                 jsonObject[key] = value;
             })
+            
+            LOADING(4);
+            document.getElementById("Submit_Button").onclick = "";
+
 
 
             const jsonBody = JSON.stringify(jsonObject);
@@ -187,28 +310,20 @@ function FL_Names(){
                    
                     a.style.animationName = "Hide";
                 }
+
+
+                
                 setTimeout(() => {
                     a.style.animationName = "Hidess";
                     a.style.display = "none";
+
+                    let Main_Container = document.getElementsByClassName("Main_Container_01")[0];
+                    Main_Container.style.display = "none";
                     
-                }, 5000);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    let OTP_Container = document.getElementById("OTP_Container");
+                    OTP_Container.style.display = "flex";
+                    Timer();
+                }, 4200);
 
             })
             
@@ -233,77 +348,8 @@ function FL_Names(){
 
 
 
-}
-function A() {
-    let first = document.getElementById('First_Name');
-    let last = document.getElementById('Last_Name');
-    let mobno = document.getElementById('Mobile_Number');
-    let email = document.getElementById('Email');
-    let Create_Password = document.getElementById('Create_Password');
-    let Confirm_Password = document.getElementById('Confirm_Password');
-
-    first.addEventListener('input',()=>{
-        document.getElementById('First_Name_P').innerHTML = "Letters and spaces only";
-        document.getElementById('First_Name_P').style.color = "black";
-        first.style.border ='1px solid var(--Outline-Color)';
-    });
-    last.addEventListener('input',()=>{
-        document.getElementById('Last_Name_P').innerHTML = "Letters and spaces only";
-        document.getElementById('Last_Name_P').style.color = "black";
-        last.style.border ='1px solid var(--Outline-Color)';
-    })
-    mobno.addEventListener('input',()=>{
-        document.getElementById('Mobile_Number_P').innerHTML = "Mobile number (9876543210)";
-        document.getElementById('Mobile_Number_P').style.color = "black";
-        mobno.style.border ='1px solid var(--Outline-Color)';
-    })
-    email.addEventListener('input',()=>{
-        document.getElementById('Email_P').innerHTML = "Email address (example@gmail.com)";
-        document.getElementById('Email_P').style.color = "black";
-        email.style.border ='1px solid var(--Outline-Color)';
-
-    })
-    Create_Password.addEventListener('input',()=>{
-        document.getElementById('Create_Password_P').innerHTML = "Include, uppercase, lowercase, symbol and numbers <br> (Minimum 8 character)";
-        document.getElementById('Create_Password_P').style.color = "black";
-        Create_Password.style.border ='1px solid var(--Outline-Color)';
-        if (Create_Password.value.length>=8){
-
-            if(Confirm_Password.value === Create_Password.value){
-                document.getElementById('DoesNotMatch').innerHTML = "Password matched";
-                document.getElementById('DoesNotMatch').style.color = "rgb(0, 160, 120)";
-                document.getElementById('DoesNotMatch').style.fontWeight = "bold";
-                Confirm_Password.style.border ='1px solid var(--Outline-Color)';
-            }
-            else if(Confirm_Password.value != Create_Password.value && Confirm_Password.value.length>=8){
-                document.getElementById('DoesNotMatch').innerHTML = "Password do not match";
-                document.getElementById('DoesNotMatch').style.color = "red";
-                document.getElementById('DoesNotMatch').style.fontWeight = "100";
-                Confirm_Password.style.border ='1px solid red';
-            }
-        }
-    })
-    Confirm_Password.addEventListener('input',()=>{
-        document.getElementById('DoesNotMatch').innerHTML = "Re-enter your password";
-        document.getElementById('DoesNotMatch').style.color = "black";
-        Confirm_Password.style.border ='1px solid var(--Outline-Color)';
-        if (Confirm_Password.value.length>=8){
-
-            if(Confirm_Password.value === Create_Password.value){
-                document.getElementById('DoesNotMatch').innerHTML = "Password matched";
-                document.getElementById('DoesNotMatch').style.color = "rgb(0, 160, 120)";
-                document.getElementById('DoesNotMatch').style.fontWeight = "bold";
-                Confirm_Password.style.border ='1px solid var(--Outline-Color)';
-            }
-            else if(Confirm_Password.value != Create_Password.value && Create_Password.value.length>=8){
-                document.getElementById('DoesNotMatch').innerHTML = "Password do not match";
-                document.getElementById('DoesNotMatch').style.color = "red";
-                document.getElementById('DoesNotMatch').style.fontWeight = "100";
-                Confirm_Password.style.border ='1px solid red';
-            }
-        }
-    })
 };
+
 function Submited_Clicked(){FL_Names()};
 A();
 Checked();
@@ -311,3 +357,216 @@ Checked();
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function Timer() {
+    let Min_2_T = document.getElementsByClassName("Min_2_T")[0];
+    let min = "04";
+    let sec = "59";
+    let min_sec = '';
+    let a = 0;
+    let b = 0;
+        setInterval(() => {
+            min_sec = min + ":" + sec;
+            if(min_sec == "00:00"){
+                document.getElementsByClassName("H5_")[0].innerHTML = `Haven't got the code.<span class="Min_2_Ta">00:00</span>`;
+                min = "04";
+                sec = "59";
+            }
+            Min_2_T.innerHTML = min_sec;
+            a = eval(min);
+            b = eval(sec);
+            if (b==0) {
+                b = 60;
+            }
+            b = b-1;
+            if(b<10){
+                sec = "0" + String(b)            
+            }else{
+                sec = String(b)
+            }
+            if(b == 59){
+                a = a-1;
+                min = "0" + a;
+            }
+        }, 1000);        
+}
+
+
+
+function Submit() {
+
+    let forma = document.getElementById("OTP_FORM");
+    let GP = new FormData(forma);
+
+    let jsonOTP = {};
+    GP.forEach((value,key) => {
+        jsonOTP[key] = value;
+    })
+    console.log(jsonOTP);
+    
+    fetch('/signup', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(jsonOTP),
+    })
+    .then(response => {
+
+        return response.json()
+    })
+    .then(data => {
+        console.log('Response from server:', data);
+        if(data.SUCCESS=="YES"){
+            window.location.href = "/login";
+        }
+
+
+    })
+    .catch(error => {
+        console.log('Error sending data:', error);
+    });
+
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+function Resend() {
+    let Min_2_Ta = document.getElementsByClassName("Min_2_Ta")[0];
+
+    if(Min_2_Ta.innerHTML = "00:00"){
+
+        
+        fetch('/signup/otp/verification', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                resend: 'Yes'
+            }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Response from server:', data);
+            if(data.Login){
+                console.log("Login successfull");
+            }
+        })
+        .catch(error => {
+            console.log('Error sending data:', error);
+        });
+    }
+
+
+
+
+
+
+    else{
+
+    }
+}
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+function LOADING(s) {
+    let LOADING = document.getElementById("LOADING");
+    let LOGIN_SPAN = document.getElementById("LOGIN_SPAN");
+    let LOADING_ICON = document.getElementById("LOADING_ICON");
+    LOADING.style.display = 'block';
+    LOGIN_SPAN.style.animationName = "Loading";
+    LOADING_ICON.style.display = 'flex';
+    LOGIN_SPAN.style.animationDuration = `${s}s`;
+    let a = String(s) + "000";
+    let tt = eval(a);
+    setTimeout(() => {
+        LOADING.style.display = 'none';
+        LOGIN_SPAN.style.animationName = "Losading";
+        LOADING_ICON.style.display = 'none';
+        LOGIN_SPAN.style.animationDuration = `0s`;
+        
+    }, tt);
+    
+}

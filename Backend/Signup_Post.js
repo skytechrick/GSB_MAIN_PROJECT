@@ -15,8 +15,8 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-function Signup_Post(req, res) {
-    console.log(req.body);
+async function Signup_Post(req, res) {
+    // console.log(req.body);
     let p = req.cookies.New_User;
     let s1 = req.body.First_Name;
     let s2 = req.body.Last_Name;
@@ -24,7 +24,7 @@ function Signup_Post(req, res) {
     let s4 = req.body.Email;
     let s5 = req.body.Confirm_Password;
 
-    if(p == "Yes"){        
+    if(p == "Yes"){
         if(s5 || s1 || s2 || s3 || s4){
             function Set_Get_Auth(){
                 let Get_Auth = Auth_Token(32);
@@ -69,6 +69,14 @@ function Signup_Post(req, res) {
             console.log(Signup_Details);
             
             let KK = req.cookies.New_User;
+
+            res.cookie("New_User", "No",{
+                httpOnly: true,
+                path: "/signup",
+                expires: new Date(Date.now() + 86400000),
+                secure: false
+            });
+
             if(KK == "Yes"){
                 res.clearCookie("New_User");
                 let OTP_Mail = Signup_Details.Email;
@@ -131,11 +139,60 @@ function Signup_Post(req, res) {
             res.status(401).send("Unauthorized Access");
         }
     
+    }else if(p=="No"){
+        let a = req.body.OTP_REC;
+        let b = req.cookies.Temp_ID;
+        let c = req.cookies.Temp_Em;
+        let Dta =await Signup_Model.find({})
+        console.log(Dta);
+        let BF = 0;
+        let element;
+        for (let i = 0; i < Dta.length; i++) {
+            element = Dta[i];
+            // console.log(element.Email);
+            if (element.Email == c) {
+                // console.log(element.Authentication);
+                BF = 0;
+                break;                
+            }
+            else{
+                // console.log("999");
+                BF = 1;
+            }
+        }
+        if (BF == 0) {
+            
+            if (element.Authentication.OTP_Auth == b) {
+                if(element.Authentication.OTP_Value == a){
+                    let Get_Authaa = Auth_Token(57);
+                    res.cookie("ID_C",Get_Authaa,{
+                        httpOnly: true,
+                        expires: new Date(Date.now() + 15552000000), // 6 months approx
+                        secure: false,
+                        path: "/"
+                    })
+                    res.json({
+                        SUCCESS:"YES"
+                    })
+                   
+                } 
+                else{
+                    res.status(200).send("Wrong OTP");
+                    // worng otp 
+                }
+            } 
+            else{
+                res.status(200).send("Wrong OTP");
+                // worng otp 
+            } 
+        }
+        else{
+            res.status(200).send("USER_NOT_FOUND");
+        }
     }
-
     else {
         res.status(401).send("Unauthorized Access");
     }
 }
-    
+
 module.exports = Signup_Post;

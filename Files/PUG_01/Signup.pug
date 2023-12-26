@@ -91,10 +91,10 @@
 
             </div>
             <div id="Last_Main">
-                <a title="Home" href="/" class="count">Home</a>
-                <a title="Help center" href="help_center" class="count">Help center</a>
-                <a title="Privacy and Policy" href="privacy_and_policy" class="count">Privacy and policy</a>
-                <a title="Terms and condition" href="terms_and_conditions" class="count">Terms and conditions</a>
+                <a title="Home" href="/?source=Signup_Page" class="count">Home</a>
+                <a title="Help center" href="/help_center?source=Signup_Page" class="count">Help center</a>
+                <a title="Privacy and Policy" href="/privacy_and_policy?source=Signup_Page" class="count">Privacy and policy</a>
+                <a title="Terms and condition" href="/terms_and_conditions?source=Signup_Page" class="count">Terms and conditions</a>
             </div>
         </div>
     </div>
@@ -102,6 +102,77 @@
     <div id="OTP_SENT_Y_N">
         <div id="OTP_SENT_Y_N_CENTER">OTP sent successfully</div>
     </div>
+
+
+
+
+    
+    <div id="OTP_Container">
+        <div class="Center_OTP">
+            <div class="Center_OTP_C">
+                <h3 class="H3_OTP">One Time Password</h3>
+                <p>Enter the <strong>OTP</strong> sent to your E-mail.</p>
+                <form id="OTP_FORM" method="post">
+                    <input maxlength="6" name="OTP_REC" title="Enter OTP" class="OTP_INPUT" spellcheck="false" autocomplete="off" placeholder="Enter OTP" type="text">
+                    <p id="OTP_Para">Wrong OTP | Re-enter OTP</p>
+                    <button class="OTP_SUBMIT" type="button" onclick="Submit()">Submit</button>
+                    <h5 class="H5_">Haven't got the code.
+                        <span class="Min_2_T">05:00</span>
+                    </h5>
+                    <button type="button" onclick="Resend();" class="OTP_SUBMIT_D">Resend</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div id="KK">
+        <div id="Small">Data</div>
+
+    </div>
+
+    <div id="LOADING">
+        <div id="LOGIN_SPAN"></div>
+    </div>
+
+    <div id="LOADING_ICON">
+        <div id="LOADING_ICON_CENTER">
+            <img src="/files/img/Login.gif" alt="Loading...">
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 
     <script src="/files/js/Signup.js"></script>
