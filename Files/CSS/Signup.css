@@ -584,3 +584,49 @@ body {
     
     
 }
+
+
+
+
+
+
+
+
+#OTP_SENT_Y_N {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: transparent;
+    animation-name: Hidess;
+    animation-delay: 200ms;
+    animation-duration: 2.2s;
+    animation-fill-mode: forwards;
+    display: none;
+}
+
+#OTP_SENT_Y_N_CENTER {
+
+    padding: 10px 20px;
+    color: white;
+    user-select: none;
+    background-color: black;
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+@keyframes Hide {
+    0%{
+        opacity: 1;
+    }    
+    100%{
+        opacity: 0;
+        display: none;
+    }
+}

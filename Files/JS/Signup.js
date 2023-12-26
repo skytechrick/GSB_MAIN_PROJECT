@@ -137,15 +137,102 @@ function FL_Names(){
         Confirm_Password.style.border ='1px solid red';
         PP =1
     }
+
+
     setTimeout(() => {
         if(PP==0){
-            document.getElementById("Submit_Button").type = "submit";
-            document.getElementById("Submit_Button").onclick = "";
-            setTimeout(() => {
-                document.getElementById('Submit_Button').click();
-            }, 1);
+
+
+            let forma = document.getElementById("FORM_SIGNUP");
+            let form_Data = new FormData(forma);
+
+            let jsonObject = {};
+            form_Data.forEach((value,key) => {
+                jsonObject[key] = value;
+            })
+
+
+            const jsonBody = JSON.stringify(jsonObject);
+
+            fetch("/signup",{
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: jsonBody,
+            })
+
+            .then(response => {
+                return response.json();
+                
+            })
+            
+            .then(data => {
+
+                console.log(data);
+
+
+                let a = document.getElementById("OTP_SENT_Y_N");
+                let a_C = document.getElementById("OTP_SENT_Y_N_CENTER");
+                if (data.DATA_SAVE == "YES" & data.Email == "YES"){
+                    a_C.innerHTML = "Account created and OTP sent successfully.<br>Enter the OTP from You mail";
+                    a.style.display = "flex";
+                    
+                    a.style.animationName = "Hide";
+
+
+                } else if(data.DATA_SAVE != "YES" & data.Email != "YES"){
+
+
+                    a.style.display = "flex";
+                    a_C.innerHTML = "Cann't created your account";
+                   
+                    a.style.animationName = "Hide";
+                }
+                setTimeout(() => {
+                    a.style.animationName = "Hidess";
+                    a.style.display = "none";
+                    
+                }, 5000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            })
+            
+            .catch(error => {
+                let a = document.getElementById("OTP_SENT_Y_N");
+                let a_C = document.getElementById("OTP_SENT_Y_N_CENTER");
+                a_C.innerHTML = "Cann't created your account";
+                a.style.display = "flex";
+                a.style.animationName = "Hide";
+                setTimeout(() => {
+                    a.style.animationName = "Hidess";
+                    a.style.display = "none";
+                    
+                }, 5000);
+            })
+
+
+
+
         }
     }, 1);
+
+
+
 }
 function A() {
     let first = document.getElementById('First_Name');
@@ -220,3 +307,7 @@ function A() {
 function Submited_Clicked(){FL_Names()};
 A();
 Checked();
+
+
+
+
