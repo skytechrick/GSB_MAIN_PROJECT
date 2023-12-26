@@ -75,17 +75,15 @@ async function Signup_Post(req, res) {
             }
             if(SW == 1) {
                 res.json({
-                    Email:"E-mail address Already exist."
+                    Email_Unique:{
+                        Value:"False",
+                        Message:"E-mail address Already exist."
+                    }
                 });
                 //Email Already exist
 
             }else{
-
-            
-
-
-
-
+                
                 let Final_OTP = GET_OTP();
                 let Final_Auth = Set_Get_Auth();
 
@@ -101,6 +99,8 @@ async function Signup_Post(req, res) {
                         OTP_Value: Final_OTP,
                     },
                     Verification: "No",
+                    Profile_Id: "No_ID"
+                    
                 }
 
                 console.log(Signup_Details);
