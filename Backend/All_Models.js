@@ -1,4 +1,14 @@
 const mongoose = require("mongoose");
+mongoose.connect('mongodb://127.0.0.1:27017/User_Data');
+const db = mongoose.connection;
+db.on('error',(error) => {
+    console.error('MongoDB connection error:', error);
+});
+
+db.once('open',() => {
+    console.log('Connected to MongoDB database.');
+});
+
 const Signup_Schema = new mongoose.Schema({
     Profile_Id:{
         type: String
@@ -18,7 +28,7 @@ const Signup_Schema = new mongoose.Schema({
     User_Password:{
         type: String
     },
-    Verification:{
+    Verified:{
         type: String
     },
     Created_Account: {
@@ -29,5 +39,7 @@ const Signup_Schema = new mongoose.Schema({
     }
 });
 
-const Signup_Model = mongoose.model("Main_User", Signup_Schema);
-module.exports = Signup_Model;
+const Sign_Mol = mongoose.model("Main_User", Signup_Schema);
+module.exports = {
+    Signup_Model: Sign_Mol
+};

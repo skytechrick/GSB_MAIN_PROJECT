@@ -83,6 +83,31 @@ function Login(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function FL_Names(){
     let first = document.getElementById('First_Name');
     let last = document.getElementById('Last_Name');
@@ -163,7 +188,7 @@ function FL_Names(){
         email.style.border ='1px solid red';
         PP =1
     }
-    else if(emaill != "" || emaill != null){
+    else{
         let TT=0;
         for (let index = 0; index < emaill.length; index++) {
             const element = emaill[index];
@@ -186,7 +211,7 @@ function FL_Names(){
             
 
         }
-        else if(TT!=2){
+        else{
             document.getElementById('Email_P').innerHTML = "Please enter correct email";
             document.getElementById('Email_P').style.color = "red";
             email.style.border ='1px solid red';
