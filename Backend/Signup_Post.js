@@ -251,7 +251,7 @@ async function Signup_Post(req, res) {
         }
         
         else {
-            res.status(401).json({Unauthorized:"Unauthorized Access or missing data."});
+            res.status(401).send("Unauthorized Access or missing data.");
         }
     
     }else if(p=="No"){
@@ -306,7 +306,7 @@ async function Signup_Post(req, res) {
         }
     }
     else {
-        res.status(401).json({Unauthorized:"Unauthorized Access. You have to use any browser or app"});
+        res.status(401).send("Unauthorized Access. You have to use any browser or app");
     }
 }
 
