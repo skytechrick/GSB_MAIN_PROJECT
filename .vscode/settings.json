@@ -1,2 +1,7 @@
 {
+    "workbench.colorTheme": "Tomorrow Night Blue",
+    "explorer.confirmDelete": false,
+    "editor.mouseWheelZoom": true,
+    "window.commandCenter": false,
+    "security.workspace.trust.untrustedFiles": "open"
 }

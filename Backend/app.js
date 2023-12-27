@@ -1,22 +1,27 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-const mongoose = require('mongoose');
-const Product_URL_Generator = require("./product_url_generator.js");
 const bodyParser = require("body-parser");
 const multer = require("multer");
-const fs = require("fs");
-
 const cookieParser = require('cookie-parser');
-
-
-
+// _______________________________________________________________________________________________________
 const Signup_Post = require("./Signup_Post");
 const Signup_Get = require("./Signup_Get");
+// _______________________________________________________________________________________________________
 
 
-// const OTP_GET_Signup_Post = require("./OTP_GET_Signup_Post.js")
-// const OTP_POST_Signup_Post = require("./OTP_POST_Signup_Post.js")
+app.set("view engine", "pug");
+app.set("views", path.join(__dirname, "../Files/PUG_01"));
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(cookieParser());
+
+app.use('/files/css', express.static('../Files/CSS'));
+app.use('/files/js', express.static('../Files/JS'));
+app.use('/files/img', express.static('../Files/Img'));
+
+app.use('/product/img', express.static('../Products_Images/Product_2'));
 
 
 const storage = multer.diskStorage({
@@ -37,23 +42,6 @@ const Photo_Upload = multer({ storage: storage });
 
 
 
-
-
-
-
-
-
-app.set("view engine", "pug");
-app.set("views", path.join(__dirname, "../Files/PUG_01"));
-app.use('/files/css', express.static('../Files/CSS'));
-app.use('/files/js', express.static('../Files/JS'));
-app.use('/files/img', express.static('../Files/Img'));
-
-app.use('/product/img', express.static('../Products_Images/Product_2'));
-
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(cookieParser());
 
 
 
