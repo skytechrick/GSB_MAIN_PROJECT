@@ -20,9 +20,7 @@ body {
     background-color: white;
     border-radius: 5px;
     border: 1px solid #aaa;
-    /* border: 1px solid var(--Outline-Color); */
     box-sizing: border-box;
-    /* box-shadow: 0px 0px 15px var(--Outline-Color); */
     box-shadow: 0px 0px 5px #aaa;
     width: 480px;
     height: 750px;
@@ -684,16 +682,23 @@ body{
 }
 
 .OTP_SUBMIT {
-    width: 100px;
+    width: 191px;
     padding: 8px;
     background-color: #ff3bf5;
     color: white;
     outline: none;
-    border: 1px solid #aaa;
+    border: 0px solid #aaa;
     margin: auto;
     display: block;
     cursor: pointer;
     margin-top: 10px;
+}
+.OTP_SUBMIT:hover {
+    background-color: #ff29f4;
+}
+
+.OTP_SUBMIT:active {
+    background-color: #ff64f7;
 }
 
 #OTP_Para {
@@ -708,16 +713,20 @@ body{
 
 }
 
+#BTNSS {
+    display: flex;
+    justify-content: space-evenly;
+}
 
 .OTP_SUBMIT_D {
-    width: 200px;
+    width: 100px;
     padding: 10px;
     background-color: #ff3bf5;
     color: white;
     outline: none;
-    border: 1px solid #aaa;
-    margin: auto;
-    display: block;
+    border: 0px solid #aaa;
+    /* margin: auto; */
+    display: inline-block;
     cursor: pointer;
     margin-top: 10px;
 }
@@ -727,7 +736,19 @@ body{
     background-color: #ff11f3;
     
 }
+.OTP_SUBMIT_D:nth-child(2) {
+    background-color: white;
+    border: 1px solid #ff11f3;
+    color: black;
+}
 
+.OTP_SUBMIT_D:nth-child(2):hover {
+    background-color: #ffe8fe;
+}
+
+.OTP_SUBMIT_D:nth-child(2):active {
+    background-color: #ffa1fa;
+}
 
 .OTP_SUBMIT_D:active {
     background-color: #fd6af6;
@@ -858,7 +879,6 @@ body{
 
 
 #OTP_SENT_Y_N {
-    /* display: flex; */
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -866,24 +886,23 @@ body{
     left: 0px;
     width: 100vw;
     height: 100vh;
-
+    opacity: 0.9;
     background-color: transparent;
-    animation-name: Hidess;
+    animation-name: Hidea;
     animation-delay: 200ms;
-    animation-duration: 3.2s;
+    animation-duration: 5s; /*________________________________________*/
     animation-fill-mode: forwards;
     display: none;
+    /* display: flex; */
 }
 
 #OTP_SENT_Y_N_CENTER {
-
     padding: 10px 20px;
     color: white;
     user-select: none;
-    background-color: rgb(51, 51, 51);
+    background-color: rgb(75, 75, 75);
     border-radius: 10px;
     text-align: center;
-
 }
 
 @keyframes Hide {
@@ -899,7 +918,7 @@ body{
     }
 }
 
-
+/* ______________________________________________________________ */
 
 
 
@@ -916,12 +935,12 @@ body{
 
 }
 
-#LOGIN_SPAN {
+#LOADING_SPAN {
     width: 100%;
     height: 4px;
     background-color: #ffae00;
-    animation-name: Loaading;
-    animation-duration: 0;
+    animation-name: Loadding;
+    animation-duration: 5s;
     animation-iteration-count: 1;
     animation-delay: 100ms;
     animation-fill-mode: forwards;

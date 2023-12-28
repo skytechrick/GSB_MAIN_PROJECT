@@ -1,6 +1,6 @@
 const Auth_Token = require("./Auth_Token.js");
 const {Signup_Model} = require("./All_Models.js");
-// const SENT_OTP = require("./OTP_SENT.js");
+const Profile_ID = require("./Profile_ID.js");
 const nodemailer = require("nodemailer");
 const GET_OTP = require("./OTP_Generator.js");
 
@@ -167,7 +167,7 @@ async function Signup_Post(req, res) {
                     res.json({Message:"E-mail address Already exist."});
                 }else{
                     let Final_Auth = Set_Get_Auth();
-                    console.log("11");
+                    // console.log("11");
 //_____________________________________________________________________________________
                     let A = 0;
                     let Final_OTP =  GET_OTP();
@@ -177,7 +177,7 @@ async function Signup_Post(req, res) {
                     Transporter.sendMail(Mail_Option, (error, info) => {
                         if (error) {
                             A = 2;
-                            console.error('Error:', error);
+                            // console.error('Error:', error);
                         } else {
                             console.log('Email sent:', info.response);
                             A = 3;
@@ -188,7 +188,7 @@ async function Signup_Post(req, res) {
 //_____________________________________________________________________________________
 
                     
-                    console.log("555");
+                    // console.log("555");
                     setTimeout(() => {
                         let Email_Sent_Q = "";
                         if(A==3){
@@ -198,11 +198,14 @@ async function Signup_Post(req, res) {
                             Email_Sent_Q = "Unable to send OTP. Please try again after some time.";
                         };
 
-                        console.log("9999")
+                        // console.log("9999")
                         if (Email_Sent_Q == "OTP sent successfully") {
                             
                             
                             const Signup_Details ={
+                                Profile_Log:{
+                                    Auth1: "_"
+                                },
                                 First_Name: s1,
                                 Last_Name: s2,
                                 Mobile_Number: s3,
@@ -214,11 +217,11 @@ async function Signup_Post(req, res) {
                                     OTP_Value: Final_OTP
                                 },
                                 Verified: "No",
-                                Profile_Id: "No_ID"
+                                Profile_Id: 0
                             };
                                 
                             
-                            console.log(Signup_Details);
+                            // console.log(Signup_Details);
                             
                             
                             res.cookie("New_User", "No",{httpOnly: true, path: "/signup", expires: new Date(Date.now() + 86400000), secure: false});
@@ -251,15 +254,15 @@ async function Signup_Post(req, res) {
         }
         
         else {
-            res.status(401).send("Unauthorized Access or missing data.");
+            res.status(401).json({Unauthorized:"Unauthorized Access or missing data."});
         }
     
     }else if(p=="No"){
         let a = req.body.OTP_REC;
         let b = req.cookies.Temp_ID;
         let c = req.cookies.Temp_Em;
-        let Dta =await Signup_Model.find({})
-        console.log(Dta);
+        let Dta = await Signup_Model.find({});
+        // console.log(Dta);
         let BF = 0;
         let element;
         for (let i = 0; i < Dta.length; i++) {
@@ -279,34 +282,49 @@ async function Signup_Post(req, res) {
             
             if (element.Authentication.OTP_Auth == b) {
                 if(element.Authentication.OTP_Value == a){
-                    let Get_Authaa = Auth_Token(57);
-                    res.cookie("ID_C",Get_Authaa,{
-                        httpOnly: true,
-                        expires: new Date(Date.now() + 15552000000), // 6 months approx
-                        secure: false,
-                        path: "/"
-                    })
-                    res.json({
-                        SUCCESS:"YES"
-                    })
-                   
+                    // let Get_Authaa = Auth_Token(57);
+                    // res.cookie("ID_C", Get_Authaa, {httpOnly: true, expires: new Date(Date.now() + 15552000000), secure: false, path: "/"})
+                    res.clearCookie("Temp_ID", { path: '/signup' });
+                    res.clearCookie("Temp_Em", { path: '/signup' });
+                    res.clearCookie("New_User", { path: '/signup' });
+                    let G = element.Email;
+                    let P_ID;
+                    while (true) {
+                        P_ID = Profile_ID();
+                        let dat = await Signup_Model.find({Profile_Id: {$eq: P_ID}});
+                        if (dat.length===0) {
+                            break;
+                        }
+                    }
+                    
+                    await Signup_Model.updateOne({Email: G }, {
+                        $set:{
+                            Profile_Id: P_ID,
+                            Verified: "Yes",
+                            Authentication: {
+                                OTP_Auth:"_",
+                                OTP_Value:"_"
+                            }
+                        }
+                    }); 
+                    setTimeout(() => {
+                        res.json({ SUCCESS:"YES" });
+                    }, 1000);
                 } 
                 else{
-                    res.status(200).send("Wrong OTP");
-                    // worng otp 
+                    res.json({SUCCESS: "NO"});
                 }
             } 
             else{
-                res.status(200).send("Wrong OTP");
-                // worng otp 
+                res.json({SUCCESS: "NO"});
             } 
         }
         else{
-            res.status(200).send("USER_NOT_FOUND");
+            res.json({SUCCESS: "NO"});
         }
     }
     else {
-        res.status(401).send("Unauthorized Access. You have to use any browser or app");
+        res.status(401).json({Unauthorized: "Unauthorized Access. You have to use any browser or app."});
     }
 }
 

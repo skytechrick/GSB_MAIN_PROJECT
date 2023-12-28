@@ -414,9 +414,9 @@ app.post("/signup", async (req, res) => {Signup_Post(req, res)});
 // app.get("/seller_login", (req, res) => {
 //     res.status(200).render("Seller_Login");
 // });
-// app.get("/login", (req, res) => {
-//     res.status(200).render("Login");
-// });
+app.get("/login", (req, res) => {
+    res.status(200).render("Login");
+});
 // app.get("/seller_profile", (req, res) => {
 //     res.status(200).render("Seller_Profile");
 // });

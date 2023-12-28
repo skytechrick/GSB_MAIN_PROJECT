@@ -11,7 +11,10 @@ db.once('open',() => {
 
 const Signup_Schema = new mongoose.Schema({
     Profile_Id:{
-        type: String
+        type: Number
+    },
+    Profile_Log:{
+        type: Object
     },
     First_Name:{
         type: String
@@ -24,7 +27,7 @@ const Signup_Schema = new mongoose.Schema({
     },
     Email:{
         type: String
-    }, 
+    },
     User_Password:{
         type: String
     },

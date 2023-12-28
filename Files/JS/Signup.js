@@ -131,7 +131,6 @@ function FL_Names(){
     }
 
 
-    
     if (lastt == "" || lastt == null){
         document.getElementById('Last_Name_P').innerHTML = "Please enter your last name";
         document.getElementById('Last_Name_P').style.color = "red";
@@ -145,7 +144,7 @@ function FL_Names(){
         document.getElementById('Mobile_Number_P').innerHTML = "Please enter your mobile number";
         document.getElementById('Mobile_Number_P').style.color = "red";
         mobno.style.border ='1px solid red';
-        PP=1
+        PP=1;
     }
     else if(mobnoo.length <10){
         document.getElementById('Mobile_Number_P').innerHTML = "Please enter correct mobile number";
@@ -285,18 +284,19 @@ function FL_Names(){
 
     setTimeout(() => {
         if(PP==0){
-
-
+            document.getElementById("SUB_BTN").innerHTML = `<button id="Submit_Button" type="button">Continue</button>`;
+            
             let forma = document.getElementById("FORM_SIGNUP");
             let form_Data = new FormData(forma);
-
             let jsonObject = {};
+            let GK = 0;
             form_Data.forEach((value,key) => {
                 jsonObject[key] = value;
-            })
+            });
             
-            LOADING(4);
-            document.getElementById("Submit_Button").onclick = "";
+
+            
+            LOADING(5);
 
 
 
@@ -314,55 +314,141 @@ function FL_Names(){
             })
             
             .then(data => {
-
-                console.log(data);
-
-
                 let a = document.getElementById("OTP_SENT_Y_N");
                 let a_C = document.getElementById("OTP_SENT_Y_N_CENTER");
-                if (data.DATA_SAVE == "YES" & data.Email == "YES"){
-                    a_C.innerHTML = "Account created and OTP sent successfully.<br>Enter the OTP from You mail";
-                    a.style.display = "flex";
-                    
-                    a.style.animationName = "Hide";
 
-
-                } else if(data.DATA_SAVE != "YES" & data.Email != "YES"){
-
-
-                    a.style.display = "flex";
-                    a_C.innerHTML = "Cann't created your account";
-                   
-                    a.style.animationName = "Hide";
+                console.log(data);
+                if(data.Message){
+                    if (data.Message == 'OTP sent successfully') {
+                        GK = 1;
+                        a.style.display = "flex";
+                        a_C.innerHTML = data.Message;
+                        
+                    }
+                    if (data.Message == 'Unable to send OTP. Please try again after some time.') {
+                        GK = 0;
+                        a.style.display = "flex";
+                        a_C.innerHTML = data.Message;
+                        
+                    }
+                    if (data.Message == 'E-mail address Already exist.') {
+                        GK = 0;
+                        a.style.display = "flex";
+                        a_C.innerHTML = data.Message;
+                    }
                 }
-
-
                 
+                else if(data.FIRST && data.LAST && data.MOBILE && data.EMAIL && data.PASSWORD) {
+                    GK = 0;
+                    let v = "EMPTY";
+                    if(data.FIRST == v){
+                        document.getElementById('First_Name_P').innerHTML = "Please enter your first name";
+                        document.getElementById('First_Name_P').style.color = "red";
+                        first.style.border ='1px solid red';
+                    };
+
+                    if(data.LAST == v){
+                        document.getElementById('Last_Name_P').innerHTML = "Please enter your last name";
+                        document.getElementById('Last_Name_P').style.color = "red";
+                        last.style.border ='1px solid red';
+                    };
+                    
+                    if(data.MOBILE == v){
+                        document.getElementById('Mobile_Number_P').innerHTML = "Please enter your mobile number";
+                        document.getElementById('Mobile_Number_P').style.color = "red";
+                        mobno.style.border ='1px solid red';
+                    }
+                    else if (data.MOBILE == "NUMBER_LESS_MORE"){
+                        document.getElementById('Mobile_Number_P').innerHTML = "Please enter correct mobile number";
+                        document.getElementById('Mobile_Number_P').style.color = "red";
+                        mobno.style.border ='1px solid red';
+                    }
+                    else if(data.MOBILE == "NO_VALID_NUMBER"){
+                        document.getElementById('Mobile_Number_P').innerHTML = "Please enter correct mobile number";
+                        document.getElementById('Mobile_Number_P').style.color = "red";
+                        mobno.style.border ='1px solid red';
+                    }
+                    if(data.EMAIL == v){
+                        document.getElementById('Email_P').innerHTML = "Please enter your email";
+                        document.getElementById('Email_P').style.color = "red";
+                        email.style.border ='1px solid red';
+
+                    }
+                    else if(data.EMAIL == "NOT_VALID_MAIL"){
+                        document.getElementById('Email_P').innerHTML = "Please enter correct email";
+                        document.getElementById('Email_P').style.color = "red";
+                        email.style.border ='1px solid red';
+                    }
+
+                    if(data.PASSWORD == v){
+                        document.getElementById('Create_Password_P').innerHTML = "Please create your password";
+                        document.getElementById('Create_Password_P').style.color = "red";
+                        Create_Password.style.border ='1px solid red';
+                        document.getElementById('DoesNotMatch').innerHTML = "Please re-enter your password";
+                        document.getElementById('DoesNotMatch').style.color = "red";
+                        Confirm_Password.style.border ='1px solid red';
+
+                    }
+                    else if(data.PASSWORD == "PASSWORD_LESS"){
+                        document.getElementById('DoesNotMatch').innerHTML = "Password must be minimum 8 characters";
+                        document.getElementById('DoesNotMatch').style.color = "red";
+                        Confirm_Password.style.border ='1px solid red';
+                        document.getElementById('Create_Password_P').innerHTML = "Password must be minimum 8 characters";
+                        document.getElementById('Create_Password_P').style.color = "red";
+                        Create_Password.style.border ='1px solid red';
+                    };
+                }
+                
+                else if (data.Unauthorized) {
+                    if (data.Unauthorized == 'Unauthorized Access or missing data.') {
+                        GK = 0;
+                        a.style.display = "flex";
+                        a_C.innerHTML = data.Unauthorized;
+                    }
+                    if (data.Unauthorized == 'Unauthorized Access. You have to use any browser or app.') {
+                        GK = 0;
+                        a.style.display = "flex";
+                        a_C.innerHTML = data.Unauthorized;
+                    }
+                }
+                else{
+                    GK = 0;
+                    a.style.display = "flex";
+                    a_C.innerHTML = "Cann't create your account please reload the page and then try again";
+                };
+
+
                 setTimeout(() => {
                     a.style.animationName = "Hidess";
                     a.style.display = "none";
+                    if(GK==1){
 
-                    let Main_Container = document.getElementsByClassName("Main_Container_01")[0];
-                    Main_Container.style.display = "none";
-                    
-                    let OTP_Container = document.getElementById("OTP_Container");
-                    OTP_Container.style.display = "flex";
-                    Timer();
-                }, 4200);
+                        
+                        let Main_Container = document.getElementsByClassName("Main_Container_01")[0];
+                        Main_Container.style.display = "none";
+                        
+                        let OTP_Container = document.getElementById("OTP_Container");
+                        OTP_Container.style.display = "flex";
+                        Timer();
+                    }
+                    else{
+                        document.getElementById("SUB_BTN").innerHTML = `<button onclick="Submited_Clicked();" id="Submit_Button" type="button">Continue</button>`;
+                    }
+                }, 4500);
 
             })
             
             .catch(error => {
                 let a = document.getElementById("OTP_SENT_Y_N");
                 let a_C = document.getElementById("OTP_SENT_Y_N_CENTER");
-                a_C.innerHTML = "Cann't created your account";
+                a_C.innerHTML = "Unable to send data to server. Please reload the page and then try again later.";
                 a.style.display = "flex";
                 a.style.animationName = "Hide";
                 setTimeout(() => {
                     a.style.animationName = "Hidess";
                     a.style.display = "none";
                     
-                }, 5000);
+                }, 4500);
             })
 
 
@@ -378,61 +464,6 @@ function FL_Names(){
 function Submited_Clicked(){FL_Names()};
 A();
 Checked();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -471,8 +502,9 @@ function Timer() {
 }
 
 
-
 function Submit() {
+    
+    document.getElementById("OTPBTN").innerHTML = `<button class="OTP_SUBMIT" type="button">Submit</button>`;
 
     let forma = document.getElementById("OTP_FORM");
     let GP = new FormData(forma);
@@ -495,15 +527,30 @@ function Submit() {
         return response.json()
     })
     .then(data => {
+        let a = document.getElementById("OTP_SENT_Y_N");
+        let a_C = document.getElementById("OTP_SENT_Y_N_CENTER");
+        
         console.log('Response from server:', data);
-        if(data.SUCCESS=="YES"){
-            window.location.href = "/login";
+        if(data.SUCCESS == "YES"){
+            a.style.display = "flex";
+            a_C.innerHTML = "OTP verified.";
+            setTimeout(() => {
+                window.location.href = "/login";
+            }, 5000);
         }
-
-
+        else{
+            document.getElementById("OTPBTN").innerHTML = `<button class="OTP_SUBMIT" type="button" onclick="Submit()">Submit</button>`;
+            a.style.display = "flex";
+            a_C.innerHTML = "Invalid OTP";
+        }
     })
     .catch(error => {
-        console.log('Error sending data:', error);
+        let a = document.getElementById("OTP_SENT_Y_N");
+        let a_C = document.getElementById("OTP_SENT_Y_N_CENTER");
+        a.style.display = "flex";
+        a_C.innerHTML = "OTP not verified.";
+        document.getElementById("OTPBTN").innerHTML = `<button class="OTP_SUBMIT" type="button" onclick="Submit()">Submit</button>`;
+        
     });
 
 
@@ -578,20 +625,41 @@ function Resend() {
 
 function LOADING(s) {
     let LOADING = document.getElementById("LOADING");
-    let LOGIN_SPAN = document.getElementById("LOGIN_SPAN");
+    let LOADING_SPAN = document.getElementById("LOADING_SPAN");
     let LOADING_ICON = document.getElementById("LOADING_ICON");
+
     LOADING.style.display = 'block';
-    LOGIN_SPAN.style.animationName = "Loading";
+    LOADING_SPAN.style.animationName = "Loading";
     LOADING_ICON.style.display = 'flex';
-    LOGIN_SPAN.style.animationDuration = `${s}s`;
+    LOADING_SPAN.style.animationDuration = `${s}s`;
     let a = String(s) + "000";
     let tt = eval(a);
+
     setTimeout(() => {
         LOADING.style.display = 'none';
-        LOGIN_SPAN.style.animationName = "Losading";
+        LOADING_SPAN.style.animationName = "Losading";
         LOADING_ICON.style.display = 'none';
-        LOGIN_SPAN.style.animationDuration = `0s`;
+        LOADING_SPAN.style.animationDuration = `0s`;
         
     }, tt);
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function Cancel() {
+    
     
 }
