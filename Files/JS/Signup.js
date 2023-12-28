@@ -317,7 +317,7 @@ function FL_Names(){
                 let a = document.getElementById("OTP_SENT_Y_N");
                 let a_C = document.getElementById("OTP_SENT_Y_N_CENTER");
 
-                console.log(data);
+                // console.log(data);
                 if(data.Message){
                     if (data.Message == 'OTP sent successfully') {
                         GK = 1;
@@ -513,7 +513,7 @@ function Submit() {
     GP.forEach((value,key) => {
         jsonOTP[key] = value;
     })
-    console.log(jsonOTP);
+    // console.log(jsonOTP);
     
     fetch('/signup', {
         method: 'POST',
@@ -530,7 +530,7 @@ function Submit() {
         let a = document.getElementById("OTP_SENT_Y_N");
         let a_C = document.getElementById("OTP_SENT_Y_N_CENTER");
         
-        console.log('Response from server:', data);
+        // console.log('Response from server:', data);
         if(data.SUCCESS == "YES"){
             a.style.display = "flex";
             a_C.innerHTML = "OTP verified.";
@@ -660,6 +660,6 @@ function LOADING(s) {
 
 
 function Cancel() {
-    
+
     
 }

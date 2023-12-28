@@ -179,7 +179,7 @@ async function Signup_Post(req, res) {
                             A = 2;
                             // console.error('Error:', error);
                         } else {
-                            console.log('Email sent:', info.response);
+                            // console.log('Email sent:', info.response);
                             A = 3;
                             
                             
@@ -242,7 +242,7 @@ async function Signup_Post(req, res) {
                         }
 
                         else{
-                            console.log("155555")
+                            // console.log("155555")
                             res.json({Message: "Unable to send OTP. Please try again after some time."})
                         }
                     }, 4800);
