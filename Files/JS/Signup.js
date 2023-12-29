@@ -121,7 +121,7 @@ function FL_Names(){
     let emaill = email.value;
     let Create_Passwordd = Create_Password.value;
     let Confirm_Passwordd = Confirm_Password.value;
-    let PP = 0
+    let PP = 0;
 
     if (firstt == "" || firstt == null){
         document.getElementById('First_Name_P').innerHTML = "Please enter your first name";
@@ -214,7 +214,7 @@ function FL_Names(){
             document.getElementById('Email_P').innerHTML = "Please enter correct email";
             document.getElementById('Email_P').style.color = "red";
             email.style.border ='1px solid red';
-            PP = 1
+            PP = 1;
         }
     }
 
@@ -234,13 +234,13 @@ function FL_Names(){
         document.getElementById('Create_Password_P').innerHTML = "Please create your password";
         document.getElementById('Create_Password_P').style.color = "red";
         Create_Password.style.border ='1px solid red';
-        PP=1
+        PP=1;
     }
     else if(Create_Passwordd.length <8){
         document.getElementById('Create_Password_P').innerHTML = "Password must be minimum 8 characters";
         document.getElementById('Create_Password_P').style.color = "red";
         Create_Password.style.border ='1px solid red';
-        PP=1
+        PP=1;
     }
 
 
@@ -256,19 +256,19 @@ function FL_Names(){
         document.getElementById('DoesNotMatch').innerHTML = "Please re-enter your password";
         document.getElementById('DoesNotMatch').style.color = "red";
         Confirm_Password.style.border ='1px solid red';
-        PP=1
+        PP=1;
     }
     else if(Confirm_Passwordd.length <8){
         document.getElementById('DoesNotMatch').innerHTML = "Password must be minimum 8 characters";
         document.getElementById('DoesNotMatch').style.color = "red";
         Confirm_Password.style.border ='1px solid red';
-        PP=1
+        PP=1;
     }
     else if(Confirm_Passwordd != Create_Passwordd){
         document.getElementById('DoesNotMatch').innerHTML = "Password do not match";
         document.getElementById('DoesNotMatch').style.color = "red";
         Confirm_Password.style.border ='1px solid red';
-        PP =1
+        PP =1;
     }
 
 
@@ -285,6 +285,7 @@ function FL_Names(){
     setTimeout(() => {
         if(PP==0){
             document.getElementById("SUB_BTN").innerHTML = `<button id="Submit_Button" type="button">Continue</button>`;
+            LOADING(4);
             
             let forma = document.getElementById("FORM_SIGNUP");
             let form_Data = new FormData(forma);
@@ -296,7 +297,6 @@ function FL_Names(){
             
 
             
-            LOADING(5);
 
 
 
@@ -322,18 +322,21 @@ function FL_Names(){
                     if (data.Message == 'OTP sent successfully') {
                         GK = 1;
                         a.style.display = "flex";
+                        a.style.animationName = "Hide";
                         a_C.innerHTML = data.Message;
                         
                     }
                     if (data.Message == 'Unable to send OTP. Please try again after some time.') {
                         GK = 0;
                         a.style.display = "flex";
+                        a.style.animationName = "Hide";
                         a_C.innerHTML = data.Message;
                         
                     }
                     if (data.Message == 'E-mail address Already exist.') {
                         GK = 0;
                         a.style.display = "flex";
+                        a.style.animationName = "Hide";
                         a_C.innerHTML = data.Message;
                     }
                 }
@@ -403,17 +406,20 @@ function FL_Names(){
                     if (data.Unauthorized == 'Unauthorized Access or missing data.') {
                         GK = 0;
                         a.style.display = "flex";
+                        a.style.animationName = "Hide";
                         a_C.innerHTML = data.Unauthorized;
                     }
                     if (data.Unauthorized == 'Unauthorized Access. You have to use any browser or app.') {
                         GK = 0;
                         a.style.display = "flex";
+                        a.style.animationName = "Hide";
                         a_C.innerHTML = data.Unauthorized;
                     }
                 }
                 else{
                     GK = 0;
                     a.style.display = "flex";
+                    a.style.animationName = "Hide";
                     a_C.innerHTML = "Cann't create your account please reload the page and then try again";
                 };
 
@@ -432,9 +438,10 @@ function FL_Names(){
                         Timer();
                     }
                     else{
+                        LOADING(1)
                         document.getElementById("SUB_BTN").innerHTML = `<button onclick="Submited_Clicked();" id="Submit_Button" type="button">Continue</button>`;
                     }
-                }, 4500);
+                }, 2500);
 
             })
             
@@ -443,6 +450,7 @@ function FL_Names(){
                 let a_C = document.getElementById("OTP_SENT_Y_N_CENTER");
                 a_C.innerHTML = "Unable to send data to server. Please reload the page and then try again later.";
                 a.style.display = "flex";
+                a.style.animationName = "Hide";
                 a.style.animationName = "Hide";
                 setTimeout(() => {
                     a.style.animationName = "Hidess";
@@ -469,7 +477,7 @@ Checked();
 
 
 function Timer() {
-    let Min_2_T = document.getElementsByClassName("Min_2_T")[0];
+    let Min_2_T = document.getElementById("Min_2_T");
     let min = "04";
     let sec = "59";
     let min_sec = '';
@@ -478,7 +486,7 @@ function Timer() {
         setInterval(() => {
             min_sec = min + ":" + sec;
             if(min_sec == "00:00"){
-                document.getElementsByClassName("H5_")[0].innerHTML = `Haven't got the code.<span class="Min_2_Ta">00:00</span>`;
+                document.getElementsByClassName("H5_")[0].innerHTML = `Haven't got the code.<span id="Min_2_Ta">00:00</span>`;
                 min = "04";
                 sec = "59";
             }
@@ -505,6 +513,7 @@ function Timer() {
 function Submit() {
     
     document.getElementById("OTPBTN").innerHTML = `<button class="OTP_SUBMIT" type="button">Submit</button>`;
+    
 
     let forma = document.getElementById("OTP_FORM");
     let GP = new FormData(forma);
@@ -532,95 +541,45 @@ function Submit() {
         
         // console.log('Response from server:', data);
         if(data.SUCCESS == "YES"){
+            LOADING(1);
             a.style.display = "flex";
             a_C.innerHTML = "OTP verified.";
+            a.style.animationName = "Hide";
             setTimeout(() => {
                 window.location.href = "/login";
-            }, 5000);
+            }, 1600);
         }
         else{
+            LOADING(2)
+            
             document.getElementById("OTPBTN").innerHTML = `<button class="OTP_SUBMIT" type="button" onclick="Submit()">Submit</button>`;
             a.style.display = "flex";
             a_C.innerHTML = "Invalid OTP";
+            a.style.animationName = "Hide";
         }
+        setTimeout(() => {
+            a.style.animationName = "Hidess";
+            a.style.display = "none";
+        }, 4500);
     })
     .catch(error => {
+        LOADING(2)
         let a = document.getElementById("OTP_SENT_Y_N");
         let a_C = document.getElementById("OTP_SENT_Y_N_CENTER");
+        a.style.animationName = "Hide";
         a.style.display = "flex";
         a_C.innerHTML = "OTP not verified.";
         document.getElementById("OTPBTN").innerHTML = `<button class="OTP_SUBMIT" type="button" onclick="Submit()">Submit</button>`;
+        setTimeout(() => {
+            a.style.animationName = "Hidess";
+            a.style.display = "none";
+        }, 4500);
         
     });
 
 
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-function Resend() {
-    let Min_2_Ta = document.getElementsByClassName("Min_2_Ta")[0];
-
-    if(Min_2_Ta.innerHTML = "00:00"){
-
-        
-        fetch('/signup/otp/verification', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                resend: 'Yes'
-            }),
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Response from server:', data);
-            if(data.Login){
-                console.log("Login successfull");
-            }
-        })
-        .catch(error => {
-            console.log('Error sending data:', error);
-        });
-    }
-
-
-
-
-
-
-    else{
-
-    }
-}
-    
-    
-    
-    
-    
-    
-
-
-
-
-
-
-
-
-
-
-
 
 
 function LOADING(s) {
@@ -646,20 +605,114 @@ function LOADING(s) {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 function Cancel() {
+    document.getElementById("BTNSS").innerHTML = `<button type="button" class="OTP_SUBMIT_D">Resend</button><button type="button" class="OTP_SUBMIT_D">Cancel</button>`;
+    fetch('/signup', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            Cancel: 'Yes'
+        })
+    })
+    .then(response => {
+        return response.json();
+    }
+    ).then(data => {
+        if(data.cancel == "OK"){
+            window.location.href = "/signup";
+        }
+    })
+    .catch(error =>{
+        console.log("Error")
+    });
+};
 
-    
+function RT() {
+    let a = `<button type="button" onclick="Resend();" class="OTP_SUBMIT_D">Resend</button><button type="button" onclick="Cancel();" class="OTP_SUBMIT_D">Cancel</button>`;
+    let b = `<button type="button" class="OTP_SUBMIT_D">Resend</button><button type="button" onclick="Cancel();" class="OTP_SUBMIT_D">Cancel</button>`;
+    let Q = document.getElementsByClassName("BTNSS")[0];
+    let J = document.getElementsByClassName("OTP_INPUT")[0].value;
+    if(J == 6){
+        Q.innerHTML = a;
+    }else{
+        Q.innerHTML = b;
+    }
+}
+
+RT();
+
+function Resend() {
+    if(document.getElementById("Min_2_Ta")){
+        if(document.getElementById("Min_2_Ta").innerHTML == "00:00"){
+            document.getElementById("BTNSS").innerHTML = `<button type="button" class="OTP_SUBMIT_D">Resend</button><button type="button" onclick="Cancel();" class="OTP_SUBMIT_D">Cancel</button>`;
+            // document.getElementById("BTNSS").innerHTML = `<button type="button" onclick="Resend();" class="OTP_SUBMIT_D">Resend</button><button type="button" onclick="Cancel();" class="OTP_SUBMIT_D">Cancel</button>`;
+            // Timer set 
+                        
+
+            
+            fetch('/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    resend: 'Yes'
+                }),
+            })
+            .then(response => {
+                return response.json()
+            })
+            .then(data => {
+                console.log('Response from server:', data);
+                if(data.RESEND == "Yes"){
+                    let a = document.getElementById("OTP_SENT_Y_N");
+                    let a_C = document.getElementById("OTP_SENT_Y_N_CENTER");
+                    a.style.display = "flex";
+                    a.style.animationName = "Hide";
+                    a_C.innerHTML = "OTP sent successfully.";
+                    document.getElementById("BTNSS").innerHTML = `<button type="button" onclick="Resend();" class="OTP_SUBMIT_D">Resend</button><button type="button" onclick="Cancel();" class="OTP_SUBMIT_D">Cancel</button>`;
+                    document.getElementsByClassName("H5_")[0].innerHTML = `Haven't got the code.<span id="Min_2_T">00:00</span>`;
+                    Timer();
+                }
+                else {
+                    let a = document.getElementById("OTP_SENT_Y_N");
+                    let a_C = document.getElementById("OTP_SENT_Y_N_CENTER");
+                    document.getElementById("BTNSS").innerHTML = `<button type="button" onclick="Resend();" class="OTP_SUBMIT_D">Resend</button><button type="button" onclick="Cancel();" class="OTP_SUBMIT_D">Cancel</button>`;
+                    a.style.display = "flex";
+                    a.style.animationName = "Hide";
+                    a_C.innerHTML = "Unable to sent OTP";
+                    
+                };
+                setTimeout(() => {
+                    let a = document.getElementById("OTP_SENT_Y_N");
+                    a.style.animationName = "Hidess";
+                    a.style.display = "none";
+                }, 4000);
+            })
+            .catch(error => {
+
+                let a = document.getElementById("OTP_SENT_Y_N");
+                let a_C = document.getElementById("OTP_SENT_Y_N_CENTER");
+                a.style.display = "flex";
+                a_C.innerHTML = "Cann't connect to a server.";
+                setTimeout(() => {
+                    a.style.animationName = "Hidess";
+                    a.style.display = "none";
+                }, 4500);
+            });
+        }
+    }else{
+        let a = document.getElementById("OTP_SENT_Y_N");
+        let a_C = document.getElementById("OTP_SENT_Y_N_CENTER");
+        a.style.display = "flex";
+        a.style.animationName = "Hide";
+        a_C.innerHTML = "You can not sent otp twice within 5 minutes.";
+        setTimeout(() => {
+            a.style.animationName = "Hidess";
+            a.style.display = "none";
+        }, 4500);
+
+    }
 }

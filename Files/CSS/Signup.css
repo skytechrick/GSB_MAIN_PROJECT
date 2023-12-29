@@ -768,11 +768,11 @@ body{
     text-align: center;
 }
 
-.Min_2_T {
+#Min_2_T {
     color: black;
 }
 
-.Min_2_Ta {
+#Min_2_Ta {
     color: black;
 }
 
@@ -790,7 +790,7 @@ body{
     justify-content: center;
     align-items: center;
     z-index: 100000;
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
     background-color: transparent;
@@ -881,7 +881,7 @@ body{
 #OTP_SENT_Y_N {
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
     width: 100vw;
@@ -890,7 +890,7 @@ body{
     background-color: transparent;
     animation-name: Hidea;
     animation-delay: 200ms;
-    animation-duration: 5s; /*________________________________________*/
+    animation-duration: 4s; /*________________________________________*/
     animation-fill-mode: forwards;
     display: none;
     /* display: flex; */
@@ -921,11 +921,13 @@ body{
 /* ______________________________________________________________ */
 
 
-
+#OTP_SENT_Y_N {
+    z-index: 10000000000000000000000000;
+}
 
 
 #LOADING {
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
     width: 100vw;
@@ -974,7 +976,7 @@ body{
     display: none;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
     z-index: 1000;
