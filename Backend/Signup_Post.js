@@ -218,7 +218,8 @@ async function Signup_Post(req, res) {
                                     OTP_Value: Final_OTP
                                 },
                                 Verified: "No",
-                                Profile_Id: 0
+                                Profile_Id: 0,
+                                createdAt: new Date()
                             };
                                 
                             
@@ -330,7 +331,7 @@ async function Signup_Post(req, res) {
                         // console.log(Email_Sent_Q);
                         if (Email_Sent_Q == "OTP sent successfully") {
 
-                            await Signup_Model.updateOne({Email: element.Email},{ $set:{Authentication:{OTP_Auth: Final_Auth, OTP_Value: Final_OTP}}});
+                            await Signup_Model.updateOne({Email: element.Email},{ $set:{Authentication:{OTP_Auth: Final_Auth, OTP_Value: Final_OTP}, createdAt: new Date()}});
                             
                             res.cookie("New_User", "No",{httpOnly: true, path: "/signup", expires: new Date(Date.now() + 86400000), secure: false});
                             
@@ -406,7 +407,8 @@ async function Signup_Post(req, res) {
                                 Authentication: {
                                     OTP_Auth:"_",
                                     OTP_Value:"_"
-                                }
+                                },
+                                createdAt: null
                             }
                         }); 
                         setTimeout(() => {
