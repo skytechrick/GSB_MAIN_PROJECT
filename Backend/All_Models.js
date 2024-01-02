@@ -40,8 +40,8 @@ const Signup_Schema = new mongoose.Schema({
     },
     createdAt: {
         type: Date,
-        default: new Date(),
-        expires: 600
+        // default: new Date(),
+        // expires: 600
     },
     Authentication:{
         type: Object
