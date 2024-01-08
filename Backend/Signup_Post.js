@@ -13,6 +13,8 @@ const Transporter = nodemailer.createTransport({
 });
 
 async function Signup_Post(req, res) {
+    console.log(req.body);
+    console.log(req.cookies);
     let p = req.cookies.New_User;
     let RT = req.body.Cancel;
     let s1 = req.body.First_Name;
@@ -30,49 +32,33 @@ async function Signup_Post(req, res) {
             s5 = s5.trim();
             function Set_Get_Auth(){
                 let Get_Auth = Auth_Token(32);
-                // let tID = req.cookies.Temp_ID;
-                // if(tID == undefined || tID == null || tID == ""){
                 res.cookie("Temp_ID", Get_Auth, {
                     httpOnly: true,
                     path: "/signup",
                     expires: new Date(Date.now() + 600000),
                     secure: false
                 });
-                // }
-                // else{
-                    // res.clearCookie("Temp_ID");
-                //     res.cookie("Temp_ID", Get_Auth, {
-                //         httpOnly: true,
-                //         path: "/signup",
-                //         expires: new Date(Date.now() + 600000),
-                //         secure: false
-                //     });
-                // }
                 return Get_Auth;
             };
             function VALIDATING() {
                 let JS_GET_DATA = {};
-                // _______________________________________________________________________
                 if (s1 == "" || s1 == null){
                     JS_GET_DATA["FIRST"] = "EMPTY";
                 }else{
                     JS_GET_DATA["FIRST"] = "GOT_IT";
                 };
-                // _______________________________________________________________________
                 if (s2 == "" || s2 == null){
                     JS_GET_DATA["LAST"] = "EMPTY";
                 }else{
                     JS_GET_DATA["LAST"] = "GOT_IT";
                 }
-                // _______________________________________________________________________
                 if (s3 == "" || s3 == null){
                     JS_GET_DATA["MOBILE"] = "EMPTY";
                 }
                 else if(s3.length <10 || s3.length >10){
                     JS_GET_DATA["MOBILE"] = "NUMBER_LESS_MORE";
                     
-                }
-                else{
+                }else{
                     let p = 0
                     for (let index = 0; index < s3.length; index++) {
                         const element = s3[index];
@@ -92,11 +78,9 @@ async function Signup_Post(req, res) {
                         JS_GET_DATA["MOBILE"] = "GOT_IT";
                     }
                 }
-                // _______________________________________________________________________
                 if (s4 == "" || s4 == null){
                     JS_GET_DATA["EMAIL"] = "EMPTY";
-                }
-                else{
+                }else{
                     let TT=0;
                     for (let index = 0; index < s4.length; index++) {
                         const element = s4[index];
@@ -125,32 +109,23 @@ async function Signup_Post(req, res) {
                     }
                     
                 }
-                
-                
-                // _______________________________________________________________________
-                
                 if (s5 == "" || s5 == null){
                     JS_GET_DATA["PASSWORD"] = "EMPTY";
                     
-                }
-                else if(s5.length <8){
+                }else if(s5.length <8){
                     JS_GET_DATA["PASSWORD"] = "PASSWORD_LESS";
                     
                 }else{
                     JS_GET_DATA["PASSWORD"] = "GOT_IT";
                     
                 }
-                // _______________________________________________________________________
                 return JS_GET_DATA;
             }
-            
-            //___________________________________________________________________________________________________________________
-            
+
             let VALID = VALIDATING();
             let V = "GOT_IT";
 
             if(VALID.FIRST == V && VALID.LAST == V && VALID.MOBILE == V && VALID.EMAIL == V && VALID.PASSWORD == V) {
-                        
                 let elem = {};
                 let SW = 4;
                 let DD = await Signup_Model.find({});
@@ -329,22 +304,17 @@ async function Signup_Post(req, res) {
                         }else{
                             Email_Sent_Q = "Unable to send OTP. Please try again after some time.";
                         };
-                        // console.log(Email_Sent_Q);
                         if (Email_Sent_Q == "OTP sent successfully") {
-
                             await Signup_Model.updateOne({Email: element.Email},{ $set:{Authentication:{OTP_Auth: Final_Auth, OTP_Value: Final_OTP}, }});
                             // await Signup_Model.updateOne({Email: element.Email},{ $set:{Authentication:{OTP_Auth: Final_Auth, OTP_Value: Final_OTP}, createdAt: new Date()}});
-                            
                             res.cookie("New_User", "No",{httpOnly: true, path: "/signup", expires: new Date(Date.now() + 86400000), secure: false});
-                            
                             res.cookie("Temp_Em", element.Email, {httpOnly: true, path: "/signup", expires: new Date(Date.now() + 600000), secure: false});
-                            
                             res.json({RESEND: "Yes"});
                                 
                             
                             
                         
-                            // Why my data is deleted automatically after some time... Actually I want it but it doesn't work on time so I removed it, but now after removing all the lines and commenting it still it going wrong. this is my code
+                            
                         
                         
                         }
