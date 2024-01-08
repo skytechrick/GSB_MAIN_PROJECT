@@ -24,7 +24,6 @@ const Signup_Schema = new mongoose.Schema({
     },
     Mobile_Number:{
         type: Number
-        // expires: 10
     },
     Email:{
         type: String
@@ -37,13 +36,6 @@ const Signup_Schema = new mongoose.Schema({
     },
     Created_Account: {
         type: Date,
-    },
-    createdAt: {
-        type: Date,
-        // default: new Date(),
-        // expires: 600
-        // sws 
-        
     },
     Authentication:{
         type: Object

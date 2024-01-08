@@ -30,24 +30,24 @@ async function Signup_Post(req, res) {
             s5 = s5.trim();
             function Set_Get_Auth(){
                 let Get_Auth = Auth_Token(32);
-                let tID = req.cookies.Temp_ID;
-                if(tID == undefined || tID == null || tID == ""){
-                    res.cookie("Temp_ID", Get_Auth, {
-                        httpOnly: true,
-                        path: "/signup",
-                        expires: new Date(Date.now() + 600000),
-                        secure: false
-                    });
-                }
-                else{
-                    res.clearCookie("Temp_ID");
-                    res.cookie("Temp_ID", Get_Auth, {
-                        httpOnly: true,
-                        path: "/signup",
-                        expires: new Date(Date.now() + 600000),
-                        secure: false
-                    });
-                }
+                // let tID = req.cookies.Temp_ID;
+                // if(tID == undefined || tID == null || tID == ""){
+                res.cookie("Temp_ID", Get_Auth, {
+                    httpOnly: true,
+                    path: "/signup",
+                    expires: new Date(Date.now() + 600000),
+                    secure: false
+                });
+                // }
+                // else{
+                    // res.clearCookie("Temp_ID");
+                //     res.cookie("Temp_ID", Get_Auth, {
+                //         httpOnly: true,
+                //         path: "/signup",
+                //         expires: new Date(Date.now() + 600000),
+                //         secure: false
+                //     });
+                // }
                 return Get_Auth;
             };
             function VALIDATING() {
@@ -219,7 +219,7 @@ async function Signup_Post(req, res) {
                                 },
                                 Verified: "No",
                                 Profile_Id: 0,
-                                createdAt: new Date()
+                                // createdAt: new Date()
                             };
                                 
                             
@@ -227,6 +227,7 @@ async function Signup_Post(req, res) {
                             
                             
                             res.cookie("New_User", "No",{httpOnly: true, path: "/signup", expires: new Date(Date.now() + 86400000), secure: false});
+                            // res.cookie("New_User", "No",{httpOnly: true, path: "/signup", expires: new Date(Date.now() + 86400000), secure: false});
                             let OTP_Mail = Signup_Details.Email;
                             
                             let New_User_Signup = new Signup_Model(Signup_Details);
@@ -271,37 +272,37 @@ async function Signup_Post(req, res) {
         for (let i = 0; i < Dta.length; i++) {
             element = Dta[i];
             if (element.Email == c) {
-                BF = 0;
+                BF = 4;
                 break;                
             }
             else{
                 BF = 1;
             }
         }
-        if (BF == 0) {
+        if (BF == 4) {
             if(resend1){
                 if(resend1 == "Yes"){
 
                     function Set_Get_Auth(){
                         let Get_Auth = Auth_Token(32);
                         let tID = req.cookies.Temp_ID;
-                        if(tID == undefined || tID == null || tID == ""){
-                            res.cookie("Temp_ID", Get_Auth, {
-                                httpOnly: true,
-                                path: "/signup",
-                                expires: new Date(Date.now() + 600000),
-                                secure: false
-                            });
-                        }
-                        else{
-                            res.clearCookie("Temp_ID");
-                            res.cookie("Temp_ID", Get_Auth, {
-                                httpOnly: true,
-                                path: "/signup",
-                                expires: new Date(Date.now() + 600000),
-                                secure: false
-                            });
-                        }
+                        // if(tID == undefined || tID == null || tID == ""){
+                        res.cookie("Temp_ID", Get_Auth, {
+                            httpOnly: true,
+                            path: "/signup",
+                            expires: new Date(Date.now() + 600000),
+                            secure: false
+                        });
+                        // }
+                        // else{
+                        //     res.clearCookie("Temp_ID");
+                        //     res.cookie("Temp_ID", Get_Auth, {
+                        //         httpOnly: true,
+                        //         path: "/signup",
+                        //         expires: new Date(Date.now() + 600000),
+                        //         secure: false
+                        //     });
+                        // }
                         return Get_Auth;
                     };
 
@@ -331,7 +332,8 @@ async function Signup_Post(req, res) {
                         // console.log(Email_Sent_Q);
                         if (Email_Sent_Q == "OTP sent successfully") {
 
-                            await Signup_Model.updateOne({Email: element.Email},{ $set:{Authentication:{OTP_Auth: Final_Auth, OTP_Value: Final_OTP}, createdAt: new Date()}});
+                            await Signup_Model.updateOne({Email: element.Email},{ $set:{Authentication:{OTP_Auth: Final_Auth, OTP_Value: Final_OTP}, }});
+                            // await Signup_Model.updateOne({Email: element.Email},{ $set:{Authentication:{OTP_Auth: Final_Auth, OTP_Value: Final_OTP}, createdAt: new Date()}});
                             
                             res.cookie("New_User", "No",{httpOnly: true, path: "/signup", expires: new Date(Date.now() + 86400000), secure: false});
                             
@@ -342,7 +344,7 @@ async function Signup_Post(req, res) {
                             
                             
                         
-                            
+                            // Why my data is deleted automatically after some time... Actually I want it but it doesn't work on time so I removed it, but now after removing all the lines and commenting it still it going wrong. this is my code
                         
                         
                         }
@@ -408,7 +410,7 @@ async function Signup_Post(req, res) {
                                     OTP_Auth:"_",
                                     OTP_Value:"_"
                                 },
-                                createdAt: null
+                                // : null
                             }
                         }); 
                         setTimeout(() => {
@@ -426,7 +428,7 @@ async function Signup_Post(req, res) {
             }else if(RT){
                 // conso
                 if(RT=="Yes"){
-                    let R = req.cookies.Temp_Em
+                    let R = req.cookies.Temp_Em;
                     // let T = req.cookies.Temp_ID
                     res.clearCookie("Temp_ID", { path: '/signup' });
                     res.clearCookie("Temp_Em", { path: '/signup' });
