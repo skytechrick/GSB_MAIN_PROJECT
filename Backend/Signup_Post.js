@@ -139,6 +139,8 @@ async function Signup_Post(req, res) {
                         SW = 4;
                     }                
                 }
+
+                // https://www.amazon.in/NICE-WONDER-Womens-Sleeve-Blouse/dp/B0B21B3TW3/ref=sr_1_2?crid=2P2HI24AIHIP7&dib=eyJ2IjoiMSJ9.BW94ThEVjPE_Va4rRRPMo3Ydb8Doxdy61O8n-C5vojXs5asPsPewH8PyYUDi6x5FnZs1prLLNRUMg04_BXlN8A.O9_7ekqaxfdSxAv7EmSBXemyVzMFKXgFED46kLZI5Lw&dib_tag=se&keywords=wool%2Bblouse&qid=1704985667&sprefix=wool%2Bblouse%2Caps%2C202&sr=8-2&th=1
                 if(SW == 1) {
                     res.json({Message:"E-mail address Already exist."});
                 }else{
