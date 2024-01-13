@@ -13,9 +13,11 @@ const Transporter = nodemailer.createTransport({
 });
 
 async function Signup_Post(req, res) {
-    console.log(req.body);
-    console.log(req.cookies);
+    // console.log(req.body);
+    // console.log(req.cookies);
     let p = req.cookies.New_User;
+
+
     let RT = req.body.Cancel;
     let s1 = req.body.First_Name;
     let s2 = req.body.Last_Name;
@@ -54,8 +56,7 @@ async function Signup_Post(req, res) {
                 }
                 if (s3 == "" || s3 == null){
                     JS_GET_DATA["MOBILE"] = "EMPTY";
-                }
-                else if(s3.length <10 || s3.length >10){
+                }else if(s3.length <10 || s3.length >10){
                     JS_GET_DATA["MOBILE"] = "NUMBER_LESS_MORE";
                     
                 }else{
@@ -73,8 +74,7 @@ async function Signup_Post(req, res) {
                     if (p==1){
                         p=0;
                         JS_GET_DATA["MOBILE"] = "NO_VALID_NUMBER";
-                    }
-                    else{
+                    }else{
                         JS_GET_DATA["MOBILE"] = "GOT_IT";
                     }
                 }
@@ -219,21 +219,17 @@ async function Signup_Post(req, res) {
                             
                         
                         
-                        }
-
-                        else{
+                        }else{
                             // console.log("155555")
                             res.json({Message: "Unable to send OTP. Please try again after some time."})
                         }
-                    }, 4800);
+                    }, 4000);
                 }
             }
             else{
                 res.json(VALID);
             }
-        }
-        
-        else {
+        }else {
             res.status(401).json({Unauthorized:"Unauthorized Access or missing data."});
         }
     
@@ -263,23 +259,12 @@ async function Signup_Post(req, res) {
                     function Set_Get_Auth(){
                         let Get_Auth = Auth_Token(32);
                         let tID = req.cookies.Temp_ID;
-                        // if(tID == undefined || tID == null || tID == ""){
                         res.cookie("Temp_ID", Get_Auth, {
                             httpOnly: true,
                             path: "/signup",
                             expires: new Date(Date.now() + 600000),
                             secure: false
                         });
-                        // }
-                        // else{
-                        //     res.clearCookie("Temp_ID");
-                        //     res.cookie("Temp_ID", Get_Auth, {
-                        //         httpOnly: true,
-                        //         path: "/signup",
-                        //         expires: new Date(Date.now() + 600000),
-                        //         secure: false
-                        //     });
-                        // }
                         return Get_Auth;
                     };
 
@@ -312,45 +297,12 @@ async function Signup_Post(req, res) {
                             res.cookie("New_User", "No",{httpOnly: true, path: "/signup", expires: new Date(Date.now() + 86400000), secure: false});
                             res.cookie("Temp_Em", element.Email, {httpOnly: true, path: "/signup", expires: new Date(Date.now() + 600000), secure: false});
                             res.json({RESEND: "Yes"});
-                                
-                            
-                            
-                        
-                            
-                        
-                        
-                        }
-
-                        else{
-                            // console.log("155555")
+                        }else{
                             res.json({RESEND: "Unable to send OTP. Please try again after some time."})
                         }
-                    }, 4200);
-                    
-
-
-
-                   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                }
-                else{
+                    }, 4000);
+                }else{
                     res.json({RESEND_: "NO"});
-
                 }
                 
                  
@@ -387,7 +339,7 @@ async function Signup_Post(req, res) {
                         }); 
                         setTimeout(() => {
                             res.json({ SUCCESS:"YES" });
-                        }, 1000);
+                        }, 10);
                     } 
                     else{
                         res.json({SUCCESS: "NO"});
@@ -417,10 +369,8 @@ async function Signup_Post(req, res) {
         else{
             res.json({SUCCESS: "NO"});
         }
-    }
-    else {
+    }else {
         res.status(401).json({Unauthorized: "Unauthorized Access. You have to use any browser or app."});
     }
 }
-
 module.exports = Signup_Post;

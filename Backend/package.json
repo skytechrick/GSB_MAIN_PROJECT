@@ -4,7 +4,7 @@
   "description": "Online shopping platform for local products",
   "main": "app.js",
   "scripts": {
-    "test": "Backend"
+    "server": "supervisor --trace-deprecation ./app.js"
   },
   "keywords": [
     "GET_SKY_BUY",
@@ -17,15 +17,15 @@
   "author": "GET-SKY-BUY",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.20.2",
-    "cookie-parser": "^1.4.6",
-    "express": "^4.18.2",
-    "fs": "^0.0.1-security",
-    "mongoose": "^8.0.3",
-    "multer": "^1.4.5-lts.1",
-    "nodemailer": "^6.9.7",
-    "nodemon": "^3.0.2",
-    "path": "^0.12.7",
-    "pug": "^3.0.2"
+    "body-parser": "~1.20.2",
+    "cookie-parser": "~1.4.6",
+    "express": "~4.18.2",
+    "fs": "~0.0.1-security",
+    "mongoose": "~8.0.3",
+    "multer": "~1.4.5-lts.1",
+    "nodemailer": "~6.9.7",
+    "path": "~0.12.7",
+    "pug": "~3.0.2",
+    "supervisor": "^0.12.0"
   }
 }
