@@ -3,6 +3,7 @@ const {Signup_Model} = require("./All_Models.js");
 const Profile_ID = require("./Profile_ID.js");
 const nodemailer = require("nodemailer");
 const GET_OTP = require("./OTP_Generator.js");
+const Pass_Hash = require("./Password_Hashing");
 
 const Transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -24,7 +25,6 @@ async function Signup_Post(req, res) {
     let s3 = req.body.Mobile_Number;
     let s4 = req.body.Email;
     let s5 = req.body.Confirm_Password;
-
     if(p == "Yes"){
         if(s5 || s1 || s2 || s3 || s4){
             s1 = s1.trim();
@@ -32,6 +32,7 @@ async function Signup_Post(req, res) {
             s3 = s3.trim();
             s4 = s4.trim();
             s5 = s5.trim();
+            s5 = Pass_Hash(s5, s4);
             function Set_Get_Auth(){
                 let Get_Auth = Auth_Token(32);
                 res.cookie("Temp_ID", Get_Auth, {
@@ -150,7 +151,12 @@ async function Signup_Post(req, res) {
                     let A = 0;
                     let Final_OTP =  GET_OTP();
 
-                    const Mail_Option = { from: 'GET SKY BUY <getskybuy@gmail.com>', to: s4, subject: 'GET-SKY-BUY | Email verification | OTP', html: `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>One-Time Password</title><style>body {font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f4f4f4;}.container { width: 100%; max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);}h1 { border-bottom: 1px solid #aaa; } h2 { color: #333333; } p { color: #666666; } .otp { font-size: 26px; color: #4CAF50; margin: 20px 0; text-align: center; } .footer { margin-top: 20px; text-align: center; color: #999999; } .footer p { margin: 0px; } .footer p:nth-child(1) { margin-bottom: 10px; } .Links { font-size: 14px; }.Links span{ font-weight: bold; } .Links a{ font-weight: bold; color: rgb(0, 185, 0);}</style></head><body dir="ltr"><div class="container"><h1>GET SKY BUY | Email Verfication - Creating GSB account.</h1><h2>Your OTP for creating GSB account is here.</h2><p>If you haven't created a <strong>GSB account</strong>, please refrain from sharing this email or <strong>OTP</strong> with anyone, and kindly disregard it..</p><p>Your <strong>One Time Password</strong> is:</p><p title="OTP" class="otp"><span>${Final_OTP}</span></p><p>This password is valid for <strong>5 minutes</strong>. Do not share it with others.</p><div title="GET-SKY-BUY" class="Links"><span>Official Website: </span><a href="https://www.getskybuy.com">GET SKY BUY</a></div><hr><div class="footer"><p>Thank you for using our service!</p><p title="Team GSB">Team GSB!</p></div></div></body></html>`};
+                    const Mail_Option = {
+                        from: 'GET SKY BUY <getskybuy@gmail.com>',
+                        to: s4,
+                        subject: 'GET-SKY-BUY | Email verification | OTP', 
+                        html: `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>One-Time Password</title><style>body {font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f4f4f4;}.container { width: 100%; max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);}h1 { border-bottom: 1px solid #aaa; } h2 { color: #333333; } p { color: #666666; } .otp { font-size: 26px; color: #4CAF50; margin: 20px 0; text-align: center; } .footer { margin-top: 20px; text-align: center; color: #999999; } .footer p { margin: 0px; } .footer p:nth-child(1) { margin-bottom: 10px; } .Links { font-size: 14px; }.Links span{ font-weight: bold; } .Links a{ font-weight: bold; color: rgb(0, 185, 0);}</style></head><body dir="ltr"><div class="container"><h1>GET SKY BUY | Email Verfication - Creating GSB account.</h1><h2>Your OTP for creating GSB account is here.</h2><p>If you haven't created a <strong>GSB account</strong>, please refrain from sharing this email or <strong>OTP</strong> with anyone, and kindly disregard it..</p><p>Your <strong>One Time Password</strong> is:</p><p title="OTP" class="otp"><span>${Final_OTP}</span></p><p>This password is valid for <strong>5 minutes</strong>. Do not share it with others.</p><div title="GET-SKY-BUY" class="Links"><span>Official Website: </span><a href="https://www.getskybuy.com">GET SKY BUY</a></div><hr><div class="footer"><p>Thank you for using our service!</p><p title="Team GSB">Team GSB!</p></div></div></body></html>`
+                    };
 
                     Transporter.sendMail(Mail_Option, (error, info) => {
                         if (error) {

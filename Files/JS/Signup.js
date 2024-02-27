@@ -202,6 +202,10 @@ function FL_Names(){
                     break
                 }
             }
+            if(element == " " || element == ","){
+                TT=12121;
+                break;
+            }
         }
         if(TT==2){
             document.getElementById('Email_P').innerHTML = "Email address (example@gmail.com)";

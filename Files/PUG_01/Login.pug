@@ -30,14 +30,15 @@
             <img src="/files/img/Login_BackGround1.jpg" alt="No_Img">
         </div>
         <div id="Login_Side">
-            <div id="heading">GET-SKY-BUY</div>
+            <div id="heading">GET SKY BUY</div>
             <div id="As_Login">Login</div>
-            <form action="/login_user_login_account/gsb" method="post">
+            <form method="post">
                 <p id="Welcome">Welcome to our online shopping site</p>
-                <div id="Selection">
-                    <label id="Email_Label" for="Email">Email</label>
-                    <label id="Mobile_Label" for="Mobile_Number">Mobile</label>
-                </div>
+                <!-- <div id="Selection"> -->
+                    <!-- <p>Welcome back, please login using your credentials.</p> -->
+                    <!-- <label id="Email_Label" for="Email">Email</label> -->
+                    <!-- <label id="Mobile_Label" for="Mobile_Number">Mobile</label> -->
+                <!-- </div> -->
 
                 <!-- <div id="Email_Top">Email:</div> -->
 
@@ -45,14 +46,18 @@
                     <span class="material-symbols-outlined" id="Span_Person">person</span>
                     <input title="Email" type="text" id="Email" name="Email" placeholder="Email" autocomplete="off" spellcheck="false" autofocus>
                 </div>
+
                 <p id="User_Login_P">Enter your Email address</p>
+
                 <div id="User_Password">
                     <span class="material-symbols-outlined" id="Span_Password">lock</span>
                     <input title="Password" type="password" id="Password" name="Password" placeholder="Password" autocomplete="off" spellcheck="false">
                 </div>
                 <p id="User_Password_P">Enter your password</p>
-
-                <button id="Submit_Button" title="Login" type="submit">Login</button>
+                <div id="Check_Div">
+                    <input type="checkbox" id="Checkk_p"><label for="Checkk_p">Show Password</label>
+                </div>
+                <button id="Submit_Button" title="Login" onclick="Submit_S();" type="button">Login</button>
                 <a id="forgot_passowrd" href="/forgot_passowrd">Forgot password?</a>
                 <div id="OR">or</div>
                 <a href="/signup" id="Donothaveaaccount">Don't have a account?</a>
@@ -60,6 +65,6 @@
             </form>
         </div>
     </div>
-    
+    <script src="/files/js/Login.js"></script>
 </body>
 </html>

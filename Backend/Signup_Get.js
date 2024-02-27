@@ -1,4 +1,3 @@
-const Pass_Hash = require("./Password_Hashing");
 function Signup_Get(req, res) {
     const User_Id_ = req.cookies.User_Id_;
     // const Temp_ID = req.cookies.Temp_ID;
@@ -22,8 +21,6 @@ function Signup_Get(req, res) {
     else{
         res.status(302).redirect("/");
     }
-    console.log(Pass_Hash('a','ricksarkar2005@gmail.com'));
-    
 }
 
 
