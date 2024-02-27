@@ -195,6 +195,12 @@ app.get("/signup", async (req, res) => {Signup_Get(req, res)});
 app.post("/signup", async (req, res) => {Signup_Post(req, res)});
 
 
+
+app.get("/", (req, res) => {
+    res.status(200).send(`<h1><a href="/signup">Signup</a></h1>`);
+});
+
+
 // ___________________________________________________________
 // ___________________________________________________________
 // ___________________________________________________________
@@ -905,5 +911,5 @@ app.get("/login", (req, res) => {
 
 app.listen(1111, () => {
     console.log("We are connected to server at port 1111");
-    console.log("Link: http://127.0.0.1:1111");
+    console.log("Link: http://192.168.0.44:1111");
 })
