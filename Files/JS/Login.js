@@ -97,26 +97,25 @@ function Submit_S() {
     }
     
     if(KL == 1){
-        let buttona = document.getElementById("Submit_Button");
-        buttona.onclick = "";
-        
+        document.getElementById("Submit_Button").onclick = "";
         let Data = {};
         Data["Email"] = Email;
         Data["Password"] = Password.trim();
         console.log(Data);
         KL = 12121;
 
-    }else if(KL != 1){
-        let buttona = document.getElementById("Submit_Button");
-        buttona.onclick = "Submit_S();";
-    }
-    
-    
-    
-    
-    
-    // if all satisfies
-    
-    
 
+        fetch(){
+
+        }.then(){
+
+        }.then(){
+
+        }.catch(){
+
+        }
+    }else if(KL != 1){
+        // document.getElementById("Submit_Button").onclick = "Submit_S();";
+        console.log("Y1");
+    }
 }
