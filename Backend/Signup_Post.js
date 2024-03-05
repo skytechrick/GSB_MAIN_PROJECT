@@ -25,6 +25,13 @@ async function Signup_Post(req, res) {
     let s3 = req.body.Mobile_Number;
     let s4 = req.body.Email;
     let s5 = req.body.Confirm_Password;
+    // let a = res.cookies.User_Id_;
+    // if (a) {
+
+        // res.status(200).redirect("/");        
+    // }
+
+
     if(p == "Yes"){
         if(s5 || s1 || s2 || s3 || s4){
             s1 = s1.trim();
@@ -98,7 +105,7 @@ async function Signup_Post(req, res) {
                             if(element==="."){
                                 TT = 2
                                 break;
-                            }
+                             }
                         }
                     }
                     if(TT==2){
@@ -106,7 +113,7 @@ async function Signup_Post(req, res) {
                     }
                     else{
                         JS_GET_DATA["EMAIL"] = "NOT_VALID_MAIL";
-                        
+                       
                     }
                     
                 }

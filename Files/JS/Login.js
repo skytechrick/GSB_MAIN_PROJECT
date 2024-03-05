@@ -101,19 +101,35 @@ function Submit_S() {
         let Data = {};
         Data["Email"] = Email;
         Data["Password"] = Password.trim();
+        Data["TP"] = "Yes";
         console.log(Data);
         KL = 12121;
 
 
-        fetch(){
+        fetch("/login",{
+            method:"POST",
+            headers:{
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(Data),
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+              }
+            return response.json();
+            
+        })
+        
+        .then(data => {
+            console.log("Data...:");
+            console.log(data);
+        })
+        .catch(error => {
+            console.log('Problem...:');
+        })
 
-        }.then(){
-
-        }.then(){
-
-        }.catch(){
-
-        }
+        
     }else if(KL != 1){
         // document.getElementById("Submit_Button").onclick = "Submit_S();";
         console.log("Y1");

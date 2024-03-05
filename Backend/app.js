@@ -8,6 +8,9 @@ const cookieParser = require('cookie-parser');
 const Signup_Post = require("./Signup_Post");
 const Signup_Get = require("./Signup_Get");
 // _______________________________________________________________________________________________________
+const {Login_Post} = require("./Login_Post.js");
+const Login_Get = require("./Login_Get.js");
+// _______________________________________________________________________________________________________
 
 
 app.set("view engine", "pug");
@@ -36,28 +39,6 @@ const storage = multer.diskStorage({
 });
 
 const Photo_Upload = multer({ storage: storage });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // const PRO_DAT = new mongoose.Schema({
@@ -182,10 +163,6 @@ const Photo_Upload = multer({ storage: storage });
 
 
 
-
-
-
-
 // ___________________________________________________________
 // ___________________________________________________________
 // ___________________________________________________________
@@ -201,210 +178,14 @@ app.get("/", (req, res) => {
 });
 
 
+app.get("/login", async (req, res) => {Login_Get(req, res)});
+app.post("/login", async (req, res) => {Login_Post(req, res)});
+
+
 // ___________________________________________________________
 // ___________________________________________________________
 // ___________________________________________________________
 // ___________________________________________________________
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // app.get("/", async (req, res) => {
@@ -420,53 +201,15 @@ app.get("/", (req, res) => {
 // app.get("/seller_login", (req, res) => {
 //     res.status(200).render("Seller_Login");
 // });
-app.get("/login", (req, res) => {
-    res.status(200).render("Login");
-});
+
 // app.get("/seller_profile", (req, res) => {
 //     res.status(200).render("Seller_Profile");
 // });
-
-
-
-
 
 // app.get("/seller_add_product", (req, res) => {
 //     res.status(200).render("Seller_Add_Product")
 
 // })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // app.post("/seller_add_product",
 //     Photo_Upload.fields([
@@ -552,89 +295,7 @@ app.get("/login", (req, res) => {
 //         res.status(200).send("Product added successfully...");
 //     });
     
-    
 // })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // app.get("/product/:product_url", async (req, res) => {
 //     let req_url = req.params.product_url;
@@ -687,14 +348,8 @@ app.get("/login", (req, res) => {
 // })
 
 
-
 // // /product/XvfuEmHqU1iImuLRiGxI0LhAi
 // // http://127.0.0.1:1111/product/XvfuEmHqU1iImuLRiGxI0LhAi
-
-
-
-
-
 
 // app.get("/s", (req, res) => {
 //     // const newFolderPath = `Product_Images`;
@@ -708,208 +363,13 @@ app.get("/login", (req, res) => {
 //     });
 // });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // app.get("/product_page", (req, res) => {
 //     res.status(200).render("Product_Page",{
 //         Title:"This is Rick"
 //     });
 // });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-app.listen(1111, () => {
-    console.log("We are connected to server at port 1111");
-    console.log("Link: http://192.168.0.44:1111");
-})
+app.listen(80, () => {
+    console.log("We are connected to server at port 80");
+    console.log("Link: http://192.168.0.44/signup");
+});
