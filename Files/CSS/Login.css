@@ -50,6 +50,7 @@ body {
     /* border: 1px solid #aaa; */
     padding: 10px;
     margin-top: 22px;
+    margin-bottom: 0;
     font-family: Roboto, Arial, sans-serif;
 
 }
@@ -60,6 +61,9 @@ body {
     font-size: 16px;
     font-family: Roboto, Arial, sans-serif;
     text-align: center;
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
 
 }
 
@@ -243,7 +247,7 @@ input {
 
 #forgot_passowrd {
     display: block;
-    font-size: 14px;
+    font-size: 12.5px;
     margin: 0px 15px;
     text-align: right;
 }
@@ -334,4 +338,394 @@ body{
 
 button{
     cursor: pointer;
+}
+
+.Dwn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #d6d6d6;
+    z-index: 1000000;
+    opacity: 0.6;
+}
+
+
+#LOADING_ICON {
+    display: flex;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1000;
+    width: 100vw;
+    height: 100vh;
+    background-color: #aaaaaa3b;
+}
+
+#LOADING_ICON_CENTER {
+    width: 50px;    
+}
+#LOADING_ICON_CENTER img {
+    width: 50px;
+}
+
+
+
+@keyframes Loading {
+    0% {
+        width: 0px;
+    }
+    85% {
+        width: 75%;
+    } 
+    90% {
+        width: 75%;
+    } 
+    99% {
+        width: 100%;
+    }
+    100% {
+        width: 0%;
+    }
+}
+
+
+
+#LOADING {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 2px;
+    z-index: 100000000;
+    display: none; 
+
+}
+
+#LOADING_SPAN {
+    width: 100%;
+    height: 4px;
+    opacity: 0.5;
+    background-color: #ff4be7;
+    animation-name: Loadding;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-delay: 100ms;
+    animation-fill-mode: forwards;
+}
+
+
+
+
+input{
+    outline: none;
+    padding: 10px;
+    font-size: 13px;
+    border: 1px solid var(--Outline-Color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .container{
+    display: none;
+} */
+
+
+
+
+#OTP_SENT_Y_N {
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.9;
+    background-color: transparent;
+    animation-name: Hidea;
+    animation-delay: 200ms;
+    z-index: 10000000000000000000000000;
+    animation-duration: 3.2s; /*________________________________________*/
+    animation-fill-mode: forwards;
+    display: none;
+    /* display: flex; */
+}
+
+
+
+
+@keyframes Hide {
+    0%{
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }    
+    100%{
+        opacity: 0;
+        display: none;
+    }
+}
+
+
+
+#OTP_SENT_Y_N_CENTER {
+    padding: 10px 20px;
+    color: white;
+    user-select: none;
+    background-color: rgb(75, 75, 75);
+    /* border-radius: 10px; */
+    border: 1px solid #aaa;
+    font-family: sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+#OTP_Container {
+    font-family: Roboto, Arial, sans-serif;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    /* display: flex; */
+}
+
+
+
+
+
+
+
+
+
+.Center_OTP {
+    box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.2);
+    border: 1px solid #aaa;
+    width: 270px;
+    height: 270px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Center_OTP_C {
+    width: 230px;
+    height: 230px;
+    background-color: white;
+
+}
+
+.H3_OTP {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+
+}
+
+.Center_OTP_C p {
+    font-size: 15px;
+}
+
+
+#OTP_FORM {
+    /* border: 1px solid red; */
+    height: 126px;
+    width: 100%;
+}
+
+
+
+
+
+.OTP_INPUT {
+    display: block;
+    border: 1px solid #aaa;
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+.OTP_SUBMIT {
+    width: 191px;
+    padding: 8px;
+    background-color: #ff3bf5;
+    color: white;
+    outline: none;
+    border: 0px solid #aaa;
+    margin: auto;
+    display: block;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.OTP_SUBMIT:hover {
+    background-color: #ff29f4;
+}
+
+.OTP_SUBMIT:active {
+    background-color: #ff64f7;
+}
+
+#OTP_Para {
+    margin: 0px;
+    font-size: 13px;
+    color: red;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 5px;
+    padding: 0px;
+    display: none;
+
+}
+
+#BTNSS {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.OTP_SUBMIT_D {
+    width: 100px;
+    padding: 10px;
+    background-color: #ff3bf5;
+    color: white;
+    outline: none;
+    border: 0px solid #aaa;
+    /* margin: auto; */
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+
+.OTP_SUBMIT_D:hover {
+    background-color: #ff11f3;
+    
+}
+.OTP_SUBMIT_D:nth-child(2) {
+    background-color: white;
+    border: 1px solid #ff11f3;
+    color: black;
+}
+
+.OTP_SUBMIT_D:nth-child(2):hover {
+    background-color: #ffe8fe;
+}
+
+.OTP_SUBMIT_D:nth-child(2):active {
+    background-color: #ffa1fa;
+}
+
+.OTP_SUBMIT_D:active {
+    background-color: #fd6af6;
+
+    
+}
+
+.H5_ {
+    margin: 0px;
+    padding: 0px;
+    margin-top: 5px;
+    font-weight: 300;
+    color: #424242;
+
+    text-align: center;
+}
+
+#Min_2_T {
+    color: black;
+}
+
+#Min_2_Ta {
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+#KK {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100000;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: transparent;
+    display: none;
+
+}
+
+#Small {
+    padding: 10px 30px;
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    font-size: 14px;
+
 }

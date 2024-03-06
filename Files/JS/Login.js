@@ -122,6 +122,120 @@ function Submit_S() {
         })
         
         .then(data => {
+            if(data.Message){
+                if(data.Message == "Wrong Password"){
+                    // console.log("Wrong...:");
+                    document.getElementById("OTP_SENT_Y_N_CENTER").innerHTML = "Wrong password, try again."
+                    document.getElementById("OTP_SENT_Y_N").style.display = "flex";
+                    document.getElementById("OTP_SENT_Y_N").style.animationName = "Hide";
+                    
+                    setTimeout(() => {
+                        
+                        document.getElementById("OTP_SENT_Y_N").style.animationName = "Hideaa";
+                        document.getElementById("OTP_SENT_Y_N").style.display = "none";
+                        document.getElementById("Submit_Button_DIV").innerHTML = `<button id="Submit_Button" title="Login" onclick="Submit_S();" type="button">Login</button>`;
+                        document.getElementById("Password").value = "";
+                    }, 3200);
+
+
+                }
+                else if(data.Message == "Login Successful."){
+                    document.getElementById("LOADING_ICON").style.display = "flex";
+                    document.getElementById("LOADING").style.display = "block";
+                    document.getElementById("LOADING_SPAN").style.animationName = "Loading";
+                    
+                    
+                    document.getElementById("Submit_Button").style.backgroundColor = "#1bdf00";
+                    document.getElementById("Submit_Button").style.borderColor = "#3a7800";
+                    document.getElementById("Submit_Button").style.transitionDuration = "0.5s";
+                    document.getElementById("Submit_Button").innerHTML = "Login Successfully.";
+                    document.getElementById("Submit_Button").onclick = "";
+                    setTimeout(() => {
+                        document.getElementById("LOADING_ICON").style.display = "none";
+                        document.getElementById("Submit_Button").style.backgroundColor = "#ff3af5";
+                        document.getElementById("Submit_Button").style.borderColor = "#be007f";
+                        document.getElementById("Submit_Button").innerHTML = "Login";
+                        document.getElementById("Submit_Button").onclick = "";
+                        setTimeout(() => {
+                            window.location.href = "http://192.168.0.44";
+                            
+                        }, 800);
+                        
+                    }, 2000);
+                }
+                else if(data.Message == "You don't have account."){
+                    document.getElementById("OTP_SENT_Y_N_CENTER").innerHTML = data.Message + `<br>Redirecting you in 3 seconds`;
+                    document.getElementById("OTP_SENT_Y_N").style.display = "flex";
+                    document.getElementById("OTP_SENT_Y_N").style.animationName = "Hide";
+                    
+                    setTimeout(() => {
+                        
+                        document.getElementById("OTP_SENT_Y_N").style.animationName = "Hideaa";
+                        document.getElementById("OTP_SENT_Y_N").style.display = "none";
+                        document.getElementById("Submit_Button_DIV").innerHTML = `<button id="Submit_Button" title="Login" type="button">Login</button>`;
+                        document.getElementById("Password").value = "";
+                        window.location.href = "http://192.168.0.44/signup/";
+                        
+                    }, 3200);
+
+                }
+                else if(data.Message == "Unable to send OTP. Please try again after some time."){
+                    document.getElementById("OTP_SENT_Y_N_CENTER").innerHTML = data.Message;
+                    document.getElementById("OTP_SENT_Y_N").style.display = "flex";
+                    document.getElementById("OTP_SENT_Y_N").style.animationName = "Hide";
+                    
+                    setTimeout(() => {
+                        
+                        
+                        document.getElementById("OTP_SENT_Y_N").style.animationName = "Hideaa";
+                        document.getElementById("OTP_SENT_Y_N").style.display = "none";
+                        document.getElementById("Submit_Button_DIV").innerHTML = `<button id="Submit_Button" title="Login" type="button">Login</button>`;
+                        document.getElementById("Password").value = "";
+                        window.location.href = "http://192.168.0.44/login/";
+
+                        
+                        
+                    }, 3200);
+                    
+                }
+                else if(data.Message == "OTP sent successfully"){
+                    document.getElementById("OTP_SENT_Y_N_CENTER").innerHTML = data.Message;
+                    document.getElementById("OTP_SENT_Y_N").style.display = "flex";
+                    document.getElementById("OTP_SENT_Y_N").style.animationName = "Hide";
+                    
+                    setTimeout(() => {
+                        
+                        
+                        document.getElementById("OTP_SENT_Y_N").style.animationName = "Hideaa";
+                        document.getElementById("OTP_SENT_Y_N").style.display = "none";
+                        document.getElementById("Submit_Button_DIV").innerHTML = `<button id="Submit_Button" title="Login" type="button">Login</button>`;
+                        document.getElementById("Password").value = "";
+                        // window.location.href = "http://192.168.0.44/login/";
+                        Timer();
+
+                        document.getElementsByClassName("container")[0].style.display = "none";
+                        document.getElementById("OTP_Container").style.display = "flex";
+    
+    
+                        
+                        
+                    }, 3200);
+
+                }
+                else{
+                    document.getElementById("OTP_SENT_Y_N_CENTER").innerHTML = data.Message;
+                    document.getElementById("OTP_SENT_Y_N").style.display = "flex";
+                    document.getElementById("OTP_SENT_Y_N").style.animationName = "Hide";
+                    
+                    setTimeout(() => {
+                        
+                        document.getElementById("OTP_SENT_Y_N").style.animationName = "Hideaa";
+                        document.getElementById("OTP_SENT_Y_N").style.display = "none";
+                        document.getElementById("Submit_Button_DIV").innerHTML = `<button id="Submit_Button" title="Login" type="button">Login</button>`;
+                        document.getElementById("Password").value = "";
+                    }, 3200);
+                }
+            }
             console.log("Data...:");
             console.log(data);
         })
@@ -134,4 +248,75 @@ function Submit_S() {
         // document.getElementById("Submit_Button").onclick = "Submit_S();";
         console.log("Y1");
     }
+}
+
+
+
+
+
+
+function Timer() {
+    let Min_2_T = document.getElementById("Min_2_T");
+    let min = "04";
+    let sec = "59";
+    let min_sec = '';
+    let a = 0;
+    let b = 0;
+        setInterval(() => {
+            min_sec = min + ":" + sec;
+            if(min_sec == "00:00"){
+                document.getElementsByClassName("H5_")[0].innerHTML = `Haven't got the code.<span id="Min_2_Ta">00:00</span>`;
+                min = "04";
+                sec = "59";
+            }
+            Min_2_T.innerHTML = min_sec;
+            a = eval(min);
+            b = eval(sec);
+            if (b==0) {
+                b = 60;
+            }
+            b = b-1;
+            if(b<10){
+                sec = "0" + String(b)            
+            }else{
+                sec = String(b)
+            }
+            if(b == 59){
+                a = a-1;
+                min = "0" + a;
+            }
+        }, 1000);        
+}
+
+function Submitt(){
+
+    let OTP = document.getElementsByClassName("OTP_INPUT")[0].value;
+    // document.getElementById("").value;
+    let a = {
+        "OT": OTP,
+        "OT_VA":"Yes",
+    }
+
+
+    fetch("/login",{
+        method:"POST",
+        headers:{
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(a),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+        return response.json();
+        
+    })
+    
+    .then(data => {
+
+    })
+    .catch(error => {
+        console.log('Problem...:');
+    })
 }

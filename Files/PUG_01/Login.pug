@@ -30,8 +30,8 @@
             <img src="/files/img/Login_BackGround1.jpg" alt="No_Img">
         </div>
         <div id="Login_Side">
-            <div id="heading">GET SKY BUY</div>
-            <div id="As_Login">Login</div>
+            <h1 id="heading">GET SKY BUY</h1>
+            <h2 id="As_Login">Login</h2>
             <form method="post">
                 <p id="Welcome">Welcome to our online shopping site</p>
                 <!-- <div id="Selection"> -->
@@ -57,7 +57,9 @@
                 <div id="Check_Div">
                     <input type="checkbox" id="Checkk_p"><label for="Checkk_p">Show Password</label>
                 </div>
-                <button id="Submit_Button" title="Login" onclick="Submit_S();" type="button">Login</button>
+                <div id="Submit_Button_DIV">
+                    <button id="Submit_Button" title="Login" onclick="Submit_S();" type="button">Login</button>
+                </div>
                 <a id="forgot_passowrd" href="/forgot_passowrd">Forgot password?</a>
                 <div id="OR">or</div>
                 <a href="/signup" id="Donothaveaaccount">Don't have a account?</a>
@@ -65,6 +67,69 @@
             </form>
         </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="OTP_SENT_Y_N">
+        <div id="OTP_SENT_Y_N_CENTER">Messages_HERE</div>
+    </div>
+
+    <div id="OTP_Container">
+        <div class="Center_OTP">
+            <div class="Center_OTP_C">
+                <h3 class="H3_OTP">Verification Code</h3>
+                <p>Enter the <strong>OTP</strong> sent to your E-mail.</p>
+                <form id="OTP_FORM" method="post">
+                    <input maxlength="6" name="OTP_REC" title="Enter OTP" class="OTP_INPUT" spellcheck="false" autocomplete="off" placeholder="Enter OTP" type="text">
+                    <p id="OTP_Para">Wrong OTP | Re-enter OTP</p>
+                    <div id="OTPBTN">
+                        <button class="OTP_SUBMIT" type="button" onclick="Submitt();">Submit</button>
+                    </div>
+                    <h5 class="H5_">Haven't got the code.
+                        <span id="Min_2_T">05:00</span>
+                    </h5>
+                    <div id="BTNSS">
+                        <button type="button" onclick="Resend();" class="OTP_SUBMIT_D">Resend</button>
+                        <!-- <button type="button" onclick="Del();" class="OTP_SUBMIT_D">Delete</button> -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="KK">
+        <div id="Small">Data</div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div id="LOADING">
+        <div id="LOADING_SPAN"></div>
+    </div>
+
+    <div id="LOADING_ICON">
+        <div id="LOADING_ICON_CENTER">
+            <img src="/files/img/Loading_Pink.gif" alt="Loading...">
+        </div>
+    </div>
+
+
     <script src="/files/js/Login.js"></script>
 </body>
 </html>

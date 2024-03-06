@@ -894,6 +894,7 @@ body{
     animation-fill-mode: forwards;
     display: none;
     /* display: flex; */
+    z-index: 10000000000000000000000000;
 }
 
 #OTP_SENT_Y_N_CENTER {
@@ -921,11 +922,6 @@ body{
 /* ______________________________________________________________ */
 
 
-#OTP_SENT_Y_N {
-    z-index: 10000000000000000000000000;
-}
-
-
 #LOADING {
     position: fixed;
     top: 0px;
@@ -940,7 +936,8 @@ body{
 #LOADING_SPAN {
     width: 100%;
     height: 4px;
-    background-color: #ffae00;
+    opacity: 0.5;
+    background-color: #ff4be7;
     animation-name: Loadding;
     animation-duration: 5s;
     animation-iteration-count: 1;

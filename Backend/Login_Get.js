@@ -11,7 +11,6 @@ function Login_Get(req, res) {
     }
     else{
         res.status(302).redirect("/");
-        
     }
 }
 module.exports = Login_Get;
