@@ -289,7 +289,7 @@ function Timer() {
 }
 
 function gg(){
-    let ds = document.getElementById("Min_2_Ta").innerHTML;
+    let ds = document.getElementById("Min_2_T").innerHTML;
     let d = document.getElementById("BTNSS");
     if(ds == "00:00"){
         let a = `<button type="button" onclick="Resend();" class="OTP_SUBMIT_D">Resend</button>`;
@@ -302,12 +302,24 @@ function gg(){
 gg();
 
 function Submitt(){
+    // let tt = 1223;
+    // console.log(tt.length);
+    console.log("w")
 
     document.getElementById("OTPBTN").innerHTML = `<button class="OTP_SUBMIT" type="button">Submit</button>`;
-
-    let OTP = document.getElementsByClassName("OTP_INPUT")[0].value;
-
-    if(OTP.length != 6 || OTP[0] != Number || OTP[1] != Number || OTP[2] != Number || OTP[3] != Number || OTP[4] != Number || OTP[5] != Number ){
+    //<button class="OTP_SUBMIT" type="button" onclick="Submitt();">Submit</button>
+    let OP = document.getElementsByClassName("OTP_INPUT")[0].value;
+    
+    let OTP = Number(OP);
+    // let OTP = Number(OP);
+    // console.log(OTP);
+    if(OP.length != 6 || OTP < 0 || OTP > 999999){
+        console.log(OTP > 999999);
+        console.log(OTP < 0);
+        console.log(OTP.length != 6);
+        console.log("IFFFFF");
+        document.getElementsByClassName("OTP_INPUT")[0].value = "";
+        document.getElementById("OTPBTN").innerHTML = `<button class="OTP_SUBMIT" type="button" onclick="Submitt();">Submit</button>`;
 
     }
     else{
@@ -335,6 +347,59 @@ function Submitt(){
         })
         
         .then(data => {
+            console.log(data);
+            if(data.Ver == "Yes"){
+                let d = "Login Successfully";
+                document.getElementById("OTP_SENT_Y_N_CENTER").innerHTML = d;
+                document.getElementById("OTP_SENT_Y_N").style.display = "flex";
+                document.getElementById("OTP_SENT_Y_N").style.animationName = "Hide";
+                
+                setTimeout(() => {
+                    
+                    document.getElementById("OTP_SENT_Y_N").style.animationName = "Hideaa";
+                    document.getElementById("OTP_SENT_Y_N").style.display = "none";
+                    // document.getElementById("Submit_Button_DIV").innerHTML = `<button id="Submit_Button" title="Login" type="button">Login</button>`;
+                    document.getElementById("Password").value = "";
+                    window.location.href = "http://192.168.0.44";
+                }, 3200);
+
+
+                
+            }else if(data.Ver == "Wrong OTP"){
+                let k = "Wrong OTP";
+                document.getElementById("OTP_SENT_Y_N_CENTER").innerHTML = k;
+                document.getElementById("OTP_SENT_Y_N").style.display = "flex";
+                document.getElementById("OTP_SENT_Y_N").style.animationName = "Hide";
+                
+                setTimeout(() => {
+                    
+                    document.getElementById("OTP_SENT_Y_N").style.animationName = "Hideaa";
+                    document.getElementById("OTP_SENT_Y_N").style.display = "none";
+                    // document.getElementById("Submit_Button_DIV").innerHTML = `<button id="Submit_Button" title="Login" type="button">Login</button>`;
+                    // document.getElementById("Password").value = "";
+                    // window.location.href = "http://192.168.0.44";
+                    document.getElementById("OTPBTN").innerHTML = `<button class="OTP_SUBMIT" type="button" onclick="Submitt();">Submit</button>`;
+                    document.getElementById("OTPP_INT").value = "";
+                }, 3200);
+                
+            }else{
+                let a = "An error occured please re load the page and try again.";
+                document.getElementById("OTP_SENT_Y_N_CENTER").innerHTML = a;
+                document.getElementById("OTP_SENT_Y_N").style.display = "flex";
+                document.getElementById("OTP_SENT_Y_N").style.animationName = "Hide";
+                
+                setTimeout(() => {
+                    
+                    document.getElementById("OTP_SENT_Y_N").style.animationName = "Hideaa";
+                    document.getElementById("OTP_SENT_Y_N").style.display = "none";
+                    // document.getElementById("Submit_Button_DIV").innerHTML = `<button id="Submit_Button" title="Login" type="button">Login</button>`;
+                    document.getElementById("Password").value = "";
+                    setTimeout(() => {
+                        window.location.href = "http://192.168.0.44";
+                    }, 1000);
+                }, 3200);
+
+            }
             
         })
         .catch(error => {

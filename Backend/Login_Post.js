@@ -25,7 +25,9 @@ async function Login_Post(req, res) {
 
     let a = req.cookies.New_Login;
     // console.log(a);
+    // console.log("a");
     if (a == "Yes") {
+        console.log("aa");
         let TP = req.body.TP;
         let Email = req.body.Email;
         let Password = req.body.Password;
@@ -269,9 +271,108 @@ async function Login_Post(req, res) {
         
     }else if (a == "OTP"){
         console.log("OTP");
-        console.log(req.body.OT);
+        let b = req.cookies.Temp_ID;
+        let c = req.cookies.Temp_EM;
+        let OTTP = req.body.OT;
+        console.log(c);
         console.log(req.body.OT_VA);
         console.log(req.cookies.Temp_ID);
+        let element;
+        let BF = 0;
+        let Dta = await Signup_Model.find({});
+        for (let i = 0; i < Dta.length; i++) {
+            element = Dta[i];
+            if (element.Email == c) {
+                BF = 4;break;}
+                else{
+                    BF = 1;}
+        }
+        if(req.body.OT_VA == "Yes"){
+
+
+            if (BF == 4) {
+                
+                
+                if (b == element.Authentication.OTP_Auth) {
+                    if (OTTP == element.Authentication.OTP_Value) {
+                        res.clearCookie("Temp_ID", { path: '/signup' });
+                        res.clearCookie("Temp_Em", { path: '/signup' });
+                        res.clearCookie("New_User", { path: '/signup' });
+                        res.clearCookie("New_Login", { path: '/signup' });
+                        res.clearCookie("Temp_ID", { path: '/login' });
+                        res.clearCookie("Temp_Em", { path: '/login' });
+                        res.clearCookie("New_User", { path: '/login' });
+                        res.clearCookie("New_Login", { path: '/login' });
+                        console.log("Login Successfully");
+                        let G = element.Email;
+                        let P_ID;
+                        while (true) {
+                            P_ID = Profile_ID();
+                            let dat = await Signup_Model.find({Profile_Id: {$eq: P_ID}});
+                            if (dat.length===0) {
+                                break;
+                                
+                            }
+                        }
+                        
+                        await Signup_Model.updateOne({Email: G }, {
+                            $set:{
+                                Profile_Id: P_ID,
+                                Verified: "Yes",
+                                Authentication: {
+                                    OTP_Auth:"_",
+                                    OTP_Value:"_"
+                                },
+                                // : null
+                            }
+                        }); 
+
+                        // ________________________________________________________
+                        // ________________________________________________________
+                        // ________________________________________________________
+                        // ________________________________________________________
+                        // ________________________________________________________
+                        // ________________________________________________________
+                        // ________________________________________________________
+
+
+
+
+
+
+
+
+                        setTimeout(() => {
+                            res.json({Ver: "Yes"});
+                        }, 10);
+
+
+
+
+
+
+
+                        
+                    }else{
+                        res.json({Ver: "Wrong OTP"});
+
+                    }
+                }
+                else{
+                    res.json({Ver: "Wrong OTP"});
+                }
+
+
+
+                
+            }
+            else{
+                res.json({Ver: "NO"});
+            }
+        }else{
+            res.status(401).json({Unauthorized: "Unauthorized Access. You have to use any browser or app."});
+        }
+        
     }else{
         res.status(401).json({Unauthorized: "Unauthorized Access. You have to use any browser or app."});
     }
