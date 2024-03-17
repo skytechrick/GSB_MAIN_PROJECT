@@ -98,15 +98,18 @@ async function Login_Post(req, res) {
                     if (SW == 1){
                         D = "Email Address Found.";
                         if(elem.Verified == "Yes"){
-
+                            // console.log(elem.Verified);
+                            // console.log("elem.Verified");
+                            
                             let Ps = Pass_Hash(Password, Email);
                             if (elem.User_Password === Ps){
-
-
+                                
+                                
                                 res.status(200).json({
                                     "Message":"Login Successful.",
                                 })
-                                console.log("YEsS_________")
+                                // console.log("YEsS_________")
+                                
                                 
 
                                 
@@ -139,6 +142,8 @@ async function Login_Post(req, res) {
                         }else{
                             let Ps = Pass_Hash(Password, Email);
                             if (elem.User_Password === Ps){
+                                // console.log("elem.Verified11");
+                                // console.log(elem.Verified);
 
                                 function Set_Get_Auth(){
                                     let Get_Auth = Auth_Token(32);
@@ -187,6 +192,7 @@ async function Login_Post(req, res) {
                                             secure: false
                                         });
                                         res.json({"Message": Email_Sent_Q});
+                                        // console.log("SENT...:");
 
 
                                         
@@ -269,11 +275,6 @@ async function Login_Post(req, res) {
     }else{
         res.status(401).json({Unauthorized: "Unauthorized Access. You have to use any browser or app."});
     }
-    
-
-    
-
-    
 }
 
 module.exports = {

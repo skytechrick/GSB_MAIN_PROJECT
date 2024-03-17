@@ -288,35 +288,57 @@ function Timer() {
         }, 1000);        
 }
 
+function gg(){
+    let ds = document.getElementById("Min_2_Ta").innerHTML;
+    let d = document.getElementById("BTNSS");
+    if(ds == "00:00"){
+        let a = `<button type="button" onclick="Resend();" class="OTP_SUBMIT_D">Resend</button>`;
+        d.innerHTML = a;
+    }else{
+        let b = `<button type="button" class="OTP_SUBMIT_D">Resend</button>`;
+        d.innerHTML = b;
+    }
+}
+gg();
+
 function Submitt(){
 
+    document.getElementById("OTPBTN").innerHTML = `<button class="OTP_SUBMIT" type="button">Submit</button>`;
+
     let OTP = document.getElementsByClassName("OTP_INPUT")[0].value;
-    // document.getElementById("").value;
-    let a = {
-        "OT": OTP,
-        "OT_VA":"Yes",
+
+    if(OTP.length != 6 || OTP[0] != Number || OTP[1] != Number || OTP[2] != Number || OTP[3] != Number || OTP[4] != Number || OTP[5] != Number ){
+
     }
+    else{
 
-
-    fetch("/login",{
-        method:"POST",
-        headers:{
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(a),
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-        return response.json();
+        // document.getElementById("").value;
+        let a = {
+            "OT": OTP,
+            "OT_VA":"Yes",
+        }
         
-    })
-    
-    .then(data => {
-
-    })
-    .catch(error => {
-        console.log('Problem...:');
-    })
+        
+        fetch("/login",{
+            method:"POST",
+            headers:{
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(a),
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+                
+        })
+        
+        .then(data => {
+            
+        })
+        .catch(error => {
+            console.log('Problem...:');
+        })
+    }
 }
