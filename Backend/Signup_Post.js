@@ -13,6 +13,7 @@ const Transporter = nodemailer.createTransport({
     }
 });
 
+
 async function Signup_Post(req, res) {
     // console.log(req.body);
     // console.log(req.cookies);

@@ -388,7 +388,7 @@ const Photo_Upload = multer({ storage: storage });
 //     });
 // });
 
-app.listen(83, () => {
+app.listen(80, () => {
     console.log("We are connected to server at port 80");
-    console.log("Link: http://192.168.0.44:83/signup");
+    console.log("Link: http://192.168.0.44/signup");
 });
