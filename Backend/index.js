@@ -387,8 +387,8 @@ const Photo_Upload = multer({ storage: storage });
 //         Title:"This is Rick"
 //     });
 // });
-
-app.listen(80, () => {
+let a = process.env.PORT || 80;
+app.listen(a, () => {
     console.log("We are connected to server at port 80");
     console.log("Link: http://192.168.0.44/signup");
 });

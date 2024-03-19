@@ -3,8 +3,11 @@
   "version": "1.0.1",
   "description": "Online shopping platform for local products",
   "main": "app.js",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
-    "build": "nodemon --no-deprecation ./index.js"
+    "server": "node ./index.js"
   },
   "keywords": [
     "GET_SKY_BUY",
