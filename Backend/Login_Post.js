@@ -5,6 +5,9 @@ const nodemailer = require("nodemailer");
 const GET_OTP = require("./OTP_Generator.js");
 const Pass_Hash = require("./Password_Hashing");
 
+const{JWTC, JWTV} = require("./JWT_");
+
+
 
 const Transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -23,11 +26,15 @@ const Transporter = nodemailer.createTransport({
 
 async function Login_Post(req, res) {
 
+    
+    
+
+
     let a = req.cookies.New_Login;
     // console.log(a);
     // console.log("a");
     if (a == "Yes") {
-        console.log("aa");
+        // console.log("aa");
         let TP = req.body.TP;
         let Email = req.body.Email;
         let Password = req.body.Password;
@@ -105,15 +112,100 @@ async function Login_Post(req, res) {
                             
                             let Ps = Pass_Hash(Password, Email);
                             if (elem.User_Password === Ps){
-                                
-                                
-                                res.status(200).json({
-                                    "Message":"Login Successful.",
-                                })
+
+
+
+                                let ele = {};
+                                let DD = await Signup_Model.find({});
+                                for (let x = 0; x < DD.length; x++) {
+                                    ele = DD[x];
+                                    if(ele.Email == Email){
+                                        break;
+                                    }               
+                                }                                
                                 // console.log("YEsS_________")
                                 
+                                let Auth_Toke = Auth_Token(32);
+                                function USER_ID() {
+                                    
+                                    let Name = ele.First_Name + ele.First_Name;
+                                    
+                                    const JS = {
+                                        Name: Name,
+                                        Profile_ID: ele.Profile_ID,
+                                        Profile_Log: Auth_Toke,
+                                        Verified: "Yes",
+                                    };
+                                    
+                                    
+                                    let JWTCa = JWTC(JS);
+                                    console.log(JWTCa)
+                                    return JWTCa;
+                                };
                                 
 
+                                let dc = Object.keys(ele.Profile_Log).length;
+                                
+
+                                if(dc == 1){
+                                    await Signup_Model.updateOne({Profile_ID: ele.Profile_ID},{$set:{Profile_Log:{"Auth_1": Auth_Toke,"Auth_2":"_"}}});
+                                    res.cookie("U_ID",USER_ID(),{
+                                        httpOnly: true,
+                                        path: "/",
+                                        expires: new Date(Date.now() + 1200000),
+                                        secure: false
+                                    });
+                                    res.status(200).json({
+                                        "Message":"Login Successful.",
+                                    })
+                                    
+                                }else if(dc == 2){
+                                    await Signup_Model.updateOne({Profile_ID: ele.Profile_ID},{$set:{Profile_Log:{"Auth_1": ele.Profile_Log.Auth_1,"Auth_2": Auth_Toke, "Auth_3":"_"}}});
+                                    res.cookie("U_ID",USER_ID(),{
+                                        httpOnly: true,
+                                        path: "/",
+                                        expires: new Date(Date.now() + 1200000),
+                                        secure: false
+                                    });
+                                    res.status(200).json({
+                                        "Message":"Login Successful.",
+                                    })
+                                    
+                                }else if(dc == 3){
+                                    await Signup_Model.updateOne({Profile_ID: ele.Profile_ID},{$set:{Profile_Log:{"Auth_1": ele.Profile_Log.Auth_1,"Auth_2": ele.Profile_Log.Auth_2, "Auth_3": Auth_Toke, "Auth_4":"_"}}});
+                                    res.cookie("U_ID",USER_ID(),{
+                                        httpOnly: true,
+                                        path: "/",
+                                        expires: new Date(Date.now() + 1200000),
+                                        secure: false
+                                    });
+                                    res.status(200).json({
+                                        "Message":"Login Successful.",
+                                    })
+                                    
+                                }else if(dc == 4){
+                                    await Signup_Model.updateOne({Profile_ID: ele.Profile_ID},{$set:{Profile_Log:{"Auth_1": ele.Profile_Log.Auth_1,"Auth_2": ele.Profile_Log.Auth_2, "Auth_3": ele.Profile_Log.Auth_3, "Auth_4": Auth_Toke, "Auth_5":"_"}}});
+                                    res.cookie("U_ID",USER_ID(),{
+                                        httpOnly: true,
+                                        path: "/",
+                                        expires: new Date(Date.now() + 1200000),
+                                        secure: false
+                                    });
+                                    res.status(200).json({
+                                        "Message":"Login Successful.",
+                                    })
+
+                                }else{
+                                    res.status(200).json({
+                                        "Message":"Reached maximum number of login",
+                                    })
+                                }
+
+
+
+
+
+                                
                                 
 // ______________________________________________________________
 // ______________________________________________________________
@@ -325,7 +417,94 @@ async function Login_Post(req, res) {
                                 },
                                 // : null
                             }
-                        }); 
+                        });
+                        
+                        let ele = {};
+                        let DD = await Signup_Model.find({});
+                        for (let x = 0; x < DD.length; x++) {
+                            ele = DD[x];
+                            if(ele.Email == Email){
+                                break;
+                            }               
+                        }                                
+                        // console.log("YEsS_________")
+                        
+                        let Auth_Toke = Auth_Token(32);
+                        function USER_ID() {
+                            
+                            let Name = ele.First_Name + ele.First_Name;
+                            
+                            const JS = {
+                                Name: Name,
+                                Profile_ID: ele.Profile_ID,
+                                Profile_Log: Auth_Toke,
+                                Verified: "Yes",
+                            };
+                            
+                            
+                            let JWTCa = JWTC(JS);
+                            console.log(JWTCa)
+                            return JWTCa;
+                        };
+                        
+
+                        let dc = Object.keys(ele.Profile_Log).length;
+                        
+
+                        if(dc == 1){
+                            await Signup_Model.updateOne({Profile_ID: ele.Profile_ID},{$set:{Profile_Log:{"Auth_1": Auth_Toke,"Auth_2":"_"}}});
+                            res.cookie("U_ID",USER_ID(),{
+                                httpOnly: true,
+                                path: "/",
+                                expires: new Date(Date.now() + 1200000),
+                                secure: false
+                            });
+                            res.status(200).json({
+                                "Message":"Login Successful.",
+                            })
+                            
+                        }else if(dc == 2){
+                            await Signup_Model.updateOne({Profile_ID: ele.Profile_ID},{$set:{Profile_Log:{"Auth_1": ele.Profile_Log.Auth_1,"Auth_2": Auth_Toke, "Auth_3":"_"}}});
+                            res.cookie("U_ID",USER_ID(),{
+                                httpOnly: true,
+                                path: "/",
+                                expires: new Date(Date.now() + 1200000),
+                                secure: false
+                            });
+                            res.status(200).json({
+                                "Message":"Login Successful.",
+                            })
+                            
+                        }else if(dc == 3){
+                            await Signup_Model.updateOne({Profile_ID: ele.Profile_ID},{$set:{Profile_Log:{"Auth_1": ele.Profile_Log.Auth_1,"Auth_2": ele.Profile_Log.Auth_2, "Auth_3": Auth_Toke, "Auth_4":"_"}}});
+                            res.cookie("U_ID",USER_ID(),{
+                                httpOnly: true,
+                                path: "/",
+                                expires: new Date(Date.now() + 1200000),
+                                secure: false
+                            });
+                            res.status(200).json({
+                                "Message":"Login Successful.",
+                            })
+                            
+                        }else if(dc == 4){
+                            await Signup_Model.updateOne({Profile_ID: ele.Profile_ID},{$set:{Profile_Log:{"Auth_1": ele.Profile_Log.Auth_1,"Auth_2": ele.Profile_Log.Auth_2, "Auth_3": ele.Profile_Log.Auth_3, "Auth_4": Auth_Toke, "Auth_5":"_"}}});
+                            res.cookie("U_ID",USER_ID(),{
+                                httpOnly: true,
+                                path: "/",
+                                expires: new Date(Date.now() + 1200000),
+                                secure: false
+                            });
+                            res.status(200).json({
+                                "Message":"Login Successful.",
+                            })
+
+                        }else{
+                            res.status(200).json({
+                                "Message":"Reached maximum number of login",
+                            })
+                        }
+
 
                         // ________________________________________________________
                         // ________________________________________________________
@@ -334,6 +513,8 @@ async function Login_Post(req, res) {
                         // ________________________________________________________
                         // ________________________________________________________
                         // ________________________________________________________
+
+
 
 
 
@@ -343,7 +524,7 @@ async function Login_Post(req, res) {
 
 
                         setTimeout(() => {
-                            res.json({Ver: "Yes"});
+                            res.json({Ver: "Login Successfully"});
                         }, 10);
 
 

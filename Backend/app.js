@@ -174,7 +174,7 @@ app.post("/signup", async (req, res) => {Signup_Post(req, res)});
 
 
 app.get("/", (req, res) => {
-    res.status(200).send(`<h1><a href="/signup">Signup</a></h1>`);
+    res.status(200).render(`Home`);
 });
 
 

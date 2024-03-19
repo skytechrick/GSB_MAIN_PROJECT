@@ -292,10 +292,10 @@ function gg(){
     let ds = document.getElementById("Min_2_T").innerHTML;
     let d = document.getElementById("BTNSS");
     if(ds == "00:00"){
-        let a = `<button type="button" onclick="Resend();" class="OTP_SUBMIT_D">Resend</button>`;
+        let a = `<button type="button" onclick="Resend();" class="OTP_SUBMIT_D">Retry</button>`;
         d.innerHTML = a;
     }else{
-        let b = `<button type="button" class="OTP_SUBMIT_D">Resend</button>`;
+        let b = `<button type="button" class="OTP_SUBMIT_D">Retry</button>`;
         d.innerHTML = b;
     }
 }
@@ -348,7 +348,7 @@ function Submitt(){
         
         .then(data => {
             console.log(data);
-            if(data.Ver == "Yes"){
+            if(data.Ver == "Login Successfully"){
                 let d = "Login Successfully";
                 document.getElementById("OTP_SENT_Y_N_CENTER").innerHTML = d;
                 document.getElementById("OTP_SENT_Y_N").style.display = "flex";
@@ -384,20 +384,38 @@ function Submitt(){
                 
             }else{
                 let a = "An error occured please re load the page and try again.";
-                document.getElementById("OTP_SENT_Y_N_CENTER").innerHTML = a;
-                document.getElementById("OTP_SENT_Y_N").style.display = "flex";
-                document.getElementById("OTP_SENT_Y_N").style.animationName = "Hide";
-                
-                setTimeout(() => {
+                if(!data.Ver){
+
+                    document.getElementById("OTP_SENT_Y_N_CENTER").innerHTML = a;
+                    document.getElementById("OTP_SENT_Y_N").style.display = "flex";
+                    document.getElementById("OTP_SENT_Y_N").style.animationName = "Hide";
                     
-                    document.getElementById("OTP_SENT_Y_N").style.animationName = "Hideaa";
-                    document.getElementById("OTP_SENT_Y_N").style.display = "none";
-                    // document.getElementById("Submit_Button_DIV").innerHTML = `<button id="Submit_Button" title="Login" type="button">Login</button>`;
-                    document.getElementById("Password").value = "";
                     setTimeout(() => {
-                        window.location.href = "http://192.168.0.44";
-                    }, 1000);
-                }, 3200);
+                    
+                        document.getElementById("OTP_SENT_Y_N").style.animationName = "Hideaa";
+                        document.getElementById("OTP_SENT_Y_N").style.display = "none";
+                        // document.getElementById("Submit_Button_DIV").innerHTML = `<button id="Submit_Button" title="Login" type="button">Login</button>`;
+                        document.getElementById("Password").value = "";
+                        setTimeout(() => {
+                            window.location.href = "http://192.168.0.44";
+                        }, 1000);
+                    }, 3200);
+                }else{
+                    document.getElementById("OTP_SENT_Y_N_CENTER").innerHTML = data.Message;
+                    document.getElementById("OTP_SENT_Y_N").style.display = "flex";
+                    document.getElementById("OTP_SENT_Y_N").style.animationName = "Hide";
+                    
+                    setTimeout(() => {
+                    
+                        document.getElementById("OTP_SENT_Y_N").style.animationName = "Hideaa";
+                        document.getElementById("OTP_SENT_Y_N").style.display = "none";
+                        // document.getElementById("Submit_Button_DIV").innerHTML = `<button id="Submit_Button" title="Login" type="button">Login</button>`;
+                        document.getElementById("Password").value = "";
+                        setTimeout(() => {
+                            window.location.href = "http://192.168.0.44";
+                        }, 1000);
+                    }, 3200);
+                }
 
             }
             
@@ -406,4 +424,9 @@ function Submitt(){
             console.log('Problem...:');
         })
     }
+}
+
+
+function Resend() {
+    window.location.href = "http://192.168.0.44/login";
 }

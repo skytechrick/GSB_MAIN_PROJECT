@@ -1,7 +1,8 @@
+const {JWTV} = require("./JWT_");
 function Signup_Get(req, res) {
-    const User_Id_ = req.cookies.User_Id_;
+    const U_ID = req.cookies.U_ID;
     
-    if (User_Id_ == undefined || User_Id_ == null || User_Id_ == "") {
+    if (U_ID == undefined || U_ID == null || U_ID == "") {
         res.cookie("New_User", "Yes",{
             httpOnly: true,
             path: "/signup",
@@ -11,7 +12,19 @@ function Signup_Get(req, res) {
         res.status(200).render("Signup");
     }
     else{
-        res.status(302).redirect("/");
+        if(JWTV(U_ID)){
+            res.status(302).redirect("/");
+        }else{
+            res.clearCookie("U_ID", { path:'/'});
+            res.cookie("New_User", "Yes",{
+                httpOnly: true,
+                path: "/signup",
+                expires: new Date(Date.now() + 86400000),
+                secure: false
+            });
+            res.status(200).render("Signup");
+        };
+        // res.status(302).redirect("/");
     }
 }
 
