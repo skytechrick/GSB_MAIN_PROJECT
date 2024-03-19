@@ -5,13 +5,13 @@ const bodyParser = require("body-parser");
 const multer = require("multer");
 const cookieParser = require('cookie-parser');
 // _______________________________________________________________________________________________________
-const Signup_Post = require("./Signup_Post");
-const Signup_Get = require("./Signup_Get");
+const Signup_Post = require("./Signup_Post.js");
+const Signup_Get = require("./Signup_Get.js");
 // _______________________________________________________________________________________________________
 const {Login_Post} = require("./Login_Post.js");
 const Login_Get = require("./Login_Get.js");
 // _______________________________________________________________________________________________________
-const Home = require("./Home")
+const Home = require("./Home.js")
 
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "../Files/PUG_01"));
