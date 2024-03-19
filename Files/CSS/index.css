@@ -789,7 +789,7 @@ body {
     width: 100vw;
     position: relative;
     top: 0px;
-    background-color: aqua;
+    background-color: #ed9feb;
 }
 #Nav_2nd a {
     color: black;
@@ -1355,3 +1355,4 @@ header {
     text-decoration: none;
     color: rgb(247, 0, 255);
 }
+

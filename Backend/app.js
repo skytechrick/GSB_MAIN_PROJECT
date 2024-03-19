@@ -11,7 +11,7 @@ const Signup_Get = require("./Signup_Get");
 const {Login_Post} = require("./Login_Post.js");
 const Login_Get = require("./Login_Get.js");
 // _______________________________________________________________________________________________________
-
+const Home = require("./Home")
 
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "../Files/PUG_01"));
@@ -37,6 +37,39 @@ const storage = multer.diskStorage({
         cb(null, a + "_" +file.fieldname + '-' + b + path.extname(file.originalname));
     }
 });
+
+
+
+
+
+
+
+
+
+
+app.get("/",async (req, res) => {Home(req, res)});
+
+
+
+
+app.get("/signup", async (req, res) => {Signup_Get(req, res)});
+app.post("/signup", async (req, res) => {Signup_Post(req, res)});
+app.get("/login", async (req, res) => {Login_Get(req, res)});
+app.post("/login", async (req, res) => {Login_Post(req, res)});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const Photo_Upload = multer({ storage: storage });
 
@@ -167,20 +200,6 @@ const Photo_Upload = multer({ storage: storage });
 // ___________________________________________________________
 // ___________________________________________________________
 // ___________________________________________________________
-
-app.get("/signup", async (req, res) => {Signup_Get(req, res)});
-app.post("/signup", async (req, res) => {Signup_Post(req, res)});
-
-
-
-app.get("/", (req, res) => {
-    res.status(200).render(`Home`);
-});
-
-
-app.get("/login", async (req, res) => {Login_Get(req, res)});
-app.post("/login", async (req, res) => {Login_Post(req, res)});
-
 
 // ___________________________________________________________
 // ___________________________________________________________
@@ -369,7 +388,7 @@ app.post("/login", async (req, res) => {Login_Post(req, res)});
 //     });
 // });
 
-app.listen(80, () => {
+app.listen(83, () => {
     console.log("We are connected to server at port 80");
-    console.log("Link: http://192.168.0.44/signup");
+    console.log("Link: http://192.168.0.44:83/signup");
 });
