@@ -4,7 +4,7 @@
   "description": "Online shopping platform for local products",
   "main": "app.js",
   "scripts": {
-    "server": "nodemon --no-deprecation ./index.js"
+    "server": "nodemon --no-deprecation ./app.js"
   },
   "keywords": [
     "GET_SKY_BUY",
