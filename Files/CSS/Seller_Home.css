@@ -1,0 +1,93 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+
+.CC {
+    /* background-color: wheat; */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    padding-bottom: 5px;
+    width: 180px;
+    
+    border-bottom: 1px solid #aaa;
+    margin: 0 auto;
+    margin-bottom: 6px;
+}
+h2 {
+    text-align: center;
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+
+}
+
+.cc_Box {
+    padding: 40px;
+    margin-top: 60px;
+    width: 100%;
+    max-width: 250px;
+    height: 290px;
+    box-shadow: 0 0 5px #aaa;
+}
+
+input {
+    margin: 10px auto;
+    text-align: center;
+    display: block;
+    padding: 8px;
+    outline: none;
+    width: 200px;
+    font-size: 13px;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+
+    appearance: none;
+}
+
+button:hover{
+    text-decoration: underline;
+}
+button{
+    padding: 8px;
+    background-color: #ff00f2;
+    color: white;
+    outline: none;
+    width: 100px;
+    display: block;
+    margin: 10px auto;
+    cursor: pointer;
+    border: 1px solid #aaa;
+}
+
+form a {
+    display: block;
+    font-size: 14px;
+    text-align: right;
+    margin-right: 14px;
+}
+
+.A_A {
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    /* margin-right: 40px; */
+
+}
+
+.note {
+    margin: 10px auto;
+    text-align: center;
+    font-size: 12px;
+}

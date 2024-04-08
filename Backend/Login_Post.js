@@ -97,10 +97,8 @@ async function Login_Post(req, res) {
                                 }
                                 let Auth_Toke = Auth_Token(32);
                                 function USER_ID() {
-                                    let Name = ele.First_Name + ele.First_Name;
                                     const JS = {
-                                        Name: Name,
-                                        Profile_ID: ele.Profile_ID,
+                                        Profile_ID: ele.Profile_Id,
                                         Profile_Log: Auth_Toke,
                                         Verified: "Yes",
                                     };
@@ -383,6 +381,14 @@ async function Login_Post(req, res) {
                         setTimeout(() => {
                             res.json({ Ver: "Login Successfully" });
                         }, 10);
+
+
+
+
+
+
+
+
                     } else {
                         res.json({ Ver: "Wrong OTP" });
 
@@ -391,6 +397,10 @@ async function Login_Post(req, res) {
                 else {
                     res.json({ Ver: "Wrong OTP" });
                 }
+
+
+
+
             }
             else {
                 res.json({ Ver: "NO" });

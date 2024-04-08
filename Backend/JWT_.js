@@ -15,7 +15,7 @@ function JWTTT(token){
         const aa = jwt.verify(token,sec)
         // console.log(aa);
         
-        // console.log("Yes");
+        // console.log("Yes_Veri");
         return aa;
     } catch (E) {
         // console.log("No");

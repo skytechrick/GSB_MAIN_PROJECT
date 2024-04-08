@@ -15,23 +15,13 @@ const Transporter = nodemailer.createTransport({
 
 
 async function Signup_Post(req, res) {
-    // console.log(req.body);
-    // console.log(req.cookies);
     let p = req.cookies.New_User;
-
-
     let RT = req.body.Cancel;
     let s1 = req.body.First_Name;
     let s2 = req.body.Last_Name;
     let s3 = req.body.Mobile_Number;
     let s4 = req.body.Email;
     let s5 = req.body.Confirm_Password;
-    // let a = res.cookies.User_Id_;
-    // if (a) {
-
-        // res.status(200).redirect("/");        
-    // }
-
 
     if(p == "Yes"){
         if(s5 || s1 || s2 || s3 || s4){
@@ -114,9 +104,7 @@ async function Signup_Post(req, res) {
                     }
                     else{
                         JS_GET_DATA["EMAIL"] = "NOT_VALID_MAIL";
-                       
                     }
-                    
                 }
                 if (s5 == "" || s5 == null){
                     JS_GET_DATA["PASSWORD"] = "EMPTY";
@@ -126,14 +114,11 @@ async function Signup_Post(req, res) {
                     
                 }else{
                     JS_GET_DATA["PASSWORD"] = "GOT_IT";
-                    
                 }
                 return JS_GET_DATA;
             }
-
             let VALID = VALIDATING();
             let V = "GOT_IT";
-
             if(VALID.FIRST == V && VALID.LAST == V && VALID.MOBILE == V && VALID.EMAIL == V && VALID.PASSWORD == V) {
                 let elem = {};
                 let SW = 4;
@@ -148,39 +133,25 @@ async function Signup_Post(req, res) {
                         SW = 4;
                     }                
                 }
-
-                // https://www.amazon.in/NICE-WONDER-Womens-Sleeve-Blouse/dp/B0B21B3TW3/ref=sr_1_2?crid=2P2HI24AIHIP7&dib=eyJ2IjoiMSJ9.BW94ThEVjPE_Va4rRRPMo3Ydb8Doxdy61O8n-C5vojXs5asPsPewH8PyYUDi6x5FnZs1prLLNRUMg04_BXlN8A.O9_7ekqaxfdSxAv7EmSBXemyVzMFKXgFED46kLZI5Lw&dib_tag=se&keywords=wool%2Bblouse&qid=1704985667&sprefix=wool%2Bblouse%2Caps%2C202&sr=8-2&th=1
                 if(SW == 1) {
                     res.json({Message:"E-mail address Already exist."});
                 }else{
                     let Final_Auth = Set_Get_Auth();
-                    // console.log("11");
-//_____________________________________________________________________________________
                     let A = 0;
                     let Final_OTP =  GET_OTP();
-
                     const Mail_Option = {
                         from: 'GET SKY BUY <getskybuy@gmail.com>',
                         to: s4,
                         subject: 'GET-SKY-BUY | Email verification | OTP', 
                         html: `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>One-Time Password</title><style>body {font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f4f4f4;}.container { width: 100%; max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);}h1 { border-bottom: 1px solid #aaa; } h2 { color: #333333; } p { color: #666666; } .otp { font-size: 26px; color: #4CAF50; margin: 20px 0; text-align: center; } .footer { margin-top: 20px; text-align: center; color: #999999; } .footer p { margin: 0px; } .footer p:nth-child(1) { margin-bottom: 10px; } .Links { font-size: 14px; }.Links span{ font-weight: bold; } .Links a{ font-weight: bold; color: rgb(0, 185, 0);}</style></head><body dir="ltr"><div class="container"><h1>GET SKY BUY | Email Verfication - Creating GSB account.</h1><h2>Your OTP for creating GSB account is here.</h2><p>If you haven't created a <strong>GSB account</strong>, please refrain from sharing this email or <strong>OTP</strong> with anyone, and kindly disregard it..</p><p>Your <strong>One Time Password</strong> is:</p><p title="OTP" class="otp"><span>${Final_OTP}</span></p><p>This password is valid for <strong>5 minutes</strong>. Do not share it with others.</p><div title="GET-SKY-BUY" class="Links"><span>Official Website: </span><a href="https://www.getskybuy.com">GET SKY BUY</a></div><hr><div class="footer"><p>Thank you for using our service!</p><p title="Team GSB">Team GSB!</p></div></div></body></html>`
                     };
-
                     Transporter.sendMail(Mail_Option, (error, info) => {
                         if (error) {
                             A = 2;
-                            // console.error('Error:', error);
                         } else {
-                            // console.log('Email sent:', info.response);
                             A = 3;
-                            
-                            
                         }
                     });
-//_____________________________________________________________________________________
-
-                    
-                    // console.log("555");
                     setTimeout(() => {
                         let Email_Sent_Q = "";
                         if(A==3){
@@ -189,11 +160,7 @@ async function Signup_Post(req, res) {
                         else{
                             Email_Sent_Q = "Unable to send OTP. Please try again after some time.";
                         };
-
-                        // console.log("9999")
                         if (Email_Sent_Q == "OTP sent successfully") {
-                            
-                            
                             const Signup_Details ={
                                 Profile_Log:{
                                     Auth1: "_"
@@ -210,31 +177,16 @@ async function Signup_Post(req, res) {
                                 },
                                 Verified: "No",
                                 Profile_Id: 0,
-                                // createdAt: new Date()
+                                Cart:[],
                             };
-                                
-                            
-                            // console.log(Signup_Details);
-                            
-                            
                             res.cookie("New_User", "No",{httpOnly: true, path: "/signup", expires: new Date(Date.now() + 86400000), secure: false});
-                            // res.cookie("New_User", "No",{httpOnly: true, path: "/signup", expires: new Date(Date.now() + 86400000), secure: false});
                             let OTP_Mail = Signup_Details.Email;
-                            
                             let New_User_Signup = new Signup_Model(Signup_Details);
-                            
-                            
-                            
                             New_User_Signup.save().then(()=>{
                                 res.cookie("Temp_Em", OTP_Mail, {httpOnly: true, path: "/signup", expires: new Date(Date.now() + 600000), secure: false});
                                 res.json({Message: Email_Sent_Q});
-                                
                             });
-                            
-                        
-                        
                         }else{
-                            // console.log("155555")
                             res.json({Message: "Unable to send OTP. Please try again after some time."})
                         }
                     }, 4000);
@@ -253,7 +205,6 @@ async function Signup_Post(req, res) {
         let b = req.cookies.Temp_ID;
         let c = req.cookies.Temp_Em;
         let Dta = await Signup_Model.find({});
-        // console.log(Dta);
         let BF = 0;
         let element;
         for (let i = 0; i < Dta.length; i++) {
@@ -281,7 +232,6 @@ async function Signup_Post(req, res) {
                         });
                         return Get_Auth;
                     };
-
 
                     let Final_Auth = Set_Get_Auth();
                     let A = 0;
@@ -318,14 +268,9 @@ async function Signup_Post(req, res) {
                 }else{
                     res.json({RESEND_: "NO"});
                 }
-                
-                 
-
             }else if(a){
                 if (element.Authentication.OTP_Auth == b) {
                     if(element.Authentication.OTP_Value == a){
-                        // let Get_Authaa = Auth_Token(57);
-                        // res.cookie("ID_C", Get_Authaa, {httpOnly: true, expires: new Date(Date.now() + 15552000000), secure: false, path: "/"})
                         res.clearCookie("Temp_ID", { path: '/signup' });
                         res.clearCookie("Temp_Em", { path: '/signup' });
                         res.clearCookie("New_User", { path: '/signup' });
@@ -336,10 +281,8 @@ async function Signup_Post(req, res) {
                             let dat = await Signup_Model.find({Profile_Id: {$eq: P_ID}});
                             if (dat.length===0) {
                                 break;
-                                
                             }
                         }
-                        
                         await Signup_Model.updateOne({Email: G }, {
                             $set:{
                                 Profile_Id: P_ID,
@@ -348,7 +291,6 @@ async function Signup_Post(req, res) {
                                     OTP_Auth:"_",
                                     OTP_Value:"_"
                                 },
-                                // : null
                             }
                         }); 
                         setTimeout(() => {
@@ -367,7 +309,6 @@ async function Signup_Post(req, res) {
                 // conso
                 if(RT=="Yes"){
                     let R = req.cookies.Temp_Em;
-                    // let T = req.cookies.Temp_ID
                     res.clearCookie("Temp_ID", { path: '/signup' });
                     res.clearCookie("Temp_Em", { path: '/signup' });
                     res.clearCookie("New_User", { path: '/signup' });
@@ -375,10 +316,8 @@ async function Signup_Post(req, res) {
                     setTimeout(() => {
                         res.json({cancel: "OK"})
                     }, 1);
-                    
                 }
             }
-
         }
         else{
             res.json({SUCCESS: "NO"});

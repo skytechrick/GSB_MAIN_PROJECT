@@ -11,8 +11,16 @@ const Signup_Get = require("./Signup_Get.js");
 const {Login_Post} = require("./Login_Post.js");
 const Login_Get = require("./Login_Get.js");
 // _______________________________________________________________________________________________________
+const Logout_Get = require("./Logout_Get.js");
+const Logout_Post = require("./Logout_Post.js");
+// _______________________________________________________________________________________________________
 const Home = require("./Home.js")
-
+// _______________________________________________________________________________________________________
+const Main_Admin = require("./Main_Admin/Main_Admin.js")
+// _______________________________________________________________________________________________________
+const Seller_Login_Get = require("./SELLER/Seller_Login_Get.js")
+const Seller_Login_Post = require("./SELLER/Seller_Login_Post.js")
+// _______________________________________________________________________________________________________
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "../Files/PUG_01"));
 
@@ -49,6 +57,7 @@ const storage = multer.diskStorage({
 
 app.get("/",async (req, res) => {Home(req, res)});
 
+app.get("/admin",async (req, res) => {Main_Admin(req, res)});
 
 
 
@@ -56,6 +65,19 @@ app.get("/signup", async (req, res) => {Signup_Get(req, res)});
 app.post("/signup", async (req, res) => {Signup_Post(req, res)});
 app.get("/login", async (req, res) => {Login_Get(req, res)});
 app.post("/login", async (req, res) => {Login_Post(req, res)});
+
+app.get("/logout", async (req, res) => {Logout_Get(req, res)});
+app.post("/logout", async (req, res) => {Logout_Post(req, res)});
+
+
+
+
+
+
+
+
+app.get("/seller/login", async (req, res) => {Seller_Login_Get(req, res)});
+app.post("/seller/login", async (req, res) => {Seller_Login_Post(req, res)});
 
 
 

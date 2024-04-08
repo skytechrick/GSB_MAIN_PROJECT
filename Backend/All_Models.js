@@ -43,6 +43,10 @@ const Signup_Schema = new mongoose.Schema({
     },
     Authentication:{
         type: Object
+    },
+    Cart:{
+        type:Object
+        
     }
 });
 

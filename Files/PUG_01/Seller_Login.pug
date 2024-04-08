@@ -3,59 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name='keywords' content='Online shopping site, goods and products, Local Shops, getskybuy, Online shopping, Local shops, good products, fast delivery'>
-    <meta name="description" content="India's online shopping site for your local shops, this will help our India to grow faster. India doesn't has such a platform, where every shopkeepers can sell his products online. And every single one will get such a unique platform where we are going to provides you the fastest one day delivery services, and local products available in your locality and far away will also be available to you. You have a option to order any products from a particular shop and different place also.">
-    <meta name='copyright' content='GET-SKY-BUY'>
-    <meta name='robots' content='INDEX, FOLLOW'>
-    <meta name='author' content='Rick, getskybuy@gmail.com, https://www.getskybuy.com'>
-    <meta name='owner' content='Rick, GET-SKY-BUY and SKY TECH - RICK'>
-    <meta name='url' content='https://www.getskybuy.com'>
-    <meta name='coverage' content='India'>
-    <meta name='revised' content='Saturday, August 5th, 2023, 9:00 pm'>
+    <title>Seller Login - GET SKY BUY</title> 
+        <link rel="shortcut icon" href="/files/img/GSB_logo.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="/files/css/Seller_Home.css">
 
-    <link rel="shortcut icon"href="/files/img/GSB_logo.png" type="image/x-icon">
 
-    <title>Login | Seller GSB Account</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
-    
-    <link rel="stylesheet" href="/files/css/Seller_Login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap" rel="stylesheet">
 
 </head>
-<body id="body">
-    <div class="container"></div>
-    <div id="center">
-        <div id="Headdd"><strong>GET-SKY-BUY</strong></div>
-        <div id="Login_Center">Login</div>
-        <div id="Sell_Products">Login and sell your products online</div>
-        <form action="/seller/login" method="post">
-            <div id="Selection">
-                <label id="Email_Label" for="Email">Email</label>
-                <label id="Mobile_Label" for="Mobile_Number">Mobile</label>
-            </div>
+<body>
 
-            <div id="User_Login">
-                <span class="material-symbols-outlined" id="Span_Person">person</span>
-                <input title="Email" type="text" id="Email" name="Email" placeholder="Email" autocomplete="off" spellcheck="false" autofocus>
-            </div>
-            <p id="User_Login_P">Enter your Email address</p>
-            <div id="User_Password">
-                <span class="material-symbols-outlined" id="Span_Password">lock</span>
-                <input title="Password" type="password" id="Password" name="Password" placeholder="Password" autocomplete="off" spellcheck="false">
-            </div>
-            <p id="User_Password_P">Enter your password</p>
-
-            <button id="Submit_Button" title="Login" type="submit">Login</button>
-            <a id="forgot_passowrd" href="/seller/forgot_passowrd">Forgot password?</a>
-            <div id="OR">or</div>
-            <a href="/seller/create_account" id="Donothaveaaccount">Don't have a account?</a>
-            <a href="/seller/terms_and_conditions" id="Terms">Terms and condition</a>
-        </form>
-    </div>
-    <div class="container"></div>
     
-    <script src="/files/gsb/getfrontend/js/asuhreut2utrge65/4t46reutr456iwn/vvjdfjwir/324ryqihihc654bdufefjfjgfeh/oifw346/234fe456g45756j87452hb42bvnm5nq45453n53453/45435344n45435n454/Seller_Login.js"></script>
+    <div class="CC">
+        <div class="cc_Box">
+            <div><h1>GET SKY BUY</h1></div>
+            <div><h2>Seller Account</h2></div>
+            <div><h2>Login</h2></div>
+            <form action="/seller/login" method="post">
+                <input name="Mobile_Number" title="Enter your number" type="number" spellcheck="false" maxlength="10" autocomplete="off" required placeholder="Enter your Number" autofocus>
+                <input name="Password" title="Enter your password" type="password" spellcheck="false" autocomplete="off" required placeholder="Enter your password">
+                <a href="/seller/forgot_password">Forgot Password?</a>
+                <button type="submit">Submit</button>
+            </form>
+            <a class="A_A" href="/seller/signup">Don't have an account?</a>
+            <div class="note">
+            |    NOTE: You have to be active for more productive.
+            </div>
 
+        </div>
+
+    </div>
+    
 </body>
 </html>
