@@ -1,0 +1,35 @@
+body{
+    font-family: sans-serif;
+    margin: 0px;
+    padding: 0px;
+    /* background-color: aqua; */
+}
+header {
+    display: block;
+    background-color: antiquewhite;
+}
+
+nav ul{
+    display: flex;
+    padding: 0px;
+    list-style: none;
+    justify-content: space-evenly;
+}
+
+
+nav ul li{
+    margin: 5px;
+    padding: 5px;
+}
+nav ul li a{
+    color: black;
+    text-decoration: none;
+    
+}
+nav ul li a:hover{
+    padding: 5px;
+    background-color: rgb(0, 225, 255);
+    border-radius: 6px;
+    font-weight: bold;
+    /* text-decoration: underline; */
+}
