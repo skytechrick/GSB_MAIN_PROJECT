@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Dashboard | GET SKY BUY</title>
-    <link rel="stylesheet" href="./Files/css/Main_Admin.css">
+    <title>Dashboard | GET SKY BUY</title>
+    <link rel="stylesheet" href="/Files/css/Main_Admin.css">
     <link rel="shortcut icon" href="/files/img/GSB_logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,18 +12,423 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="Background_Blur"></div>
     <header>
-        <nav>
+        <div id="Down_Btn" class="Down_Btn">
+            <span class="material-symbols-outlined">expand_more</span>
+
+        </div>
+        <nav id="Nav">
             <ul>
                 <li><a href="/admin">Home</a></li>
-                <li><a href="/admin/client">Client</a></li>
+                <li><a href="/admin/managers">Managers</a></li>
+                <li><a href="/admin/Analytics">Analytics</a></li>
+                <li><a href="/admin/control">Control</a></li>
                 <li><a href="/admin/seller">Seller</a></li>
-                <li><a href="/admin/manager">Manager</a></li>
-                <li><a href="/admin/seller/manager">Seller Manager</a></li>
+                <li>
+                    <a href="/admin/logout">Logout</a>
+                </li>
             </ul>
         </nav>
     </header>
-    
-    <script src="files/js/Main_Admin.js"></script>
+    <center><h1>GET SKY BUY DASHBOARD - <span>Hi! Rick Sarkar</span></h1></center>
+
+
+
+
+    <section>
+        <div class="Section01">
+            <h2>Products Dashboard</h2>
+            <div class="Grid">
+                
+                <div class="r1">
+                    <h3>Main Data</h3>
+                    <table class="r1Table">
+                        <tr>
+                            <td class="Td01"><strong>Total Products:</strong></td>
+                            <td class="Td02">12,213</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Public Products:</strong></td>
+                            <td class="Td02">9,995</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Private Products:</strong></td>
+                            <td class="Td02">1,213</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>In stock Products:</strong></td>
+                            <td class="Td02">54,213</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Out stock Products:</strong></td>
+                            <td class="Td02">213</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Issue with Products:</strong></td>
+                            <td class="Td02">2,113</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Verified Products:</strong></td>
+                            <td class="Td02">2,198</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Non-Verified Products:</strong></td>
+                            <td class="Td02">2,198</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>More than 1 sold Products:</strong></td>
+                            <td class="Td02">18</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>More than 10 sold Products:</strong></td>
+                            <td class="Td02">1,798</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>No sold Products:</strong></td>
+                            <td class="Td02">598</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Rating 4+ Products:</strong></td>
+                            <td class="Td02">8,198</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Rating 3+ Products:</strong></td>
+                            <td class="Td02">2,498</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Rating &lt;3 Products:</strong></td>
+                            <td class="Td02">911</td>
+                        </tr>
+
+
+
+                    </table>
+                </div>
+                <div class="r1">
+                    <h3>Analytics Data</h3>
+                    <table class="r1Table">
+                        <tr>
+                            <td class="Td01"><strong>Products Added (Today):</strong></td>
+                            <td class="Td02">-</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Products Added (Last 7 days):</strong></td>
+                            <td class="Td02">-</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Products Added (Last 30 days):</strong></td>
+                            <td class="Td02">-</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+
+            
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section>
+        <div class="Section01">
+            <h2>Seller Dashboard</h2>
+            <div class="Grid">
+                
+                <div class="r1">
+                    <h3>Main Data</h3>
+                    <table class="r1Table">
+                        <tr>
+                            <td class="Td01"><strong>Total Sellers:</strong></td>
+                            <td class="Td02">12,213</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Public Sellers:</strong></td>
+                            <td class="Td02">9,995</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Private Sellers:</strong></td>
+                            <td class="Td02">1,213</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Verified Sellers:</strong></td>
+                            <td class="Td02">2,198</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Non-Verified Sellers:</strong></td>
+                            <td class="Td02">2,198</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>No sold Sellers:</strong></td>
+                            <td class="Td02">598</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Rating 4+ Sellers:</strong></td>
+                            <td class="Td02">8,198</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Rating 3+ Sellers:</strong></td>
+                            <td class="Td02">2,498</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Rating &lt;3 Sellers:</strong></td>
+                            <td class="Td02">911</td>
+                        </tr>
+
+
+
+                    </table>
+                </div>
+                <div class="r1">
+                    <h3>Analytics Data</h3>
+                    <table class="r1Table">
+                        <tr>
+                            <td class="Td01"><strong>Sellers Added (Today):</strong></td>
+                            <td class="Td02">-</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Sellers Added (Last 7 days):</strong></td>
+                            <td class="Td02">-</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Sellers Added (Last 30 days):</strong></td>
+                            <td class="Td02">-</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section>
+        <div class="Section01">
+            <h2>Revenue Dashboard</h2>
+            <div class="Grid">
+                
+                <div class="r1">
+                    <h3>Main Data</h3>
+                    <table class="r1Table">
+                        <tr>
+                            <td class="Td01"><strong>Total Revenue:</strong></td>
+                            <td class="Td02">Rs. 12,213</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Profite Revenue</strong></td>
+                            <td class="Td02">Rs. 995</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Invested Revenue:</strong></td>
+                            <td class="Td02">Rs. 11,213</td>
+                        </tr>
+
+
+
+                    </table>
+                </div>
+                <div class="r1">
+                    <h3>Analytics Data</h3>
+                    <table class="r1Table">
+                        <tr>
+                            <td class="Td01"><strong>Revenue Added (Today):</strong></td>
+                            <td class="Td02">-</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Revenue Added (Last 7 days):</strong></td>
+                            <td class="Td02">-</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Revenue Added (Last 30 days):</strong></td>
+                            <td class="Td02">-</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section>
+        <div class="Section01">
+            <h2>Order Dashboard</h2>
+            <div class="Grid">
+                
+                <div class="r1">
+                    <h3>Main Data</h3>
+                    <table class="r1Table">
+                        <tr>
+                            <td class="Td01"><strong>Total Orders:</strong></td>
+                            <td class="Td02">12,213</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Delivered Orders:</strong></td>
+                            <td class="Td02">995</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Refund/Pickedup Orders:</strong></td>
+                            <td class="Td02">3,213</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Cancelled Orders:</strong></td>
+                            <td class="Td02">1,213</td>
+                        </tr>
+
+
+
+                    </table>
+                </div>
+                <div class="r1">
+                    <h3>Analytics Data</h3>
+                    <table class="r1Table">
+                        <tr>
+                            <td class="Td01"><strong>Orders Added (Today):</strong></td>
+                            <td class="Td02">-</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Orders Added (Last 7 days):</strong></td>
+                            <td class="Td02">-</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Orders Added (Last 30 days):</strong></td>
+                            <td class="Td02">-</td>
+                        </tr>
+                        <tr>
+                            <td class="Td01"><strong>Orders Processing:</strong></td>
+                            <td class="Td02">-</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="/files/js/Main_Admin.js"></script>
 </body>
 </html>
