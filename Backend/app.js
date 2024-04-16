@@ -14,14 +14,15 @@ const Login_Get = require("./Login_Get.js");
 const Logout_Get = require("./Logout_Get.js");
 const Logout_Post = require("./Logout_Post.js");
 // _______________________________________________________________________________________________________
-const Home = require("./Home.js")
+const Home = require("./Home.js");
 // _______________________________________________________________________________________________________
-const Main_Admin = require("./Main_Admin/Main_Admin.js")
-const Admin_Manager = require("./Main_Admin/Admin_Manager.js")
-const Admin_Analytics = require("./Main_Admin/Admin_Analytics.js")
+const Main_Admin = require("./Main_Admin/Main_Admin.js");
+const Admin_Manager = require("./Main_Admin/Admin_Manager.js");
+const Admin_Manager_Reg = require("./Main_Admin/Admin_Manager_Reg.js");
+const Admin_Analytics = require("./Main_Admin/Admin_Analytics.js");
 // _______________________________________________________________________________________________________
-const Seller_Login_Get = require("./SELLER/Seller_Login_Get.js")
-const Seller_Login_Post = require("./SELLER/Seller_Login_Post.js")
+const Seller_Login_Get = require("./SELLER/Seller_Login_Get.js");
+const Seller_Login_Post = require("./SELLER/Seller_Login_Post.js");
 // _______________________________________________________________________________________________________
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "../Files/PUG_01"));
@@ -61,6 +62,7 @@ app.get("/",async (req, res) => {Home(req, res)});
 
 app.get("/admin",async (req, res) => {Main_Admin(req, res)});
 app.get("/admin/managers",async (req, res) => {Admin_Manager(req, res)});
+app.post("/admin/managers/registration",async (req, res) => {Admin_Manager_Reg(req, res)});
 app.get("/admin/Analytics",async (req, res) => {Admin_Analytics(req, res)});
 
 

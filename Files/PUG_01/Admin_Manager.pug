@@ -55,7 +55,16 @@
                 <div class="Main_N">
                     <form id="Search_Man" action="/admin/managers/search" method="get">
                         <input id="Search_Man_I" autocomplete="off" spellcheck="false" type="search" placeholder="Enter Mobile Number">
-                        <button type="button" id="Search_Man_B">GO</button>
+                        <select name="S_Type" id="S_Type">
+                            <option value="">Type</option>
+                            <option value="Sellers Assistant leader">Sellers Assistant leader</option>
+                            <option value="Order Assistant leader">Order Assistant leader</option>
+                            <option value="Delivery Assistant leader">Delivery Assistant leader</option>
+                            <option value="Complaint Assistant leader">Complaint Assistant leader</option>
+                            <option value="Contact Assistant leader">Contact Assistant leader</option>
+                            <option value="Analytics Assistant leader">Analytics Assistant leader</option>
+                        </select>
+                        <button type="button" id="Search_Man_B">Search</button>
                     </form>
                     
                 </div>
@@ -78,7 +87,221 @@
             <div class="Section03">
                 <div class="Sec_Main">
                     <div class="Main_Data_M">
-                        <button type="button">ADD MANAGER</button>
+                        <div class="formm">
+                            <form id="Form_Reg" action="/admin/managers/registration" method="post">
+                                <button type="reset">+ ADD MANAGER</button>
+                                <fieldset class="fieldset1">
+                                    <legend>Account details</legend>
+                                    <div class="Lab_Div">
+                                        <label title="First name" class="Reg_label" for="First_Name">First Name:</label>
+                                        <input title="First name" placeholder="First name" name="First_Name" id="First_Name" autocomplete="off" spellcheck="false" type="text" required>
+                                        <p class="lab_P">Enter your first name</p>
+                                    </div>
+                                    <div class="Lab_Div">
+                                        <label title="Last name" class="Reg_label" for="Last_Name">Last Name:</label>
+                                        <input title="Last name" placeholder="Last name" name="Last_Name" id="Last_Name" autocomplete="off" spellcheck="false" type="text" required>
+                                        <p class="lab_P">Enter your last name</p>
+                                    </div>
+                                    <div class="Lab_Div">
+                                        <label title="Mobile number" class="Reg_label" for="Mobile_number">Mobile number:</label>
+                                        <input title="Mobile number" maxlength="10" placeholder="Mobile number" name="Mobile_Number" id="Mobile_number" autocomplete="off" spellcheck="false" type="text" required>
+                                        <p class="lab_P">Enter your mobile number</p>
+                                    </div>
+                                    <div class="Lab_Div">
+                                        <label title="Email" class="Reg_label" for="Email">Email address:</label>
+                                        <input title="Email" placeholder="Email address" name="Email" id="Email" autocomplete="off" spellcheck="false" type="text" required>
+                                        <p class="lab_P">Enter your Email address</p>
+                                    </div>
+                                    <div class="Lab_Div">
+                                        <label title="Create password" class="Reg_label" for="Create_password">Create password:</label>
+                                        <input title="Create password" minlength="8" placeholder="Create password" name="Create_Password" id="Create_password" autocomplete="off" spellcheck="false" type="text" required>
+                                        <p class="lab_P">Create your password</p>
+                                    </div>
+                                </fieldset>
+
+
+
+
+
+
+
+                                <fieldset class="fieldset2">
+                                    <legend>Personal details</legend>
+                                    <div class="Lab_Div">
+                                        <label title="Country name" class="Reg_label" for="Country_Name">Country name:</label>
+                                        <select name="Country_Name" id="Country_Name">
+                                            <option value="India" selected>India</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                        <!-- <input title="Country name" placeholder="Country name" name="Country_Name" id="Country name" autocomplete="off" spellcheck="false" type="text" required> -->
+                                        <p class="lab_P">Enter your Country name</p>
+                                    </div>
+                                    <div class="Lab_Div">
+                                        <label title="State name" class="Reg_label" for="State_Name">State name:</label>
+                                        <select name="State_Name" id="State_Name">
+                                            <option value="SelectState">-- Select State --</option>
+                                            <option value="Andra Pradesh">Andra Pradesh</option>
+                                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                            <option value="Assam">Assam</option>
+                                            <option value="Bihar">Bihar</option>
+                                            <option value="Chhattisgarh">Chhattisgarh</option>
+                                            <option value="Goa">Goa</option>
+                                            <option value="Gujarat">Gujarat</option>
+                                            <option value="Haryana">Haryana</option>
+                                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                            <option value="Jharkhand">Jharkhand</option>
+                                            <option value="Karnataka">Karnataka</option>
+                                            <option value="Kerala">Kerala</option>
+                                            <option value="Madya Pradesh">Madya Pradesh</option>
+                                            <option value="Maharashtra">Maharashtra</option>
+                                            <option value="Manipur">Manipur</option>
+                                            <option value="Meghalaya">Meghalaya</option>
+                                            <option value="Mizoram">Mizoram</option>
+                                            <option value="Nagaland">Nagaland</option>
+                                            <option value="Orissa">Orissa</option>
+                                            <option value="Punjab">Punjab</option>
+                                            <option value="Rajasthan">Rajasthan</option>
+                                            <option value="Sikkim">Sikkim</option>
+                                            <option value="Tamil Nadu">Tamil Nadu</option>
+                                            <option value="Telangana">Telangana</option>
+                                            <option value="Tripura">Tripura</option>
+                                            <option value="Uttaranchal">Uttaranchal</option>
+                                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                            <option value="West Bengal">West Bengal</option>
+                                            <option disabled style="background-color:#aaa; color:#fff">UNION Territories</option>
+                                            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                            <option value="Chandigarh">Chandigarh</option>
+                                            <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                                            <option value="Daman and Diu">Daman and Diu</option>
+                                            <option value="Delhi">Delhi</option>
+                                            <option value="Lakshadweep">Lakshadweep</option>
+                                            <option value="Pondicherry">Pondicherry</option>
+                                        </select>
+                                        <p class="lab_P">Enter your State name</p>
+                                    </div>
+                                    <div class="Lab_Div">
+                                        <label title="District" class="Reg_label" for="District_Name">District:</label>
+                                        <select name="District_Name" id="District_Name">
+                                            <option value="">-- Select District --</option>
+                                        </select>
+                                        <p class="lab_P">Enter your District name</p>
+                                    </div>
+
+
+
+                                    <div class="Lab_Div">
+                                        <label title="PIN code" class="Reg_label" for="Pin_Code">Pin code:</label>
+                                        <input title="PIN code" maxlength="6" placeholder="PIN Code" name="Pin_Code" id="Pin_Code" autocomplete="off" spellcheck="false" type="text" required>
+                                        <p class="lab_P">Enter your PIn code</p>
+                                    </div>
+
+                                    <div class="Lab_Div">
+                                        <label title="City name" class="Reg_label" for="City_Name">City name:</label>
+                                        <input title="City name" placeholder="City name" name="City_Name" id="City_Name" autocomplete="off" spellcheck="false" type="text" required>
+                                        <p class="lab_P">Enter your City name</p>
+                                    </div>
+
+                                    <div class="Lab_Div">
+                                        <label title="Town/Village" class="Reg_label" for="Village_Name">Town/Village name:</label>
+                                        <input title="Town/Village" placeholder="Town/Village name" name="Village_Name" id="Village_Name" autocomplete="off" spellcheck="false" type="text" required>
+                                        <p class="lab_P">Enter your Town/Village name</p>
+                                    </div>
+
+                                    <div class="Lab_Div">
+                                        <label title="Locality/Road" class="Reg_label" for="Locality_Road">Locality/Road name:</label>
+                                        <input title="Locality/Road" placeholder="Locality/Road name" name="Locality_Road" id="Locality_Road" autocomplete="off" spellcheck="false" type="text" required>
+                                        <p class="lab_P">Enter your Locality/Road name</p>
+                                    </div>
+                                    <div class="Lab_Div">
+                                        <label title="Language you speak" class="Reg_label" for="Language">Language you speak:</label>
+                                        <input title="Language you speak" placeholder="Language you speak" name="Language" id="Language" autocomplete="off" spellcheck="false" type="text" required>
+                                        <p class="lab_P">Enter your Language you speak</p>
+                                    </div>
+
+                                    <div class="Lab_Div">
+                                        <label title="Your Age" class="Reg_label" for="Your_Age">Your Age:</label>
+                                        <input title="Your Age" placeholder="Your Age" name="Your_Age" id="Your_Age" autocomplete="off" spellcheck="false" type="text" required>
+                                        <p class="lab_P">Enter your Your Age</p>
+                                    </div>
+
+                                    <div class="Lab_Div" id="Gen">
+                                        <label title="Town/Village" class="Reg_label" for="Gender1">Gender:</label>
+                                        <select name="Gender" id="Gender1">
+                                            <option value="">-- select option --</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                        <p class="lab_P">Enter your Gender</p>
+                                    </div>
+
+                                </fieldset>
+
+
+                                <fieldset class="fieldset1">
+                                    <legend>Bank account details</legend>
+                                    <div class="Lab_Div">
+                                        <label title="Bank name" class="Reg_label" for="Bank_Name">Bank name:</label>
+                                        <input title="Bank name" placeholder="Bank name" name="Bank_Name" id="Bank_Name" autocomplete="off" spellcheck="false" type="text" required>
+                                        <p class="lab_P">Enter your Bank name</p>
+                                    </div>
+                                    <div class="Lab_Div">
+                                        <label title="Account name" class="Reg_label" for="Account_Name">Account name:</label>
+                                        <input title="Account name" placeholder="Account name" name="Account_Name" id="Account_Name" autocomplete="off" spellcheck="false" type="text" required>
+                                        <p class="lab_P">Enter your Account name</p>
+                                    </div>
+                                    <div class="Lab_Div">
+                                        <label title="Account number" class="Reg_label" for="Account_Number">Account number:</label>
+                                        <input title="Account number" placeholder="Account number" name="Account_Number" id="Account_Number" autocomplete="off" spellcheck="false" type="text" required>
+                                        <p class="lab_P">Enter your Account number</p>
+                                    </div>
+                                    <div class="Lab_Div">
+                                        <label title="IFSC CODE" class="Reg_label" for="Ifsc_Code">IFSC CODE:</label>
+                                        <input title="IFSC CODE" placeholder="IFSC CODE" name="Ifsc_Code" id="Ifsc_Code" autocomplete="off" spellcheck="false" type="text" required>
+                                        <p class="lab_P">Enter your IFSC CODE</p>
+                                    </div>
+
+                                    <div class="Lab_Div">
+                                        <label title="UPI number" class="Reg_label" for="Upi_Number">UPI number:</label>
+                                        <input title="UPI number" placeholder="UPI number" name="Upi_Number" id="Upi_Number" autocomplete="off" spellcheck="false" type="text" required>
+                                        <p class="lab_P">Enter your UPI number</p>
+                                    </div>
+                                </fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+                                <fieldset class="fieldset2">
+                                    
+                                    <legend>Assistant access</legend>
+                                    <div class="Lab_Div">
+                                        <label title="Assistant type" class="Reg_label" for="Assistant_Type">Assistant type:</label>
+                                        <select name="Assistant_Type" id="Assistant_Type">
+                                            <option value="">-- select options --</option>
+                                            <option value="Sellers Assistant leader">Sellers Assistant leader</option>
+                                            <option value="Order Assistant leader">Order Assistant leader</option>
+                                            <option value="Delivery Assistant leader">Delivery Assistant leader</option>
+                                            <option value="Complaint Assistant leader">Complaint Assistant leader</option>
+                                            <option value="Contact Assistant leader">Contact Assistant leader</option>
+                                            <option value="Analytics Assistant leader">Analytics Assistant leader</option>
+                                        </select>
+                                        <p class="lab_P">Enter your Assistant type</p>
+                                    </div>
+                                </fieldset>
+                                <button id="Submit_BTN" type="submit">Submit</button>
+                            </form>
+
+
+                        </div>
 
 
                     </div>

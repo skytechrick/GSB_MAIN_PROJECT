@@ -27,6 +27,14 @@
     /* display: none; */
 }
 
+#S_Type{
+    width: 60px;
+    margin: 0 4px;
+    /* width: 200px; */
+    /* padding: 5px; */
+    border: 1px solid rgb(55, 151, 241);
+    outline: none;
+}
 
 .tr {
     position: relative;
@@ -87,22 +95,6 @@ h2 {
     /* overflow: hidden; */
 
 }
-@media screen and (max-width: 450px){
-    .Aside10 {
-        top: 69px;
-    }
-    
-}
-
-
-.Main_Data_M {
-    /* background-color: antiquewhite; */
-    /* width: 90%; */
-    border: 1px solid #aaa;
-    display: flex;
-    
-}
-
 .Main_N {
     background-color: white;
 }
@@ -112,6 +104,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     
 }
 
@@ -119,7 +112,9 @@ h2 {
     font-size: 14px;
     padding: 5px;
     outline: none;
-    margin-right: 15px;
+    /* margin-right: 15px; */
+    
+    border: 1px solid rgb(55, 151, 241);
 }
 #Search_Man_B {
     background-color: rgb(55, 151, 241);
@@ -128,14 +123,19 @@ h2 {
     border: 1px solid #aaa;
     cursor: pointer;
     padding: 5px;
-
+    
+}
+#Search_Man_B:hover {
+    text-decoration: underline;
+    transition-duration: 400ms;
+    background-color: rgb(13, 126, 231);
 }
 
 .S_List {
     /* background-color: antiquewhite; */
     width: 80%;
     margin: auto;
-    height: 50%;
+    height: 60%;
     overflow-y: scroll;
     border: 1px solid #aaa;
     border-top: none;
@@ -166,4 +166,170 @@ h2 {
     transition-duration: 200ms;
     color: rgb(18, 188, 255);
     font-size: 14.5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.formm {
+    /* background-color: rgb(236, 236, 236); */
+    padding: 20px;
+}
+
+
+.Main_Data_M {
+    /* background-color: antiquewhite; */
+    /* width: 90%; */
+    border: 1px solid #aaa;
+    /* display: flex; */
+    
+}
+
+.fieldset1 {
+    display: flex;
+    justify-content: left;
+    align-self: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#Form_Reg input, #Form_Reg textarea, #Form_Reg button{
+    outline: none;
+    /* padding: 6px 8px; */
+    padding: 6px 0px;
+    font-size: 14px;
+    border: none;
+    border-bottom: 1px solid rgb(55, 151, 241);
+    width: 200px;
+    background-color: transparent;
+    
+}
+fieldset {
+    border: 1px solid rgb(55, 151, 241);
+    box-sizing: border-box;
+    margin: 10px 0;
+    /* box-shadow: 0 0 10px rgb(18, 188, 255); */
+
+}
+
+.Reg_label {
+    width: 150px;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+    /* display: block; */
+}
+.Reg_label:hover {
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition-duration: 200ms;
+    color: rgb(55, 151, 241);
+
+}
+
+.Lab_Div {
+    margin: 5px 0;
+    /* background-color: aqua; */
+
+}
+
+
+.lab_P {
+    font-size: 11px;
+    position: relative;
+    padding: 0;
+    left: 154px;
+    margin: 0;
+    /* color: red; */
+    /* display: inline-block; */
+    width: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Country_Name, #State_Name, #District_Name, #Gender1, #Assistant_Type{
+    width: 200px;
+    padding: 5px;
+    border: 1px solid rgb(55, 151, 241);
+    outline: none;
+    
+}
+
+.fieldset1 {
+    background-color: rgb(201, 226, 255);
+}
+
+.fieldset2 {
+    background-color: rgb(243, 245, 255);
+}
+
+@media screen and (max-width: 450px){
+    .Aside10 {
+        top: 69px;
+    }
+    .lab_P {
+        left: 0px;
+
+    }
+    .Reg_label {
+        width: auto;
+
+    }
+    
+    .lab_P {
+        font-size: 11px;
+}
+    
+}
+
+
+
+#Form_Reg input[type="radio"] {
+    width: 10px;
+}
+
+#Gen label, #Gen input{
+    font-size: 15px;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+}
+
+
+
+
+#Form_Reg button {
+    background-color: rgb(18, 188, 255);
+    color: white;
+    border: 1px solid #aaa;
+    cursor: pointer;
+}
+
+#Form_Reg button:hover {
+    text-decoration: underline;
 }
