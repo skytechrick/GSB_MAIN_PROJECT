@@ -22,7 +22,7 @@
         <nav id="Nav">
             <ul>
                 <li><a href="/admin">Home</a></li>
-                <li><a href="/admin/managers">Managers</a></li>
+                <li><a href="/admin/assistant">Assistant</a></li>
                 <li><a href="/admin/Analytics">Analytics</a></li>
                 <li><a href="/admin/control">Control</a></li>
                 <li><a href="/admin/seller">Seller</a></li>
@@ -53,7 +53,7 @@
     
                 </div>
                 <div class="Main_N">
-                    <form id="Search_Man" action="/admin/managers/search" method="get">
+                    <form id="Search_Man" action="/admin/assistant/search" method="get">
                         <input id="Search_Man_I" autocomplete="off" spellcheck="false" type="search" placeholder="Enter Mobile Number">
                         <select name="S_Type" id="S_Type">
                             <option value="">Type</option>
@@ -92,6 +92,11 @@
                                 <button type="reset">+ ADD MANAGER</button>
                                 <fieldset class="fieldset1">
                                     <legend>Account details</legend>
+                                    <div class="Lab_Div">
+                                        <label title="Acode" class="Reg_label" for="Acode">Acode:</label>
+                                        <input title="Acode" placeholder="Acode" name="Acode" id="Acode" autocomplete="off" spellcheck="false" type="text" required>
+                                        <p class="lab_P">Enter Acode</p>
+                                    </div>
                                     <div class="Lab_Div">
                                         <label title="First name" class="Reg_label" for="First_Name">First Name:</label>
                                         <input title="First name" placeholder="First name" name="First_Name" id="First_Name" autocomplete="off" spellcheck="false" type="text" required>

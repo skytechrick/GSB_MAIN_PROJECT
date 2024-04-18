@@ -1,5 +1,5 @@
 const {New_Worker_Model} = require("../All_Models.js");
-Admin_Manager_Reg = (req, res) =>{
+Admin_Assistant_Reg = (req, res) =>{
     
     const {First_Name, Last_Name, Mobile_Number, Email, Create_Password, Country_Name, State_Name, District_Name, Pin_Code, City_Name, Village_Name, Locality_Road, Language, Your_Age, Gender, Bank_Name, Account_Name, Account_Number, Ifsc_Code, Upi_Number, Assistant_Type} = req.body
     const se = {
@@ -34,6 +34,6 @@ Admin_Manager_Reg = (req, res) =>{
     New_Worker1.save().then(() =>{
         console.log("Saved to database....:");
     });
-    res.status(200).redirect("/admin/managers/");
+    res.status(200).redirect("/admin/assistant/");
 }
-module.exports = Admin_Manager_Reg;
+module.exports = Admin_Assistant_Reg;

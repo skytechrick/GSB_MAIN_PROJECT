@@ -53,6 +53,7 @@ const Signup_Schema = new mongoose.Schema({
 
 const New_Worker = new mongoose.Schema(
     {
+        Acode:{type:Number},
         First_Name:{type:String},
         Last_Name: {type:String},
         Mobile_Number: {type:Number},
