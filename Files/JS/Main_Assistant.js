@@ -10,10 +10,10 @@ function a() {
         }else{
             d = "0px";
             Aside011.style.left = "-240px"
-            console.log(44)
-        }
-    })
-}
+            console.log(44);
+        };
+    });
+};
 a();
 function STATE_DISTRICT() {
     var AndraPradesh = ["Anantapur","Chittoor","East Godavari","Guntur","Kadapa","Krishna","Kurnool","Prakasam","Nellore","Srikakulam","Visakhapatnam","Vizianagaram","West Godavari"];
@@ -177,24 +177,397 @@ STATE_DISTRICT();
 
 
 
-// function Submit() {
-//     let data = document.getElementById("Form_Reg");
-//     let First_Name = document.getElementById("First_Name").value;
-//     let Last_Name = document.getElementById("Last_Name").value;
-//     let Mobile_Number = document.getElementById("Mobile_Number").value;
-//     let Email = document.getElementById("Email").value;
-//     let Create_Password = document.getElementById("Create_password").value;
-//     let Country_Name = document.getElementById("Country_Name").value;
-//     let State_Name = document.getElementById("State_Name").value;
-//     let District_Name = document.getElementById("District_Name").value;
-//     let Pin_Code = document.getElementById("Pin_Code").value;
-//     let City_Name = document.getElementById("City_Name").value;
-//     let Village_Name = document.getElementById("Village_Name").value;
-//     let Locality_Road = document.getElementById("Locality_Road").value;
-//     let Language = document.getElementById("Language").value;
-//     let Your_Age = document.getElementById("Your_Age").value;
-//     let Gender = document.getElementById("Gender").value;
-//     // let Gender = document.getElementById("Gender").value;
+function searchs() {
+
+    let Search_Man_I = document.getElementById("Search_Man_I").value;
+    let S_Type = document.getElementById("S_Type").value;
+    
+    let a = {Search_Man_I: Number(Search_Man_I), S_Type:S_Type};
+    // console.log(a);
+    // console.log("Clcicked")
+    fetch("/admin/assistant/search",{
+        method:"POST",
+        headers:{
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(a),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+            
+    })
+    
+    .then(data => {
+        if(data.Message){
+            document.getElementById("mess").innerHTML = data.Message;
+            setTimeout(() => {
+                document.getElementById("mess").innerHTML = "";
+                
+            }, 2000);
+        }else{
+            document.getElementById("Form11").style.display = "none";
+            document.getElementById("Display_Data").style.display = "block";
+            document.getElementById("mess").innerHTML = "Search found";
+            setTimeout(() => {
+                document.getElementById("mess").innerHTML = "";
+                
+            }, 2000);
+            
+
+
+
+            let a = `<div class="boxx">
+            <div class="keye">First Name:</div>
+            <div class="valuee">${data.First_Name}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">Last Name:</div>
+            <div class="valuee">${data.Last_Name}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">Number:</div>
+            <div class="valuee">${data.Mobile_Number}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">Email:</div>
+            <div class="valuee">${data.Email}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">Country:</div>
+            <div class="valuee">${data.Country_Name}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">State:</div>
+            <div class="valuee">${data.State_Name}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">District:</div>
+            <div class="valuee">${data.District_Name}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">PIN:</div>
+            <div class="valuee">${data.Pin_Code}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">City:</div>
+            <div class="valuee">${data.City_Name}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">Village:</div>
+            <div class="valuee">${data.Village_Name}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">Locality:</div>
+            <div class="valuee">${data.Locality_Road}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">Language:</div>
+            <div class="valuee">${data.Language}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">Age:</div>
+            <div class="valuee">${data.Your_Age}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">Gender:</div>
+            <div class="valuee">${data.Gender}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">Bank:</div>
+            <div class="valuee">${data.Bank_Name}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">Name:</div>
+            <div class="valuee">${data.Account_Name}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">Account no:</div>
+            <div class="valuee">${data.Account_Number}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">IFSC:</div>
+            <div class="valuee">${data.Ifsc_Code}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">UPI:</div>
+            <div class="valuee">${data.Upi_Number}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">Assistant:</div>
+            <div class="valuee">${data.Assistant_Type}</div>
+        </div>`;
+
+
+        document.getElementById("boxx11").innerHTML = a;
+
+
+        let fdd = `<span>${data.Village_Name}, ${data.Locality_Road}</span><br>
+        <span>PIN: ${data.Pin_Code}</span><br>
+        <span>Dist: ${data.District_Name}</span><br>
+        <span>${data.City_Name}, ${data.State_Name}</span><br>
+        <span>${data.Country_Name}</span><br>`
+
+
+
+        document.getElementById("AdssP").innerHTML = fdd;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        };
+
+
+    }).catch(error => {
+        console.log('Problem...:');
+    })
 
     
-// }
+}
+
+
+
+
+function Optiona(Search_Man_I,S_Type) {
+    let a = {Search_Man_I: Number(Search_Man_I), S_Type:S_Type};
+    // console.log(a);
+    // console.log("Clcicked")
+    fetch("/admin/assistant/search",{
+        method:"POST",
+        headers:{
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(a),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+            
+    })
+    
+    .then(data => {
+        // console.log(data)
+        if(data.Message){
+            document.getElementById("mess").innerHTML = data.Message;
+            setTimeout(() => {
+                document.getElementById("mess").innerHTML = "";
+                
+            }, 2000);
+        }else{
+            document.getElementById("Form11").style.display = "none";
+            document.getElementById("Display_Data").style.display = "block";
+            document.getElementById("mess").innerHTML = "Search found";
+            setTimeout(() => {
+                document.getElementById("mess").innerHTML = "";
+                
+            }, 2000);
+            
+
+
+
+            let a = `<div class="boxx">
+            <div class="keye">First Name:</div>
+            <div class="valuee">${data.First_Name}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">Last Name:</div>
+            <div class="valuee">${data.Last_Name}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">Number:</div>
+            <div id="NNA" class="valuee">${data.Mobile_Number}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">Email:</div>
+            <div class="valuee">${data.Email}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">Country:</div>
+            <div class="valuee">${data.Country_Name}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">State:</div>
+            <div class="valuee">${data.State_Name}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">District:</div>
+            <div class="valuee">${data.District_Name}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">PIN:</div>
+            <div class="valuee">${data.Pin_Code}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">City:</div>
+            <div class="valuee">${data.City_Name}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">Village:</div>
+            <div class="valuee">${data.Village_Name}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">Locality:</div>
+            <div class="valuee">${data.Locality_Road}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">Language:</div>
+            <div class="valuee">${data.Language}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">Age:</div>
+            <div class="valuee">${data.Your_Age}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">Gender:</div>
+            <div class="valuee">${data.Gender}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">Bank:</div>
+            <div class="valuee">${data.Bank_Name}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">Name:</div>
+            <div class="valuee">${data.Account_Name}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">Account no:</div>
+            <div class="valuee">${data.Account_Number}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">IFSC:</div>
+            <div class="valuee">${data.Ifsc_Code}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">UPI:</div>
+            <div class="valuee">${data.Upi_Number}</div>
+        </div>
+        <div class="boxx">
+            <div class="keye">Assistant:</div>
+            <div id="AAAAA" class="valuee">${data.Assistant_Type}</div>
+        </div>`;
+
+
+        document.getElementById("boxx11").innerHTML = a;
+
+
+        let fdd = `<span>${data.Village_Name}, ${data.Locality_Road}</span><br>
+        <span>PIN: ${data.Pin_Code}</span><br>
+        <span>Dist: ${data.District_Name}</span><br>
+        <span>${data.City_Name}, ${data.State_Name}</span><br>
+        <span>${data.Country_Name}</span><br>`
+
+
+
+        document.getElementById("AdssP").innerHTML = fdd;
+        };
+
+
+    }).catch(error => {
+        console.log('Problem...:');
+    })
+
+    
+}
+
+
+document.getElementById("cf").addEventListener("click",() => {
+    document.getElementById("Display_Data").style.display ='none';
+    document.getElementById("Form11").style.display ='block';
+});
+
+
+
+document.getElementById("Upd_BTN").addEventListener("click",() => {
+    let Update_As = document.getElementById("Update_As").value;
+    let valueee = document.getElementById("valueee").value;
+    let NAA = document.getElementById("NNA").innerHTML;
+    let AAAAA = document.getElementById("AAAAA").innerHTML;
+    a = {Keya:Update_As,Value: valueee,Num: NAA,A_Type: AAAAA,}
+    fetch("/admin/assistant/update",{
+        method:"POST",
+        headers:{
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(a),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+            
+    })
+    
+    .then(data => {
+
+        document.getElementById("mess").innerHTML = data.Message;
+        setTimeout(() => {
+            document.getElementById("mess").innerHTML = "";
+                
+        }, 2000);
+
+
+
+
+
+    }).catch(error => {
+        console.log('Problem...:');
+    });
+
+});
+document.getElementById("ssss").addEventListener("click",() => {
+    let valueee = document.getElementById("asdas").value;
+    let NAA = document.getElementById("NNA").innerHTML;
+    let AAAAA = document.getElementById("AAAAA").innerHTML;
+    a = {Keya:"Ban",Value: valueee,Num: NAA,A_Type: AAAAA,}
+    fetch("/admin/assistant/update",{
+        method:"POST",
+        headers:{
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(a),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+
+        document.getElementById("mess").innerHTML = data.Message;
+        setTimeout(() => {
+            document.getElementById("mess").innerHTML = "";
+                
+        }, 2000);
+    }).catch(error => {
+        console.log('Problem...:');
+    });
+});
+
+
+
+
+
+
+
+
+

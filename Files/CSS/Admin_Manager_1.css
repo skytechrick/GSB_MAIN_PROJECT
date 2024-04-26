@@ -288,25 +288,6 @@ fieldset {
     background-color: rgb(243, 245, 255);
 }
 
-@media screen and (max-width: 450px){
-    .Aside10 {
-        top: 69px;
-    }
-    .lab_P {
-        left: 0px;
-
-    }
-    .Reg_label {
-        width: auto;
-
-    }
-    
-    .lab_P {
-        font-size: 11px;
-}
-    
-}
-
 
 
 #Form_Reg input[type="radio"] {
@@ -333,3 +314,234 @@ fieldset {
 #Form_Reg button:hover {
     text-decoration: underline;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* #Form11 {
+    
+} */
+
+.Display_Data {
+    padding-left: 280px;
+    display: none;
+    /* background-color: wheat; */
+}
+
+.boxx {
+    /* background-color: antiquewhite; */
+    font-size: 14px;
+
+}
+.keye {
+    /* background-color: aqua; */
+    display: inline-block;
+    padding: 8px;
+    width: 100px;
+    font-weight: bold;
+}
+
+.valuee {
+    /* background-color: gold; */
+    display: inline-block;
+    padding: 8px;
+    padding-left: 0px;
+    margin: 0px;
+    width: 180px;
+
+}
+
+
+
+#Adss {
+    font-size: 14px;
+    /* background-color: aqua; */
+    margin-left: 10px;
+}
+#Adss h3{
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+}
+
+
+#AdssP {
+    margin-top: 0;
+    text-align: left;
+    line-height: 24px;
+
+}
+
+#FOr {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#Update_As{
+    outline: none;
+    width: 100px;
+    padding: 6px;
+    cursor: pointer;
+    border: 1px solid rgb(13, 126, 231);
+}
+
+.df {
+    display: flex;
+    justify-content: center;
+    /* width: 300px; */
+    margin: 2px 0;
+}
+.df label {
+    padding: 6px;
+}
+
+.df button {
+    padding: 8px;
+    width: 100px;
+    cursor: pointer;
+    background-color: rgb(109, 185, 255);
+    outline: none;
+    border: none;
+    
+}
+.df button:hover {
+    background-color: rgb(58, 160, 255);
+    text-decoration: none;
+    color: white;
+
+}
+
+#valueee {
+    outline: none;
+    border: 1px solid rgb(13, 126, 231);
+    padding: 5px;
+}
+
+#aassd {
+    padding-left: 10px;
+}
+
+
+
+#asdas {
+    outline: none;
+    padding: 5px;
+    border: 1px solid rgb(13, 126, 231);
+}
+
+
+.gf {
+    display: flex;
+    justify-content: right;
+    padding-right: 10px;
+    padding-top: 10px;
+
+}
+
+#cf{
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    background-color: #e9e9e9;
+}
+#cf:hover{
+    background-color: #aaa;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 950px){
+    
+    .Display_Data {
+        padding-left: 0px;
+    }
+}
+@media screen and (max-width: 450px){
+    
+    #Adss {
+        font-size: 14px;
+    }
+    .Aside10 {
+        top: 69px;
+    }
+    .lab_P {
+        left: 0px;
+
+    }
+    .Reg_label {
+        width: auto;
+
+    }
+    
+    .lab_P {
+        font-size: 11px;
+    }
+    
+    .boxx {
+        font-size: 12px;
+
+    }
+    
+    .keye {
+        width: 80px;
+    }
+
+    .valuee {
+        width: 180px;
+
+    }
+    
+}
+

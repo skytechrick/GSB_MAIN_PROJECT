@@ -19,10 +19,35 @@ const Home = require("./Home.js");
 const Main_Admin = require("./Main_Admin/Main_Admin.js");
 const Admin_Assistant = require("./Main_Admin/Admin_Assistant.js");
 const Admin_Assistant_Reg = require("./Main_Admin/Admin_Assistant_Reg.js");
+const Admin_Assistant_Search = require("./Main_Admin/Admin_Assistant_Search.js");
+const Admin_Assistant_Update = require("./Main_Admin/Admin_Assistant_Update.js");
+
+
 const Admin_Analytics = require("./Main_Admin/Admin_Analytics.js");
+// _______________________________________________________________________________________________________
 // _______________________________________________________________________________________________________
 const Seller_Login_Get = require("./SELLER/Seller_Login_Get.js");
 const Seller_Login_Post = require("./SELLER/Seller_Login_Post.js");
+
+
+
+// _______________________________________________________________________________________________________
+// _______________________________________________________________________________________________________
+
+
+
+
+
+const Product_Page = require("./Product/Product_Page.js");
+
+
+
+
+
+
+
+
+// _______________________________________________________________________________________________________
 // _______________________________________________________________________________________________________
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "../Files/PUG_01"));
@@ -35,7 +60,9 @@ app.use('/files/css', express.static('../Files/CSS'));
 app.use('/files/js', express.static('../Files/JS'));
 app.use('/files/img', express.static('../Files/Img'));
 
-app.use('/product/img', express.static('../Products_Images/Product_2'));
+app.use('/gsb/documents/', express.static('../Files/Documents'));
+
+app.use('/product/img', express.static('../Served_Images_Product'));
 
 
 const storage = multer.diskStorage({
@@ -63,6 +90,10 @@ app.get("/",async (req, res) => {Home(req, res)});
 app.get("/admin",async (req, res) => {Main_Admin(req, res)});
 app.get("/admin/assistant",async (req, res) => {Admin_Assistant(req, res)});
 app.post("/admin/assistant/registration",async (req, res) => {Admin_Assistant_Reg(req, res)});
+
+app.post("/admin/assistant/search",async (req, res) => {Admin_Assistant_Search(req, res)});
+app.post("/admin/assistant/update",async (req, res) => {Admin_Assistant_Update(req, res)});
+
 app.get("/admin/Analytics",async (req, res) => {Admin_Analytics(req, res)});
 
 
@@ -80,10 +111,185 @@ app.post("/logout", async (req, res) => {Logout_Post(req, res)});
 
 
 
-
-
 app.get("/seller/login", async (req, res) => {Seller_Login_Get(req, res)});
 app.post("/seller/login", async (req, res) => {Seller_Login_Post(req, res)});
+
+
+
+
+app.get("/products", async (req, res) => {Product_Page(req,res)});
+
+
+
+
+// app.get("/product/:product_url", async (req, res) => {
+//     let req_url = req.params.product_url;
+//     let dataURL = await Product_Model.find({});
+//     let TP = "None";
+//     let ele = "None";
+//     let f = 0;
+//     for (let i = 0; i < dataURL.length; i++) {
+//         ele = dataURL[i];
+//         let T = ele.Product_A_URL;
+//         if (T == req_url) {
+//             TP = ele.Title;
+//             f = 0;
+//             break;
+//         }else{
+//             ele = {};
+//             f = 1;
+//         }
+//     };
+//     let Photo_File_1_URL = ele.Photo_File_1_URL;
+//     let Photo_File_4_URL = ele.Photo_File_4_URL;
+//     let Photo_File_5_URL = ele.Photo_File_5_URL;
+
+//     let Selling_Price_Get = ele.Selling_Price;
+//     let MRP_Get = ele.MRP;
+
+
+//     if (f ==0) {
+        
+//         res.status(200).render("Product_Page",{
+//             Title: TP,
+            
+//             Product_Image1: `<img id="Product_longList-B-1" class="Product_longList-B" src="${Photo_File_1_URL}" alt="${ele.Title}">`,
+//             Product_Image2: `<img id="Product_longList-B-2" class="Product_longList-B" src="${Photo_File_5_URL}" alt="${ele.Title}">`,
+//             Product_Image3: `<img id="Product_longList-B-3" class="Product_longList-B" src="${Photo_File_1_URL}" alt="${ele.Title}">`,
+//             Product_Image4: `<img id="Product_longList-B-4" class="Product_longList-B" src="${Photo_File_4_URL}" alt="${ele.Title}">`,
+//             Product_Image5: `<img id="Product_longList-B-5" class="Product_longList-B" src="${Photo_File_5_URL}" alt="${ele.Title}">`,
+//             Selling_Price: Selling_Price_Get,
+//             MRP: MRP_Get
+
+            
+//         });
+//     }
+//     else{
+//         res.status(404).send("Page not found");
+//     }
+//         // console.log(TP);
+//         // res.send(TP);
+        
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -344,55 +550,55 @@ const Photo_Upload = multer({ storage: storage });
     
 // })
 
-// app.get("/product/:product_url", async (req, res) => {
-//     let req_url = req.params.product_url;
-//     let dataURL = await Product_Model.find({});
-//     let TP = "None";
-//     let ele = "None";
-//     let f = 0;
-//     for (let i = 0; i < dataURL.length; i++) {
-//         ele = dataURL[i];
-//         let T = ele.Product_A_URL;
-//         if (T == req_url) {
-//             TP = ele.Title;
-//             f = 0;
-//             break;
-//         }else{
-//             ele = {};
-//             f = 1;
-//         }
-//     };
-//     let Photo_File_1_URL = ele.Photo_File_1_URL;
-//     let Photo_File_4_URL = ele.Photo_File_4_URL;
-//     let Photo_File_5_URL = ele.Photo_File_5_URL;
+app.get("/product/:product_url", async (req, res) => {
+    let req_url = req.params.product_url;
+    let dataURL = await Product_Model.find({});
+    let TP = "None";
+    let ele = "None";
+    let f = 0;
+    for (let i = 0; i < dataURL.length; i++) {
+        ele = dataURL[i];
+        let T = ele.Product_A_URL;
+        if (T == req_url) {
+            TP = ele.Title;
+            f = 0;
+            break;
+        }else{
+            ele = {};
+            f = 1;
+        }
+    };
+    let Photo_File_1_URL = ele.Photo_File_1_URL;
+    let Photo_File_4_URL = ele.Photo_File_4_URL;
+    let Photo_File_5_URL = ele.Photo_File_5_URL;
 
-//     let Selling_Price_Get = ele.Selling_Price;
-//     let MRP_Get = ele.MRP;
+    let Selling_Price_Get = ele.Selling_Price;
+    let MRP_Get = ele.MRP;
 
 
-//     if (f ==0) {
+    if (f ==0) {
         
-//         res.status(200).render("Product_Page",{
-//             Title: TP,
+        res.status(200).render("Product_Page",{
+            Title: TP,
             
-//             Product_Image1: `<img id="Product_longList-B-1" class="Product_longList-B" src="${Photo_File_1_URL}" alt="${ele.Title}">`,
-//             Product_Image2: `<img id="Product_longList-B-2" class="Product_longList-B" src="${Photo_File_5_URL}" alt="${ele.Title}">`,
-//             Product_Image3: `<img id="Product_longList-B-3" class="Product_longList-B" src="${Photo_File_1_URL}" alt="${ele.Title}">`,
-//             Product_Image4: `<img id="Product_longList-B-4" class="Product_longList-B" src="${Photo_File_4_URL}" alt="${ele.Title}">`,
-//             Product_Image5: `<img id="Product_longList-B-5" class="Product_longList-B" src="${Photo_File_5_URL}" alt="${ele.Title}">`,
-//             Selling_Price: Selling_Price_Get,
-//             MRP: MRP_Get
+            Product_Image1: `<img id="Product_longList-B-1" class="Product_longList-B" src="${Photo_File_1_URL}" alt="${ele.Title}">`,
+            Product_Image2: `<img id="Product_longList-B-2" class="Product_longList-B" src="${Photo_File_5_URL}" alt="${ele.Title}">`,
+            Product_Image3: `<img id="Product_longList-B-3" class="Product_longList-B" src="${Photo_File_1_URL}" alt="${ele.Title}">`,
+            Product_Image4: `<img id="Product_longList-B-4" class="Product_longList-B" src="${Photo_File_4_URL}" alt="${ele.Title}">`,
+            Product_Image5: `<img id="Product_longList-B-5" class="Product_longList-B" src="${Photo_File_5_URL}" alt="${ele.Title}">`,
+            Selling_Price: Selling_Price_Get,
+            MRP: MRP_Get
 
             
-//         });
-//     }
-//     else{
-//         res.status(404).send("Page not found");
-//     }
-//         // console.log(TP);
-//         // res.send(TP);
+        });
+    }
+    else{
+        res.status(404).send("Page not found");
+    }
+        // console.log(TP);
+        // res.send(TP);
         
-// })
+})
 
 
 // // /product/XvfuEmHqU1iImuLRiGxI0LhAi

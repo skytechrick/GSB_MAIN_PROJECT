@@ -13,6 +13,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div style="position: sticky;z-index: 1000; width: 100%; background-color: white; top: 0px;">
+        <center id="mess"></center>
+    </div>
     <div id="Background_Blur"></div>
     <header>
         <div id="Down_Btn" class="Down_Btn">
@@ -53,9 +56,9 @@
     
                 </div>
                 <div class="Main_N">
-                    <form id="Search_Man" action="/admin/assistant/search" method="get">
-                        <input id="Search_Man_I" autocomplete="off" spellcheck="false" type="search" placeholder="Enter Mobile Number">
-                        <select name="S_Type" id="S_Type">
+                    <form id="Search_Man">
+                        <input name="Search_Man_I" id="Search_Man_I" autocomplete="off" spellcheck="false" type="search" placeholder="Enter Mobile Number">
+                        <select name="S_Type" id="S_Type" style="cursor: pointer;">
                             <option value="">Type</option>
                             <option value="Sellers Assistant leader">Sellers Assistant leader</option>
                             <option value="Order Assistant leader">Order Assistant leader</option>
@@ -64,22 +67,13 @@
                             <option value="Contact Assistant leader">Contact Assistant leader</option>
                             <option value="Analytics Assistant leader">Analytics Assistant leader</option>
                         </select>
-                        <button type="button" id="Search_Man_B">Search</button>
+                        <button type="button" onclick="searchs();" id="Search_Man_B">Search</button>
                     </form>
                     
                 </div>
                 <div class="S_List">
                     <ul class="S_List_UL">
-
-                        <li><button>8436431656 (Rick)</button></li>
-                        <li><button>9800629145 (Rick)</button></li>
-                        
-                        <li><button>9832459014 (Rick)</button></li>
-                        
-                        <li><button>8436431656 (Rick)</button></li>
-                        <li><button>9800629145 (Rick)</button></li>
-                        <li><button>9832459014 (Rick)</button></li>
-
+                        | !{ULL}
                     </ul>
 
                 </div>
@@ -87,8 +81,8 @@
             <div class="Section03">
                 <div class="Sec_Main">
                     <div class="Main_Data_M">
-                        <div class="formm">
-                            <form id="Form_Reg" action="/admin/managers/registration" method="post">
+                        <div class="formm" id="Form11">
+                            <form id="Form_Reg" action="/admin/assistant/registration" method="post">
                                 <button type="reset">+ ADD MANAGER</button>
                                 <fieldset class="fieldset1">
                                     <legend>Account details</legend>
@@ -309,6 +303,196 @@
                         </div>
 
 
+
+
+
+
+
+
+
+
+
+                        <div id="Display_Data" class="Display_Data">
+
+                            <div class="gf">
+                                <span id="cf" class="material-symbols-outlined">close</span>
+
+                            </div>
+
+                            <div id="FOr">
+                                <fieldset id="aaa">
+                                    <legend>Update</legend>
+                                    <form>
+
+                                        <div class="df">
+                                            
+                                            <label for="Update_As">Update Key?</label>
+                                            <select id="Update_As">
+                                                <option value="First_Name">First Name</option>
+                                                <option value="Last_Name">Last Name</option>
+                                                <option value="Mobile_Number">Mobile</option>
+                                                <option value="Email">Email</option>
+                                                <option value="Country_Name">Country</option>
+                                                <option value="State_Name">State</option>
+                                                <option value="District_Name">District</option>
+                                                <option value="Pin_Code">PIN</option>
+                                                <option value="City_Name">City</option>
+                                                <option value="Village_Name">Village</option>
+                                                <option value="Locality_Road">Locality</option>
+                                                <option value="Language">Language</option>
+                                                <option value="Your_Age">Age</option>
+                                                <option value="Gender">Gender</option>
+                                                <option value="Bank_Name">Bank</option>
+                                                <option value="Account_Name">Account Name</option>
+                                                <option value="Account_Number">Account No</option>
+                                                <option value="Ifsc_Code">IFSC Code</option>
+                                                <option value="Upi_Number">UPI No</option>
+                                                <option value="Assistant_Type">Assistant Type</option>
+                                                
+                                            </select>
+                                        </div>
+                                        <div class="df">
+                                            <label for="valueee"style="cursor: pointer;">Value:</label>
+                                            <input title="Value" placeholder="Value" id="valueee" autocomplete="off" spellcheck="false" type="text">
+                                            
+                                        </div>
+                                        <div class="df">
+                                            <button id="Upd_BTN" type="button">Update</button>
+                                        </div>
+                                    </form>
+
+                                </fieldset>
+                                <fieldset>
+                                    <legend>Ban/Unban?</legend>
+                                    <form>
+
+                                        <input id="asdas" placeholder="Ban/Unban? (Yes, No)" type="text" autocomplete="off" spellcheck="false" type="text">
+                                        
+                                        <div class="df">
+                                            <button id="ssss" type="button">Ban/Unban</button>
+                                        </div>
+                                    </form>
+                                </fieldset>
+
+                            </div>
+                            <hr>
+                            <h3 id="aassd">Details</h3>
+
+
+
+
+
+
+
+
+ 
+                            <div id="boxx11">
+
+                                <div class="boxx">
+                                    <div class="keye">First Name:</div>
+                                    <div class="valuee">Rick</div>
+                                </div>
+                                <div class="boxx">
+                                    <div class="keye">Last Name:</div>
+                                    <div class="valuee">Sarkar</div>
+                                </div>
+                                <div class="boxx">
+                                    <div class="keye">Number:</div>
+                                    <div id="NNA" class="valuee">8436431656</div>
+                                </div>
+                                <div class="boxx">
+                                    <div class="keye">Email:</div>
+                                    <div class="valuee">ricksarkar2005@gmail.com</div>
+                                </div>
+                                <div class="boxx">
+                                    <div class="keye">Country:</div>
+                                    <div class="valuee">India</div>
+                                </div>
+                                <div class="boxx">
+                                    <div class="keye">State:</div>
+                                    <div class="valuee">West Bengal</div>
+                                </div>
+                                <div class="boxx">
+                                    <div class="keye">District:</div>
+                                    <div class="valuee">Darjeeling</div>
+                                </div>
+                                <div class="boxx">
+                                    <div class="keye">PIN:</div>
+                                    <div class="valuee">734014</div>
+                                </div>
+                                <div class="boxx">
+                                    <div class="keye">City:</div>
+                                    <div class="valuee">Siliguri</div>
+                                </div>
+                                <div class="boxx">
+                                    <div class="keye">Village:</div>
+                                    <div class="valuee">Bagdogra</div>
+                                </div>
+                                <div class="boxx">
+                                    <div class="keye">Locality:</div>
+                                    <div class="valuee">Loknath Nagar</div>
+                                </div>
+                                <div class="boxx">
+                                    <div class="keye">Language:</div>
+                                    <div class="valuee">English, Hindi, Bengali</div>
+                                </div>
+                                <div class="boxx">
+                                    <div class="keye">Age:</div>
+                                    <div class="valuee">18</div>
+                                </div>
+                                <div class="boxx">
+                                    <div class="keye">Gender:</div>
+                                    <div class="valuee">Male</div>
+                                </div>
+                                <div class="boxx">
+                                    <div class="keye">Bank:</div>
+                                    <div class="valuee">STATE BANK OF INDIA</div>
+                                </div>
+                                <div class="boxx">
+                                    <div class="keye">Name:</div>
+                                    <div class="valuee">Rick Sarkar</div>
+                                </div>
+                                <div class="boxx">
+                                    <div class="keye">Account no:</div>
+                                    <div class="valuee">42094200655</div>
+                                </div>
+                                <div class="boxx">
+                                    <div class="keye">IFSC:</div>
+                                    <div class="valuee">SBIN0007148</div>
+                                </div>
+                                <div class="boxx">
+                                    <div class="keye">UPI:</div>
+                                    <div class="valuee">8436431656</div>
+                                </div>
+                                <div class="boxx">
+                                    <div class="keye">Assistant:</div>
+                                    <div id="AAAAA" class="valuee">Sellers Assistant leader</div>
+                                </div>
+                            </div>
+                            
+                            <hr>
+                            
+
+
+
+
+
+
+
+                            <div id="Adss">
+                                <h3>Address</h3>
+                                <p id="AdssP">
+                                    <span>Bagdogra, Loknath Nagar</span><br>
+                                    <span>PIN: 734014</span><br>
+                                    <span>Dist: Darjeeling</span><br>
+                                    <span>Siliguri, West Bengal</span><br>
+                                    <span>India</span><br>
+
+                                </p>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
             </div>
@@ -388,6 +572,6 @@
 
 
     <script src="/files/js/Main_Admin.js"></script>
-    <script src="/files/js/Main_Manager01.js"></script>
+    <script src="/files/js/Main_Assistant.js"></script>
 </body>
 </html>
