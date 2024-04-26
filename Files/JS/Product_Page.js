@@ -31,3 +31,17 @@ smImg = (Nu) =>{
     let ss = document.getElementById(db).src;
     document.getElementById("BIG_I").src = ss;
 }
+
+
+
+
+AddToCart = () => {
+
+
+}
+
+BuyNow = () => {
+
+}
+
+
