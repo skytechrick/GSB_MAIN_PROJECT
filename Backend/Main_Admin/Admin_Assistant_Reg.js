@@ -1,9 +1,10 @@
 const {New_Worker_Model} = require("../All_Models.js");
 Admin_Assistant_Reg = (req, res) =>{
     
-    const {Acode, First_Name, Last_Name, Mobile_Number, Email, Create_Password, Country_Name, State_Name, District_Name, Pin_Code, City_Name, Village_Name, Locality_Road, Language, Your_Age, Gender, Bank_Name, Account_Name, Account_Number, Ifsc_Code, Upi_Number, Assistant_Type} = req.body
+    const {Acode, Added_By, First_Name, Last_Name, Mobile_Number, Email, Create_Password, Country_Name, State_Name, District_Name, Pin_Code, City_Name, Village_Name, Locality_Road, Language, Your_Age, Gender, Bank_Name, Account_Name, Account_Number, Ifsc_Code, Upi_Number, Assistant_Type} = req.body
     const se = {
         "Acode": Acode,
+        "Added_By": Added_By,
         "First_Name": First_Name,
         "Last_Name": Last_Name,
         "Mobile_Number": Mobile_Number,

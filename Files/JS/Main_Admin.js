@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
     let Down_Btn = document.getElementById("Down_Btn");
     let Nav = document.getElementById("Nav");
@@ -57,3 +58,6 @@ function Com_Num(aa) {
     for (let index = 0; index < a.length; index++){sd += a[index];}
     return sd;
 }
+
+
+

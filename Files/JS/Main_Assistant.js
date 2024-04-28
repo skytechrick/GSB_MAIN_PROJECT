@@ -215,18 +215,29 @@ function searchs() {
                 document.getElementById("mess").innerHTML = "";
                 
             }, 2000);
+            console.log(data);
             
 
 
 
-            let a = `<div class="boxx">
-            <div class="keye">First Name:</div>
-            <div class="valuee">${data.First_Name}</div>
-        </div>
-        <div class="boxx">
-            <div class="keye">Last Name:</div>
-            <div class="valuee">${data.Last_Name}</div>
-        </div>
+            let a = `
+                    
+                    <div class="boxx">
+                        <div class="keye">Added BY:</div>
+                        <div class="valuee">${data.Added_By}</div>
+                    </div>
+                    <div class="boxx">
+                        <div class="keye">Acode:</div>
+                        <div class="valuee">${data.Acode}</div>
+                    </div>
+                    <div class="boxx">
+                        <div class="keye">First Name:</div>
+                        <div class="valuee">${data.First_Name}</div>
+                    </div>
+                    <div class="boxx">
+                        <div class="keye">Last Name:</div>
+                        <div class="valuee">${data.Last_Name}</div>
+                    </div>
         <div class="boxx">
             <div class="keye">Number:</div>
             <div class="valuee">${data.Mobile_Number}</div>
@@ -383,86 +394,96 @@ function Optiona(Search_Man_I,S_Type) {
 
 
 
-            let a = `<div class="boxx">
-            <div class="keye">First Name:</div>
-            <div class="valuee">${data.First_Name}</div>
-        </div>
-        <div class="boxx">
-            <div class="keye">Last Name:</div>
-            <div class="valuee">${data.Last_Name}</div>
-        </div>
-        <div class="boxx">
-            <div class="keye">Number:</div>
-            <div id="NNA" class="valuee">${data.Mobile_Number}</div>
-        </div>
-        <div class="boxx">
-            <div class="keye">Email:</div>
-            <div class="valuee">${data.Email}</div>
-        </div>
-        <div class="boxx">
-            <div class="keye">Country:</div>
-            <div class="valuee">${data.Country_Name}</div>
-        </div>
-        <div class="boxx">
-            <div class="keye">State:</div>
-            <div class="valuee">${data.State_Name}</div>
-        </div>
-        <div class="boxx">
-            <div class="keye">District:</div>
-            <div class="valuee">${data.District_Name}</div>
-        </div>
-        <div class="boxx">
-            <div class="keye">PIN:</div>
-            <div class="valuee">${data.Pin_Code}</div>
-        </div>
-        <div class="boxx">
-            <div class="keye">City:</div>
-            <div class="valuee">${data.City_Name}</div>
-        </div>
-        <div class="boxx">
-            <div class="keye">Village:</div>
-            <div class="valuee">${data.Village_Name}</div>
-        </div>
-        <div class="boxx">
-            <div class="keye">Locality:</div>
-            <div class="valuee">${data.Locality_Road}</div>
-        </div>
-        <div class="boxx">
-            <div class="keye">Language:</div>
-            <div class="valuee">${data.Language}</div>
-        </div>
-        <div class="boxx">
-            <div class="keye">Age:</div>
-            <div class="valuee">${data.Your_Age}</div>
-        </div>
-        <div class="boxx">
-            <div class="keye">Gender:</div>
-            <div class="valuee">${data.Gender}</div>
-        </div>
-        <div class="boxx">
-            <div class="keye">Bank:</div>
-            <div class="valuee">${data.Bank_Name}</div>
-        </div>
-        <div class="boxx">
-            <div class="keye">Name:</div>
-            <div class="valuee">${data.Account_Name}</div>
-        </div>
-        <div class="boxx">
-            <div class="keye">Account no:</div>
-            <div class="valuee">${data.Account_Number}</div>
-        </div>
-        <div class="boxx">
-            <div class="keye">IFSC:</div>
-            <div class="valuee">${data.Ifsc_Code}</div>
-        </div>
-        <div class="boxx">
-            <div class="keye">UPI:</div>
-            <div class="valuee">${data.Upi_Number}</div>
-        </div>
-        <div class="boxx">
-            <div class="keye">Assistant:</div>
-            <div id="AAAAA" class="valuee">${data.Assistant_Type}</div>
-        </div>`;
+            let a = `
+                    
+            <div class="boxx">
+                <div class="keye">Added BY:</div>
+                <div class="valuee">${data.Added_By}</div>
+            </div>
+            <div class="boxx">
+                <div class="keye">Acode:</div>
+                <div class="valuee">${data.Acode}</div>
+            </div>
+            <div class="boxx">
+                <div class="keye">First Name:</div>
+                <div class="valuee">${data.First_Name}</div>
+            </div>
+            <div class="boxx">
+                <div class="keye">Last Name:</div>
+                <div class="valuee">${data.Last_Name}</div>
+            </div>
+<div class="boxx">
+    <div class="keye">Number:</div>
+    <div class="valuee">${data.Mobile_Number}</div>
+</div>
+<div class="boxx">
+    <div class="keye">Email:</div>
+    <div class="valuee">${data.Email}</div>
+</div>
+<div class="boxx">
+    <div class="keye">Country:</div>
+    <div class="valuee">${data.Country_Name}</div>
+</div>
+<div class="boxx">
+    <div class="keye">State:</div>
+    <div class="valuee">${data.State_Name}</div>
+</div>
+<div class="boxx">
+    <div class="keye">District:</div>
+    <div class="valuee">${data.District_Name}</div>
+</div>
+<div class="boxx">
+    <div class="keye">PIN:</div>
+    <div class="valuee">${data.Pin_Code}</div>
+</div>
+<div class="boxx">
+    <div class="keye">City:</div>
+    <div class="valuee">${data.City_Name}</div>
+</div>
+<div class="boxx">
+    <div class="keye">Village:</div>
+    <div class="valuee">${data.Village_Name}</div>
+</div>
+<div class="boxx">
+    <div class="keye">Locality:</div>
+    <div class="valuee">${data.Locality_Road}</div>
+</div>
+<div class="boxx">
+    <div class="keye">Language:</div>
+    <div class="valuee">${data.Language}</div>
+</div>
+<div class="boxx">
+    <div class="keye">Age:</div>
+    <div class="valuee">${data.Your_Age}</div>
+</div>
+<div class="boxx">
+    <div class="keye">Gender:</div>
+    <div class="valuee">${data.Gender}</div>
+</div>
+<div class="boxx">
+    <div class="keye">Bank:</div>
+    <div class="valuee">${data.Bank_Name}</div>
+</div>
+<div class="boxx">
+    <div class="keye">Name:</div>
+    <div class="valuee">${data.Account_Name}</div>
+</div>
+<div class="boxx">
+    <div class="keye">Account no:</div>
+    <div class="valuee">${data.Account_Number}</div>
+</div>
+<div class="boxx">
+    <div class="keye">IFSC:</div>
+    <div class="valuee">${data.Ifsc_Code}</div>
+</div>
+<div class="boxx">
+    <div class="keye">UPI:</div>
+    <div class="valuee">${data.Upi_Number}</div>
+</div>
+<div class="boxx">
+    <div class="keye">Assistant:</div>
+    <div class="valuee">${data.Assistant_Type}</div>
+</div>`;
 
 
         document.getElementById("boxx11").innerHTML = a;

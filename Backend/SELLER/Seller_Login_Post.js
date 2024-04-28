@@ -1,4 +1,3 @@
-const { render } = require("pug");
 
 function Seller_Login_Post(req, res) {
     let {Mobile_Number, Password} = req.body;
@@ -6,7 +5,7 @@ function Seller_Login_Post(req, res) {
     console.log(Mobile_Number);
     console.log(Password);
 
-    res.render("Seller_Signup");
+    res.json({Mob:Mobile_Number,Pass:Password});
 
 
     

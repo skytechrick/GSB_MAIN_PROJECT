@@ -1,9 +1,4 @@
-const express = require("express");
-const path = require("path");
-const app = express();
-const bodyParser = require("body-parser");
-const multer = require("multer");
-const cookieParser = require('cookie-parser');
+const express = require("express");const path = require("path");const app = express();const bodyParser = require("body-parser");const multer = require("multer");const cookieParser = require('cookie-parser');
 // _______________________________________________________________________________________________________
 const Signup_Post = require("./Signup_Post.js");
 const Signup_Get = require("./Signup_Get.js");
@@ -14,9 +9,18 @@ const Login_Get = require("./Login_Get.js");
 const Logout_Get = require("./Logout_Get.js");
 const Logout_Post = require("./Logout_Post.js");
 // _______________________________________________________________________________________________________
+
+
+
+
+
+
+
+
 const Home = require("./Home.js");
 // _______________________________________________________________________________________________________
 const Main_Admin = require("./Main_Admin/Main_Admin.js");
+const Main_Admin_Post = require("./Main_Admin/Main_Admin_Post.js");
 const Admin_Assistant = require("./Main_Admin/Admin_Assistant.js");
 const Admin_Assistant_Reg = require("./Main_Admin/Admin_Assistant_Reg.js");
 const Admin_Assistant_Search = require("./Main_Admin/Admin_Assistant_Search.js");
@@ -28,6 +32,8 @@ const Admin_Analytics = require("./Main_Admin/Admin_Analytics.js");
 // _______________________________________________________________________________________________________
 const Seller_Login_Get = require("./SELLER/Seller_Login_Get.js");
 const Seller_Login_Post = require("./SELLER/Seller_Login_Post.js");
+const Seller_Seller_Get = require("./SELLER/Seller_Signup_Get.js");
+const Seller_Seller_Post = require("./SELLER/Seller_Signup_Post.js");
 
 
 
@@ -89,6 +95,11 @@ const storage = multer.diskStorage({
 app.get("/",async (req, res) => {Home(req, res)});
 
 app.get("/admin",async (req, res) => {Main_Admin(req, res)});
+app.get("/admin/login", (req, res) => {
+    res.status(200).render("h");
+});
+
+app.post("/admin",async (req, res) => {Main_Admin_Post(req, res)});
 app.get("/admin/assistant",async (req, res) => {Admin_Assistant(req, res)});
 app.post("/admin/assistant/registration",async (req, res) => {Admin_Assistant_Reg(req, res)});
 
@@ -96,8 +107,6 @@ app.post("/admin/assistant/search",async (req, res) => {Admin_Assistant_Search(r
 app.post("/admin/assistant/update",async (req, res) => {Admin_Assistant_Update(req, res)});
 
 app.get("/admin/Analytics",async (req, res) => {Admin_Analytics(req, res)});
-
-
 
 app.get("/signup", async (req, res) => {Signup_Get(req, res)});
 app.post("/signup", async (req, res) => {Signup_Post(req, res)});
@@ -114,6 +123,9 @@ app.post("/logout", async (req, res) => {Logout_Post(req, res)});
 
 app.get("/seller/login", async (req, res) => {Seller_Login_Get(req, res)});
 app.post("/seller/login", async (req, res) => {Seller_Login_Post(req, res)});
+
+app.get("/seller/signup", async (req, res) => {Seller_Signup_Get(req, res)});
+app.post("/seller/signup", async (req, res) => {Seller_Signup_Post(req, res)});
 
 
 

@@ -1,7 +1,7 @@
 const { Signup_Model } = require("./All_Models.js");
 const {JWTV} = require("./JWT_.js")
 
-async function Home(req, res) {
+Home = async(req, res) => {
 
     let U_ID = req.cookies.U_ID;
 
