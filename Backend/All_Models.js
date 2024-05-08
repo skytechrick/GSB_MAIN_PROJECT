@@ -89,6 +89,16 @@ const New_Worker = new mongoose.Schema(
 
 
 
+const a = new mongoose.Schema({
+
+    "Email": {type: String},
+    "Sent": {type: String},
+    "Date": {type: Date},
+    "Done":{type: String},
+
+})
+
+
 
 
 
@@ -96,8 +106,12 @@ const New_Worker = new mongoose.Schema(
 
 const New_Worker_Mode = mongoose.model("Workers", New_Worker);
 
+const a_ = mongoose.model("Assistants_Confirmation", a);
+
 const Sign_Mol = mongoose.model("Main_User", Signup_Schema);
+
 module.exports = {
     Signup_Model: Sign_Mol,
     New_Worker_Model: New_Worker_Mode,
+    Assistant_Confirmation: a_,
 };

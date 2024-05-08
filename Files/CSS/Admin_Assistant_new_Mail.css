@@ -1,0 +1,64 @@
+
+body{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+input, button {
+    outline: none;
+    border: 1px solid rgb(0, 132, 255);
+    padding: 7px;
+
+}
+button:hover{
+    background-color: rgb(0, 174, 255);
+    
+}
+button{
+    background-color: rgb(164, 224, 252);
+    cursor: pointer;
+}
+form{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    border-left: 1px solid black;
+    flex-wrap: wrap;
+}
+.dis {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+label {
+    cursor: pointer;
+}
+td,th {
+    padding: 6px;
+}
+
+td {
+    padding: 6px;
+}
+caption{
+    font-size: 18px;
+    font-weight: bold;
+}
+.aas {
+    display: none;
+    text-align: center;
+    background-color: antiquewhite;
+    padding: 6px;
+    
+}
+
+.Assa {
+    padding: 10px 15px;
+}

@@ -1,4 +1,10 @@
-const express = require("express");const path = require("path");const app = express();const bodyParser = require("body-parser");const multer = require("multer");const cookieParser = require('cookie-parser');
+const express = require("express");
+const path = require("path");
+const app = express();
+const bodyParser = require("body-parser");
+const multer = require("multer");
+
+const cookieParser = require('cookie-parser');
 // _______________________________________________________________________________________________________
 const Signup_Post = require("./Signup_Post.js");
 const Signup_Get = require("./Signup_Get.js");
@@ -12,6 +18,8 @@ const Logout_Post = require("./Logout_Post.js");
 
 
 
+const Send_Ver = require("./Assistant_Mail/Send_Ver.js");
+const Send_Ass = require("./Assistant_Mail/Send_Ass.js");
 
 
 
@@ -21,10 +29,17 @@ const Home = require("./Home.js");
 // _______________________________________________________________________________________________________
 const Main_Admin = require("./Main_Admin/Main_Admin.js");
 const Main_Admin_Post = require("./Main_Admin/Main_Admin_Post.js");
+const Main_Admin_GET = require("./Main_Admin/Main_Admin_GET.js");
 const Admin_Assistant = require("./Main_Admin/Admin_Assistant.js");
 const Admin_Assistant_Reg = require("./Main_Admin/Admin_Assistant_Reg.js");
 const Admin_Assistant_Search = require("./Main_Admin/Admin_Assistant_Search.js");
 const Admin_Assistant_Update = require("./Main_Admin/Admin_Assistant_Update.js");
+
+const Assistant_Get = require("./Assistant_Admin/Assistant_Get.js");
+
+
+
+
 
 
 const Admin_Analytics = require("./Main_Admin/Admin_Analytics.js");
@@ -35,25 +50,11 @@ const Seller_Login_Post = require("./SELLER/Seller_Login_Post.js");
 const Seller_Seller_Get = require("./SELLER/Seller_Signup_Get.js");
 const Seller_Seller_Post = require("./SELLER/Seller_Signup_Post.js");
 
-
-
 const Seller_Home = require("./Seller/Seller_Home.js");
 // _______________________________________________________________________________________________________
 // _______________________________________________________________________________________________________
 
-
-
-
-
 const Product_Page = require("./Product/Product_Page.js");
-
-
-
-
-
-
-
-
 // _______________________________________________________________________________________________________
 // _______________________________________________________________________________________________________
 app.set("view engine", "pug");
@@ -86,7 +87,32 @@ const storage = multer.diskStorage({
 
 
 
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
 
+app.get("/admin/login", (req, res) => {Main_Admin_GET(req, res)});
+app.post("/admin/login",async (req, res) => {Main_Admin_Post(req, res)});
+app.get("/admin/assistant",async (req, res) => {Admin_Assistant(req, res)});
+app.post("/admin/assistant/registration",async (req, res) => {Admin_Assistant_Reg(req, res)});
+app.post("/admin/assistant/search",async (req, res) => {Admin_Assistant_Search(req, res)});
+app.post("/admin/assistant/update",async (req, res) => {Admin_Assistant_Update(req, res)});
+app.get("/admin",async (req, res) => {Main_Admin(req, res)});
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
+app.get("/assistant/seller",async (req, res) => {Assistant_Get(req, res)});
+
+
+
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
 
 
 
@@ -94,17 +120,28 @@ const storage = multer.diskStorage({
 
 app.get("/",async (req, res) => {Home(req, res)});
 
-app.get("/admin",async (req, res) => {Main_Admin(req, res)});
-app.get("/admin/login", (req, res) => {
-    res.status(200).render("h");
-});
 
-app.post("/admin",async (req, res) => {Main_Admin_Post(req, res)});
-app.get("/admin/assistant",async (req, res) => {Admin_Assistant(req, res)});
-app.post("/admin/assistant/registration",async (req, res) => {Admin_Assistant_Reg(req, res)});
 
-app.post("/admin/assistant/search",async (req, res) => {Admin_Assistant_Search(req, res)});
-app.post("/admin/assistant/update",async (req, res) => {Admin_Assistant_Update(req, res)});
+
+
+
+
+
+
+
+app.get("/admin/assistant/new/user",async (req, res) => {Send_Ver(req, res)});
+app.post("/admin/assistant/new/user",async (req, res) => {Send_Ass(req, res)});
+
+
+
+
+
+
+
+
+
+
+
 
 app.get("/admin/Analytics",async (req, res) => {Admin_Analytics(req, res)});
 
@@ -635,6 +672,14 @@ app.get("/product/:product_url", async (req, res) => {
 //     });
 // });
 let a = process.env.PORT || 80;
+
+app.post('/your-path', (req, res) => {
+    const data = req.query.data;
+    console.log('Received data:', data);
+    // Process the data as needed
+    res.send('HI RICK IS HERE');
+});
+
 app.listen(a, () => {
     console.log("We are connected to server at port 80");
     console.log("Link: http://192.168.0.44/signup");

@@ -1,0 +1,898 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    top: 0px;
+}
+
+body{
+    width: 100%;
+    height: 60px;
+    position: relative;
+    top: 0px;
+    /* background-color: aqua; */
+
+}
+
+.Aside_Ham{
+    position: fixed;
+    top: 0px;
+    height: 100vh;
+    display: inline-block;
+    /* background-color: rgb(0, 140, 255); */
+    width: 300px;
+    overflow-y: auto;
+    box-shadow: 0 1px 6px #aaa;
+    box-sizing: border-box;
+    z-index: 100;
+    left: 0px;
+}
+
+
+.H1 {
+    margin-top: 100px;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.H1 a{
+    color: black;
+    text-decoration: none;
+}
+.H1 a:hover{
+    
+    color: rgb(0, 121, 235);
+}
+
+
+.H3 {
+    margin-top: 9px;
+    font-weight: normal;
+    text-decoration: underline;
+
+    font-size: 15px;
+    
+    text-align: center;
+    
+}
+.H3 a{
+    color: black;
+    
+    text-decoration: none;
+}
+
+.H3 a:hover{
+    
+    color: rgb(0, 121, 235);
+}
+
+.UL {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px;
+    list-style: none;
+}
+
+
+.UL li {
+    display: block;
+    width: 100%;
+    
+    
+}
+.UL li button{
+    cursor: pointer;
+    background-color: white;
+    border: 0px solid rgb(0, 55, 235);
+    outline: none;
+    margin: 4px 0px;
+    padding: 6px;
+    padding-left: 40px;
+    font-size: 15px;
+    text-align: left;
+    display: block;
+    width: 100%;
+}
+
+#Setting_Side, #Profile_Side, #Bank_Side, #Logout_Side, #Home {
+    position: relative;
+    top: 6px;
+    margin-right: 6px;
+}
+
+
+.UL li button:hover{
+    color: rgb(0, 121, 235);
+}
+
+.Boot {
+    display: block;
+    position: relative;
+    top: 200px;
+    margin: 10px 16px;
+    font-size: 14px;
+}
+
+.Boot p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#Sec{
+    /* background-color: gold; */
+    width: calc(100% - 300px);
+    float: right;
+    z-index: 99;
+    position: relative;
+    top: 0px;
+}
+.S_T {
+    padding: 20px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    color: white;
+    background-color: rgb(0, 121, 235);
+    /* height: 90px; */
+    
+}
+
+#Ham_Side {
+    color: black;
+    user-select: none;
+    position: absolute;
+    left: 2px;
+    cursor: pointer;
+    top: 6px;
+    border: 1px solid #aaa;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 101;
+    background-color: white;
+    outline: none;
+    border-radius: 9px;
+    
+}
+#Ham_Side:hover {
+    color: rgb(0, 121, 235);
+    border: 1px solid transparent;
+    box-shadow: 0 0 6px rgb(0, 121, 235);
+}
+
+
+.H22 {
+    margin-bottom:0;
+    text-align: center;
+}
+
+#Main_BOX {
+    display: block;
+    width: 100%;
+    margin-bottom: 50px;
+    /* background-color: aqua; */
+}
+
+.H44 {
+    margin: 0px;
+    padding: 10px;
+    padding-left: 30px;
+    padding-top: 40px;
+    position: relative;
+    top: 0px;   
+}
+
+#Croxx {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    user-select: none;
+}
+#Croxx span{
+    padding: 5px;
+    cursor: pointer;
+    font-size: 27px;
+    border-radius: 50%;
+}
+
+
+#Croxx span:hover{
+    box-shadow: 0px 0px 5px #aaa;
+    background-color: #aaa;
+
+}
+
+#St {
+    padding-left: 30px;
+}
+
+#St input{
+    padding: 6px 9px;
+    outline: none;
+    font-size: 14px;
+}
+
+#St label{
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    width: 110px;
+}
+
+.Ds {
+    
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Ds div{
+    margin: 6px 0px;
+    margin-left: 10px;
+}
+#AddressL {
+    position: relative;
+    bottom: 35px;
+}
+#Address {
+    font-size: 14px;
+    display: inline-block;
+}
+
+#OOOP {
+    cursor: pointer;
+    background-color: white;
+    border: 0px solid rgb(0, 55, 235);
+    outline: none;
+    margin: 4px 0px;
+    padding: 6px;
+    padding-left: 0px;
+    font-size: 15px;
+    text-align: left;
+    display: block;
+    width: 100%;
+}
+
+#OOOP:hover{
+    color: rgb(0, 121, 235);
+}
+
+
+
+#Bank_Side1 {
+    position: relative;
+    top: 6px;
+    margin-right: 6px;
+}
+
+#disss {
+    display: none;
+}
+
+#Homieo {
+    
+    display: block;
+}
+
+
+nav {
+    user-select: none;
+    padding: 0 30px;
+    position: relative;
+    top: 0px;
+}
+
+nav ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 3px;
+    flex-wrap: wrap;
+    
+}
+
+nav ul li button{
+    width: 120px;
+    font-size: 14px;
+    outline: none;
+    padding: 6px 9px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    margin: 3px 3px;
+    background-color: white;
+    
+}
+nav ul li button:hover{
+    border-bottom: 1px solid #aaa;
+}
+
+#BTON_1 {
+    
+    background-color: rgb(0, 121, 235);
+    color: white;
+}
+
+#BankkA {
+    display: none;
+}
+
+#Setting_A {
+    display: none;
+}
+
+#BankkA_CLo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    user-select: none;
+}
+
+
+#BankkA_CLo span{
+    padding: 5px;
+    cursor: pointer;
+    font-size: 27px;
+    border-radius: 50%;
+}
+
+#BankkA_CLo span:hover{
+    box-shadow: 0px 0px 5px #aaa;
+    background-color: #aaa;
+    
+}
+
+#BankkA_CLoa {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    user-select: none;
+}
+
+#BankkA_CLoa span{
+    padding: 5px;
+    cursor: pointer;
+    font-size: 27px;
+    border-radius: 50%;
+}
+
+#BankkA_CLoa span:hover{
+    box-shadow: 0px 0px 5px #aaa;
+    background-color: #aaa;
+
+}
+
+
+.TaskP {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+
+.NewTask{
+    
+    margin: 10px 30px;
+    
+    font-size: 14px;
+    /* background-color: aqua; */
+}
+
+.NewTask1{
+    width: 200px;
+    
+    padding: 10px;
+    font-size: 14px;
+    background-color: #e9e9e9;
+    border: 1px solid #cacaca;
+
+}
+
+
+.DateN {
+    font-size: 10px;
+    text-align: right;
+    margin: 10px 0;
+    margin-bottom: 0;
+
+}
+
+
+
+.Mess {
+    font-size: 13px;
+
+}
+
+.Commm {
+    
+    width: 200px;
+    
+    margin: 3px 0px;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    color: white;
+    background-color: red;
+    border: 1px solid blue;
+
+}
+.Comme {
+    
+    width: 200px;
+    
+    margin: 3px 0px;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    color: white;
+    background-color: rgb(0, 177, 0);
+    border: 1px solid #aaa;
+
+}
+label {
+    cursor: pointer;
+}
+
+input{
+    outline: none;
+    padding: 6px 9px;
+}
+
+.asdas {
+    margin: 10px 0;
+    font-size: 21px;
+    
+
+    margin-left: 29px;
+
+}
+
+#BTON_1{
+    margin-left: 0;
+}
+
+#DDDD_2,
+#DDDD_3,
+#DDDD_4,
+#DDDD_5,
+#DDDD_6,
+#DDDD_7 {
+    display: none;
+}
+
+
+
+#INSTOCK {
+    cursor: pointer;
+    outline: none;
+}
+
+
+
+
+.Stockss {
+    padding: 0 30px;
+}
+
+#Product_DIIDL {
+    color: black;
+}
+#Product_DIIDL:hover {
+    color: rgb(0, 121, 235);
+}
+
+#Product_DIID {
+    color: blue;
+    
+}
+
+
+
+#Product_DIID_BTN {
+    padding: 8px 10px;
+    background-color: rgb(0, 132, 255);
+    color: white;
+    outline: none;
+    cursor: pointer;
+    border: 0px;
+}
+#Product_DIID_BTN:hover {
+    background-color: rgb(120, 190, 255);
+    transition-duration: 350ms;
+    color: #000000;
+}
+
+#Product_DIID_BTN:active {
+    text-decoration: underline;
+
+}
+
+
+.Product_Title_T {
+    margin: 9px 0;
+}
+
+.BLACKK {
+    display: inline-block;
+    padding: 8px 9px;
+    /* font-weight: bold; */
+    color: white;
+    background-color: #000000;
+}
+
+.BLACKKVAL {
+    padding: 5px 0;
+}
+
+
+
+.adsasadasdsa {
+    padding-left: 3px;
+    margin: 10px 0;
+}
+
+
+#INSTOCK {
+    padding: 5px 10px;
+}
+
+
+
+
+#DISPLAY_HIDEEE {
+    display: none;
+}
+
+
+
+
+#Messageeeee {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 100000;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    animation-name: ddm2;
+    animation-duration: 1500ms;
+    animation-fill-mode: forwards;
+    
+
+
+}
+
+@keyframes Adm1{
+    0%{
+        display: none;
+        opacity: 0;
+    }
+    100%{
+        display: flex;
+        
+    }
+    
+}
+@keyframes Adm2 {
+    0%{
+        opacity: 1;
+        display: flex;
+    }
+    100%{
+        opacity: 0;
+        display: none;
+
+    }
+    
+}
+
+#bakgg{
+    width: 100%;
+    height: 100vh;
+    opacity: 0.4;
+    background-color: #aaa;
+    position: absolute;
+    top: 0;
+}
+
+#mess {
+    background-color: #000000;
+    color: white;
+    border: 1px solid #aaa;
+    padding: 6px 10px;
+    opacity: 1;
+}
+
+
+
+
+
+
+
+.Addss {
+    padding: 40px 30px;
+    padding-top: 0px;
+}
+
+
+
+.FFOrm {
+    font-size: 14px;
+}
+
+.FFOrm input{
+    outline: none;
+    padding: 7px 12px;
+    font-size: 14px;
+    width: 200px;
+    
+}
+.FFOrm label:hover{
+    color: rgb(0, 121, 235);
+}
+.FFOrm label{
+    outline: none;
+    padding: 7px 12px;
+    font-size: 14px;
+    display: inline-block;
+    width: 120px;
+
+}
+.FFOrm textarea{
+    outline: none;
+    padding: 7px 12px;
+    font-size: 14px;
+    resize: none;
+    width: 200px;
+    font-family: sans-serif;
+    
+}
+.FFOrm button{
+    outline: none;
+    padding: 7px 12px;
+    font-size: 14px;
+
+}
+
+#Title_Value {
+    font-family: sans-serif;
+    width: 200px;
+    resize: none;
+}
+
+#Title_ValueL {
+    position: relative;
+    bottom: 20px;
+}
+
+
+.Type1 {
+    margin: 5px 0px;
+}
+
+#Type1 {
+    padding: 6px 9px;
+    width: 180px;
+    outline: none;
+
+}
+
+
+#Seller_ID_BTN {
+    border: none;
+    background-color: rgb(0, 121, 235);
+    color: white;
+    cursor: pointer;
+
+    padding: 8px 9px;
+}
+#Seller_ID_BTN:hover {
+    text-decoration: underline;
+}
+
+#VER {
+    padding-left: 0px;
+    color: rgb(0, 187, 0);
+    font-weight: bold;
+    /* display: none; */
+}
+#VER span{
+    position: relative;
+    top: 6px;
+}
+
+
+#P121 {
+    position: relative;
+    top: 5px;
+}
+
+
+
+
+
+#MRP {
+    margin: 4px 0px;
+}
+
+
+
+
+
+
+
+.Cost_Pri {
+    margin: 4px 0px;
+    
+}
+
+
+.red{
+    font-weight: bold;
+    color: red;
+}
+
+#DescriptionL {
+    position: relative;
+    bottom: 110px;
+    
+}
+#Description {
+    margin: 4px 0px;
+    width: 250px;
+    height: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

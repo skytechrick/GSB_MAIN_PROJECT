@@ -7,24 +7,25 @@ Main_Admin = (req, res) => {
 
     let da = fs.readFileSync("./Main_Admin/d.txt", "utf8");
     // let Auth = Auth_Token(59);
-    console.log(da);
+    // console.log(da);
     // console.log(Auth);
-
+    
     let Admin = req.cookies.Admin;
-
+    
+    // console.log(Admin);
     if (Admin) {
-        console.log(Admin)
         if (Admin == da) {
-            
             res.render("Main_Admin");
 
             
         }else{
-
+            res.clearCookie("Admin");
+            res.redirect("/admin/login");
         }
     
     }else{
-        // res.redirect("/admin/login");
+        res.clearCookie("Admin");
+        res.redirect("/admin/login");
     }
     
 }
