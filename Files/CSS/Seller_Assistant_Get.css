@@ -234,7 +234,9 @@ body{
     flex-wrap: wrap;
 }
 
-.Ds div{
+.Ds > div{
+    font-size: 14px;
+    display: inline-block;
     margin: 6px 0px;
     margin-left: 10px;
 }
@@ -574,8 +576,6 @@ input{
     animation-name: ddm2;
     animation-duration: 500ms;
     animation-fill-mode: forwards;
-    
-
     
 
 
@@ -947,6 +947,9 @@ input[type=number]::-webkit-inner-spin-button {
 
 
 
+.pad30 {
+    padding: 30px;
+}
 
 
 
@@ -956,15 +959,20 @@ input[type=number]::-webkit-inner-spin-button {
 
 
 
+#INOPPT input{
+    padding: 6px 9px;
+    margin: 5px 0;
+    display: block;
+}
 
 
 
 
 
 
-
-
-
+.paddingX {
+    padding: 10px 0 ;
+}
 
 
 

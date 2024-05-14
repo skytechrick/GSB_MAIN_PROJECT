@@ -11,7 +11,7 @@ Main_Admin_Post = (req, res) =>{
         if(d.P == PAs){
             if(d.S == "Yes"){
 
-                res.cookie("Admin", Ds, {httpOnly: true, path: "/admin", expires: new Date(Date.now() + 1200000), secure: false});
+                res.cookie("Admin", Ds, {httpOnly: true, path: "/admin", expires: new Date(Date.now() + 7200000), secure: false});
                 res.json({"GOT":"Yes"});
                 
             }else{

@@ -18,14 +18,10 @@ const Logout_Post = require("./Logout_Post.js");
 
 
 
-const Send_Ver = require("./Assistant_Mail/Send_Ver.js");
-const Send_Ass = require("./Assistant_Mail/Send_Ass.js");
-
-
-
 
 
 const Home = require("./Home.js");
+
 // _______________________________________________________________________________________________________
 const Main_Admin = require("./Main_Admin/Main_Admin.js");
 const Main_Admin_Post = require("./Main_Admin/Main_Admin_Post.js");
@@ -35,10 +31,15 @@ const Admin_Assistant_Reg = require("./Main_Admin/Admin_Assistant_Reg.js");
 const Admin_Assistant_Search = require("./Main_Admin/Admin_Assistant_Search.js");
 const Admin_Assistant_Update = require("./Main_Admin/Admin_Assistant_Update.js");
 
-const Assistant_Get = require("./Assistant_Admin/Assistant_Get.js");
+const Product_Assistant_Get = require("./Assistant_Admin/Product_Assistant_Get.js");
+
+const Seller_Assistant_Get = require("./Assistant_Admin/Seller_Assistant_Get.js");
+const Seller_Assistant_Post = require("./Assistant_Admin/Seller_Assistant_Post.js");
 
 
 
+const Seller_Assistant_Get_Login = require("./Assistant_Admin/Seller_Assistant_Get_Login.js");
+const Seller_Assistant_Post_Login = require("./Assistant_Admin/Seller_Assistant_Post_Login.js");
 
 
 
@@ -87,23 +88,52 @@ const storage = multer.diskStorage({
 
 
 
+const Send_Ver = require("./Assistant_Mail/Send_Ver.js");
+const Send_Ass = require("./Assistant_Mail/Send_Ass.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // --------------------------------------------------------------------------------------
 // --------------------------------------------------------------------------------------
 
 app.get("/admin/login", (req, res) => {Main_Admin_GET(req, res)});
 app.post("/admin/login",async (req, res) => {Main_Admin_Post(req, res)});
+
+app.get("/admin",async (req, res) => {Main_Admin(req, res)});
+
 app.get("/admin/assistant",async (req, res) => {Admin_Assistant(req, res)});
 app.post("/admin/assistant/registration",async (req, res) => {Admin_Assistant_Reg(req, res)});
 app.post("/admin/assistant/search",async (req, res) => {Admin_Assistant_Search(req, res)});
 app.post("/admin/assistant/update",async (req, res) => {Admin_Assistant_Update(req, res)});
-app.get("/admin",async (req, res) => {Main_Admin(req, res)});
-// --------------------------------------------------------------------------------------
-// --------------------------------------------------------------------------------------
-// --------------------------------------------------------------------------------------
-// --------------------------------------------------------------------------------------
-// --------------------------------------------------------------------------------------
-// --------------------------------------------------------------------------------------
-app.get("/assistant/seller",async (req, res) => {Assistant_Get(req, res)});
+
+app.get("/admin/Analytics",async (req, res) => {Admin_Analytics(req, res)});
+
 
 
 
@@ -113,6 +143,47 @@ app.get("/assistant/seller",async (req, res) => {Assistant_Get(req, res)});
 // --------------------------------------------------------------------------------------
 // --------------------------------------------------------------------------------------
 // --------------------------------------------------------------------------------------
+
+
+
+
+
+
+app.get("/assistant/product",async (req, res) => {Product_Assistant_Get(req, res)});
+
+app.get("/assistant/seller",async (req, res) => {Seller_Assistant_Get(req, res)});
+app.post("/assistant/seller",async (req, res) => {Seller_Assistant_Post(req, res)});
+
+
+app.get("/assistant/seller/login",async (req, res) => {Seller_Assistant_Get_Login(req, res)});
+app.post("/assistant/seller/login",async (req, res) => {Seller_Assistant_Post_Login(req, res)});
+
+
+
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
+
+
+app.get("/admin/assistant/new/user",async (req, res) => {Send_Ver(req, res)});
+app.post("/admin/assistant/new/user",async (req, res) => {Send_Ass(req, res)});
+
+
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
+
+
+
+
+
+
 
 
 
@@ -127,31 +198,19 @@ app.get("/",async (req, res) => {Home(req, res)});
 
 
 
-
-
-app.get("/admin/assistant/new/user",async (req, res) => {Send_Ver(req, res)});
-app.post("/admin/assistant/new/user",async (req, res) => {Send_Ass(req, res)});
-
-
-
-
-
-
-
-
-
-
-
-
-app.get("/admin/Analytics",async (req, res) => {Admin_Analytics(req, res)});
-
 app.get("/signup", async (req, res) => {Signup_Get(req, res)});
 app.post("/signup", async (req, res) => {Signup_Post(req, res)});
+
 app.get("/login", async (req, res) => {Login_Get(req, res)});
 app.post("/login", async (req, res) => {Login_Post(req, res)});
 
 app.get("/logout", async (req, res) => {Logout_Get(req, res)});
 app.post("/logout", async (req, res) => {Logout_Post(req, res)});
+
+
+
+
+
 
 
 

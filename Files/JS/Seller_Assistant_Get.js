@@ -1,3 +1,4 @@
+
 function Slide() {
     document.getElementById("Aside_Ham").style.left = "-295px";
     document.getElementById("Sec").style.width = "calc(100% - 5px)";   
@@ -144,12 +145,7 @@ if (a<600){
 
 }
 
-
-
-
-const DD = ["TaskP","Stockss","Addss","Modi","Sellll","SellllSupport","QnAA"]
-
-
+const DD = ["TaskP","Stockss","Addss","Modi","Sellll","ModificationP","QnAA"]
 
 Nav = (n = 1) => {
     let a = `BTON_${n}`;
@@ -166,7 +162,7 @@ Nav = (n = 1) => {
     
     document.getElementById(a).style.backgroundColor = "rgb(0, 121, 235)";
     document.getElementById(a).style.color = "white";
-    for (let index = 1; index < 8; index++) {
+    for (let index = 1; index < 5; index++) {
         let DS = `DDDD_${index}`;
         let aa = `BTON_${index}`;
         if (index != n) {
@@ -181,6 +177,7 @@ Nav = (n = 1) => {
 }
 
 Message = (A = "Server Error") =>{
+    document.getElementById("Messageeeee").style.display = "block";
     document.getElementById("Messageeeee").style.animationName = "Adm1";
     document.getElementById("mess").innerHTML = A;
 }
@@ -202,289 +199,71 @@ document.getElementById("Messageeeee").addEventListener('click',() => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-document.getElementById('SUBBBB').addEventListener('click', function() {
+document.getElementById('SUDUSAD').addEventListener('click', function() {
     var formData = {};
-    var inputs = document.getElementById('Addd_PROOROOR').elements;
+    var inputs = document.getElementById('INOPPT').elements;
     for (var i = 0; i < inputs.length; i++) {
         if (inputs[i].tagName === 'INPUT' || inputs[i].tagName === 'TEXTAREA') {
             formData[inputs[i].name] = inputs[i].value;
         }
     }
-    const fileInput = document.getElementById('Image_1');
-    const file = fileInput.files[0];
+
     
-    if (!file) {
-      alert("Please select a file.");
-      return;
-    }
-  
-
-    formData.append('Img_File1', file);
-  
-    console.log(formData);
-});
-
-
-
-
-
-
-
-function AddLine(n) {
-    if (n < 31) {
-        
-        
-        document.getElementById(`DIVVV${n}`).innerHTML = 
-        `
-        <div id="key${n}">
-        <input type="text" name="Inp_Key_${n}" placeholder="Key" id="Inp_Key_${n}">
-        </div>
-        <div id="Value${n}">
-        <input type="text" name="Inp_Val_${n}" placeholder="Value" id="Inp_Val_${n}">
-        </div>
-        <div id="Add_MORE_KEYDIV${n}">
-        <button type="button" class="Add_MORE_KEY" onclick="AddLine(${n+1});">+ Add More</button>
-        </div>
-        
-        `;
-        document.getElementById(`Add_MORE_KEYDIV${n-1}`).innerHTML = "";
-    }
-    else{
-        
-        document.getElementById(`Add_MORE_KEYDIV30`).innerHTML = "";
-    }
-    
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const Box1 = ["Mobiles", "Tablets", "Laptops", "Cables", "Adaptors", "Men_Dress", "Women_Dress","Baby_Dress","Kitchen","Home_Appliances","Desktop", "Electronics"];
-
-
-
-function opp(Box1) {
-    let d1 = `<option value="">---- Select Option ----</option>`
-    let dn ="";
-    Box1.forEach(e => {
-        dn = dn + `<option value="${e}">${e}</option>`;
-        
-    });
-
-    d1 = d1 + dn;
-    
-    document.getElementById("Type1").innerHTML = d1;
-
-
-}
-opp(Box1);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-More_Option = (n) => {
-    if (n < 17) {
-        if (n != 16) {
-            
-            
-            let aa = `Butnss${n-1}`;
-            document.getElementById(aa).innerHTML = "";
-            let dd = `    
-            <input title="Option" name="Option${n}" type="text" id="Option_n_${n}" placeholder="Option" autocomplete="off" spellcheck="false">
-            <div id="Butnss${n}" class="Bttnnss">
-            <button class="Option__B" onclick="More_Option(${n+1});" type="button">+ More options</button>
-            </div>
-            `;
-            let aaa = `Option__${n}`;
-            document.getElementById(aaa).innerHTML = dd;
-        }else{
-            let aa = `Butnss${n-1}`;
-            document.getElementById(aa).innerHTML = "";
-            let dd = `    
-            <input title="Option" name="Option${n}" type="text" id="Option_n_${n}" placeholder="Option" autocomplete="off" spellcheck="false">
-            <div id="Butnss${n}" class="Bttnnss"></div>
-            `;
-            let aaa = `Option__${n}`;
-            document.getElementById(aaa).innerHTML = dd;
-            
+    let Sen = {};
+    Sen["Name"] = formData.Name;
+    Sen["Mobile_Number"] = formData.Mobile_Number;
+    Sen["WhatsApp_Number"] = formData.WP_No;
+    Sen["Email"] = formData.Email;
+    Sen["State"] = formData.State;
+    Sen["District"] = formData.Dist;
+    Sen["PIN_Code"] = formData.PINcode;
+    Sen["City"] = formData.City;
+    Sen["Town"] = formData.Town;
+    Sen["Locality"] = formData.Locality;
+    Sen["Language"] = formData.Language;
+    Sen["Age"] = formData.Age;
+    Sen["Gender"] = formData.Gender;
+    Sen["Bank_Name"] = formData.Bank_Name;
+    Sen["IFSC_Code"] = formData.IFSC;
+    Sen["UPI"] = formData.UPI;
+    Sen["Shop_Name"] = formData.Name_of_Shop;
+    Sen["Shop_Type"] = formData.Type_of_Shop;
+    Sen["Shop_Type"] = formData.Type_of_Shop;
+    Sen["State_Shop"] = formData.State_Shop;
+    Sen["Dist_Shop"] = formData.Dist_Shop;
+    Sen["PINcode_Shop"] = formData.PINcode_Shop;
+    Sen["City_Shop"] = formData.City_Shop;
+    Sen["Town_Shop"] = formData.Town_Shop;
+    Sen["Locality_Shop"] = formData.Locality_Shop;
+    Sen["Done"] = "Yes";
+    console.log(Sen);
+    fetch("/assistant/seller",{
+        method: 'POST',
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify(Sen),
+    }).then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
         }
-    }
-}
-    
-    
+        return response.json();
+    }).then(data => {
+        // Handle response data
+        console.log(data);
+        if(data.Message == "Unable to add."){
+            Message(data.Message);
+            setTimeout(() => {
+                window.location.href = "http://192.168.0.44/assistant/seller/login";
+            }, 2000);
+            
+        }else{
+            Message(data.Message);
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-Modi_Sub = () => {
-    
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }).catch(error => {
+        // Handle errors
+        Message("Enable to connect with server 1...");
+    });
+});
 
 
 

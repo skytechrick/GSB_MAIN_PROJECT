@@ -9,20 +9,12 @@ Main_Admin_GET = (req, res) =>{
         if (Admin == da){
             res.redirect("/admin");
         }else{
-            res.clearCookie("Admin");
-            res.redirect("/admin/login");
-            
-            
+            res.clearCookie("Admin", { path: '/admin'});
+            res.redirect("/admin");
         }        
     }else{ 
         res.render("h");
-
     }
-
-    
-    
-
-
 }
 
 module.exports = Main_Admin_GET;
