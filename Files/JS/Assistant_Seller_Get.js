@@ -240,24 +240,46 @@ document.getElementById("Messageeeee").addEventListener('click',() => {
 
 
 document.getElementById('SUBBBB').addEventListener('click', function() {
-    var formData = {};
+    var formData = new FormData();
     var inputs = document.getElementById('Addd_PROOROOR').elements;
     for (var i = 0; i < inputs.length; i++) {
-        if (inputs[i].tagName === 'INPUT' || inputs[i].tagName === 'TEXTAREA') {
+        if (inputs[i].tagName === 'SELECT' || inputs[i].tagName === 'INPUT' || inputs[i].tagName === 'TEXTAREA') {
             formData[inputs[i].name] = inputs[i].value;
+            formData.append(inputs[i].name, inputs[i].value)
         }
     }
-    const fileInput = document.getElementById('Image_1');
-    const file = fileInput.files[0];
-    
-    if (!file) {
-      alert("Please select a file.");
-      return;
-    }
-  
 
-    formData.append('Img_File1', file);
-  
+    for (let isa = 0; isa < 10; isa++) {
+        let FA = `File_${isa+1}`;
+        let Img = `Image_${isa+1}`;
+
+        let DG = document.getElementById(Img)
+        let VC = DG.files[0];
+        if (VC) {
+            formData.append(FA, VC);
+        }
+    }
+
+    let ID = document.getElementById("Seller_ID").value;
+    
+    formData.append("Seller_ID", ID);
+    
+
+
+    fetch('/assistant/product/add',{
+        method: "POST",
+        body: formData,
+         
+    }).then(response => {
+        return response.json();
+        
+    })
+    
+    .then(data => {
+        console.log(data);
+    }).catch(error =>{
+        console.log("Error_____ Yes...:");
+    })
     console.log(formData);
 });
 

@@ -45,6 +45,11 @@ const Product_Assistant_Login_Get = require("./Assistant_Admin/Product_Assistant
 const Product_Assistant_Login_Post = require("./Assistant_Admin/Product_Assistant_Login_Post.js");
 
 
+const Product_Assistant_Add_Post = require("./Assistant_Admin/Product_Assistant_Add_Post.js");
+
+
+
+
 const Admin_Analytics = require("./Main_Admin/Admin_Analytics.js");
 
 const Seller_Login_Get = require("./SELLER/Seller_Login_Get.js");
@@ -133,6 +138,42 @@ app.get("/admin/Analytics",async (req, res) => {Admin_Analytics(req, res)});
 
 app.get("/assistant/product",async (req, res) => {Product_Assistant_Get(req, res)});
 
+
+
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, path.join(__dirname, '../Served_Images_Product'));
+    },
+    filename: (req, file, cb) => {
+        let a = req.body.Title;
+        cb(null, a  +  Date.now() +  "_" + file.fieldname + '_'  + file.originalname);
+    }
+});
+
+
+const Photo_Upload = multer({ storage: storage });
+
+const uploadMiddleware1 = Photo_Upload.fields([
+    { name: 'File_1', maxCount: 1 },
+    { name: 'File_2', maxCount: 1 },
+    { name: 'File_3', maxCount: 1 },
+    { name: 'File_4', maxCount: 1 },
+    { name: 'File_5', maxCount: 1 },
+    { name: 'File_6', maxCount: 1 },
+    { name: 'File_7', maxCount: 1 },
+    { name: 'File_8', maxCount: 1 },
+    { name: 'File_9', maxCount: 1 },
+    { name: 'File_10', maxCount: 1 }
+]);
+
+app.post("/assistant/product/add",uploadMiddleware1,async (req, res) => {Product_Assistant_Add_Post(req, res)});
+
+
+
+
+
+
 app.get("/assistant/product/login",async (req, res) => {Product_Assistant_Login_Get(req, res)});
 app.post("/assistant/product/login",async (req, res) => {Product_Assistant_Login_Post(req, res)});
 
@@ -217,37 +258,37 @@ app.get("/products", async (req, res) => {Product_Page(req,res)});
 
 
 
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, '../Products_Images/Product_2');
-    },
-    filename: (req, file, cb) => {
-        let a = req.body.MRP;
-        let b = req.body.Selling_Price;
-        cb(null, a + "_" +file.fieldname + '-' + b + path.extname(file.originalname));
-    }
-});
+// const storage = multer.diskStorage({
+//     destination: (req, file, cb) => {
+//         cb(null, '../Products_Images/Product_2');
+//     },
+//     filename: (req, file, cb) => {
+//         let a = req.body.MRP;
+//         let b = req.body.Selling_Price;
+//         cb(null, a + "_" +file.fieldname + '-' + b + path.extname(file.originalname));
+//     }
+// });
 
 
-const Photo_Upload = multer({ storage: storage });
+// const Photo_Upload = multer({ storage: storage });
 
 
 
 
 
 // app.post("/seller_add_product",
-//     Photo_Upload.fields([
-//         { name: 'File_1', maxCount: 1 },
-//         { name: 'File_2', maxCount: 1 },
-//         { name: 'File_3', maxCount: 1 },
-//         { name: 'File_4', maxCount: 1 },
-//         { name: 'File_5', maxCount: 1 },
-//         { name: 'File_6', maxCount: 1 },
-//         { name: 'File_7', maxCount: 1 },
-//         { name: 'File_8', maxCount: 1 },
-//         { name: 'File_9', maxCount: 1 }
-//     ]),
-//     async (req, res) => {
+    // Photo_Upload.fields([
+    //     { name: 'File_1', maxCount: 1 },
+    //     { name: 'File_2', maxCount: 1 },
+    //     { name: 'File_3', maxCount: 1 },
+    //     { name: 'File_4', maxCount: 1 },
+    //     { name: 'File_5', maxCount: 1 },
+    //     { name: 'File_6', maxCount: 1 },
+    //     { name: 'File_7', maxCount: 1 },
+    //     { name: 'File_8', maxCount: 1 },
+    //     { name: 'File_9', maxCount: 1 }
+    // ]),
+    // async (req, res) => {
 //     const files = req.files;
 //     let lp = 0;
 //     let dataURL = await Product_Model.find();
@@ -335,7 +376,7 @@ const Photo_Upload = multer({ storage: storage });
 // });
 
 app.get('*', (req, res) => {
-    res.status(404).send('Page Not Found');
+    res.status(404).send('<h1><center>Page Not Found</h1></center>');
 });
 
 let a = process.env.PORT || 80;
