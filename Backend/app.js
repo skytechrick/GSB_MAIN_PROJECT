@@ -46,7 +46,10 @@ const Product_Assistant_Login_Post = require("./Assistant_Admin/Product_Assistan
 
 
 const Product_Assistant_Add_Post = require("./Assistant_Admin/Product_Assistant_Add_Post.js");
+const Product_Assistant__Search_Post = require("./Assistant_Admin/Product_Assistant__Search_Post.js");
+const Product_Assistant__Product_Post = require("./Assistant_Admin/Product_Assistant__Product_Post.js");
 
+const Product_Assistant__Product_Update_Post = require("./Assistant_Admin/Product_Assistant__Product_Update_Post.js");
 
 
 
@@ -136,7 +139,6 @@ app.get("/admin/Analytics",async (req, res) => {Admin_Analytics(req, res)});
 // --------------------------------------------------------------------------------------
 // --------------------------------------------------------------------------------------
 
-app.get("/assistant/product",async (req, res) => {Product_Assistant_Get(req, res)});
 
 
 
@@ -167,8 +169,12 @@ const uploadMiddleware1 = Photo_Upload.fields([
     { name: 'File_10', maxCount: 1 }
 ]);
 
+app.get("/assistant/product",async (req, res) => {Product_Assistant_Get(req, res)});
 app.post("/assistant/product/add",uploadMiddleware1,async (req, res) => {Product_Assistant_Add_Post(req, res)});
+app.post("/assistant/product/seller/search",async (req, res) => {Product_Assistant__Search_Post(req, res)});
+app.post("/assistant/product/product/search",async (req, res) => {Product_Assistant__Product_Post(req, res)});
 
+app.post("/assistant/product/product/update",async (req, res) => {Product_Assistant__Product_Update_Post (req, res)});
 
 
 

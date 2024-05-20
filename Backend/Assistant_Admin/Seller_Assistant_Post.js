@@ -67,6 +67,7 @@ Seller_Assistant_Post = async (req, res) => {
                     Age: Body.Age,
                     Gender: Body.Gender,
                     Bank_Name: Body.Bank_Name,
+                    Account_NO:Body.Account_NO,
                     IFSC_Code: Body.IFSC_Code,
                     UPI: Body.UPI,
                     Shop_Name: Body.Shop_Name,

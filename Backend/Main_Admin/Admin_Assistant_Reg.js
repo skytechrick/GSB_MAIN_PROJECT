@@ -67,14 +67,16 @@ Admin_Assistant_Reg = async (req, res) => {
                 
                 let New_Worker1 = new New_Worker_Model(se);
                 New_Worker1.save().then(() =>{
-                    console.log("Saved to database....:");
+                    res.status(200).redirect("/admin/assistant/");
                 });
-                res.status(200).redirect("/admin/assistant/");
                 break;
             }
         }
     }else{
         res.clearCookie("Admin");
+        res.json({
+            Message:"",
+        })
         res.redirect("/admin/login");
     }
 

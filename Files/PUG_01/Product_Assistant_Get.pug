@@ -118,39 +118,40 @@
 
                 <div class="Stockss" id="DDDD_2">
                     <p>This is only for the products which is sold in the shop itself, so for that we have to arrange an arrangement for Availability of products as <i>Out of Stock</i> and <i>In Stock</i>. So for that you have to search for the product ID which is shared by the shop owner for updatation, by searching and validating the product make the product OUT OF STOCK and IN STOCK as per the instruction given be the shop owner.</p>
-                    <div>
+                    <div id="P_SSSS">
                         <label id="Product_DIIDL" for="Product_DIID">Product ID:</label>
-                        <input type="text" placeholder="Product ID" id="Product_DIID">
-                        <button id="Product_DIID_BTN" type="button">Search</button>
+                        <input type="text" placeholder="Product ID" id="Product_DIID" autocomplete="off" spellcheck="false">
+                        <button id="Product_DIID_BTN" type="button" onclick="Product_ID_S();">Search</button>
                     </div>
                     <div id="DISPLAY_HIDEEE">
-                        <fieldset>
-                            <legend>Product details</legend>
-                            <div class="Product_Title_T">
-                                <div class="BLACKK">Product Title:</div>
-                                <div class="BLACKKVAL"><i>Samsung galaxy S50 pro max | 8GB RAM - 128GB Storage | 6000mAh Battery | <a href="">Product Link</a></i></div>
-                            </div>
+                        <form id="DSSDSDD">
 
-                            <div class="Product_Title_T">
-                                <div class="BLACKK">Product Prize:</div>
-                                <div class="BLACKKVAL"><i>Rs. 15,999</i></div>
-                            </div>
-                            <div class="Product_Title_T">
-                                <div class="BLACKK">Availability</div>
-                                <div class="BLACKKVAL"><i>In Stock</i></div>
+                            <fieldset id="SSSSS">
+                                <legend>Product details</legend>
+                                <div class="Product_Title_T">
+                                    <div class="BLACKK">Product Title:</div>
+                                    <div class="BLACKKVAL"><i>Samsung galaxy S50 pro max | 8GB RAM - 128GB Storage | 6000mAh Battery | <a href="">Product Link</a></i></div>
+                                </div>
                                 
-                                
-                            </div>
-                        </fieldset>
+                                <div class="Product_Title_T">
+                                    <div class="BLACKK">Product Prize:</div>
+                                    <div class="BLACKKVAL"><i>Rs. 15,999</i></div>
+                                </div>
+                                <div class="Product_Title_T">
+                                    <div class="BLACKK">Availability</div>
+                                    <div class="BLACKKVAL"><i>In Stock</i></div>
+                                    
+                                    
+                                </div>
+                                <button type="reset" style="display: none;" id="RSSSSS"></button>
+                            </fieldset>
+                        </form>
                             
 
                         <div class="adsasadasdsa">
                             <label for="INSTOCK">Availability</label>
-                            <select id="INSTOCK">
-                                <option value="In Stock">---- Select option ----</option>
-                                <option value="In Stock">In Stock</option>
-                                <option value="Out of Stock">Out of Stock</option>
-                            </select>
+                            <input id="OSD" placeholder="Availabile products" type="number" autocomplete="off" spellcheck="false" autofocus>
+                            <button id="sds" onclick="UPDATE();" type="submit">Change</button>
                         </div>
                         
                         
@@ -170,14 +171,14 @@
                         <h3><span id="P121" class="material-symbols-outlined">add</span>Add products</h3>
                         <p>Please fill all the spaces, if you are facing any problem then you can contact me: <a href="tel:+918436431656"><i>Click here</i></a></p>
 
-                        <div class="Title_Div">
+                        <div class="Title_Div" id="Title_Div">
                             <label title="Seller_ID" for="Seller_ID">Seller ID:</label>
                             <input title="Seller_ID" type="text" id="Seller_ID" placeholder="Seller ID" autocomplete="off" spellcheck="false">
-                            <button id="Seller_ID_BTN" type="button" onclick="">Search</button>
+                            <button id="Seller_ID_BTN" type="button" onclick="SELLE_SEARCH();">Search</button>
                             <div id="VER">Verified<span class="material-symbols-outlined">verified</span></div>
                         </div>
 
-                        <div class="FFOrm">
+                        <div class="FFOrm" id="FFOrmas">
                             <form id="Addd_PROOROOR">
 
                                 <fieldset>
@@ -501,55 +502,55 @@
 
 
             <div id="disss">
-
                 <h4 class="H44">Profile (Personal Details)<span id="Croxx"><span class="material-symbols-outlined">Close</span></span></h4>
-                
                 <div id="St">
+                    <div class="Ds">
+                        <div>Profile ID: 7946564313</div>
+                    </div>
                     <div class="Ds">
                         <div>
                             <label for="First_Name">First Name:</label>
-                            <input type="text" id="First_Name" value="Rick" disabled>
+                            | !{First_Name}
                         </div>
                         <div>
-                            
                             <label for="Last_Name">Last Name:</label>
-                            <input type="text" id="Last_Name" value="Sarkar" disabled>
+                            <input type="text" id="Last_Name" value=#{Last_Name} disabled>
                         </div>
                     </div>
-                    
                     <div class="Ds">
                         <div>
                             <label for="Email">Email:</label>
-                            <input type="text" id="Email" value="ricksarkar2005@gmail.com" disabled>
+                            <input type="text" id="Email" value=#{Email} disabled>
                         </div>
                         <div>
-                            
                             <label for="Mobile_Number">Mobile Number:</label>
-                            <input type="text" id="Mobile_Number" value="8436431656" disabled>
+                            <input type="text" id="Mobile_Number" value=#{Mobile_Number} disabled>
                         </div>
                     </div>
                     
                     <div class="Ds">
                         <div class="SA">
                             <label id="AddressL" for="Address">Address:</label>
-                            <Address id="Address">Bagdogra, Loknath Nagar,<br>B.P Road,<br>PIN: 734014, <br> Dist: Darjeeling, <br>Siliguri, West Bengal,</Address>
+                            <Address id="Address">
+                                | !{Address}    
+                            </Address>
                         </div>
                     </div>
                     <div class="Ds">
                         <div>
                             <label for="Age">Age:</label>
-                            <input type="text" id="Age" value="18" disabled>
+                            <input type="text" id="Age" value=#{AGE} disabled>
                         </div>
                         <div>
                             
                             <label for="Gender">Gender:</label>
-                            <input type="text" id="Gender" value="Male" disabled>
+                            <input type="text" id="Gender" value=#{GENDEER} disabled>
                         </div>
                     </div>
                     <div class="Ds">
                         <div>
                             <label for="Language">Language:</label>
-                            <input type="text" id="Language" value="English, Hindi, Bengali" disabled>
+                            | !{SALanguage}
                         </div>
                         <div>
                             
@@ -581,35 +582,37 @@
                     <div class="Ds">
                         <div>
                             <label for="Bank_Name">Bank Name:</label>
-                            <input type="text" id="Bank_Name" value="State Bank of India" disabled>
+                            | !{BANK_N}
+                            
                         </div>
                         <div>
                             
                             <label for="Account_Benificiary_Name">Benificiary Name:</label>
-                            <input type="text" id="Account_Benificiary_Name" value="Rick Sarkar" disabled>
+                            | !{Benificiary}
+                            
                         </div>
                     </div>
                     
                     <div class="Ds">
                         <div>
                             <label for="Account_Number">Account Number:</label>
-                            <input type="text" id="Account_Number" value="42094200655" disabled>
+                            <input type="text" id="Account_Number" value=#{Account_Np} disabled>
                         </div>
                         <div>
                             
                             <label for="IFSC_Code">IFSC Code:</label>
-                            <input type="text" id="IFSC_Code" value="SBIN0007148" disabled>
+                            <input type="text" id="IFSC_Code" value="#{IFSC_Code}" disabled>
                         </div>
                     </div>
                     
                     <div class="Ds">
                         <div>
                             <label for="UPI">UPI:</label>
-                            <input type="text" id="UPI" value="8436431656" disabled>
+                            <input type="text" id="UPI" value=#{UPI_NO} disabled>
                         </div>
                     </div>
                     <div class="Ds">
-                        <table border="1" style="text-align: center; border-collapse: collapse; font-size: 13px;">
+                        <!-- <table border="1" style="text-align: center; border-collapse: collapse; font-size: 13px;">
                             <tr>
                                 <th style="padding: 5px 20px;">Date</th>
                                 <th style="padding: 5px 20px;">Amount</th>
@@ -620,7 +623,7 @@
                                 <td style="padding: 5px 20px;">Rs. 4,800</td>
                                 <td style="padding: 5px 20px;">Pending</td>
                             </tr>
-                        </table>
+                        </table> -->
                     </div>
                     
                 </div>
@@ -638,7 +641,7 @@
                     <div class="Ds">
                         <div>
                             <label for="Available">Available:</label>
-                            <select name="" id="Available">
+                            <select name="" id="Available" disabled>
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                             </select>

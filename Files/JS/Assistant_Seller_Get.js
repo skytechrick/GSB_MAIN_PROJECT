@@ -1,3 +1,4 @@
+
 function Slide() {
     document.getElementById("Aside_Ham").style.left = "-295px";
     document.getElementById("Sec").style.width = "calc(100% - 5px)";   
@@ -182,6 +183,7 @@ Nav = (n = 1) => {
 
 Message = (A = "Server Error") =>{
     document.getElementById("Messageeeee").style.animationName = "Adm1";
+    document.getElementById("Messageeeee").style.display = 'block';
     document.getElementById("mess").innerHTML = A;
 }
 
@@ -327,20 +329,147 @@ function AddLine(n) {
 
 
 
+SELLE_SEARCH = () =>{
+    
+    let Search_ID = document.getElementById(`Seller_ID`).value;
+    d = {ID: Search_ID,Send:"Yes"};
+    fetch("/assistant/product/seller/Search",{
+        method:"POST",
+        body:JSON.stringify(d),
+        headers:{"Content-Type":"application/json"},
+
+
+
+    }).then(response =>{
+        if (response) {
+            return response.json();
+        }
+
+    }).then((data)=>{
+        console.log(data);
+        if(data.FOUND == "Yes"){
+            
+            let a = document.getElementById("Seller_ID").value;
+            
+            let Title_Div = document.getElementById("Title_Div");
+            
+            
+            let IND = `
+                <label title="Seller_ID" for="Seller_ID">Seller ID:</label>
+                <input value="${a}" title="Seller_ID" type="text" id="Seller_ID" placeholder="Seller ID" autocomplete="off" spellcheck="false" disabled>
+                <button id="Seller_ID_BTN" type="button" disabled>Search</button>
+                <div id="VER">Verified<span class="material-symbols-outlined">verified</span></div>
+                
+            `
+            Title_Div.innerHTML = IND;
+            document.getElementById("VER").style.display = "block"
+            document.getElementById("FFOrmas").style.display = "block";
+            Message("User found");
+            
+        }else{
+            Message(data.FOUND);
+        }
+
+    }).catch(e =>{console.log("Error while searching")})
+
+}
 
 
 
 
 
 
+function Product_ID_S () {
+     
+    let Search_ID = document.getElementById(`Product_DIID`).value;
+    d = {ID: Search_ID,Send:"Yes"};
+    console.log(1)
+    fetch("/assistant/product/product/search",{
+        method:"POST",
+        body:JSON.stringify(d),
+        headers:{"Content-Type":"application/json"},
+
+
+
+    }).then(response =>{
+        if (response) {
+            return response.json();
+        }
+
+    }).then((data)=>{
+        console.log(data);
+        if(data.FOUND == "Yes"){
+            
+            let a = document.getElementById("Product_DIID").value;
+            
+            let Title_Div = document.getElementById("P_SSSS");
+            
+            
+            let IND = `
+            <label id="Product_DIIDL" for="Product_DIID">Product ID:</label>
+            <input type="text" value="${a}" placeholder="Product ID" id="Product_DIID" autocomplete="off" spellcheck="false"disabled>
+            <button id="Product_DIID_BTN" type="button" disabled>Search</button>
+        
+            `
+            Title_Div.innerHTML = IND;
+            document.getElementById("DISPLAY_HIDEEE").style.display = "block";
+            Message("Product found");
+
+            document.getElementById("SSSSS").innerHTML=`
+                            <legend>Product details</legend>
+                            <div class="Product_Title_T">
+                                <div class="BLACKK">Product Title:</div>
+                                <div class="BLACKKVAL"><i>${data.Title} <a href="${data.URL}">Product Link</a></i></div>
+                            </div>
+
+                            <div class="Product_Title_T">
+                                <div class="BLACKK">Product Prize:</div>
+                                <div class="BLACKKVAL"><i>Rs. ${data.Sell}</i></div>
+                            </div>
+                            <div class="Product_Title_T">
+                                <div class="BLACKK">Availability</div>
+                                <div class="BLACKKVAL"><i>${data.Stock}</i></div>
+                                
+                                
+                            </div>
+            `
+            
+        }else{
+            Message(data.FOUND);
+        }
+        
+    }).catch(e =>{
+        Message("Error while searching");
+    })
+
+}
 
 
 
 
 
 
+function UPDATE(){
 
 
+    let OSD = document.getElementById("OSD").value;
+    let s = document.getElementById("Product_DIID").value;
+
+    let D = {Stock: OSD,ID:s}; 
+
+    fetch("/assistant/product/product/update",{
+        body: JSON.stringify(D),
+        headers:{"Content-Type":"application/json"},
+        method:"POST",
+    }).then(response=>{return response.json()})
+    .then(data=>{
+        console.log(data);
+        Message(data.Message);
+
+    }).catch(e=>{
+        Message("Error while updating");
+    })
+};
 
 
 

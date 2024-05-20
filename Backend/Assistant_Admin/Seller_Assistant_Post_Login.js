@@ -6,7 +6,6 @@ Seller_Assistant_Post_Login = async (req, res) =>{
     let NO = req.cookies.NO;
     let d = req.body;
     let element;
-    let MOB;
     if (!COOK && !NO) {
         p = 0;
         for (let index = 0; index < list.length; index++) {

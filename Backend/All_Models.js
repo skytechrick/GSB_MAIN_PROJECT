@@ -10,6 +10,58 @@ db.once('open',() => {
     console.log('Connected to MongoDB database.');
 });
 
+
+
+let PP = {
+    Product_ID: {type:String},
+    Verified: {type:String},
+    Product_URL: {type:String},
+    Title: {type:String},
+    Type: {type:String},
+    Quantity_Available: {type: String},
+    Options:{type:Object},
+    Brand_Name: {type:String},
+    HashTags: {type:Object},
+    Prize: {
+        MRP: {type: String},
+        Cost_Price: {type: String},
+        Sell_Price: {type: String},
+        Our_Prize: {type: String},
+        Our_Margin: {type: String},
+    },
+    Revenue:{
+        Total_Sales: {type: String},
+        Total_Delivered: {type: String},
+        Total_Returned: {type: String},
+        Total_Spend: {type: String},
+        Overall_Profit: {type: String},
+    },
+    Description: {type: String},
+    Table: {type: Object},
+    Image_Locaitons: {type: Object},
+    Review:{type: Object},
+    QnA:{type: Object},
+    Order:{
+        Total_No_Of_Orders: {type:String},
+        Total_Delivered: {type:String},
+        Total_RTO:{type:String},
+        Total_Pending: {type:String},
+    },
+    Orders_Date: {type:Object},
+    Added_ID: {type:String},
+    Seller_ID: {type:String},
+    Request: {type:Object},
+    
+}
+
+
+
+
+
+
+
+
+
 const Signup_Schema = new mongoose.Schema({
     Profile_Id:{
         type: Number
@@ -102,7 +154,7 @@ const a = new mongoose.Schema({
     
 })
 
-const New_Product = new mongoose.Schema({
+const New_ = new mongoose.Schema({
     Name: {type: String},
     Mobile_Number: {type: String},
     WhatsApp_Number: {type: String},
@@ -163,14 +215,19 @@ const New_Product = new mongoose.Schema({
 
 const New_Worker_Mode = mongoose.model("Workers", New_Worker);
 
-const New_Products_Mofule = mongoose.model("Seller", New_Product);
+const New_Products_Mofule = mongoose.model("Seller", New_);
 const a_ = mongoose.model("Assistants_Confirmation", a);
 
 const Sign_Mol = mongoose.model("Main_User", Signup_Schema);
+
+const Product = mongoose.model("Products", PP);
+
+
 
 module.exports = {
     Signup_Model: Sign_Mol,
     New_Worker_Model: New_Worker_Mode,
     Assistant_Confirmation: a_,
     Seller : New_Products_Mofule,
+    Product : Product,
 };
