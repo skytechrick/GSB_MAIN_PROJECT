@@ -29,7 +29,12 @@ const Main_Admin = require("./Main_Admin/Main_Admin.js");
 const Main_Admin_Post = require("./Main_Admin/Main_Admin_Post.js");
 const Main_Admin_GET = require("./Main_Admin/Main_Admin_GET.js");
 const Admin_Assistant = require("./Main_Admin/Admin_Assistant.js");
-const Admin_Assistant_Reg = require("./Main_Admin/Admin_Assistant_Reg.js");
+
+
+
+const Admin_Assistant_Reg = require("./Admin_Assistant_Reg.js");
+
+
 const Admin_Assistant_Search = require("./Main_Admin/Admin_Assistant_Search.js");
 const Admin_Assistant_Update = require("./Main_Admin/Admin_Assistant_Update.js");
 
@@ -114,6 +119,9 @@ app.use('/product/img', express.static('../Served_Images_Product'));
 
 
 
+app.get("/a", (req, res) => {
+    res.status(200).send(`<center>Unable to send Mail <a href="/admin/assistant">GO TO HOME PAGE</a></center>`);
+});
 
 
 // --------------------------------------------------------------------------------------
