@@ -24,16 +24,10 @@ Admin_Assistant_Reg = async (req, res) => {
     
     
     if (Admin == auth) {
-        // console.log(2);
-        
         while (true) {
             let data = await New_Worker_Model.find({});
             let Profile_ID_ = Profile_ID_G();
-            // console.log(3);
-            // console.log(Profile_ID_);
-            
             let d = 0;
-        
             for (let index = 0; index < data.length; index++) {
                 const element = data[index];
                 if(element.Profile_ID == Profile_ID_){
@@ -43,8 +37,6 @@ Admin_Assistant_Reg = async (req, res) => {
                     d = 2;
                 };
             }
-
-
             if (d == 2) {
                 const {Acode, Added_By, First_Name, Last_Name, Mobile_Number, Email, Create_Password, Country_Name, State_Name, District_Name, Pin_Code, City_Name, Village_Name, Locality_Road, Language, Your_Age, Gender, Bank_Name, Account_Name, Account_Number, Ifsc_Code, Upi_Number, Assistant_Type} = req.body
                 const se = {
@@ -79,11 +71,8 @@ Admin_Assistant_Reg = async (req, res) => {
                     "LOG_AUTH":"",
 
                 };
-                // console.log(11);
-
                 const Mail_Option = {
                     from: 'GET SKY BUY <skybuy.ceo@gmail.com>',
-                    // to: "ricksarkar2005@gmail.com",
                     to: Email,
                     subject: 'You are selected for GSB Assistant Leaders | GET SKY BUY', 
                     html: `
@@ -92,29 +81,21 @@ Admin_Assistant_Reg = async (req, res) => {
                     `,
                 }
                 let d = 111;
-                
                 Transporter.sendMail(Mail_Option, (error, info) => {
                     if (error) {
-                        // console.log("A");
                         d = 0;
                     } else {
                         d = 1;
-                        // console.log("B");
                     }
                 });
                 setTimeout( () => {
-                    
                     if (d == 1) {
-                        // console.log("C");
                         let New_Worker1 = new New_Worker_Model(se);
                         New_Worker1.save().then(() =>{
                             res.status(200).redirect("/admin/assistant/");
                         });
-                        // break;
                     }else{
-                        // console.log("D");
                         res.status(200).send(`<center style="font-family: Arial, sans-serif; font-size: 30px">Unable to send Mail <a href="/admin/assistant">GO TO HOME PAGE</a></center>`);
-                        // break;
                     }
                 }, 4100);
                 break;
@@ -122,12 +103,7 @@ Admin_Assistant_Reg = async (req, res) => {
         }
     }else{
         res.clearCookie("Admin");
-        // res.json({
-        //     Message:"",
-        // })
         res.redirect("/admin/login");
-    }
-    
-
-}
+    };
+};
 module.exports = Admin_Assistant_Reg;

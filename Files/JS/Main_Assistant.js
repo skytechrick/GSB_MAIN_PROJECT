@@ -414,7 +414,7 @@ function Optiona(Search_Man_I,S_Type) {
             </div>
 <div class="boxx">
     <div class="keye">Number:</div>
-    <div class="valuee">${data.Mobile_Number}</div>
+    <div  id="NNA" class="valuee">${data.Mobile_Number}</div>
 </div>
 <div class="boxx">
     <div class="keye">Email:</div>
@@ -482,7 +482,7 @@ function Optiona(Search_Man_I,S_Type) {
 </div>
 <div class="boxx">
     <div class="keye">Assistant:</div>
-    <div class="valuee">${data.Assistant_Type}</div>
+    <div id="AAAAA" class="valuee">${data.Assistant_Type}</div>
 </div>`;
 
 
