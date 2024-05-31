@@ -7,6 +7,8 @@ Product_Assistant_Get = async (req, res) =>{
     let COOK = req.cookies.AS_PRO;
     let NOP = req.cookies.NOP;
     let element;
+
+    console.log(req.body);
     
     
     if (COOK && NOP) {

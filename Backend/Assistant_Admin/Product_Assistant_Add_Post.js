@@ -4,6 +4,8 @@ Product_Assistant_Add_Post = async (req, res) => {
     let cook_NO = cook.NOP;
     let cook_PID= cook.PID;
 
+    console.log(req.body);
+
     let {
         Brand_Name,
         Cost_Price,
@@ -18,7 +20,8 @@ Product_Assistant_Add_Post = async (req, res) => {
     } = req.body;
 
     if(Brand_Name && Cost_Price && Description && MRP && Quantity_Available && Sell_Price && Title && Type && HashTags && Seller_ID){
-        if(Brand_Name.length > 1  && Description.length > 1    && Title.length > 1  && Type.length > 1  && HashTags.length > 1  && Seller_ID.length > 1 ){
+        if(Description.length > 1    && Title.length > 1  && Type.length > 1  && HashTags.length > 1){
+        // if(Brand_Name.length > 1  && Description.length > 1    && Title.length > 1  && Type.length > 1  && HashTags.length > 1  && Seller_ID.length > 1 ){
 
 
             let DS = (String(HashTags).split(','));
@@ -143,12 +146,12 @@ Product_Assistant_Add_Post = async (req, res) => {
             
         
         }else{
-            res.status(200).json({ Message: 'Unable to add' });
+            res.status(200).json({ Message: 'Unable to add2' });
 
         }
         
     }else{
-        res.status(200).json({ Message: 'Unable to add' });
+        res.status(200).json({ Message: 'Unable to add1' });
 
     }
 

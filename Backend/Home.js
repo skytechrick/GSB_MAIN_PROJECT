@@ -11,7 +11,7 @@ Home = async(req, res) => {
         let chec = JWTV(U_ID);
         if (chec == null) {
             res.clearCookie("U_ID");
-            res.status(200).render(`Home`,{
+            res.status(200).render(`Home2`,{
                 Name: "User",
                 Cart_No: 0,
                 Login: `<a href="/login" class="Profile_Options">Login</a>`,
@@ -34,7 +34,7 @@ Home = async(req, res) => {
             // console.log(3);
             if (g == 1){
                 res.clearCookie("U_ID");
-                res.status(200).render(`Home`,{
+                res.status(200).render(`Home2`,{
                     Name: "User",
                     Cart_No: 0,
                     Login: `<a href="/login" class="Profile_Options">Login</a>`,
@@ -47,7 +47,7 @@ Home = async(req, res) => {
                     if(chec.Profile_Log == elem.Profile_Log.Auth_1){
                         let s = elem.Cart.length;
                         // console.log(s)
-                        res.status(200).render(`Home`,{
+                        res.status(200).render(`Home2`,{
                             Name:elem.First_Name,
                             Cart_No: s,
                         });
@@ -58,7 +58,7 @@ Home = async(req, res) => {
                         
                         let s = elem.Cart.length;
                         // console.log(s)
-                        res.status(200).render(`Home`,{
+                        res.status(200).render(`Home2`,{
                             Name:elem.First_Name,
                             Cart_No: s,
                         });
@@ -69,7 +69,7 @@ Home = async(req, res) => {
                         
                         let s = elem.Cart.length;
                         // console.log(s)
-                        res.status(200).render(`Home`,{
+                        res.status(200).render(`Home2`,{
                             Name:elem.First_Name,
                             Cart_No: s,
                         });
@@ -81,7 +81,7 @@ Home = async(req, res) => {
                         
                         let s = elem.Cart.length;
                         // console.log(s)
-                        res.status(200).render(`Home`,{
+                        res.status(200).render(`Home2`,{
                             Name:elem.First_Name,
                             Cart_No: s,
                         });
@@ -93,7 +93,7 @@ Home = async(req, res) => {
                         
                         let s = elem.Cart.length;
                         // console.log(s)
-                        res.status(200).render(`Home`,{
+                        res.status(200).render(`Home2`,{
                             Name:elem.First_Name,
                             Cart_No: s,
                         });
@@ -101,7 +101,7 @@ Home = async(req, res) => {
 
                     }else{
                         res.clearCookie("U_ID");
-                        res.status(200).render(`Home`,{
+                        res.status(200).render(`Home2`,{
                             Name: "User",
                             Cart_No: 0,
                             Login: `<a href="/login" class="Profile_Options">Login</a>`,
@@ -112,7 +112,7 @@ Home = async(req, res) => {
                 }else{
                     // console.log(6);
                     res.clearCookie("U_ID");
-                    res.status(200).render(`Home`,{
+                    res.status(200).render(`Home2`,{
                         Name: "User",
                         Cart_No: 0,
                         Login: `<a href="/login" class="Profile_Options">Login</a>`,
@@ -125,7 +125,7 @@ Home = async(req, res) => {
         }
         
     }else{
-        res.status(200).render(`Home`,{
+        res.status(200).render(`Home2`,{
             Name: "User",
             Cart_No: 0,
             Login: `<a href="/login" class="Profile_Options">Login</a>`,

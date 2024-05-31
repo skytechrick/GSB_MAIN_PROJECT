@@ -156,8 +156,7 @@ const storage = multer.diskStorage({
         cb(null, path.join(__dirname, '../Served_Images_Product'));
     },
     filename: (req, file, cb) => {
-        let a = req.body.Title;
-        cb(null, a  +  Date.now() +  "_" + file.fieldname + '_'  + file.originalname);
+        cb(null,  Date.now() +  "_" + file.fieldname + '_'  + file.originalname);
     }
 });
 
@@ -219,6 +218,10 @@ app.post("/admin/assistant/new/user",async (req, res) => {Send_Ass(req, res)});
 
 
 app.get("/",async (req, res) => {Home(req, res)});
+app.get("/s",async (req, res) => {
+    res.status(200).render("Home");
+}    
+);
 
 
 
@@ -241,7 +244,7 @@ app.post("/seller/signup", async (req, res) => {Seller_Signup_Post(req, res)});
 
 
 
-app.get("/products", async (req, res) => {Product_Page(req,res)});
+app.get("/product/:Url_P", async (req, res) => {Product_Page(req,res)});
 
 
 
