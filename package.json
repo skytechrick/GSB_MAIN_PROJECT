@@ -1,5 +1,12 @@
 {
-  "dependencies": {
-    "mongodb": "^6.7.0"
-  }
+    "scripts": {
+        "build": "netlify deploy --prod"
+    },
+    "dependencies": {
+        "express": "^4.19.2",
+        "cors": "^2.8.5",
+        "netlify-cli": "^12.7.2",
+        "netlify-lambda": "^2.0.15",
+        "serverless-http": "^3.2.0"
+    }
 }
