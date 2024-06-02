@@ -5,6 +5,17 @@
     'GRAD' 0,
     'opsz' 24
 }
+#Background_Blue{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: #aaaaaa69;
+    z-index: 99;
+    display: none;
+}
+
 
 body {
     margin: 0;
@@ -16,20 +27,25 @@ body {
 .Header{
     position: sticky;
     top: 0px;
+    position: sticky;
+    top: 0px;
     height: 60px;
     background-color: white;
     box-shadow: 0 0 8px rgb(247, 0, 255);
     display: flex;
     justify-content: center;
-
+    z-index: 200;
 }
 
 .Header_c {
+    z-index: 150;
+    position: relative;
+    top: 0px;
     max-width: 1570px;
     width: 100%;
     /* background-color: aqua; */
-    border-left: 1px solid #aaa;
-    border-right: 1px solid #aaa;
+    /* border-left: 1px solid #aaa; */
+    /* border-right: 1px solid #aaa; */
     padding: 0 15px;
     display: flex;
     justify-content: space-between;
@@ -38,7 +54,7 @@ body {
 
 .Logo_Search_Part{
     
-    border: 1px solid #aaa;
+    /* border: 1px solid #aaa; */
     /* background-color: bisque; */
     display: flex;
     max-width: 800px;
@@ -143,6 +159,7 @@ body {
 .Search_Box_Main {
     display: inline-block;
     max-width: 600px;
+    min-width: 350px;
     width: 100%;
     height: 100%;
     /* background-color: rgb(255, 172, 172); */
@@ -179,6 +196,7 @@ body {
 #Search_Type option{
     background-color: white;
 }
+
 #Search_Type{
     padding-left: 4px;
     border-radius: 50px;
@@ -463,74 +481,1146 @@ body {
 
 
 
-/* ---------------------------------- */
-/* ---------------------------------- */
-/* ---------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ---------------------------------- */
 /* ---------------------------------- */
 /* ---------------------------------- */
 
+/* NAVIGATION */
+
+
+
+
+
+.Nav_Slide {
+
+    width: calc(100%);
+
+}
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.Nav_Slide nav ul{
-    display: none;
-    /* display: flex;     */
-    justify-content: space-evenly;
+.Nav_Slide nav{
+    display: flex;
     align-items: center;
+    height: 100%;
+    width: 100%;
+
+}
+.Nav_Slide nav ul{
+    /* display: none; */
+    padding: 0px;
+    margin: 0;
+    display: flex;    
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    
     list-style: none;
 }
 .Nav_Slide nav ul li{
-    padding: 6px 9px;    
+    border: 1px solid transparent;
+    /* padding: 6px 9px; */
     background-color: white;
+    position: relative;
+    top: 0;
+    /* width: 100px; */
+    height: 30px;
+    
 }
+.Nav_Slide nav ul li:hover{
+    border: 1px solid rgb(247, 0, 255)
+}
+.Nav_Slide nav ul li >div {
+    color: black;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+
+}
+.Nav_Slide nav ul li > a {
+    color: black;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+
+.Nav_Slide nav ul li > a:hover {
+    text-shadow: 0 0 1px rgb(247, 0, 255)
+}
+#LIProfileA:hover {
+    text-shadow: 0 0 1px rgb(247, 0, 255)
+}
+
+.GI {
+    position: relative;;
+    top: -2px;
+}
+
+.LI {
+    position: relative;;
+    top: 1px;
+
+}
+
+
+#LIstore {
+    width: 110px;
+}
+
+#LIProfile {
+    width: 80px;
+}
+
+
+#LIMore {
+    width: 70px;
+}
+.DC {
+    position: relative;
+    top: 1px;
+    right: 2px;
+}
+
+#LIFavourite {
+    width: 107px;
+}
+
+#LICart {
+    width: 78px;
+}
+
+#LICartA {
+    position: relative;
+    top: 0px;
+}
+
+
+
+#CART_NUMBER {
+    position: absolute;
+    top: -5px;
+    left: 19px;
+    background-color: red;
+    color: white;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --size: 15px;
+    width: var(--size);
+    height: var(--size);
+    text-align: center;
+    font-size: 12px;
+    border-radius: 52px;
+}
+
+
+
+
+
+@keyframes VIEW_ON {
+    0% {
+        display: none;
+        height: 0px;
+    }
+    100%{
+        display: flex;
+        height: 244px;
+    }
+}
+@keyframes VIEW_OFF {
+    0% {
+        display: flex;
+        height: 244px;
+    }
+    100%{
+        display: none;
+        height: 0px;
+    }
+}
+
+
+#Profile_OPTION_1 {
+    overflow: hidden;
+    width: 130px;
+    background-color: white;
+    border: 1px solid rgb(247, 0, 255);
+    position: absolute;
+    top: 30px;
+    left: -1px;
+    border-radius: 12px;
+    border-top-left-radius: 0px;
+    justify-content: left;
+    flex-direction: column;
+    height: auto; 
+    padding: 3px 5px;
+    color: #5a5a5a;
+    display: flex;
+    /* display: none; */
+    
+    animation-name: VIEW_OFF;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+    
+    box-shadow: 0px 0px 10px rgba(78, 78, 78, 0.5);
+}
+
+
+.Profile_Options_Nav2 {
+    overflow: hidden;
+    font-size: 14px;
+    width: 100%;
+    color: black;
+    text-decoration: none;
+    
+    display: block;
+    padding: 5px 2px;
+    border-bottom: 1px solid #c9c9c9;
+}
+
+.Profile_Options_Nav2:hover {
+    border: 1px solid rgb(247, 0, 255);
+}
+
+
+
+
+
+
+@keyframes VIEW1_ON {
+    0% {
+        display: none;
+        height: 0px;
+    }
+    100%{
+        display: flex;
+        height: 217px;
+    }
+}
+@keyframes VIEW1_OFF {
+    0% {
+        display: flex;
+        height: 217px;
+    }
+    100%{
+        display: none;
+        height: 0px;
+    }
+}
+
+
+
+
+
+
+#More_Down {
+    overflow: hidden;
+    width: 135px;
+    background-color: white;
+    border: 1px solid rgb(247, 0, 255);
+    position: absolute;
+    top: 30px;
+    left: -1px;
+    border-radius: 12px;
+    border-top-left-radius: 0px;
+    justify-content: left;
+    flex-direction: column;
+    height: auto; 
+    padding: 3px 5px;
+    color: #5a5a5a;
+    display: flex;
+    display: none;
+    
+    animation-name: VIEW_OFFds;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+    
+    box-shadow: 0px 0px 10px rgba(78, 78, 78, 0.5);
+
+
+}
+.More_Options {
+    overflow: hidden;
+    font-size: 14px;
+    width: 100%;
+    color: black;
+    text-decoration: none;
+    
+    display: block;
+    padding: 5px 2px;
+    border-bottom: 1px solid #c9c9c9 ;
+}
+
+.More_Options:hover {
+    border: 1px solid rgb(247, 0, 255);
+}
+
+
+#Profile_OPTION_11 {
+    display: none;
+}
+
+.MENU_SIDE {
+    display: none;
+}
+
+.SLIDE_BTN_REV,.MOBILE_CART {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------------------------- */
+/* ---------------------------------- */
+/* ---------------------------------- */
+
+
+.NEXT_HEAD {
+    display: none;
+}
+
+#LIProfile1, #LIstore1, #LIMore1, #LIFavourite1, #LICart1{
+    display: none;
+
+}
+
+@media screen and (max-width: 1250px) {
+    #LIFavourite {
+        display: none;
+    }
+    
+    #LIFavourite1 {
+        display: block;
+    }
+
+
+    .NEXT_HEAD {
+        z-index: 149;
+        position: absolute;
+        top: 62px;
+        height: 40px;
+        max-width: 1570px;
+        width: 100%;
+        /* padding: 0 15px; */
+        display: flex;
+        background-color: white;
+        border-bottom: 1px solid #aaa;
+        justify-content: space-between;
+    }
+    
+
+    .NEXT_HEAD nav{
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+
+    }
+    .NEXT_HEAD nav ul{
+        /* display: none; */
+        padding: 0px;
+        margin: 0;
+        display: flex;    
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        
+        list-style: none;
+    }
+    .NEXT_HEAD nav ul li{
+        border: 1px solid transparent;
+        /* padding: 6px 9px; */
+        background-color: white;
+        position: relative;
+        top: 0;
+        /* width: 100px; */
+        height: 30px;
+        
+    }
+    .NEXT_HEAD nav ul li:hover{
+        border: 1px solid rgb(247, 0, 255)
+    }
+    .NEXT_HEAD nav ul li >div {
+        color: black;
+        cursor: pointer;
+        height: 100%;
+        width: 100%;
+        text-decoration: none;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+
+    }
+    .NEXT_HEAD nav ul li > a {
+        color: black;
+        cursor: pointer;
+        height: 100%;
+        width: 100%;
+        text-decoration: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+
+    .NEXT_HEAD nav ul li > a:hover {
+        text-shadow: 0 0 1px rgb(247, 0, 255)
+    }
+    #LIProfileA:hover {
+        text-shadow: 0 0 1px rgb(247, 0, 255)
+    }
+
+    .GI {
+        position: relative;;
+        top: -2px;
+    }
+
+    .LI {
+        position: relative;;
+        top: 1px;
+
+    }
+
+
+    #LIstore1 {
+        width: 110px;
+    }
+
+    #LIProfile1 {
+        width: 80px;
+    }
+
+
+    #LIMore1 {
+        width: 70px;
+    }
+    .DC {
+        position: relative;
+        top: 1px;
+        right: 2px;
+    }
+
+    #LIFavourite1 {
+        width: 107px;
+    }
+
+    #LICart1 {
+        width: 78px;
+    }
+
+    #LICartA1 {
+        position: relative;
+        top: 0px;
+    }
+
+
+
+    #CART_NUMBER1 {
+        position: absolute;
+        top: -5px;
+        left: 19px;
+        background-color: red;
+        color: white;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        --size: 15px;
+        width: var(--size);
+        height: var(--size);
+        text-align: center;
+        font-size: 12px;
+        border-radius: 52px;
+    }
+    #Profile_OPTION_11 {
+        overflow: hidden;
+        width: 130px;
+        background-color: white;
+        border: 1px solid rgb(247, 0, 255);
+        position: absolute;
+        top: 30px;
+        left: -1px;
+        border-radius: 12px;
+        border-top-left-radius: 0px;
+        justify-content: left;
+        flex-direction: column;
+        height: auto; 
+        padding: 3px 5px;
+        color: #5a5a5a;
+        display: flex;
+        /* display: none; */
+        
+        animation-name: VIEW_OFF;
+        animation-duration: 300ms;
+        animation-fill-mode: forwards;
+        
+        box-shadow: 0px 0px 10px rgba(78, 78, 78, 0.5);
+    }
+    
+    
+    .Profile_Options_Nav2 {
+        overflow: hidden;
+        font-size: 14px;
+        width: 100%;
+        color: black;
+        text-decoration: none;
+        
+        display: block;
+        padding: 5px 2px;
+        border-bottom: 1px solid #c9c9c9;
+    }
+    
+    .Profile_Options_Nav2:hover {
+        border: 1px solid rgb(247, 0, 255);
+    }
+
+    
+
+    #More_Down1 {
+        overflow: hidden;
+        width: 135px;
+        background-color: white;
+        border: 1px solid rgb(247, 0, 255);
+        position: absolute;
+        top: 30px;
+        left: -1px;
+        border-radius: 12px;
+        border-top-left-radius: 0px;
+        justify-content: left;
+        flex-direction: column;
+        height: auto; 
+        padding: 3px 5px;
+        color: #5a5a5a;
+        display: flex;
+        display: none;
+        
+        animation-name: VIEW_OFFds;
+        animation-duration: 300ms;
+        animation-fill-mode: forwards;
+        
+        box-shadow: 0px 0px 10px rgba(78, 78, 78, 0.5);
+
+
+    }
+    .More_Options {
+        overflow: hidden;
+        font-size: 14px;
+        width: 100%;
+        color: black;
+        text-decoration: none;
+        
+        display: block;
+        padding: 5px 2px;
+        border-bottom: 1px solid #c9c9c9 ;
+    }
+
+    .More_Options:hover {
+        border: 1px solid rgb(247, 0, 255);
+    }
+
+        
+    
+
+
+
+}
+
+
+
+@media screen and (max-width: 1050px) {
+    #LIMore {
+        display: none;
+    }
+    #LIMore1 {
+        display: block;
+    }
+}
+
+
+
+@media screen and (max-width: 900px) {
+    #LIstore {
+        display: none;
+    }
+    #LIstore1 {
+        display: block;
+    }
+}
+
+
+
+@media screen and (max-width: 825px) {
+    #LIProfile {
+        display: none;
+    }
+    #LIProfile1 {
+        display: block;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    #LICart {
+        display: none;
+    }
+    #LICart1 {
+        display: block;
+    }
+    .Search_Box_Main {
+        min-width: 100px;
+    }
+    
+    #Nav_Slide {
+        display: none;
+    }
+    
+    
+    
+}
+
+.NEXT_HEAD_IMG{
+    display: none;
+}
+
+
+@keyframes HAMBURGER_SHOW {
+    0% {
+        left: -250px;
+    }
+    100%{
+        left: 0px;        
+    }
+    
+}
+@keyframes HAMBURGER_HIDE {
+    0% {
+        left: 0px;        
+    }
+    100%{
+        left: -250px;
+    }
+    
+}
+@media screen and (max-width: 550px) {
+    .NEXT_HEAD {
+        padding-top: 60px;
+        top: 0px;
+        background-color: white;
+        width: 250px;
+        height: 100vh;
+        left: 0px;
+        z-index: 201;
+        display: block;
+        overflow-y: scroll;
+        animation-duration: 300ms;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-out;
+        animation-name: a;
+        
+    }
+    .NEXT_HEAD nav {
+        width: 95%;
+        margin: auto;
+        flex-direction: column;
+        
+    }
+    .NEXT_HEAD nav ul  {
+        width: 100%;
+        flex-direction: column;
+    }
+    #NEXT_HEAD nav ul li{
+        display: flex;
+        justify-content: left;
+
+        margin: 4px 0px;
+        width: 100%;
+    }
+
+    #NEXT_HEAD nav ul li > a {
+        position: relative;
+        left: 20px;
+        justify-content: left;
+    }
+
+    #LIProfileA1, #LIMoreA1 {
+        
+        position: relative;
+        left: 20px;
+        justify-content: left;
+        
+    }
+
+
+
+    #Profile_OPTION_11, #More_Down1 {
+        z-index: 1000;
+    }
+
+
+
+
+
+
+    .NEXT_HEAD_IMG { 
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+   
+        
+        
+
+        
+    }
+    .NEXT_HEAD_IMG img{
+        border-radius: 50px;
+        border: 1px solid #aaa;
+        width: 60px;
+    }
+    .NEXT_HEAD_IMG a{
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        color: black;
+    }
+    
+    .Pdsa {
+        border-bottom: 1px solid #aaa;
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+
+    .Pdsa:hover {
+        text-decoration: underline;
+    }
+
+
+    #NEXT_HEAD {
+        z-index: 1200;
+        display: none;
+    }
+
+    .Header {
+        height: 110px;
+    }
+
+
+    #Logo_Search_Part {
+        flex-direction: column;
+    }
+    .SLIDE_BTN_REV {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+    }
+    .SLIDE_BTN_REV span{
+        cursor: pointer;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        background-color: #dadada;
+        border-radius: 50%;
+        padding: 8px;
+    }
+    .SLIDE_BTN_REV span:hover{
+        background-color: #b9b9b9;
+    }
+    .SLIDE_BTN_REV span:active{
+        background-color: #a1a1a1;
+    }
+    .Logo_Search_Part {
+        position: relative;
+        top: 0px;
+    }
+    .MENU_SIDE{
+        position: absolute;
+        display: inline-block;
+        top: 10px;
+        left: 0px;
+
+
+
+    }
+
+
+
+    .Search_Box_Main {
+        position: relative;
+        top: -3px;
+    }
+
+    .Main_Top {
+        position: relative;
+        left: 42px;
+    }
+
+    #MENU_SIDE_SPAN {
+        cursor: pointer;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        background-color: #e9e8e8;
+        border-radius: 50%;
+        padding: 8px;
+        
+    }
+    #MENU_SIDE_SPAN:hover {
+        background-color: #dbdbdb;
+
+    }
+
+    .Main_Top {
+        width: 236px;
+    }
+
+    
+    .SLIDE_BTN_REV {
+        display: block;
+    }
+    .MOBILE_CART {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 0px;
+        
+    }
+
+    #LICaartA1 {
+        text-decoration: none;
+        color: black;
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
+    }
+    .GSS {
+        font-size: 25px;
+        position: relative;
+        top: 4px;
+    }
+
+    .Caart_SPAN {
+        color: black;
+    }
+
+    #CART_NUMBER1dd {
+
+        position: absolute;
+        top: -5px;
+        left: 19px;
+        background-color: red;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        --size: 15px;
+        width: var(--size);
+        height: var(--size);
+        text-align: center;
+        font-size: 12px;
+        border-radius: 52px;
+    }
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+#Profile_OPTION_1 {
+    animation-name: ae;
+    display: none;
+}
+
+#Profile_OPTION_11 {
+    animation-name: ae;
+    display: none;
+}
+
+
+@media screen and (max-width: 420px) {
+    .Caart_SPAN {
+        display: none;
+    }
+        
+}
+@media screen and (max-width: 335px) {
+    .BIG_LOGO {
+        display: none;
+    }
+        
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -67,7 +67,7 @@ const Signup_Schema = new mongoose.Schema({
         type: Number
     },
     Profile_Log:{
-        type: Object
+        type: String
     },
     First_Name:{
         type: String

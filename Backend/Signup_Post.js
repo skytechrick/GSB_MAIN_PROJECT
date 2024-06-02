@@ -17,18 +17,19 @@ const Transporter = nodemailer.createTransport({
 async function Signup_Post(req, res) {
     let p = req.cookies.New_User;
     let RT = req.body.Cancel;
-    let s1 = req.body.First_Name;
-    let s2 = req.body.Last_Name;
-    let s3 = req.body.Mobile_Number;
-    let s4 = req.body.Email;
-    let s5 = req.body.Confirm_Password;
-
     if(p == "Yes"){
+        let s1 = req.body.First_Name;
+        let s2 = req.body.Last_Name;
+        let s3 = req.body.Mobile_Number;
+        let s4 = req.body.Email;
+        let s5 = req.body.Confirm_Password;
+        // console.log(s4);
         if(s5 || s1 || s2 || s3 || s4){
             s1 = s1.trim();
             s2 = s2.trim();
             s3 = s3.trim();
             s4 = s4.trim();
+            s4 = s4.toLowerCase();
             s5 = s5.trim();
             s5 = Pass_Hash(s5, s4);
             function Set_Get_Auth(){
@@ -162,9 +163,7 @@ async function Signup_Post(req, res) {
                         };
                         if (Email_Sent_Q == "OTP sent successfully") {
                             const Signup_Details ={
-                                Profile_Log:{
-                                    Auth1: "_"
-                                },
+                                Profile_Log:"",
                                 First_Name: s1,
                                 Last_Name: s2,
                                 Mobile_Number: s3,

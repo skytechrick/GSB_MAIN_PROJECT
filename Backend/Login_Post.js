@@ -65,7 +65,7 @@ async function Login_Post(req, res) {
                     }
                     return Jso;
                 }
-                let Jso = ch(Email, Password);
+                let Jso = ch(Email.trim().toLowerCase(), Password);
 
                 if (Jso["EMAIL"] == "GOT_IT" & Jso["PASSWORD"] == "GOT_IT") {
                     let elem = {};
@@ -73,7 +73,7 @@ async function Login_Post(req, res) {
                     let DD = await Signup_Model.find({});
                     for (let x = 0; x < DD.length; x++) {
                         elem = DD[x];
-                        if (elem.Email == Email) {
+                        if (elem.Email == Email.trim().toLowerCase()) {
                             SW = 1;
                             break;
                         }
@@ -85,13 +85,16 @@ async function Login_Post(req, res) {
                     if (SW == 1) {
                         D = "Email Address Found.";
                         if (elem.Verified == "Yes") {
-                            let Ps = Pass_Hash(Password, Email);
+                            let Ps = Pass_Hash(Password, Email.trim().toLowerCase());
                             if (elem.User_Password === Ps) {
-                                let ele = {};
+                                let ele;
                                 let DD = await Signup_Model.find({});
+                                console.log(Email);
+                                console.log('Email');
+                                console.log('Email');
                                 for (let x = 0; x < DD.length; x++) {
                                     ele = DD[x];
-                                    if (ele.Email == Email) {
+                                    if (ele.Email == Email.trim().toLowerCase()) {
                                         break;
                                     }
                                 }
@@ -103,63 +106,24 @@ async function Login_Post(req, res) {
                                         Verified: "Yes",
                                     };
                                     let JWTCa = JWTC(JS);
-                                    console.log(JWTCa)
+                                    // console.log(JWTCa)
                                     return JWTCa;
                                 };
-                                let dc = Object.keys(ele.Profile_Log).length;
-                                if (dc == 1) {
-                                    await Signup_Model.updateOne({ Profile_ID: ele.Profile_ID }, { $set: { Profile_Log: { "Auth_1": Auth_Toke, "Auth_2": "_" } } });
-                                    res.cookie("U_ID", USER_ID(), {
-                                        httpOnly: true,
-                                        path: "/",
-                                        expires: new Date(Date.now() + 1200000),
-                                        secure: false
-                                    });
-                                    res.status(200).json({
-                                        "Message": "Login Successful.",
-                                    })
+                                // let dc = Object.keys(ele.Profile_Log).length;
+                                // if (dc == 1) {
+                                await Signup_Model.updateOne({ Email: Email.trim().toLowerCase()}, { $set: { Profile_Log: Auth_Toke } });
+                                res.cookie("U_ID", USER_ID(), {
+                                    httpOnly: true,
+                                    path: "/",
+                                    expires: new Date(Date.now() + 432000000),
+                                    secure: false
+                                });
+                                res.status(200).json({
+                                    "Message": "Login Successful.",
+                                })
 
-                                } else if (dc == 2) {
-                                    await Signup_Model.updateOne({ Profile_ID: ele.Profile_ID }, { $set: { Profile_Log: { "Auth_1": ele.Profile_Log.Auth_1, "Auth_2": Auth_Toke, "Auth_3": "_" } } });
-                                    res.cookie("U_ID", USER_ID(), {
-                                        httpOnly: true,
-                                        path: "/",
-                                        expires: new Date(Date.now() + 1200000),
-                                        secure: false
-                                    });
-                                    res.status(200).json({
-                                        "Message": "Login Successful.",
-                                    })
+                                // }
 
-                                } else if (dc == 3) {
-                                    await Signup_Model.updateOne({ Profile_ID: ele.Profile_ID }, { $set: { Profile_Log: { "Auth_1": ele.Profile_Log.Auth_1, "Auth_2": ele.Profile_Log.Auth_2, "Auth_3": Auth_Toke, "Auth_4": "_" } } });
-                                    res.cookie("U_ID", USER_ID(), {
-                                        httpOnly: true,
-                                        path: "/",
-                                        expires: new Date(Date.now() + 1200000),
-                                        secure: false
-                                    });
-                                    res.status(200).json({
-                                        "Message": "Login Successful.",
-                                    })
-
-                                } else if (dc == 4) {
-                                    await Signup_Model.updateOne({ Profile_ID: ele.Profile_ID }, { $set: { Profile_Log: { "Auth_1": ele.Profile_Log.Auth_1, "Auth_2": ele.Profile_Log.Auth_2, "Auth_3": ele.Profile_Log.Auth_3, "Auth_4": Auth_Toke, "Auth_5": "_" } } });
-                                    res.cookie("U_ID", USER_ID(), {
-                                        httpOnly: true,
-                                        path: "/",
-                                        expires: new Date(Date.now() + 1200000),
-                                        secure: false
-                                    });
-                                    res.status(200).json({
-                                        "Message": "Login Successful.",
-                                    })
-
-                                } else {
-                                    res.status(200).json({
-                                        "Message": "Reached maximum number of login",
-                                    })
-                                }
 
                             } else {
                                 res.status(200).json({
@@ -168,7 +132,7 @@ async function Login_Post(req, res) {
 
                             }
                         } else {
-                            let Ps = Pass_Hash(Password, Email);
+                            let Ps = Pass_Hash(Password, Email.trim().toLowerCase());
                             if (elem.User_Password === Ps) {
                                 function Set_Get_Auth() {
                                     let Get_Auth = Auth_Token(32);
@@ -187,7 +151,7 @@ async function Login_Post(req, res) {
 
                                 const Mail_Option = {
                                     from: 'GET SKY BUY <getskybuy@gmail.com>',
-                                    to: Email,
+                                    to: Email.trim().toLowerCase(),
                                     subject: 'GET-SKY-BUY | Email verification | OTP',
                                     html: `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>One-Time Password</title><style>body {font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f4f4f4;}.container { width: 100%; max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);}h1 { border-bottom: 1px solid #aaa; } h2 { color: #333333; } p { color: #666666; } .otp { font-size: 26px; color: #4CAF50; margin: 20px 0; text-align: center; } .footer { margin-top: 20px; text-align: center; color: #999999; } .footer p { margin: 0px; } .footer p:nth-child(1) { margin-bottom: 10px; } .Links { font-size: 14px; }.Links span{ font-weight: bold; } .Links a{ font-weight: bold; color: rgb(0, 185, 0);}</style></head><body dir="ltr"><div class="container"><h1>GET SKY BUY | Email Verfication - Creating GSB account.</h1><h2>Your OTP for creating GSB account is here.</h2><p>If you haven't created a <strong>GSB account</strong>, please refrain from sharing this email or <strong>OTP</strong> with anyone, and kindly disregard it..</p><p>Your <strong>One Time Password</strong> is:</p><p title="OTP" class="otp"><span>${Final_OTP}</span></p><p>This password is valid for <strong>5 minutes</strong>. Do not share it with others.</p><div title="GET-SKY-BUY" class="Links"><span>Official Website: </span><a href="https://www.getskybuy.com">GET SKY BUY</a></div><hr><div class="footer"><p>Thank you for using our service!</p><p title="Team GSB">Team GSB!</p></div></div></body></html>`
                                 };
@@ -208,8 +172,8 @@ async function Login_Post(req, res) {
                                     };
 
                                     if (Email_Sent_Q == "OTP sent successfully") {
-                                        await Signup_Model.updateOne({ Email: Email }, { $set: { Authentication: { OTP_Auth: Final_Auth, OTP_Value: Final_OTP }, } });
-                                        res.cookie("Temp_EM", Email, { httpOnly: true, path: "/", expires: new Date(Date.now() + 600000), secure: false });
+                                        await Signup_Model.updateOne({ Email: Email.trim().toLowerCase() }, { $set: { Authentication: { OTP_Auth: Final_Auth, OTP_Value: Final_OTP }, } });
+                                        res.cookie("Temp_EM", Email.trim().toLowerCase(), { httpOnly: true, path: "/", expires: new Date(Date.now() + 600000), secure: false });
                                         res.cookie("New_Login", "OTP", {
                                             httpOnly: true,
                                             path: "/login",

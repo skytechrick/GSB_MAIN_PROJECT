@@ -32,79 +32,41 @@ Home = async(req, res) => {
                 
             }
             // console.log(3);
-            if (g == 1){
+            if (g == 1){  
                 res.clearCookie("U_ID");
                 res.status(200).render(`Home2`,{
-                    Name: "User",
+                    Name: "Guest",
                     Cart_No: 0,
-                    Login: `<a href="/login" class="Profile_Options">Login</a>`,
+                    Login: `<a href="/login" class="Profile_Options_Nav2">Login</a>`,
+                    // Logout1: `<a href="/logout" class="Profile_Options_Nav2">Logout</a>`,
+                    Logout1: ``,
                 });
                 // console.log(4);
             }
             else if(g == 2){
                 if(chec.Verified=="Yes"){
                     // console.log(5);
-                    if(chec.Profile_Log == elem.Profile_Log.Auth_1){
+                    // console.log(chec.Profile_Log);
+                    // console.log('chec.Profile_Log');
+                    // console.log(elem.Profile_Log);
+                    if(chec.Profile_Log == elem.Profile_Log){
                         let s = elem.Cart.length;
                         // console.log(s)
                         res.status(200).render(`Home2`,{
                             Name:elem.First_Name,
                             Cart_No: s,
+                            Login:"",
+                            Logout1: `<a href="/logout" class="Profile_Options_Nav2">Logout</a>`,
                         });
                         // console.log("T")
-                    }
-                    else if(chec.Profile_Log == elem.Profile_Log.Auth_2){
-
-                        
-                        let s = elem.Cart.length;
-                        // console.log(s)
-                        res.status(200).render(`Home2`,{
-                            Name:elem.First_Name,
-                            Cart_No: s,
-                        });
-
-                    }
-                    else if(chec.Profile_Log == elem.Profile_Log.Auth_3){
-
-                        
-                        let s = elem.Cart.length;
-                        // console.log(s)
-                        res.status(200).render(`Home2`,{
-                            Name:elem.First_Name,
-                            Cart_No: s,
-                        });
-
-
-                    }
-                    else if(chec.Profile_Log == elem.Profile_Log.Auth_4){
-
-                        
-                        let s = elem.Cart.length;
-                        // console.log(s)
-                        res.status(200).render(`Home2`,{
-                            Name:elem.First_Name,
-                            Cart_No: s,
-                        });
-
-
-                    }
-                    else if(chec.Profile_Log == elem.Profile_Log.Auth_5){
-
-                        
-                        let s = elem.Cart.length;
-                        // console.log(s)
-                        res.status(200).render(`Home2`,{
-                            Name:elem.First_Name,
-                            Cart_No: s,
-                        });
-
-
+                   
                     }else{
                         res.clearCookie("U_ID");
                         res.status(200).render(`Home2`,{
-                            Name: "User",
+                            Name: "Guest3",
                             Cart_No: 0,
-                            Login: `<a href="/login" class="Profile_Options">Login</a>`,
+                            Login: `<a href="/login" class="Profile_Options_Nav2">Login</a>`,
+                            Logout1: ``,
                         });
                         // console.log(7);
                     }
@@ -113,9 +75,11 @@ Home = async(req, res) => {
                     // console.log(6);
                     res.clearCookie("U_ID");
                     res.status(200).render(`Home2`,{
-                        Name: "User",
+                        Name: "Guest2",
                         Cart_No: 0,
-                        Login: `<a href="/login" class="Profile_Options">Login</a>`,
+                        Login: `<a href="/login" class="Profile_Options_Nav2">Login</a>`,
+                        // Logout1: `<a href="/logout" class="Profile_Options_Nav2">Logout</a>`,
+                        Logout1: ``,
                     });
                 }
 
@@ -126,9 +90,11 @@ Home = async(req, res) => {
         
     }else{
         res.status(200).render(`Home2`,{
-            Name: "User",
+            Name: "Guest1",
             Cart_No: 0,
-            Login: `<a href="/login" class="Profile_Options">Login</a>`,
+            Login: `<a href="/login" class="Profile_Options_Nav2">Login</a>`,
+            // Logout1: `<a href="/logout" class="Profile_Options_Nav2">Logout</a>`,
+            Logout1: ``,
         });
     }
 

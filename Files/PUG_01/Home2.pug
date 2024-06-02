@@ -8,13 +8,39 @@
     <link rel="shortcut icon" href="/files/img/GSB_logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
 
+
+
+
+
+
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta name="description" content="Online shopping site in India. An E-Commerce platform for selling localshop products online.">
+    <meta name="author" content="RICK SARKAR">
+    <meta name="robot" content="INDEX, FOLLOW">
+    <meta name="keywords" content="GET SKY BUY, getskybuy, Online shopping Site, Local Products Selling">
 </head>
 <body>
 
+    <div id="Background_Blue">
+        
+    </div>
+
     <header class="Header">
         <div class="Header_c">
-            <div class="Logo_Search_Part">
+            <div id="Logo_Search_Part" class="Logo_Search_Part">
+                <div class="MENU_SIDE"><span id="MENU_SIDE_SPAN" class="material-symbols-outlined">menu</span></div>
                 <!-- Search -->
+                <div class="MOBILE_CART">
+                    <a id="LICaartA1" href="/cart">
+                        <span style="font-size: 25px;" class="material-symbols-outlined GSS">shopping_cart</span>
+                        <span class="Caart_SPAN">Cart</span>
+                        <span id="CART_NUMBER1dd" class="Cart_Number">#{Cart_No}</span>
+                        <!-- <span id="CART_NUMBER1dd" class="Cart_Number">0</span> -->
+                        <!-- CART NUMBER TEMPLETED -->
+                    </a>
+                </div>
                 <div class="Main_Top">
                     <div class="LogO00">
                         <div class="BIG_LOGO">
@@ -35,8 +61,6 @@
                             </div>
                         </div>
                     </div>
-
-                    
                 </div>
                 <div class="Search_Box_Main">
                     <div class="Search_1">
@@ -57,15 +81,11 @@
                                 <input  id="Search_Main_Input" placeholder="Search for Products, Shops & Many more" type="text" name="Search" autocomplete="off" spellcheck="false" required>
                                 <button class="DSDSDSDSDSDSDD" id="DSDSDSDSDSDSDD_S2" type="reset"><span class="material-symbols-outlined">close</span></button>
                                 <button class="DSDSDSDSDSDSDD" id="DSDSDSDSDSDSDD_S" type="submit"><span class="material-symbols-outlined">search</span></button>
-
-
                                 <div id="Search_Option_Box" class="Search_Option_Box">
-
-                                    
                                     <div class="SEARCH_OPTION">
                                         <div class="SEARCH_OPTION_CENTER" id="SEARCH_OPTION_CENTER_1">
                                             
-                                            <button class="BBSBSBBSB" type="button" onclick="Search_OPPP(1);">
+                                            <!-- <button class="BBSBSBBSB" type="button" onclick="Search_OPPP(1);">
                                                 <div class="FIRST_ICON_SEARCH" id="FIRST_ICON_SEARCH_1">
                                                     <span class="material-symbols-outlined">search</span>
                                                 </div>
@@ -77,30 +97,160 @@
                                                 <button class="UPP_ARROW" type="button" onclick="UPP_ARROW(1);">
                                                     <span id="UP_ARROW_SET_1" class="material-symbols-outlined">north_west</span>
                                                 </button>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
-
-                                    
                                 </div>
                             </form>
-                            
                         </div>
-
-
                     </div>
                 </div>
             </div>
-            <div class="Nav_Slide">
+
+
+            <div id="Nav_Slide" class="Nav_Slide">
                 <nav>
                     <ul>
-                        <li>Setting</li>
-                        <li>Shop</li>
-                        <li>Profile</li>
-                        <li>Logout</li>
+                        <li id="LIstore">
+                            <a id="LIstoreA" href="/store-shop">
+                                <span class="material-symbols-outlined GI Shop">store</span>
+                                <span class="LI Shop">Store/Shop</span>
+                            </a>
+                        </li>
+                        <li id="LIProfile">
+                            <div id="LIProfileA" href="/profile">
+                                <span class="material-symbols-outlined GI Shop">person</span>
+                                <span class="LI Shop">Profile</span>
+                            </div>
+                            <div id="Profile_OPTION_1">
+
+                                <!-- <a href="/profile" class="Profile_Options_Nav2">Profile (Hi! <span>Rick</span>)</a> -->
+                                | !{Login}
+                                <a href="/profile" class="Profile_Options_Nav2">Profile (Hi! <span>#{Name}</span>)</a>
+                                <a href="/orders" class="Profile_Options_Nav2">Orders/Returns</a>
+                                <a href="/favorite" class="Profile_Options_Nav2">Favorite</a>
+                                <a href="/cart" class="Profile_Options_Nav2">Cart</a>
+                                <a href="/sb_coins" class="Profile_Options_Nav2">SB Coins</a>
+                                <a href="/notification" class="Profile_Options_Nav2">Notification</a>
+                                <a href="/help_center" class="Profile_Options_Nav2">Help center</a>
+                                <a href="/contact_us" class="Profile_Options_Nav2">Contact us</a>
+                                | !{Logout1}
+
+
+                            </div>
+                        </li>
+                        <li id="LIMore">
+                            <div id="LIMoreA" href="/more">
+                                <span class="material-symbols-outlined DC GI More">expand_more</span>
+                                <span class="LI More">More</span>
+                            </div>
+                            <div id="More_Down">
+                                <a href="/download_app" class="More_Options">Download app</a>
+                                <a href="/improve_us" class="More_Options">Improve us</a>
+                                <a href="/register_a_complaint" class="More_Options">Register a complaint</a>
+                                <a href="/customer_care" class="More_Options">Customer care</a>
+                                <a href="/setting" class="More_Options">Setting</a>
+                                <a href="/privacy_and_policy" class="More_Options">Privacy and policy</a>
+                                <a href="/terms_and_conditions" class="More_Options">Terms and conditions</a>
+                                <a href="/report_a_problem" class="More_Options">Report a problem</a>
+                                </div>
+
+                        </li>
+                        <li id="LIFavourite">
+                            <a id="LIFavouriteA" href="/favourite">
+                                <span class="material-symbols-outlined GI Favourite">favorite</span>
+                                <span class="LI Favourite">Favourite</span>
+                            </a>
+                        </li>
+                        <li id="LICart">
+                            <a id="LICartA" href="/cart">
+                                <span style="font-size: 25px;" class="material-symbols-outlined GI CART_SHOPPING">shopping_cart</span>
+                                <span class="LI Cart_SPAN">Cart</span>
+                                <span id="CART_NUMBER" class="Cart_Number">#{Cart_No}</span>
+                                <!-- <span id="CART_NUMBER" class="Cart_Number">0</span> -->
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>
+        </div>
+
+        <div id="NEXT_HEAD" class="NEXT_HEAD">
+            <div class="SLIDE_BTN_REV">
+                <span id="SLIDE_BTN_REV_S" class="material-symbols-outlined">menu</span>
+            </div>
+
+            <div class="NEXT_HEAD_IMG">
+                <a href="/">
+                    <img src="/files/img/GSB_logo.png" alt="Logo">
+                </a>
+                <a class="Pdsa" href="/">
+                    <h2>GET SKY BUY</h2>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li id="LIstore1">
+                        <a id="LIstoreA1" href="/store-shop">
+                            <span class="material-symbols-outlined GI Shop">store</span>
+                            <span class="LI Shop">Store/Shop</span>
+                        </a>
+                    </li>
+                    <li id="LIProfile1">
+                        <div id="LIProfileA1" href="/profile">
+                            <span class="material-symbols-outlined GI Shop">person</span>
+                            <span class="LI Shop">Profile</span>
+                        </div>
+                        <div id="Profile_OPTION_11">
+                            | !{Login}
+                            <a href="/profile" class="Profile_Options_Nav2">Profile (Hi! <span>#{Name}</span>)</a>
+                            <a href="/orders" class="Profile_Options_Nav2">Orders/Returns</a>
+                            <a href="/favorite" class="Profile_Options_Nav2">Favorite</a>
+                            <a href="/cart" class="Profile_Options_Nav2">Cart</a>
+                            <a href="/sb_coins" class="Profile_Options_Nav2">SB Coins</a>
+                            <a href="/notification" class="Profile_Options_Nav2">Notification</a>
+                            <a href="/help_center" class="Profile_Options_Nav2">Help center</a>
+                            <a href="/contact_us" class="Profile_Options_Nav2">Contact us</a>
+                            <!-- <a href="/logout" class="Profile_Options_Nav2">Logout</a> -->
+                            | !{Logout1}
+
+
+                        </div>
+                    </li>
+                    <li id="LIMore1">
+                        <div id="LIMoreA1" href="/more">
+                            <span class="material-symbols-outlined DC GI More">expand_more</span>
+                            <span class="LI More">More</span>
+                        </div>
+                        <div id="More_Down1">
+                            <a href="/download_app" class="More_Options">Download app</a>
+                            <a href="/improve_us" class="More_Options">Improve us</a>
+                            <a href="/register_a_complaint" class="More_Options">Register a complaint</a>
+                            <a href="/customer_care" class="More_Options">Customer care</a>
+                            <a href="/setting" class="More_Options">Setting</a>
+                            <a href="/privacy_and_policy" class="More_Options">Privacy and policy</a>
+                            <a href="/terms_and_conditions" class="More_Options">Terms and conditions</a>
+                            <a href="/report_a_problem" class="More_Options">Report a problem</a>
+                            </div>
+
+                    </li>
+                    <li id="LIFavourite1">
+                        <a id="LIFavouriteA1" href="/favourite">
+                            <span class="material-symbols-outlined GI Favourite">favorite</span>
+                            <span class="LI Favourite">Favourite</span>
+                        </a>
+                    </li>
+                    <li id="LICart1">
+                        <a id="LICartA1" href="/cart">
+                            <span style="font-size: 25px;" class="material-symbols-outlined GI CART_SHOPPING">shopping_cart</span>
+                            <span class="LI Cart_SPAN">Cart</span>
+                            <span id="CART_NUMBER1" class="Cart_Number">#{Cart_No}</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+
         </div>
     </header>
     <br>

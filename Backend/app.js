@@ -67,7 +67,13 @@ const Seller_Seller_Post = require("./SELLER/Seller_Signup_Post.js");
 
 const Seller_Home = require("./Seller/Seller_Home.js");
 
+
+
+
+
+
 const Product_Page = require("./Product/Product_Page.js");
+const Product_Search = require("./Product/Product_Search.js");
 
 
 
@@ -247,6 +253,7 @@ app.post("/seller/signup", async (req, res) => {Seller_Signup_Post(req, res)});
 app.get("/product/:Url_P", async (req, res) => {Product_Page(req,res)});
 
 
+app.post("/input_search", async (req, res) => {Product_Search(req,res)});
 
 
 
