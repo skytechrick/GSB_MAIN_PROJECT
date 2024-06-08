@@ -1,11 +1,11 @@
 
-const Razorpay = require("razorpay");
-const key_id = "rzp_test_DBekxO3l7UI6ie";
-const key_secret = "v0ko7dxpbSxDHaPxSnv8CkJb";
-var instance = new Razorpay({
-    key_id: key_id,
-    key_secret: key_secret,
-});
+// const Razorpay = require("razorpay");
+// const key_id = "rzp_test_DBekxO3l7UI6ie";
+// const key_secret = "v0ko7dxpbSxDHaPxSnv8CkJb";
+// var instance = new Razorpay({
+//     key_id: key_id,
+//     key_secret: key_secret,
+// });
 
 // instance.payments.fetch(paymentId)
 

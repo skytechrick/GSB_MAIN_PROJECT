@@ -34,23 +34,20 @@ const Admin_Assistant_Reg = require("./Admin_Assistant_Reg.js");
 
 const Admin_Assistant_Search = require("./Main_Admin/Admin_Assistant_Search.js");
 const Admin_Assistant_Update = require("./Main_Admin/Admin_Assistant_Update.js");
-
 const Product_Assistant_Get = require("./Assistant_Admin/Product_Assistant_Get.js");
-
 const Seller_Assistant_Get = require("./Assistant_Admin/Seller_Assistant_Get.js");
 const Seller_Assistant_Post = require("./Assistant_Admin/Seller_Assistant_Post.js");
-
 const Seller_Assistant_Get_Login = require("./Assistant_Admin/Seller_Assistant_Get_Login.js");
 const Seller_Assistant_Post_Login = require("./Assistant_Admin/Seller_Assistant_Post_Login.js");
-
 const Product_Assistant_Login_Get = require("./Assistant_Admin/Product_Assistant_Login_Get.js");
 const Product_Assistant_Login_Post = require("./Assistant_Admin/Product_Assistant_Login_Post.js");
+
+
 
 
 const Product_Assistant_Add_Post = require("./Assistant_Admin/Product_Assistant_Add_Post.js");
 const Product_Assistant__Search_Post = require("./Assistant_Admin/Product_Assistant__Search_Post.js");
 const Product_Assistant__Product_Post = require("./Assistant_Admin/Product_Assistant__Product_Post.js");
-
 const Product_Assistant__Product_Update_Post = require("./Assistant_Admin/Product_Assistant__Product_Update_Post.js");
 
 
@@ -71,12 +68,17 @@ const Seller_Home = require("./Seller/Seller_Home.js");
 const Product_Page = require("./Product/Product_Page.js");
 const Product_Search = require("./Product/Product_Search.js");
 
+const Payment_Base = require("./Payments_Folder/Payment_Base.js");
 const SMALL_PRO = require("./Product/SMALL_PRO.js");
 
 
-const Payment_Base = require("./Payments_Folder/Payment_Base.js");
 const Send_Ver = require("./Assistant_Mail/Send_Ver.js");
 const Send_Ass = require("./Assistant_Mail/Send_Ass.js");
+
+
+
+
+
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "../Files/PUG_01"));
 
@@ -150,12 +152,13 @@ const uploadMiddleware1 = Photo_Upload.fields([
     { name: 'File_9', maxCount: 1 },
     { name: 'File_10', maxCount: 1 }
 ]);
+app.post("/assistant/product/add",uploadMiddleware1,async (req, res) => {Product_Assistant_Add_Post(req, res)});
+
+
 
 app.get("/assistant/product",async (req, res) => {Product_Assistant_Get(req, res)});
-app.post("/assistant/product/add",uploadMiddleware1,async (req, res) => {Product_Assistant_Add_Post(req, res)});
 app.post("/assistant/product/seller/search",async (req, res) => {Product_Assistant__Search_Post(req, res)});
 app.post("/assistant/product/product/search",async (req, res) => {Product_Assistant__Product_Post(req, res)});
-
 app.post("/assistant/product/product/update",async (req, res) => {Product_Assistant__Product_Update_Post (req, res)});
 
 
@@ -235,9 +238,9 @@ app.get('*', (req, res) => {
     res.status(404).send('<h1><center>Page Not Found</h1></center>');
 });
 
-let a = process.env.PORT || 80;
+let a = 80;
 app.listen(a, () => {
     console.log("We are connected to server at port 80");
-    console.log("Link: http://192.168.0.44/signup");
+    console.log("Link: http://192.168.0.44/");
 });
 
