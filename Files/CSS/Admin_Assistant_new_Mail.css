@@ -5,6 +5,7 @@ body{
     padding: 0;
     display: flex;
     justify-content: space-between;
+    /* background-color:; */
 }
 
 input, button {

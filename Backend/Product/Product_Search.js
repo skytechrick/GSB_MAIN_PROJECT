@@ -22,10 +22,10 @@ Product_Search = async (req, res) => {
     ];
 
     let Value = req.body.val;
-    Value = Value.toLowerCase();
     
-
+    
     if (Value == "" || Value == " " || Value == null) {
+        Value = Value.toLowerCase();
         
         a = {
             A: trend[0],

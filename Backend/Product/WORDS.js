@@ -1,151 +1,3 @@
-const searchPhrases1 = [
-    "Women Dress", "Electronics", "Kitchenware", "Mobile Phones", "Laptops", 
-    "Makeup Kits", "Decoration Items", "Kids Toys", "Dress", "Mobile", 
-    "Shirts", "Pants", "Shoes", "Watches", "Jewelry", "Handbags", "Books",
-    "Sports Equipment", "Fitness Gear", "Gaming Consoles", "Headphones",
-    "Speakers", "Cameras", "Lenses", "Tripods", "Flashlights", "Batteries",
-    "Chargers", "Memory Cards", "Hard Drives", "SSDs", "Monitors", "Keyboards",
-    "Mouse", "Printers", "Scanners", "Projectors", "Office Chairs", "Desks",
-    "Notebooks", "Stationery", "Pens", "Pencils", "Markers", "Highlighters",
-    "Folders", "Binders", "Paper Clips", "Staplers", "Tape", "Glue", "Envelopes",
-    "Calendars", "Planners", "Labels", "Sticky Notes", "Whiteboards", "Chalkboards",
-    "Kitchen Appliances", "Microwaves", "Refrigerators", "Ovens", "Stoves",
-    "Dishwashers", "Blenders", "Mixers", "Toasters", "Coffee Makers",
-    "Tea Kettles", "Cookware", "Pots", "Pans", "Cutlery", "Knives", "Forks",
-    "Spoons", "Serving Utensils", "Measuring Cups", "Measuring Spoons",
-    "Mixing Bowls", "Baking Sheets", "Cake Pans", "Muffin Tins", "Cookie Cutters",
-    "Rolling Pins", "Cutting Boards", "Colanders", "Strainers", "Graters",
-    "Peelers", "Choppers", "Salad Spinners", "Food Processors", "Air Fryers",
-    "Pressure Cookers", "Slow Cookers", "Grills", "BBQ", "Outdoor Furniture",
-    "Garden Tools", "Lawn Mowers", "Leaf Blowers", "Hedge Trimmers", "Chainsaws",
-    "Snow Blowers", "Wheelbarrows", "Plant Pots", "Planters", "Seeds", "Soil",
-    "Fertilizers", "Pesticides", "Watering Cans", "Hoses", "Sprinklers", "Patio Sets",
-    "Hammocks", "Outdoor Lighting", "Outdoor Rugs", "Garden Decor", "Bird Feeders",
-    "Bird Baths", "Wind Chimes", "Fountains", "Statues", "Outdoor Storage", "Sheds",
-    "Greenhouses", "Compost Bins", "Recycling Bins", "Trash Cans", "Home Decor",
-    "Wall Art", "Mirrors", "Rugs", "Curtains", "Blinds", "Lamps", "Lighting Fixtures",
-    "Candles", "Candle Holders", "Vases", "Picture Frames", "Clocks", "Throw Pillows",
-    "Blankets", "Quilts", "Comforters", "Bed Sheets", "Pillowcases", "Mattresses",
-    "Mattress Toppers", "Bed Frames", "Headboards", "Nightstands", "Dressers",
-    "Wardrobes", "Closet Organizers", "Hangers", "Shoe Racks", "Laundry Baskets",
-    "Ironing Boards", "Irons", "Steamers", "Cleaning Supplies", "Vacuum Cleaners",
-    "Mops", "Brooms", "Dust Pans", "Dust Cloths", "Sponges", "Scrub Brushes",
-    "Cleaning Solutions", "Trash Bags", "Recycling Bags", "Paper Towels", "Wipes",
-    "Disinfectants", "Hand Sanitizers", "First Aid Kits", "Bandages", "Antiseptics",
-    "Thermometers", "Pain Relievers", "Allergy Medicine", "Cold Medicine",
-    "Cough Medicine", "Vitamins", "Supplements", "Protein Powders", "Energy Drinks",
-    "Snacks", "Chips", "Cookies", "Candy", "Chocolate", "Nuts", "Dried Fruits",
-    "Crackers", "Popcorn", "Pretzels", "Granola Bars", "Protein Bars", "Cereal",
-    "Oatmeal", "Pancake Mix", "Syrup", "Honey", "Peanut Butter", "Jelly", "Bread",
-    "Bagels", "Muffins", "Croissants", "Pastries", "Tortillas", "Pasta", "Rice",
-    "Beans", "Lentils", "Quinoa", "Couscous", "Flour", "Sugar", "Salt", "Pepper",
-    "Spices", "Herbs", "Oils", "Vinegar", "Sauces", "Condiments", "Canned Goods",
-    "Soup", "Broth", "Tomatoes", "Vegetables", "Fruits", "Meat", "Poultry",
-    "Seafood", "Dairy", "Milk", "Cheese", "Yogurt", "Butter", "Cream", "Eggs",
-    "Juice", "Soda", "Water", "Coffee", "Tea", "Wine", "Beer", "Liquor",
-    "Baby Products", "Diapers", "Wipes", "Formula", "Baby Food", "Bottles",
-    "Pacifiers", "Teethers", "Rattles", "Baby Monitors", "Baby Gates", "Playpens",
-    "Cribs", "Bassinettes", "High Chairs", "Strollers", "Car Seats", "Bouncers",
-    "Swings", "Walkers", "Bath Tubs", "Bath Toys", "Towels", "Washcloths",
-    "Baby Clothes", "Onesies", "Sleepers", "Socks", "Shoes", "Hats", "Mittens",
-    "Blankets", "Swaddles", "Diaper Bags", "Baby Carriers", "Breast Pumps",
-    "Nursing Pads", "Nursing Pillows", "Maternity Clothes", "Tops", "Bottoms",
-    "Dresses", "Lingerie", "Swimwear", "Activewear", "Loungewear", "Outerwear",
-    "Sunglasses", "Hats", "Scarves", "Gloves", "Belts", "Wallets", "Purses",
-    "Backpacks", "Suitcases", "Travel Bags", "Jewelry Boxes", "Watch Boxes",
-    "Shoe Care", "Shoe Polish", "Shoe Brushes", "Shoe Horns", "Footwear",
-    "Boots", "Sneakers", "Sandals", "Flip Flops", "Slippers", "Loafers",
-    "Oxfords", "Heels", "Flats", "Dress Shoes", "Casual Shoes", "Athletic Shoes",
-    "Hiking Boots", "Work Boots", "Rain Boots", "Winter Boots", "Sandals",
-    "Slides", "Flip Flops", "Accessories", "Jewelry", "Necklaces", "Bracelets",
-    "Rings", "Earrings", "Anklets", "Brooches", "Cufflinks", "Tie Clips",
-    "Hats", "Caps", "Beanies", "Scarves", "Gloves", "Belts", "Wallets",
-    "Keychains", "Sunglasses", "Reading Glasses", "Contact Lenses", "Eyeglasses",
-    "Watches", "Smart Watches", "Fitness Trackers", "Jewelry Boxes", "Watch Boxes",
-    "Shoe Care", "Shoe Polish", "Shoe Brushes", "Shoe Horns", "Footwear",
-    "Boots", "Sneakers", "Sandals", "Flip Flops", "Slippers", "Loafers",
-    "Oxfords", "Heels", "Flats", "Dress Shoes", "Casual Shoes", "Athletic Shoes",
-    "Hiking Boots", "Work Boots", "Rain Boots", "Winter Boots", "Sandals",
-    "Slides", "Flip Flops", "Home Improvement", "Tools", "Power Tools", "Hand Tools",
-    "Tool Sets", "Tool Storage", "Workbenches", "Ladders", "Flashlights", "Batteries",
-    "Light Bulbs", "Extension Cords", "Surge Protectors", "Electrical Tape",
-    "Duct Tape", "Super Glue", "Nails", "Screws", "Bolts", "Nuts", "Washers",
-    "Anchors", "Hooks", "Brackets", "Hinges", "Knobs", "Pulls", "Locks", "Keys",
-    "Chains", "Ropes", "Cables", "Tarps", "Bungee Cords", "Ratchet Straps",
-    "Tape Measures", "Levels", "Squares", "Calipers", "Rulers", "Protractors",
-    "Plumbing Tools", "Pipe Wrenches", "Plungers", "Drain Snakes", "Pipe Cutters",
-    "Pipe Fittings", "Valves", "Hoses", "Sprinklers", "Garden Tools", "Shovels",
-    "Rakes", "Hoes", "Pruners", "Shears", "Loppers", "Garden Forks", "Hand Trowels",
-    "Weeders", "Cultivators", "Wheelbarrows", "Garden Carts", "Garden Kneelers",
-    "Garden Gloves", "Hats", "Sun Hats", "Gardening Boots", "Rain Boots", "Overalls",
-    "Gardening Aprons", "Tool Belts", "Watering Cans", "Hoses", "Sprinklers",
-    "Nozzles", "Hose Reels", "Timers", "Watering Wands", "Drip Irrigation",
-    "Soaker Hoses", "Spray Guns", "Sprinkler Heads", "Watering Kits", "Timers",
-    "Rain Gauges", "Soil Testers", "Moisture Meters", "pH Meters", "Fertilizers",
-    "Compost", "Manure", "Bone Meal", "Blood Meal", "Fish Emulsion", "Seaweed",
-    "Humus", "Soil Conditioners", "Mulch", "Wood Chips", "Bark", "Pine Needles",
-    "Straw", "Hay", "Leaves", "Grass Clippings", "Composters", "Worm Bins",
-    "Vermicomposting", "Composting Tools", "Aerators", "Turners", "Thermometers",
-    "Compost Bins", "Compost Tumblers", "Compost Crocks", "Compost Bags",
-    "Compostable Bags", "Biodegradable Bags", "Paper Bags", "Plastic Bags",
-    "Trash Bags", "Recycling Bags", "Lawn Bags", "Leaf Bags", "Garden Bags",
-    "Trash Cans", "Recycling Bins", "Compost Bins", "Green Bins", "Blue Bins",
-    "Black Bins", "Brown Bins", "Kitchen Bins", "Bathroom Bins", "Bedroom Bins",
-    "Office Bins", "Outdoor Bins", "Wheeled Bins", "Pedal Bins", "Swing Bins",
-    "Sensor Bins", "Touchless Bins", "Step Bins", "Open Top Bins", "Waste Baskets",
-    "Recycling Bins", "Sorting Bins", "Recycling Centers", "Recycling Stations",
-    "Composting Centers", "Green Waste", "Food Waste", "Garden Waste", "Yard Waste",
-    "Organic Waste", "Household Waste", "Hazardous Waste", "Electronic Waste",
-    "E-Waste", "Industrial Waste", "Commercial Waste", "Construction Waste",
-    "Demolition Waste", "Bulky Waste", "Mixed Waste", "Recyclable Waste", "Plastic Waste",
-    "Metal Waste", "Glass Waste", "Paper Waste", "Cardboard Waste", "Wood Waste",
-    "Textile Waste", "Rubber Waste", "Leather Waste", "Organic Waste", "Inorganic Waste",
-    "Solid Waste", "Liquid Waste", "Gaseous Waste", "Radioactive Waste", "Hazardous Waste",
-    "Non-Hazardous Waste", "Medical Waste", "Biomedical Waste", "Clinical Waste", "Pharmaceutical Waste",
-    "Chemical Waste", "Agricultural Waste", "Animal Waste", "Human Waste", "Sewage",
-    "Sludge", "Manure", "Feces", "Urine", "Blood", "Tissues", "Organs", "Body Parts",
-    "Cadavers", "Infectious Waste", "Pathological Waste", "Sharps", "Needles", "Syringes",
-    "Scalpels", "Blades", "Glass", "Ampoules", "Vials", "Broken Glass", "Containers",
-    "Bottles", "Cans", "Jars", "Boxes", "Bags", "Pouches", "Tubes", "Pipes", "Hoses",
-    "Wires", "Cables", "Ropes", "Chains", "Nails", "Screws", "Bolts", "Nuts", "Washers",
-    "Anchors", "Hooks", "Brackets", "Hinges", "Knobs", "Pulls", "Locks", "Keys",
-    "Padlocks", "Combination Locks", "Deadbolts", "Latch Locks", "Chain Locks",
-    "Cables", "Chains", "Ropes", "Ties", "Straps", "Bands", "Bungee Cords", "Ratchet Straps",
-    "Tape", "Duct Tape", "Electrical Tape", "Masking Tape", "Painter's Tape", "Packing Tape",
-    "Double-Sided Tape", "Scotch Tape", "Adhesive Tape", "Label Tape", "Ribbon Tape",
-    "Binding Tape", "Grip Tape", "Hook and Loop Tape", "Mounting Tape", "Repair Tape",
-    "Reflective Tape", "Teflon Tape", "Silicone Tape", "Butyl Tape", "PTFE Tape",
-    "Foil Tape", "Copper Tape", "Aluminum Tape", "Steel Tape", "Magnetic Tape",
-    "Cloth Tape", "Fabric Tape", "Gaffer Tape", "Gaffer Tape", "Athletic Tape", "Kinesiology Tape",
-    "Sports Tape", "Medical Tape", "Surgical Tape", "First Aid Tape", "Wound Tape",
-    "Burn Tape", "Blister Tape", "Callus Tape", "Corn Tape", "Pad Tape", "Toe Tape",
-    "Finger Tape", "Nail Tape", "Cuticle Tape", "Nail Art Tape", "Striping Tape", "Nail Foils",
-    "Nail Stickers", "Nail Decals", "Nail Stencils", "Nail Templates", "Nail Stamping Plates",
-    "Nail Stamps", "Nail Stampers", "Nail Scrapers", "Nail Brushes", "Nail Files", "Nail Buffers",
-    "Nail Clippers", "Nail Scissors", "Cuticle Pushers", "Cuticle Nippers", "Cuticle Trimmers",
-    "Cuticle Removers", "Cuticle Oils", "Cuticle Creams", "Cuticle Balms", "Cuticle Butters",
-    "Nail Oils", "Nail Creams", "Nail Lotions", "Nail Serums", "Nail Treatments", "Nail Polishes",
-    "Gel Polishes", "Shellac Polishes", "Acrylic Polishes", "Nail Enamels", "Nail Varnishes",
-    "Nail Lacquers", "Nail Tints", "Nail Stains", "Nail Glazes", "Nail Top Coats", "Nail Base Coats",
-    "Nail Strengtheners", "Nail Hardeners", "Nail Growth Treatments", "Nail Repair Treatments",
-    "Nail Fungus Treatments", "Nail Whitening Treatments", "Nail Hydrating Treatments",
-    "Nail Moisturizing Treatments", "Nail Anti-Bite Treatments", "Nail Ridge Fillers", "Nail Primers",
-    "Nail Dehydrators", "Nail Bonders", "Nail Adhesives", "Nail Glues", "Nail Tapes", "Nail Strips",
-    "Nail Wraps", "Nail Foils", "Nail Decals", "Nail Stencils", "Nail Stamping Plates", "Nail Stamps",
-    "Nail Stampers", "Nail Scrapers", "Nail Brushes", "Nail Files", "Nail Buffers", "Nail Clippers",
-    "Nail Scissors", "Cuticle Pushers", "Cuticle Nippers", "Cuticle Trimmers", "Cuticle Removers",
-    "Cuticle Oils", "Cuticle Creams", "Cuticle Balms", "Cuticle Butters", "Nail Oils", "Nail Creams",
-    "Nail Lotions", "Nail Serums", "Nail Treatments", "Nail Polishes", "Gel Polishes", "Shellac Polishes",
-    "Acrylic Polishes", "Nail Enamels", "Nail Varnishes", "Nail Lacquers", "Nail Tints", "Nail Stains",
-    "Nail Glazes", "Nail Top Coats", "Nail Base Coats", "Nail Strengtheners", "Nail Hardeners",
-    "Nail Growth Treatments", "Nail Repair Treatments", "Nail Fungus Treatments", "Nail Whitening Treatments",
-    "Nail Hydrating Treatments", "Nail Moisturizing Treatments", "Nail Anti-Bite Treatments", "Nail Ridge Fillers",
-    "Nail Primers", "Nail Dehydrators", "Nail Bonders", "Nail Adhesives", "Nail Glues", "Nail Tapes", "Nail Strips",
-    "Nail Wraps", "Nail Foils", "Nail Decals", "Nail Stencils", "Nail Stamping Plates", "Nail Stamps", "Nail Stampers",
-    "Nail Scrapers", "Nail Brushes", "Nail Files", "Nail Buffers", "Nail Clippers", "Nail Scissors", "Cuticle Pushers",
-    "Cuticle Nippers", "Cuticle Trimmers", "Cuticle Removers", "Cuticle Oils", "Cuticle Creams", "Cuticle Balms",
-    "Cuticle Butters", "Nail Oils", "Nail Creams", "Nail Lotions", "Nail Serums", "Nail Treatments", "Nail Polishes",
-    "Male", "Female", "for", "of"];
 const searchPhrases = [
     // "Dress", "Women", "Men", "Kurta", "jeans", "wood", "Wonder", "While", "where", "were",
 
@@ -153,9 +5,68 @@ const searchPhrases = [
     // relation
 
     
-    "men","mens","womens","women","baby","girlfriend","boyfriend","friend","friends","boy","girl","girls","boys","mother","father",
+    "men","mens","womens","women","baby","babies","girlfriend","boyfriend","friend","friends","boy","girl","girls","boys",
+    "mother","father","grandfather","grandmother","grand","best","bestfriend","bestie","bestiee","bestu","son","daughter",
+    "husband","wife","brother","sister","grandson","uncle","aunt","nephew","cousin","cousins","sibling","siblings","ex",
+    
+    
+    
+    "the","there","when","why","this","those","how","who","they","them","me","my","for","and","of","under","","","","","","",
 
 
+
+    "zero","zeros","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen",
+    "twenty","thirty","fourty","fifty","sixty","seventy","eighty","ninety","hundered","thousand","lakhs","crores","million","thousand",
+    "decimal","float","integer","whole","natural","first","second","third","fourth","fifth","1st","2nd","3rd","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",
+
+    "half","full","cut","under","shorts","short","","","","","","","","","", 
+
+
+
+    
+    
+    "light","dark","","","", 
+    
+    
+    "blue","red","green","purple","violet","maroon","pink","light pink","dark","black","aqua","white","sky","vanish","highlight","highlighted",
+    "brown","yellow","orange","cream","butter","","","grey","",
+    
+    
+    
+    
+    
+    "","","","","","","","","","","","","","","","","","","",
+    
+    
+    "","","","","","","","","","","","","","","","","","","",
+    
+    
+    
+
+
+
+    "pant","panties","pants","pant for men","pant for women","pant for babies","underwear","wear","shorts pants","short pant","half pant","full pants",
+    "full pant","half pants","three quater pants","jeans pant","jeans pants","jeans","cargo","chinos","corduroy","slim","cropped","Leggings","Palazzo",
+    "cotton","cottons","silk","silks","jude","Bell Bottom Pants for women","bottom","bell","Cargo Pants","Chinos","Corduroy Pants","Slim-Fit Pants for women","Cropped Pants for men",
+    "Tapered","Sweatpants","Sweat","track","","","","","","","","","",
+
+    "Sweatpants for women","Sweatpants for men","track pants for men","track pants for women","Tapered pants for women","Cropped Pants for women","jeans for men","jeans for women","shorts for women","palazzo for women","leggings for women","shorts for men",
+    "pads","pad","Shaped","","","","","","","","","","",
+
+
+
+
+
+
+    "bra for women","bras","baniyans for men","baniyan","tape","tapes","brief","brief for girls","brief for women","bikini for girls","panties","camisoles","camisoles for women",
+    "camisoles for girls","camisoles for girl","boyshorts","softline","bra for girls","boxer","thermal","truncks","baniyans for boys","tape for girls","tape for women","inner for boys","baniyans",
+    "inner for girls","kurta","kurti for girls","kurta for boys","kurti","suit","jacket","causal","business","profession","lungi","tshirt","T-shirt",
+    "Full shirt","shirt","shirts","shirts for women","shirts for men","full-shirt","bra","clean","color","size","creator","best","good",
+
+
+    "quality","shocks","shoe","legs","nail","nail paints","paints","blouse","glasses","sun glasses","wig","belts","",
+    "","","","","","","","","","","","","",
+    "","","","","","","","","","","","","",
 
 
 ];

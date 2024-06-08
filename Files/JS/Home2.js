@@ -1,3 +1,4 @@
+
 function Inserted(A = null, B = null, C = null, D = null, E = null, F = null){
     function AA(Num, TEXT_INSIDE) {
         let insert = `
@@ -587,12 +588,83 @@ document.getElementById("Search_Main_Input").addEventListener('input', function 
 
 
 
+function Arrow_Left(d,f) {
+    let Arrow_Left = document.getElementsByClassName("Arrow_Left")[d];
+    let Row_Slide = document.getElementsByClassName("Row_Slide")[f];
+    Arrow_Left.addEventListener("click", ()=> {
+        
+        if(parseFloat(window.getComputedStyle(Row_Slide).left) >= 0){
+            console.log("A");
+        }else{
+            let a = window.getComputedStyle(Row_Slide);
+            let b = parseFloat(a.left);
+            let c = `${(b + 60)}px`;
+            console.log(c);
+            Row_Slide.style.left = c;
+        }
+    })
+}
+
+// let Row_Slide = document.getElementsByClassName("Row_Slide")[0];
+// Row_Slide.classList.add('move');
+
+
+function Arrow_Right(d,f) {
+    let Arrow_Right = document.getElementsByClassName("Arrow_Right")[d];
+    let Row_Slide = document.getElementsByClassName("Row_Slide")[f];
+    let Row_1 = document.getElementsByClassName("Row_1")[0];
+    Arrow_Right.addEventListener("click", ()=> {
+        let wid =  parseFloat(window.getComputedStyle(Row_1).width);
+        let aaa = 2130-wid;
+        console.log(aaa);
+        if(parseFloat(window.getComputedStyle(Row_Slide).left) <= -aaa){
+            console.log("U");
+        }else{
+            Row_Slide.classList.add('move');
+            let a = window.getComputedStyle(Row_Slide);
+            let b = parseFloat(a.left);
+            let c = `${(b - 60)}px`;
+            console.log(c);
+            Row_Slide.style.left = c;
+        }
+    })
+}
+Arrow_Left(0,0)
+Arrow_Right(0,0);
+// Arrow_Left(1,1)
+// Arrow_Right(1,1);
+// Arrow_Left(2,2)
+// Arrow_Right(2,2);
+// Arrow_Left(3,3)
+// Arrow_Right(3,3);
 
 
 
 
 
+function GET_SMALL_PRO(DD) {
+    
+    let A = {
+        
+        VERIFIED: "YES",
+        Product_ID: DD,
+    };
+    let D;
+    fetch("/product/smallsize", {
+        method:"POST",
+        headers:{"Content-Type": "application/json"},
+        body: JSON.stringify(A),
+    }).then(response => {
+        return response.json();
+    }).then(data => {
+        let Row_Slide = document.getElementsByClassName("Row_Slide")[0]
+        D = data.INSERT;
+        Row_Slide.innerHTML = D;
+    }).catch(e=>{console.log("Error.....")});
+    
+}
 
+GET_SMALL_PRO("44245545454");
 
 
 
