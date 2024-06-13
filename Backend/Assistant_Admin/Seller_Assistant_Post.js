@@ -7,13 +7,13 @@ const Profile_ID_G = require("../Main_Admin/Profile_ID_G.js");
 Seller_Assistant_Post = async (req, res) => {
 
     
-    let list = await New_Worker_Model.find({});
     let COOK = req.cookies.AS_SEL;
     let NO = req.cookies.NO;
-    let element;
     
     
     if (COOK && NO) {
+        let list = await New_Worker_Model.find({});
+        let element;
         p = 0;
         for (let index = 0; index < list.length; index++) {
             element = list[index];
@@ -30,11 +30,12 @@ Seller_Assistant_Post = async (req, res) => {
             if(element.LOG_AUTH == COOK){
                 let Body = req.body;
 
-                let IDs = Profile_ID_G();
-                console.log(IDs);
+                // console.log(IDs);
                 let Data = await Seller.find({});
+                let IDs;
                 while (true) {
                     let x = 1;
+                    IDs = Profile_ID_G();
                     for (let i = 0; i < Data.length; i++) {
                         const element = Data[i];
                         if (element.Profile_ID == IDs) {
@@ -50,9 +51,12 @@ Seller_Assistant_Post = async (req, res) => {
                 };
                 
                 let ID = IDs;
-                console.log(ID);
+                // console.log(ID);
+                
                 let Md = {
-                    SubHead: element.Profile_ID,
+                    
+                    Profile_ID: String(ID),
+                    // SubHead: element.Profile_ID,
                     Name: Body.Name,
                     Mobile_Number: Body.Mobile_Number,
                     WhatsApp_Number: Body.WhatsApp_Number,
@@ -80,7 +84,6 @@ Seller_Assistant_Post = async (req, res) => {
                     Locality_Shop: Body.Locality_Shop,
                     Done: "Yes",
                     Created_Date: Date(),
-                    Profile_ID: String(ID),
                     Product_List: [],
                     Total_Sales: {
                         Total_Products_Sales: 0,
@@ -104,19 +107,30 @@ Seller_Assistant_Post = async (req, res) => {
                     },
                     Ban: "No",
                 };
-                console.log(Md);
-            
-            
-            
-            
+                // console.log(Md);
+
+                Md.Email
+                
+                let L = element.Things_Done.Sellers_ID;
+                L.push(Md.Profile_ID);
+                let DC = [];
+                for (let index = 0; index < L.length; index++) {
+                    const e = L[index];
+                    if (e == undefined || e == null || e == ""){
+                        
+                    }else{
+                        DC.push(e);
+                    }
+                }
+                let SX = {
+                    Sellers_ID: DC
+                };
+                await New_Worker_Model.updateOne({Mobile_Number:element.Number}, {$set: {Things_Done:SX}});
             
                 let Save = new Seller(Md);
                 Save.save().then(()=>{
-            
                     res.json({Message:"Added successfully"});
-                    
                 })
-            
             
             }else{
                 res.clearCookie("AS_SEL",{"path":"/assistant/seller"});

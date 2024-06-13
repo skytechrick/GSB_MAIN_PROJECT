@@ -1679,6 +1679,8 @@ body {
 }
 .IMG_P {
     cursor: pointer;
+    position: relative;
+    top: 0px;
 
     margin: auto;
     /* padding-top: 8px; */
@@ -1880,6 +1882,8 @@ h3 {
 
 
 .CART_ADDDD {
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
     position: absolute;
     top: 0px;
     right: 35px;
@@ -1890,7 +1894,14 @@ h3 {
     padding: 0px;
     
 }
+img {
+    
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
 .CART_BUYYY{
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
     padding: 0px;
     position: absolute;
     top: 0px;
@@ -1933,10 +1944,21 @@ h3 {
 
 
 .OfferrrN {
-    color: red;
+    
+    display: flex;
+    color: white;
     position: absolute;
-    top: 1px;
-    right: 70px;
+    background-color: red;
+    border-radius: 50%;
+    height: 37px;
+    width: 37px;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    top: 6px;
+    right: 6px;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -1946,6 +1968,20 @@ h3 {
     .Products_1 {
         width: 135px;
         max-height: 281px;
+    }
+    .CART_BUYYY {
+        top: -4px;
+        right: 0;
+    }
+    .CART_BUYYY span{
+        font-size: 16px;
+    }
+    .CART_ADDDD {
+        top: -4px;
+        right: 30px;
+    }
+    .CART_ADDDD span{
+        font-size: 16px;
     }
     
     

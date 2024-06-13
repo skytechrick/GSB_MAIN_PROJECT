@@ -7,13 +7,13 @@ Product_Assistant_Login_Get = async (req, res) => {
     // }else{
     //     res.redirect("http://192.168.0.44/assistant/product");
     // }
-    let list = await New_Worker_Model.find({});
     let COOK = req.cookies.AS_PRO;
     let NOP = req.cookies.NOP;
-    let element;
     
     
     if (COOK && NOP) {
+        let list = await New_Worker_Model.find({});
+        let element;
         p = 0;
         for (let index = 0; index < list.length; index++) {
             element = list[index];

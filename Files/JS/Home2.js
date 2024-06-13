@@ -381,37 +381,37 @@ document.getElementById("Search_Main_Input").addEventListener('input', function 
         let F = data.F;
         Box.innerHTML = Inserted(A, B, C, D, E, F);
         
-    let isdsadadssdsdasdasfsa = document.getElementById("Search_Option_Box").innerHTML;
-    if(isdsadadssdsdasdasfsa == "" || isdsadadssdsdasdasfsa == " "|| isdsadadssdsdasdasfsa == null){
+        let isdsadadssdsdasdasfsa = document.getElementById("Search_Option_Box").innerHTML;
+        if(isdsadadssdsdasdasfsa == "" || isdsadadssdsdasdasfsa == " "|| isdsadadssdsdasdasfsa == null){
 
 
-        let insert = `
+            let insert = `
 
 
-            <div class="SEARCH_OPTION">
-                <div class="SEARCH_OPTION_CENTER">
-                    <button class="BBSBSBBSB" type="button">
-                        <div class="FIRST_ICON_SEARCH">
-                            <span class="material-symbols-outlined">close</span>
-                        </div>
-                        <div  class="MAIN_SEARCH_TEXT">
-                            <span><center>No results found</center></span>
-                        </div>
-                    </button>
-                    <div class="UP_ARROW">
-                        <button class="UPP_ARROW" type="button">
-                            <span class="material-symbols-outlined">close</span>
+                <div class="SEARCH_OPTION">
+                    <div class="SEARCH_OPTION_CENTER">
+                        <button class="BBSBSBBSB" type="button">
+                            <div class="FIRST_ICON_SEARCH">
+                                <span class="material-symbols-outlined">close</span>
+                            </div>
+                            <div  class="MAIN_SEARCH_TEXT">
+                                <span><center>No results found</center></span>
+                            </div>
                         </button>
+                        <div class="UP_ARROW">
+                            <button class="UPP_ARROW" type="button">
+                                <span class="material-symbols-outlined">close</span>
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </div>`
+                </div>`
 
 
-        ;
+            ;
 
-        Box.innerHTML = insert;
-        
-    }
+            Box.innerHTML = insert;
+            
+        }
         
     }).catch(error => {
         

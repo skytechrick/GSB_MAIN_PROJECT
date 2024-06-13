@@ -2,12 +2,12 @@ const {New_Worker_Model} = require("../All_Models");
 const Admin_Auth_Token = require("../Main_Admin/Admin_Auth_Token.js");
 
 Product_Assistant_Login_Post = async (req, res) => {
-    let list = await New_Worker_Model.find({});
     let COOK = req.cookies.AS_PRO;
     let NOP = req.cookies.NOP;
-    let d = req.body;
-    let element;
     if (!COOK && !NOP) {
+        let d = req.body;
+        let list = await New_Worker_Model.find({});
+        let element;
         p = 0;
         for (let index = 0; index < list.length; index++) {
             element = list[index];

@@ -3,14 +3,14 @@ const {New_Worker_Model} = require("../All_Models")
 
 Seller_Assistant_Get = async (req, res) => {
     
-    let list = await New_Worker_Model.find({});
     let COOK = req.cookies.AS_SEL;
     let NO = req.cookies.NO;
-    let element;
     
     
     if (COOK && NO) {
+        let element;
         p = 0;
+        let list = await New_Worker_Model.find({});
         for (let index = 0; index < list.length; index++) {
             element = list[index];
             let a = element.Mobile_Number;

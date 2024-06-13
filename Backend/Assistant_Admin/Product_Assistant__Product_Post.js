@@ -14,10 +14,10 @@ Product_Assistant__Product_Post = async(req, res) => {
         
     }
     if(d==1){
-        console.log("Found");
+        // console.log("Found");
         res.json({FOUND:"Yes",URL:element.Product_URL,Title:element.Title,Sell: element.Prize.Sell_Price, Stock:element.Quantity_Available});
     }else{
-        console.log("Found");
+        // console.log("Found");
         res.json({FOUND:"No Product Found"});
     }
 
