@@ -3,6 +3,17 @@ const {Seller, New_Worker_Model} = require("../All_Models.js");
 
 const Profile_ID_G = require("../Main_Admin/Profile_ID_G.js");
 
+const nodemailer = require("nodemailer");
+
+const Transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'skybuy.ceo@gmail.com',
+        pass: 'ucyj phsb oqyq zkox'
+    }
+});
+    
+
 
 Seller_Assistant_Post = async (req, res) => {
 
@@ -61,6 +72,7 @@ Seller_Assistant_Post = async (req, res) => {
                     Mobile_Number: Body.Mobile_Number,
                     WhatsApp_Number: Body.WhatsApp_Number,
                     Email: Body.Email,
+                    Password:Body.Mobile_Number,
                     State: Body.State,
                     District: Body.District,
                     PIN_Code: Body.PIN_Code,
@@ -126,6 +138,40 @@ Seller_Assistant_Post = async (req, res) => {
                     Sellers_ID: DC
                 };
                 await New_Worker_Model.updateOne({Mobile_Number:element.Number}, {$set: {Things_Done:SX}});
+
+
+
+
+                const Mail_Option = {
+                    from: 'Congratulations <skybuy.ceo@gmail.com>',
+                    to: Md.Email,
+                    subject: 'Congratulations, your Seller Account is Successfully created | GET SKY BUY', 
+                    html: `
+                        <div style="max-width:600px; width: 100%; margin:auto;">
+                            <center><h1 style="font-family: Arial;">Congratulations, your Seller Account is Successfully created.</h1></center>
+                            <p style="text-align: center;">We will provide you all the details and the required this which you must know.</p>
+                            <hr>
+                            <p style="padding:5px; border:1px solid #aaa; box-shadow: 0 0 5px #aaa; margin:5px; text-align: center;">Your Profile ID: ${Md.Profile_ID}</p>
+                            <p style="padding:5px; border:1px solid #aaa; box-shadow: 0 0 5px #aaa; margin:5px; text-align: center;">Name: ${Md.Name}</p>
+                            <p style="padding:5px; border:1px solid #aaa; box-shadow: 0 0 5px #aaa; margin:5px; text-align: center;">Mobile Number: ${Md.Mobile_Number}</p>
+                            <p style="padding:5px; border:1px solid #aaa; box-shadow: 0 0 5px #aaa; margin:5px; text-align: center;">Email: ${Md.Email}</p>
+                            <p style="padding:5px; border:1px solid #aaa; box-shadow: 0 0 5px #aaa; margin:5px; text-align: center;">Password: ${Md.Password}</p>
+                            <hr>
+                            <p style="text-align: center;">GET SKY BUY</p>
+                        </div>
+                    `};
+                    
+            
+                let d = 2
+                Transporter.sendMail(Mail_Option, (error, info) => {
+                    if (error) {
+                        d = 0;
+                    } else {
+                        d = 1;
+                    }
+                });
+
+
             
                 let Save = new Seller(Md);
                 Save.save().then(()=>{

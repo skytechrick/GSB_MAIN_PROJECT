@@ -156,10 +156,12 @@ const a = new mongoose.Schema({
 })
 
 const New_ = new mongoose.Schema({
+    Profile_ID: { type: String },
     Name: { type: String },
     Mobile_Number: { type: String },
     WhatsApp_Number: { type: String },
     Email: { type: String },
+    Password:{type:String},
     State: { type: String },
     District: { type: String },
     PIN_Code: { type: String },
@@ -182,7 +184,6 @@ const New_ = new mongoose.Schema({
     Locality_Shop: { type: String },
     Done: { type: String },
     Created_Date: { type: Date },
-    Profile_ID: { type: String },
     Product_List: { type: Object },
     Total_Sales: {
         Total_Products_Sales: { type: Number },

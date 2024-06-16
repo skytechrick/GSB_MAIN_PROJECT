@@ -1,17 +1,25 @@
-const {Product, New_Worker_Model} = require("../All_Models.js");
-
-
-
+const {Product, New_Worker_Model, Seller} = require("../All_Models.js");
 const Profile_ID_G = require("../Main_Admin/Profile_ID_G.js");
-
 const Product_URL_Generator = require("../product_url_generator.js");
 
+const fs = require("fs");
 
+const nodemailer = require("nodemailer");
 
-Product_Assistant_Add_Post = async (req, res) => {
+const Transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'skybuy.ceo@gmail.com',
+        pass: 'ucyj phsb oqyq zkox'
+    }
+});
+    
+const Product_Assistant_Add_Post = async (req, res) => {
     let cook = req.cookies;
+    
     let cook_NO = cook.NOP;
-    let cook_PID= cook.PID;
+    let cook_PID= cook.AS_PRO;
+
 
     // console.log(req.body);
 
@@ -210,37 +218,125 @@ Product_Assistant_Add_Post = async (req, res) => {
                                 }
                             ]
                         }
-                        let Ready = new Product(PP);
-                        Ready.save().then(() =>{
-                            res.status(200).json({ Message: 'Successfully Added' });
-                        });
+
                         
+
+
+                        
+                        let list = await Seller.findOne({Profile_ID: PP.Seller_ID});
+                        
+                        const Mail_Option = {
+                            from: 'Notification <skybuy.ceo@gmail.com>',
+                            to: list.Email,
+                            subject: 'Congratulations, one product is added successfully to your Account | GET SKY BUY', 
+                            html: `
+                                <div style="max-width:600px; width: 100%; margin:auto;">
+                                    <center><h1 style="font-family: Arial;">Congratulations, one product is added successfully to your Account</h1></center>
+                                    <p style="text-align: center;">Product Details are"</p>
+                                    <hr>
+                                    <p style="padding:5px; margin:5px; text-align: center;">Product ID: ${PP.Profile_ID}</p>
+                                    <p style="padding:5px; margin:5px; text-align: center;">Product URL: http://192.168.0.44/product/${PP.Product_URL} . It will be visible after it is validate by the CEO or Senior.</p>
+                                    <hr>
+                                    <p style="text-align: center;">GET SKY BUY</p>
+                                </div>
+                            `};
+                            
                     
+                        let d = 2
+                        Transporter.sendMail(Mail_Option, (error, info) => {
+                            if (error) {
+                                d = 0;
+                                console.log("Error"+error);
+                            } else {
+                                d = 1;
+                            }
+                        });
+                        setTimeout(() => {
+                            
+                            if(d == 1){
+                                
+                                let Ready = new Product(PP);
+                                Ready.save().then(() =>{
+                                    res.status(200).json({ Message: 'Successfully Added' });
+                                });
+                            }else{
+                                let ds = new Object(req.files);
+                                for (let index = 0; index < 10; index++) {
+                                    let dsda = `File_${index + 1}`;
+                                    if (ds[dsda]) {
+                                        let data = ds[dsda][0].filename;
+                                        fs.unlinkSync(`../../Served_Images_Product/${data}`);
+                                    }
+                                };
+                                
+                                res.status(200).json({ Message: 'Unable to add' });
+                            }
+                        }, 4000);
                     }else{
+                        let ds = new Object(req.files);
+                        for (let index = 0; index < 10; index++) {
+                            let dsda = `File_${index + 1}`;
+                            if (ds[dsda]) {
+                                let data = ds[dsda][0].filename;
+                                fs.unlinkSync(`../../Served_Images_Product/${data}`);
+                            }
+                        };
+                        
                         res.status(200).json({ Message: 'Unable to add' });
-
                     }
-                    
                 }else{
-                    res.status(200).json({ Message: 'Unable to add' });
-
+                    let ds = new Object(req.files);
+                        for (let index = 0; index < 10; index++) {
+                            let dsda = `File_${index + 1}`;
+                            if (ds[dsda]) {
+                                let data = ds[dsda][0].filename;
+                                fs.unlinkSync(`../../Served_Images_Product/${data}`);
+                            }
+                        };
+                        
+                        res.status(200).json({ Message: 'Unable to add' });
                 }
             }else{
                 res.clearCookie("PID",{"path":"/assistant/product"});
                 res.clearCookie("NOP",{"path":"/assistant/product"});
-                res.json({Message: "Unable to add."});
+                let ds = new Object(req.files);
+                for (let index = 0; index < 10; index++) {
+                    let dsda = `File_${index + 1}`;
+                    if (ds[dsda]) {
+                        let data = ds[dsda][0].filename;
+                        fs.unlinkSync(`../../Served_Images_Product/${data}`);
+                    }
+                };
+                
+                res.status(200).json({ Message: 'Unable to add' });
             }
         }else{
             res.clearCookie("PID",{"path":"/assistant/product"});
             res.clearCookie("NOP",{"path":"/assistant/product"});
-            res.json({Message: "Unable to add."});
+            let ds = new Object(req.files);
+            for (let index = 0; index < 10; index++) {
+                let dsda = `File_${index + 1}`;
+                if (ds[dsda]) {
+                    let data = ds[dsda][0].filename;
+                    fs.unlinkSync(`../../Served_Images_Product/${data}`);
+                }
+            };
+            
+            res.status(200).json({ Message: 'Unable to add' });
         }
     }else{
+        let ds = new Object(req.files);
+        for (let index = 0; index < 10; index++) {
+            let dsda = `File_${index + 1}`;
+            if (ds[dsda]) {
+                let data = ds[dsda][0].filename;
+                fs.unlinkSync(`../../Served_Images_Product/${data}`);
+            }
+        };
+        
         res.clearCookie("PID",{"path":"/assistant/product"});
         res.clearCookie("NOP",{"path":"/assistant/product"});
-        res.json({Message: "Unable to add."});
+        res.status(200).json({ Message: 'Unable to add' });
     }
-
-
 }
 module.exports = Product_Assistant_Add_Post;
