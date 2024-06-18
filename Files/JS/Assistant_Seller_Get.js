@@ -19,7 +19,7 @@ document.getElementById("Croxx").addEventListener("click",() => {
     document.getElementById("Homieo").style.display = "block";
     Nav(1);
     List.forEach(element => {
-        console.log(element)
+        // console.log(element)
         if (element != "Homieo") {
             document.getElementById(element).style.display = "none";
             
@@ -33,7 +33,7 @@ document.getElementById("BankkA_CLo").addEventListener("click",() => {
     document.getElementById("Homieo").style.display = "block";
     Nav(1);
     List.forEach(element => {
-        console.log(element)
+        // console.log(element)
         if (element != "Homieo") {
             document.getElementById(element).style.display = "none";
             
@@ -47,7 +47,7 @@ document.getElementById("BankkA_CLoa").addEventListener("click",() => {
     document.getElementById("Homieo").style.display = "block";
     Nav(1);
     List.forEach(element => {
-        console.log(element)
+        // console.log(element)
         if (element != "Homieo") {
             document.getElementById(element).style.display = "none";
             
@@ -69,10 +69,10 @@ const List = ["disss", "Homieo","BankkA","Setting_A"];
 Li = (n) => {
     if (n == 1) {
         document.getElementById("disss").style.display = "block";
-        console.log(1)
+        // console.log(1)
         Nav(1);
         List.forEach(element => {
-            console.log(element)
+            // console.log(element)
             if (element != "disss") {
                 document.getElementById(element).style.display = "none";
                 
@@ -81,10 +81,10 @@ Li = (n) => {
         });
     } else if(n == 2){
         document.getElementById("BankkA").style.display = "block";
-        console.log(1)
+        // console.log(1)
         Nav(1);
         List.forEach(element => {
-            console.log(element)
+            // console.log(element)
             if (element != "BankkA") {
                 document.getElementById(element).style.display = "none";
                 
@@ -95,10 +95,10 @@ Li = (n) => {
         
     } else if(n == 3){
         document.getElementById("Setting_A").style.display = "block";
-        console.log(1)
+        // console.log(1)
         Nav(1);
         List.forEach(element => {
-            console.log(element)
+            // console.log(element)
             if (element != "Setting_A") {
                 document.getElementById(element).style.display = "none";
                 
@@ -112,9 +112,9 @@ Li = (n) => {
 
     } else if(n == 100){
         document.getElementById("Homieo").style.display = "block";
-        console.log(1)
+        // console.log(1)
         List.forEach(element => {
-            console.log(element)
+            // console.log(element)
             if (element != "Homieo") {
                 document.getElementById(element).style.display = "none";
                 
@@ -135,7 +135,7 @@ Li = (n) => {
 
 
 let a = window.innerWidth
-console.log(a);
+// console.log(a);
 if (a<600){
 
     let As = window.getComputedStyle(document.getElementById("Aside_Ham")).left;
@@ -278,11 +278,13 @@ document.getElementById('SUBBBB').addEventListener('click', function() {
     })
     
     .then(data => {
-        console.log(data);
+        // document.getElementById("DISPLAY_HIDEEE").style.display = "block";
+        Message(data.Message);
     }).catch(error =>{
-        console.log("Error_____ Yes...:");
+        Message("Connection Error");
+        
     })
-    console.log(formData);
+    
 });
 
 
@@ -346,7 +348,7 @@ SELLE_SEARCH = () =>{
         }
 
     }).then((data)=>{
-        console.log(data);
+        // console.log(data);
         if(data.FOUND == "Yes"){
             
             let a = document.getElementById("Seller_ID").value;
@@ -369,8 +371,10 @@ SELLE_SEARCH = () =>{
         }else{
             Message(data.FOUND);
         }
-
-    }).catch(e =>{console.log("Error while searching")})
+        
+    }).catch(e =>{
+        Message("Connection Error");
+    })
 
 }
 
@@ -383,7 +387,7 @@ function Product_ID_S () {
      
     let Search_ID = document.getElementById(`Product_DIID`).value;
     d = {ID: Search_ID,Send:"Yes"};
-    console.log(1)
+    // console.log(1)
     fetch("/assistant/product/product/search",{
         method:"POST",
         body:JSON.stringify(d),
@@ -397,7 +401,7 @@ function Product_ID_S () {
         }
 
     }).then((data)=>{
-        console.log(data);
+        // console.log(data);
         if(data.FOUND == "Yes"){
             
             let a = document.getElementById("Product_DIID").value;
@@ -419,7 +423,7 @@ function Product_ID_S () {
                             <legend>Product details</legend>
                             <div class="Product_Title_T">
                                 <div class="BLACKK">Product Title:</div>
-                                <div class="BLACKKVAL"><i>${data.Title} <a href="${data.URL}">Product Link</a></i></div>
+                                <div class="BLACKKVAL"><i>${data.Title} <a href="/product/${data.URL}">Product Link</a></i></div>
                             </div>
 
                             <div class="Product_Title_T">
@@ -463,7 +467,7 @@ function UPDATE(){
         method:"POST",
     }).then(response=>{return response.json()})
     .then(data=>{
-        console.log(data);
+        // console.log(data);
         Message(data.Message);
 
     }).catch(e=>{

@@ -67,7 +67,9 @@ Admin_Assistant_Reg = async (req, res) => {
                     "Verified":"Yes",
                     "Ban":"No",
                     "Assistant_Type":Assistant_Type,
-                    "Things_Done":[],
+                    "Things_Done":{
+                        "Sellers_ID":[],
+                    },
                     "LOG_AUTH":"",
 
                 };

@@ -1,4 +1,4 @@
-NumToINR = (number) => {
+const NumToINR = (number) => {
     if (number === null || number === undefined) return '';
     if (isNaN(number)) return '';
 

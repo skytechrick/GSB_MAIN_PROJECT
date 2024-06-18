@@ -1,4 +1,4 @@
-const {Product} = require("../All_Models.js");
+const {Product, New_Worker_Model} = require("../All_Models.js");
 Product_Assistant__Product_Update_Post = async(req, res) => {
     
     let cook = req.cookies;

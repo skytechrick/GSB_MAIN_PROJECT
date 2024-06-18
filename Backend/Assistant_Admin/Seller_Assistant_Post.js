@@ -121,7 +121,7 @@ Seller_Assistant_Post = async (req, res) => {
                 };
                 // console.log(Md);
 
-                Md.Email
+                // Md.Email
                 
                 let L = element.Things_Done.Sellers_ID;
                 L.push(Md.Profile_ID);
@@ -200,15 +200,6 @@ Seller_Assistant_Post = async (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
 }
+
 module.exports = Seller_Assistant_Post;

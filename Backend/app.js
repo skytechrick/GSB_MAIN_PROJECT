@@ -70,6 +70,7 @@ const Product_Search = require("./Product/Product_Search.js");
 
 const Payment_Base = require("./Payments_Folder/Payment_Base.js");
 const SMALL_PRO = require("./Product/SMALL_PRO.js");
+const PRODUCT_ROW = require("./Product/PRODUCT_ROW.js");
 
 
 const Send_Ver = require("./Assistant_Mail/Send_Ver.js");
@@ -225,6 +226,7 @@ app.post("/seller/signup", async (req, res) => {Seller_Signup_Post(req, res)});
 app.get("/product/:Url_P", async (req, res) => {Product_Page(req,res)});
 
 app.post("/product/smallsize", async (req, res) => {SMALL_PRO(req,res)});
+app.post("/product/row", async (req, res) => {PRODUCT_ROW(req,res)});
 
 app.post("/input_search", async (req, res) => {Product_Search(req,res)});
 

@@ -4,6 +4,7 @@ const Product_URL_Generator = require("../product_url_generator.js");
 
 const fs = require("fs");
 
+const path = require('path');
 const nodemailer = require("nodemailer");
 
 const Transporter = nodemailer.createTransport({
@@ -136,7 +137,17 @@ const Product_Assistant_Add_Post = async (req, res) => {
                         let Added_ID = element.Profile_ID;
                         
                         let Options = OPTIONSSS;
-                        let Description1 = Description;
+
+
+                        let XCCC = Description.trim();
+                        let FC = XCCC.split("+");
+                        XCCC = FC.join("<br>");
+                     
+                        // XCCC = XCCC;
+
+
+
+
                         let ds = new Object(req.files);
                         let Image_Locaitons = []
                         for (let index = 0; index < 10; index++) {
@@ -173,7 +184,7 @@ const Product_Assistant_Add_Post = async (req, res) => {
                                 Total_Spend: "7756",
                                 Overall_Profit:"44445",
                             },
-                            Description: Description1.trim(),
+                            Description: XCCC,
                             Table: Table,
                             Image_Locaitons: Image_Locaitons,
                             Review:[
@@ -232,9 +243,9 @@ const Product_Assistant_Add_Post = async (req, res) => {
                             html: `
                                 <div style="max-width:600px; width: 100%; margin:auto;">
                                     <center><h1 style="font-family: Arial;">Congratulations, one product is added successfully to your Account</h1></center>
-                                    <p style="text-align: center;">Product Details are"</p>
+                                    <p style="text-align: center;">Product Details are:</p>
                                     <hr>
-                                    <p style="padding:5px; margin:5px; text-align: center;">Product ID: ${PP.Profile_ID}</p>
+                                    <p style="padding:5px; margin:5px; text-align: center;">Product ID: ${PP.Product_ID}</p>
                                     <p style="padding:5px; margin:5px; text-align: center;">Product URL: http://192.168.0.44/product/${PP.Product_URL} . It will be visible after it is validate by the CEO or Senior.</p>
                                     <hr>
                                     <p style="text-align: center;">GET SKY BUY</p>
@@ -261,52 +272,85 @@ const Product_Assistant_Add_Post = async (req, res) => {
                                 });
                             }else{
                                 let ds = new Object(req.files);
+
                                 for (let index = 0; index < 10; index++) {
                                     let dsda = `File_${index + 1}`;
                                     if (ds[dsda]) {
                                         let data = ds[dsda][0].filename;
-                                        fs.unlinkSync(`../../Served_Images_Product/${data}`);
+                                        let filePath = path.join(__dirname, '../../Served_Images_Product', data);
+                                        
+                                        fs.unlinkSync(filePath, (err) => {
+                                            if (err) {
+                                                console.error(`Error deleting file ${data}: ${err.message}`);
+                                            } else {
+                                                console.log(`File ${data} deleted successfully`);
+                                            }
+                                        });
                                     }
-                                };
-                                
-                                res.status(200).json({ Message: 'Unable to add' });
+                                }
+                                res.status(200).json({ Message: 'Unable to add/Send Confirmation Mail' });
                             }
-                        }, 4000);
+                        }, 4200);
                     }else{
                         let ds = new Object(req.files);
+
                         for (let index = 0; index < 10; index++) {
                             let dsda = `File_${index + 1}`;
                             if (ds[dsda]) {
                                 let data = ds[dsda][0].filename;
-                                fs.unlinkSync(`../../Served_Images_Product/${data}`);
+                                let filePath = path.join(__dirname, '../../Served_Images_Product', data);
+                                
+                                fs.unlinkSync(filePath, (err) => {
+                                    if (err) {
+                                        console.error(`Error deleting file ${data}: ${err.message}`);
+                                    } else {
+                                        console.log(`File ${data} deleted successfully`);
+                                    }
+                                });
                             }
-                        };
-                        
+                        }
                         res.status(200).json({ Message: 'Unable to add' });
                     }
                 }else{
                     let ds = new Object(req.files);
-                        for (let index = 0; index < 10; index++) {
-                            let dsda = `File_${index + 1}`;
-                            if (ds[dsda]) {
-                                let data = ds[dsda][0].filename;
-                                fs.unlinkSync(`../../Served_Images_Product/${data}`);
-                            }
-                        };
-                        
-                        res.status(200).json({ Message: 'Unable to add' });
+
+                    for (let index = 0; index < 10; index++) {
+                        let dsda = `File_${index + 1}`;
+                        if (ds[dsda]) {
+                            let data = ds[dsda][0].filename;
+                            let filePath = path.join(__dirname, '../../Served_Images_Product', data);
+                            
+                            fs.unlinkSync(filePath, (err) => {
+                                if (err) {
+                                    console.error(`Error deleting file ${data}: ${err.message}`);
+                                } else {
+                                    console.log(`File ${data} deleted successfully`);
+                                }
+                            });
+                        }
+                    }
+                    res.status(200).json({ Message: 'Unable to add' });
                 }
             }else{
                 res.clearCookie("PID",{"path":"/assistant/product"});
                 res.clearCookie("NOP",{"path":"/assistant/product"});
                 let ds = new Object(req.files);
+
                 for (let index = 0; index < 10; index++) {
                     let dsda = `File_${index + 1}`;
                     if (ds[dsda]) {
                         let data = ds[dsda][0].filename;
-                        fs.unlinkSync(`../../Served_Images_Product/${data}`);
+                        let filePath = path.join(__dirname, '../../Served_Images_Product', data);
+                        
+                        fs.unlinkSync(filePath, (err) => {
+                            if (err) {
+                                console.error(`Error deleting file ${data}: ${err.message}`);
+                            } else {
+                                console.log(`File ${data} deleted successfully`);
+                            }
+                        });
                     }
-                };
+                }
                 
                 res.status(200).json({ Message: 'Unable to add' });
             }
@@ -314,25 +358,45 @@ const Product_Assistant_Add_Post = async (req, res) => {
             res.clearCookie("PID",{"path":"/assistant/product"});
             res.clearCookie("NOP",{"path":"/assistant/product"});
             let ds = new Object(req.files);
+
             for (let index = 0; index < 10; index++) {
                 let dsda = `File_${index + 1}`;
                 if (ds[dsda]) {
                     let data = ds[dsda][0].filename;
-                    fs.unlinkSync(`../../Served_Images_Product/${data}`);
+                    let filePath = path.join(__dirname, '../../Served_Images_Product', data);
+                    
+                    fs.unlinkSync(filePath, (err) => {
+                        if (err) {
+                            console.error(`Error deleting file ${data}: ${err.message}`);
+                        } else {
+                            console.log(`File ${data} deleted successfully`);
+                        }
+                    });
                 }
-            };
-            
+            }
             res.status(200).json({ Message: 'Unable to add' });
         }
     }else{
+
+        // Assuming req.files is provided
         let ds = new Object(req.files);
+
         for (let index = 0; index < 10; index++) {
             let dsda = `File_${index + 1}`;
             if (ds[dsda]) {
                 let data = ds[dsda][0].filename;
-                fs.unlinkSync(`../../Served_Images_Product/${data}`);
+                let filePath = path.join(__dirname, '../../Served_Images_Product', data);
+                
+                fs.unlinkSync(filePath, (err) => {
+                    if (err) {
+                        console.error(`Error deleting file ${data}: ${err.message}`);
+                    } else {
+                        console.log(`File ${data} deleted successfully`);
+                    }
+                });
             }
-        };
+        }
+
         
         res.clearCookie("PID",{"path":"/assistant/product"});
         res.clearCookie("NOP",{"path":"/assistant/product"});

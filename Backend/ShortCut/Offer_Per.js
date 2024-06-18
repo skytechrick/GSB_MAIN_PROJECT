@@ -1,4 +1,4 @@
-function Offer_Per(mrp, sellingPrice) {
+const Offer_Per = (mrp, sellingPrice) => {
     if (mrp <= 0 || sellingPrice < 0) return '-0%';
     
     const discount = mrp - sellingPrice;

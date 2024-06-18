@@ -37,14 +37,14 @@ SMALL_PRO = async (req, res)=> {
         let Product_Small = `
             <div class="Products_1">
                 <div class="IMG_P">
-                    <a href="/product/${URL}">
+                    <a target="__blank" href="/product/${URL}">
                         <img class="IMG_IMG" src="${IMG}">
                         <span class="OfferrrN">${OFFER_PER}</span>
                     </a>
                 </div>
                 <div class="Title_P">
                     <h5 class="Title_P_h5">
-                        <a href="/product/${URL}">${Title}</a>
+                        <a target="__blank" href="/product/${URL}">${Title}</a>
                     </h5>
                 </div>
                 <div class="Prize_P">
