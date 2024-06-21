@@ -361,7 +361,7 @@ main {
     /* background-color: aqua; */
     position: relative;
     overflow: hidden;
-    /* top: 10px; */
+    top: 0px;
 }
 
 .I_UP_DOWN_m {
@@ -382,13 +382,11 @@ main {
 .I_UP_DOWN_l {
     opacity: 0.6;
     z-index: 100;
-    /* width: 100px; */
+    position: absolute;
+    top: 570px;
     left: 34px;
-
     display: block;
     background-color: transparent;
-    position: absolute;
-    bottom: 0px;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
 
@@ -461,7 +459,7 @@ main {
 
 #BIG_I {
     width: 95%;
-    height: 95%;
+    /* height: 95%; */
     box-shadow: 0 0 8px rgb(75, 228, 255);
 }
 
@@ -1365,4 +1363,135 @@ img {
 #m1 {
     position: sticky;
     top: 62px;
+}
+
+
+
+
+
+.Big_IMMGG {
+    background-color: transparent;
+    width: calc(100% - 100px);
+}
+
+
+@media screen and (max-width: 1400px) {
+    #m1 {
+        /* position: relative;
+        top: 0px; */
+        width: 500px;
+    }
+    
+}
+@media screen and (max-width: 1000px) {
+    .m2 {
+        width: 361px;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    #m1 {
+        position: relative;
+        top: 0px;
+        width: 100%;
+    }
+    #m2 {
+        width: 100%;
+    }
+
+
+
+
+
+
+
+}
+
+
+@media screen and (max-width: 560px) {
+    /* #m1 { */
+        /* flex-wrap: wrap-reverse; */
+        /* flex-direction: row; */
+    /* } */
+    #Big_IMMGG {
+        width: 100%;
+        position: absolute;
+        top: 10px;
+
+    }
+
+    #imgg {
+        overflow: hidden;
+        width: 100%;
+        /* height: 100px; */
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0px;
+    }
+    .MSSS {
+        width: 200%;
+        height: 105px;
+        margin: auto;
+        /* display: flex; */
+        /* margin: 0; */
+        padding: 0 4px;
+    }
+    .MSSS button{
+        height: 95%;
+        display: inline-block;
+    }
+    .dda {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #Maa {
+        position: relative;
+        top: 0px;
+        /* padding: 0px; */
+        width: 100vw;
+        margin: 0;
+    }
+
+    .dda {
+        border-radius: 3px;
+        /* margin: 0 20px; */
+    }
+    
+    .ms_img {
+        border-radius: 3px;
+
+    }
+
+
+
+
+
+
+
+    section {
+        min-width: 100vw;
+
+    }
+    main {
+        display: block;
+        width: 100vw;
+    }
+    #I_UP_DOWN_m {
+        left: 0px;
+        top: 35px;
+    }
+
+    #I_UP_DOWN_l {
+        left: auto;
+        top: 35px;
+        right: 0px;
+    }
+
+
+
+
+
 }

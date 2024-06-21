@@ -1,0 +1,109 @@
+main {
+    width: 100%;
+    
+}
+.Main_Par {
+
+    width: 70%;
+    margin: auto;
+    /* border: 1px solid #aaa; */
+    /* height: 100px; */
+    margin-top: 20px;
+    padding: 15px 20px;
+
+}
+
+.HEadere {
+    font-size: 23px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #aaaaaa9c;
+    
+}
+.HEadere a{
+    color: black;
+    text-decoration: none;
+    
+}
+
+.HEadere a:hover{
+    text-decoration: underline;
+}
+
+
+.List_SS {
+    width: 100%;
+    /* border: 1px solid #aaa; */
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-start;
+    
+}
+
+.Lists {
+    width: 200px;
+    /* height: 200px; */
+    /* border: 1px solid #aaaaaaa9; */
+
+    padding: 15px;
+    padding-top: 10px;
+    
+}
+
+.Lists button:hover {
+    border: 1px solid #aaa;
+    background-color: rgb(236, 236, 236);
+}
+.Lists button {
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #aaaaaa9c;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    text-align: left;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.List_Btn:nth-child(1) {
+    border: 1px solid #aaa;
+
+}
+
+
+.Top_Ite {
+    background-color: aqua;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ITEM {
+    /* width: 200px; */
+    /* height: 200px; */
+    border: 1px solid #aaa;
+
+}

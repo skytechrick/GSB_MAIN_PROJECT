@@ -149,7 +149,7 @@ Product_Page = async (req, res) =>{
                                 QNAA: `<P style="text-align: center;">No QnA</p>`,
                                 REVV: `<P style="text-align: center;">No review</p>`,
 
-                                Name: "Guest3",
+                                Name: "Guest",
                                 Cart_No: 0,
                                 Login: `<a href="/login" class="Profile_Options_Nav2">Login</a>`,
                                 Logout1: ``,
@@ -192,7 +192,7 @@ Product_Page = async (req, res) =>{
                             REVV: `<P style="text-align: center;">No review</p>`,
 
 
-                            Name: "Guest3",
+                            Name: "Guest",
                             Cart_No: 0,
                             Login: `<a href="/login" class="Profile_Options_Nav2">Login</a>`,
                             Logout1: ``,
@@ -234,7 +234,7 @@ Product_Page = async (req, res) =>{
                         REVV: `<P style="text-align: center;">No review</p>`,
 
 
-                        Name: "Guest3",
+                        Name: "Guest",
                         Cart_No: 0,
                         Login: `<a href="/login" class="Profile_Options_Nav2">Login</a>`,
                         Logout1: ``,
@@ -275,7 +275,7 @@ Product_Page = async (req, res) =>{
                 QNAA: `<P style="text-align: center;">No QnA</p>`,
                 REVV: `<P style="text-align: center;">No review</p>`,
 
-                Name: "Guest3",
+                Name: "Guest",
                 Cart_No: 0,
                 Login: `<a href="/login" class="Profile_Options_Nav2">Login</a>`,
                 Logout1: ``,

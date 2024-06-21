@@ -3,30 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>#{Title}</title>
-    <link rel="shortcut icon" href="/files/img/GSB_logo.png" type="image/x-icon">
-
-    
-    <link rel="stylesheet" href="/files/css/Product_Page.css">
-    <link rel="stylesheet" href="/files/css/Product_Row.css">
-
+    <title>Profile | GET SKY BUY</title>
     <link rel="stylesheet" href="/files/css/Home2.css">
+    <link rel="stylesheet" href="/files/css/Cus_Profile_Pagppp.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-
-
-
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap" rel="stylesheet">
-</head>
-<body dir="ltr">
-
-
-
     
-    <div id="Background_Blue"></div>
+    <link rel="shortcut icon" href="/files/img/GSB_logo.png" type="image/x-icon">
 
+</head>
+<body>
+    <div id="Background_Blue"></div>
     <header class="Header">
         <div class="Header_c">
             <div id="Logo_Search_Part" class="Logo_Search_Part">
@@ -253,35 +243,6 @@
 
         </div>
     </header>
-    <!-- <br> -->
-    <!-- <br> -->
-    <!-- <br> -->
-    <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -301,208 +262,41 @@
 
 
     <main>
-        <section id="Maa" class="Maa">
-            <div id="m1" class="m1">
-                <div class="imgg" id="imgg">
-                    <div class="I_UP_DOWN_m" id="I_UP_DOWN_m">
+        <section class="Main_Par">
+            <div class="HEadere">
+                <a title="Profile" href="/profile">Profile:</a>
+            </div>
 
-                        <span class="material-symbols-outlined">expand_less</span>
-                    </div>
-                    <div class="MSSS" id="MSSS">
-                        | !{IMAGES}
-                    </div>
-                    
-                    <div class="I_UP_DOWN_l" id="I_UP_DOWN_l">
-                        <span class="material-symbols-outlined">expand_more</span>
+            <div id="List_SS" class="List_SS">
 
-                    </div>
 
+                <div id="Lists" class="Lists">
+                    <button class="List_Btn">Profile</button>
+                    <button class="List_Btn" onclick="LIST_BTN()">Notification</button>
+                    <button class="List_Btn" onclick="LIST_BTN()">Order History</button>
+                    <button class="List_Btn" onclick="LIST_BTN()">Cart</button>
+                    <button class="List_Btn" onclick="LIST_BTN()">Favorite</button>
+                    <button class="List_Btn" onclick="LIST_BTN()">SB Coins</button>
+                    <button class="List_Btn" onclick="LIST_BTN()">Setting</button>
                 </div>
-                <div class="Big_IMMGG" id="Big_IMMGG">
-                    
-                    <img id="BIG_I" src="">
 
+
+
+
+
+
+
+
+                <div id="ITEM" class="ITEM">
+                   | f
 
                 </div>
 
             </div>
 
-
-            <div id="m2" class="m2">
-                <div class="Tttlleee">
-                    <h1>#{Title}</h1>
-
-                </div>
-                <div class="Visisitt">
-                    <span>#{Store_Name} &nbsp;</span><a href="/shop">Visit the shop</a> 
-                    <br>
-                    <br>
-                    <span class="SSTT">
-                        <span>5.0</span>
-                        <img class="Star" src="/files/img/White_Start.png" alt="" srcset="">
-                    </span>
-                    <span style="font-size: 14px;">
-                    |    Rating And Reviews
-                    </span>
-
-
-
-
-                </div>
-                <hr>
-
-
-                <div class="offera">
-                    <p><span class="material-symbols-outlined selll_IC">sell</span>Cashback upto Rs.500 on order over Rs.10,000 </p>
-                    <p><span class="material-symbols-outlined selll_IC">sell</span>Be the first customer and get a chance to won special gifts</p>
-                    <p><span class="material-symbols-outlined selll_IC">sell</span>Order now and get GSB - Coins</p>
-                </div>
-
-
-
-
-
-
-                <hr>
-                <div class="pri">
-                    <span class="Pris">₹</span>
-                    <span class="Prisell">#{Selling_P}</span>
-                    <span class="Primrp">MRP:</span><span class="Prinum">#{MRP}</span>
-                    <span class="PerOff">#{OFFFER}</span>
-                    <span class="PerSt">In Stock</span>
-
-                </div>
-
-
-                <div class="bbs">
-                    <button type="button" onclick="AddToCart();">Add to cart</button>
-                    <button type="button" onclick="BuyNow();">Buy now</button>
-
-                </div>
-                <div class="Des">
-                    
-                        | !{Des}
-                    
-
-                </div>
-
-                <hr>
-
-
-
-                <div class="AskAQuestion">
-
-                    <form action="">
-                        <h4><u>Ask a Question?</u></h4>
-                        <div class="Text_Btn_S_DIV">
-                            <div class="BBSCACSFSFASF">
-                                <input title="Ask A Question?" id="TextA" cols="30" rows="10" placeholder="Ask a question?">
-                            </div>
-                            <div class="BBSCACSFSFASF">
-                                <div style="color:  red;" id="Mesa">Cann't ask empty Question Or Ask good question</div>
-                                <button title="Ask A Question?" id="Text_Btn_S" type="button" onclick="Ask_A_Ques()">Ask a question?</button>
-                            </div>
-                        </div>
-                    </form>
-                    <div class="questionss">
-                        <h4><u>Question & Answer?</u></h4>
-                        <div class="Q_A_Ans">
-                            <div><Strong>Q. What is the time taken for charging?</Strong></div>
-                            <p><strong>A.</strong> 30 minutes</p>
-                            <div class="Verified"><span class="material-symbols-outlined">check</span><span>Verified Buyer</span></div>
-                        </div>
-                        <div class="Q_A_Ans">
-                            <div><Strong>Q. What is the time taken for charging?</Strong></div>
-                            <p><strong>A.</strong> 30 minutes</p>
-                            <div class="Verified"><span class="material-symbols-outlined">check</span><span>Verified Buyer</span></div>
-                        </div>
-                        <!-- | !{QNAA} -->
-                    </div>
-                    
-                </div>
-
-                <br><br>
-                
-
-
-
-                <div class="Review_Di">
-                    <form action="">
-                        <h4><u>Write a review.</u></h4>
-                        <div class="Text_Btn_S_DIV">
-                            <div class="BBSCACSFSFASF">
-                                <input title="Write a review?" id="Writeareview" cols="30" rows="10" placeholder="Write a review">
-                            </div>
-                            <div class="BBSCACSFSFASF">
-                                <div style="color:  red;" id="Write_Mesa">Review cann't be empty.</div>
-                                <button title="Write a review" id="Write_MesaBTN" type="button" onclick="Write_a_Review()">Post a review.</button>
-                            </div>
-                        </div>
-                    </form>
-                    <div class="questionss">
-                        <h4><u>Ratings & Reviews</u></h4>
-                        <div class="Q_A_Ans">
-                            <div>
-                                <span class="SSTT">
-                                    <span>5.0</span> 
-                                    <img class="Star" src="/files/img/White_Start.png" alt="" srcset="">
-                                </span>
-                                <Strong>Good product</Strong>
-                            </div>
-                            <p>Nice product I suggest you to buy this product</p>
-                            <div class="Verified"><span class="material-symbols-outlined">check</span><span>Verified Buyer</span></div>
-                        </div>
-                        <div class="Q_A_Ans">
-                            <div>
-                                <span class="SSTT">
-                                    <span>5.0</span> 
-                                    <img class="Star" src="/files/img/White_Start.png" alt="" srcset="">
-                                </span>
-                                <Strong>Good product</Strong>
-                            </div>
-                            <p>Nice product I suggest you to buy this product</p>
-                            <div class="Verified"><span class="material-symbols-outlined">check</span><span>Verified Buyer</span></div>
-                        </div>
-                        <div class="Q_A_Ans">
-                            <div>
-                                <span class="SSTT">
-                                    <span>5.0</span> 
-                                    <img class="Star" src="/files/img/White_Start.png" alt="" srcset="">
-                                </span>
-                                <Strong>Good product</Strong>
-                            </div>
-                            <p>Nice product I suggest you to buy this product</p>
-                            <div class="Verified"><span class="material-symbols-outlined">check</span><span>Verified Buyer</span></div>
-                        </div>
-
-
-                        <div class="Q_A_Ans">
-                            <div>
-                                <span class="SSTT">
-                                    <span>5.0</span> 
-                                    <img class="Star" src="/files/img/White_Start.png" alt="" srcset="">
-                                </span>
-                                <Strong>Good product</Strong>
-                            </div>
-                            <p>Nice product I suggest you to buy this product</p>
-                            <div class="Verified"><span class="material-symbols-outlined">check</span><span>Verified Buyer</span></div>
-                        </div>
-                        
-                        <!-- | !{QNAA} -->
-                    </div>
-
-
-                </div>
-
-
-
-
-            </div>
-            
         </section>
     </main>
     
-    <div style="display: none;" id="Product_LIST"></div>
 
 
 
@@ -514,66 +308,8 @@
 
 
 
-
-
-
-
-
-
-    <h2 class="SDSD">Related Products</h2>
-    <section class="Section_1">
-        <div class="Row_1">
-            <div id="Row_Slide0" class="Row_Slide">
-                
-            </div>
-            <div class="Arrow_Right"><span class="material-symbols-outlined Arrow_LEFT_SPAN">arrow_back_ios</span></div>
-            <div class="Arrow_Left"><span class="material-symbols-outlined Arrow_RIGHT_SPAN">arrow_forward_ios</span></div>
-        </div>
-    </section>
-
-    <h2 class="SDSD">More Products</h2>
-    <section class="Section_1">
-        <div class="Row_1">
-            <div id="Row_Slide1" class="Row_Slide">
-                
-            </div>
-            <div class="Arrow_Right"><span class="material-symbols-outlined Arrow_LEFT_SPAN">arrow_back_ios</span></div>
-            <div class="Arrow_Left"><span class="material-symbols-outlined Arrow_RIGHT_SPAN">arrow_forward_ios</span></div>
-        </div>
-    </section>
-
-    <h2 class="SDSD">Recent Products</h2>
-    <section class="Section_1">
-        <div class="Row_1">
-            <div id="Row_Slide2" class="Row_Slide">
-                
-            </div>
-            <div class="Arrow_Right"><span class="material-symbols-outlined Arrow_LEFT_SPAN">arrow_back_ios</span></div>
-            <div class="Arrow_Left"><span class="material-symbols-outlined Arrow_RIGHT_SPAN">arrow_forward_ios</span></div>
-        </div>
-    </section>
-
-
-
-
-
-    <footer>
-        <div>
-            <a href="/">Home</a>
-            <a href="">Contact us</a>
-            <a href="">Services</a>
-            <a href="">Customer care</a>
-            <a href="">About us</a>
-            <a href="">Terms and conditions</a>
-        </div>
-
-    </footer>
-
-
-
-    <script src="/files/js/Product_Page.js"></script>
-    
     <script src="/files/js/Home2.js"></script>    
     <script src="/files/js/Product_Search_Box.js"></script>    
-</body> 
+    <script src="/files/js/Cus_Profile_Pagppp.js"></script>    
+</body>
 </html>

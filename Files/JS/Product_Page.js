@@ -1,27 +1,27 @@
-function fd() {
+// function fd() {
 
-    document.getElementById("I_UP_DOWN_l").addEventListener("click", () => {
-        let MSSS = getComputedStyle(document.getElementById("MSSS"));
-        let imgg = getComputedStyle(document.getElementById("imgg"));
-        let hei = MSSS.height.split("px")[0];
-        let topp = MSSS.top.split("px")[0];
-        let dis = imgg.height.split("px")[0];
-        let a = document.getElementById("MSSS");
-        let sd = Number(dis - hei) - 32;
-        if (sd <= Number(topp)) {
-            a.style.top = String(Number(topp) - 18) + "px";
-        };
-    });
-    document.getElementById("I_UP_DOWN_m").addEventListener("click", () => {
-        let MSSS = getComputedStyle(document.getElementById("MSSS"));
-        let topp = MSSS.top.split("px")[0];
-        let a = document.getElementById("MSSS");
-        if (Number(topp) <= -1) {
-            a.style.top = String(Number(topp) + 18) + "px";
-        };
-    });
-}
-fd();
+//     document.getElementById("I_UP_DOWN_l").addEventListener("click", () => {
+//         let MSSS = getComputedStyle(document.getElementById("MSSS"));
+//         let imgg = getComputedStyle(document.getElementById("imgg"));
+//         let hei = MSSS.height.split("px")[0];
+//         let topp = MSSS.top.split("px")[0];
+//         let dis = imgg.height.split("px")[0];
+//         let a = document.getElementById("MSSS");
+//         let sd = Number(dis - hei) - 32;
+//         if (sd <= Number(topp)) {
+//             a.style.top = String(Number(topp) - 18) + "px";
+//         };
+//     });
+//     document.getElementById("I_UP_DOWN_m").addEventListener("click", () => {
+//         let MSSS = getComputedStyle(document.getElementById("MSSS"));
+//         let topp = MSSS.top.split("px")[0];
+//         let a = document.getElementById("MSSS");
+//         if (Number(topp) <= -1) {
+//             a.style.top = String(Number(topp) + 18) + "px";
+//         };
+//     });
+// }
+// fd();
 document.getElementById("BIG_I").src = document.getElementById("Image_Select0").src;
 
 smImg = (Nu) => {
@@ -338,4 +338,299 @@ function Write_a_Review() {
 
 
 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+function Widd() {
+    let wid = window.innerWidth;
+    // console.log(wid);
+    if ((wid <1600 && wid > 1399)) {
+        let m1 = document.getElementById("m1");
+        let d = 700 - (1600- wid);
+        m1.style.width = d +"px";
+        
+        function Imgg() {
+            let BIG_I1;
+            document.addEventListener("DOMContentLoaded",() =>{
+        
+                let BIG_I = document.getElementById("BIG_I");
+                BIG_I1 = window.getComputedStyle(BIG_I);
+                // console.log(BIG_I1.width);
+                let DX = BIG_I1.width;
+                DX = Number(DX.split("px")[0]);
+        
+        
+                // console.log(DX);
+        
+                let m1 = document.getElementById("m1");
+                let I_UP_DOWN_l = document.getElementById("I_UP_DOWN_l");
+                I_UP_DOWN_l.style.top = (DX-30) + "px";
+
+                m1.style.height = DX + "px";
+        
+        
+                
+                
+                
+            })
+        
+            
+        }
+        Imgg();
+                
+
+    }
+    else if (wid < 1400 && wid > 1000) {
+        function Imgg() {
+            let BIG_I1;
+            document.addEventListener("DOMContentLoaded",() =>{
+        
+                let BIG_I = document.getElementById("BIG_I");
+                BIG_I1 = window.getComputedStyle(BIG_I);
+                // console.log(BIG_I1.width);
+                let DX = BIG_I1.width;
+                DX = Number(DX.split("px")[0]);
+        
+        
+                // console.log(DX);
+        
+                let m1 = document.getElementById("m1");
+                let I_UP_DOWN_l = document.getElementById("I_UP_DOWN_l");
+                I_UP_DOWN_l.style.top = (DX-30) + "px";
+
+                m1.style.height = DX + "px";
+        
+        
+                
+                
+                
+            })
+        
+            
+        }
+        Imgg();
+        
+        let m1 = document.getElementById("m1");
+        m1.style.width = "500px";
+
+
+        let BIG_I = document.getElementById("Maa");
+        let BIG_I1 = window.getComputedStyle(BIG_I);
+        // console.log(BIG_I1.width);
+        let DX = BIG_I1.width;
+        DX = Number(DX.split("px")[0]);
+        console.log(DX)
+        let m2 = document.getElementById("m2");
+        m2.style.width = (DX - 540) + "px";
+
+
+    }else if (wid < 1000 && wid > 860) {
+        let m1 = document.getElementById("m1");
+        let m2 = document.getElementById("m2");
+        let Maa = document.getElementById("Maa");
+        m2.style.width = "361px";
+        
+        Maa = window.getComputedStyle(Maa);
+        let MA_W = Maa.width.split("px")[0];
+        MA_W = Number(MA_W);
+        let NEW = (MA_W - 361);
+        NEW = Number(NEW) - 40;
+        
+        console.log(NEW);
+        
+        m1.style.width = NEW + "px";
+
+        // let d = 700 - (1600- wid);
+        // m1.style.width = d +"px";
+        
+        function Imgg() {
+            let BIG_I1;
+            document.addEventListener("DOMContentLoaded",() =>{
+        
+                let BIG_I = document.getElementById("BIG_I");
+                BIG_I1 = window.getComputedStyle(BIG_I);
+                // console.log(BIG_I1.width);
+                let DX = BIG_I1.width;
+                DX = Number(DX.split("px")[0]);
+        
+        
+                // console.log(DX);
+        
+                let m1 = document.getElementById("m1");
+                let I_UP_DOWN_l = document.getElementById("I_UP_DOWN_l");
+                I_UP_DOWN_l.style.top = (DX-30) + "px";
+
+                m1.style.height = DX + "px";
+        
+        
+                
+                
+                
+            })
+        
+            
+        }
+        Imgg();
+
+    } else if(wid < 800 && wid > 560){
+        function Imgg() {
+            let BIG_I1;
+            document.addEventListener("DOMContentLoaded",() =>{
+        
+                let BIG_I = document.getElementById("BIG_I");
+                BIG_I1 = window.getComputedStyle(BIG_I);
+                // console.log(BIG_I1.width);
+                let DX = BIG_I1.width;
+                DX = Number(DX.split("px")[0]);
+        
+        
+                // console.log(DX);
+        
+                let m1 = document.getElementById("m1");
+                let I_UP_DOWN_l = document.getElementById("I_UP_DOWN_l");
+                I_UP_DOWN_l.style.top = (DX-30 + 100 ) + "px";
+
+                m1.style.height = DX + "px";
+        
+        
+                
+                
+                
+            })
+        
+            
+        }
+        Imgg();
+
+        
+    }else if(wid < 560){
+
+        function Imgg() {
+            let BIG_I1;
+            document.addEventListener("DOMContentLoaded",() =>{
+        
+                let BIG_I = document.getElementById("BIG_I");
+                BIG_I1 = window.getComputedStyle(BIG_I);
+                // console.log(BIG_I1.width);
+                let DX = BIG_I1.width;
+                DX = Number(DX.split("px")[0]);
+                
+                let imgg = document.getElementById("imgg");
+
+                imgg.style.top = DX + 25 + "px";
+                
+                document.getElementById("Big_IMMGG").style.height = DX + "px";
+        
+                let m1 = document.getElementById("m1");
+                m1.style.height = DX + 120 + "px";
+
+        
+                // console.log(DX);
+        
+                // let I_UP_DOWN_l = document.getElementById("I_UP_DOWN_l");
+                // I_UP_DOWN_l.style.top = (DX-30 + 100 ) + "px";
+
+
+
+                
+                let Maa = document.getElementById("Maa");
+                Maa.style.width = window.innerWidth;
+                
+                
+                // console.log(o.length - 1);
+                // console.log(HT);
+                let MSSS = document.getElementById("MSSS");
+                let HT = MSSS.innerHTML;
+                let o = HT.split("ms_img")
+                let lendd = o.length - 1;
+                MSSS.style.width = (100*lendd) + "px"
+
+
+                
+        
+                
+                
+                
+            })
+        
+            
+        }
+        Imgg();
+
+    }
+}
+Widd();
+
+
+
+let xc = window.innerWidth
+if (xc >=  560) {
+    function fd() {
+
+        document.getElementById("I_UP_DOWN_l").addEventListener("click", () => {
+            let MSSS = getComputedStyle(document.getElementById("MSSS"));
+            let imgg = getComputedStyle(document.getElementById("imgg"));
+            let hei = MSSS.height.split("px")[0];
+            let topp = MSSS.top.split("px")[0];
+            let dis = imgg.height.split("px")[0];
+            let a = document.getElementById("MSSS");
+            let sd = Number(dis - hei) - 32;
+            if (sd <= Number(topp)) {
+                a.style.top = String(Number(topp) - 18) + "px";
+            };
+        });
+        document.getElementById("I_UP_DOWN_m").addEventListener("click", () => {
+            let MSSS = getComputedStyle(document.getElementById("MSSS"));
+            let topp = MSSS.top.split("px")[0];
+            let a = document.getElementById("MSSS");
+            if (Number(topp) <= -1) {
+                a.style.top = String(Number(topp) + 18) + "px";
+            };
+        });
+    }
+    fd();
+}else{
+    let gv = document.getElementById("I_UP_DOWN_l");
+    let gvs = document.getElementById("I_UP_DOWN_m");
+    gv.innerHTML = `<span class="material-symbols-outlined">keyboard_arrow_right</span>`;
+    gvs.innerHTML = `<span class="material-symbols-outlined">keyboard_arrow_left</span>`;
+
+    document.getElementById("I_UP_DOWN_l").addEventListener("click", () => {
+        let MSSS = getComputedStyle(document.getElementById("MSSS"));
+        let imgg = getComputedStyle(document.getElementById("imgg"));
+        let hei = Number(MSSS.width.split("px")[0]);
+        let dis = Number(imgg.width.split("px")[0]);
+        // console.log(hei);
+        
+        
+        let le = MSSS.left.split("px")[0];
+        console.log(le);
+        
+
+        let a = document.getElementById("MSSS");
+        let sd = Number(dis - hei)
+        if (sd <= Number(le)) {
+            a.style.left = String(Number(le) - 40) + "px";
+        };
+    });
+    document.getElementById("I_UP_DOWN_m").addEventListener("click", () => {
+        let MSSS = getComputedStyle(document.getElementById("MSSS"));
+
+        let topp = MSSS.left.split("px")[0];
+        let a = document.getElementById("MSSS");
+        if (Number(topp) <= -1) {
+            a.style.left = String(Number(topp) + 40) + "px";
+        };
+    });
 }
