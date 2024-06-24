@@ -23,6 +23,8 @@ Product_Search = async (req, res) => {
 
     let Value = req.body.val;
     
+    Value = Value.toLowerCase();
+    
     
     if (Value == "" || Value == " " || Value == null) {
         Value = Value.toLowerCase();
@@ -37,11 +39,12 @@ Product_Search = async (req, res) => {
         }
         res.status(200).json(a);
     }else{
-
-    
-
-
+        
+        
+        
+        
         let Block = Value.split(" ");
+        // console.log(Value);
         // console.log(Block);
 
         let Latest = [];
@@ -82,6 +85,7 @@ Product_Search = async (req, res) => {
                 E: WORDSS[4],
                 F: WORDSS[5],
             }
+            
             res.status(200).json(a);
                             
         }else{

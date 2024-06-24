@@ -1355,6 +1355,9 @@ img {
 #Write_MesaBTN:hover {
     background-color: rgb(95, 191, 255);
 }
+.questionss {
+    font-size: 14px;
+}
 
 .questionss:nth-child(2) p {
     color: #474747;

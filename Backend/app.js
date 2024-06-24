@@ -21,6 +21,8 @@ const Logout_Post = require("./Logout_Post.js");
 
 const Cus_Profile_Page = require("./Customer_Side/Cus_Profile_Page.js");
 const Cus_Cart_Page = require("./Customer_Side/Cus_Cart_Page.js");
+const Cus_Address_Page = require("./Customer_Side/Cus_Address_Page_Get.js");
+const Cus_Address_Page_Post = require("./Customer_Side/Cus_Address_Page_Post.js");
 
 // _______________________________________________________________________________________________________
 // _______________________________________________________________________________________________________
@@ -253,6 +255,7 @@ app.post("/input_search", async (req, res) => {Product_Search(req,res)});
 
 app.get('/profile', async (req, res) => {Cus_Profile_Page(req, res)});
 app.get('/cart', async (req, res) => {Cus_Cart_Page(req, res)});
+app.get('/address', async (req, res) => {Cus_Address_Page(req, res)});
 
 
 

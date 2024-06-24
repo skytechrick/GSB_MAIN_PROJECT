@@ -1,0 +1,549 @@
+main {
+    width: 100%;
+    
+}
+.Main_Par {
+
+    width: 70%;
+    margin: auto;
+    /* border: 1px solid #aaa; */
+    /* height: 100px; */
+    margin-top: 20px;
+    padding: 15px 20px;
+
+}
+
+.HEadere {
+    font-size: 23px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #aaaaaa9c;
+    
+}
+.HEadere a{
+    color: black;
+    text-decoration: none;
+    
+}
+
+.HEadere a:hover{
+    text-decoration: underline;
+}
+
+
+.List_SS {
+    width: 100%;
+    /* border: 1px solid #aaa; */
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-start;
+    flex-wrap: wrap;
+    
+}
+
+.Lists {
+    width: 200px;
+    /* height: 200px; */
+    /* border: 1px solid #aaaaaaa9; */
+
+    padding: 15px;
+    padding-top: 10px;
+    
+}
+
+.Lists button:hover {
+    border: 1px solid #aaa;
+    background-color: rgb(236, 236, 236);
+}
+.Lists button {
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #aaaaaa9c;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    text-align: left;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.List_Btn:nth-child(4) {
+    border: 1px solid #aaa;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ITEM {
+    /* width: 200px; */
+    /* height: 200px; */
+    border: 1px solid #c4c4c49c;
+
+}
+
+
+
+
+.Top_Ite {
+    display: block;
+    /* background-color: aqua; */
+}
+
+.Top_Ite_1 {
+    background-color: #d8d8d89c;
+}
+
+.Main1 {
+    padding: 15px 10px;
+    border-bottom: 1px solid #c4c4c49c;
+}
+
+
+
+
+
+
+
+.Main2 {
+    padding: 8px 13px;
+    background-color: white;
+}
+.Main2 label {
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+.Main2 label, .Main2 input{
+    padding: 8px 13px;
+}
+.Main2 input{
+    font-size: 14px;
+}
+
+.Proi {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 0px;
+    /* background-color: aqua; */
+    padding: 5px 10px;
+    border-bottom: 1px solid #c4c4c49c;
+}
+
+.Proi div{
+    height: 60px;
+}
+
+.Proi_ICON {
+    display: flex;
+    align-items: center;
+}
+.Proi_ICON span{
+    border-radius: 50%;
+    /* background-color: rgb(131, 189, 255); */
+    font-size: 50px;
+    color: #505050;
+}
+
+
+.Proi_ICON_Side {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 8px;
+}
+
+
+
+.Proi_ICON_Side span{
+    /* background-color: beige; */
+    width: 100%;
+    text-align: left;
+}
+
+.Proi_ICON_Side span:nth-child(1){
+    font-weight: bold;
+}
+
+.Proi_ICON_Side span:nth-child(2){
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Second_Man {
+    padding: 8px 13px;
+    display: flex;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+
+
+}
+
+.Addresssss {
+    margin: 2px;
+    width: 250px;
+    color: #505050;
+    border: 1px solid #aaaaaa9c;
+    
+}
+
+.Addd {
+    padding: 10px;
+    background-color: #d8d8d89c;
+
+}
+
+.Addresssss address{
+    padding:  10px;
+    margin-bottom: 10px;
+    border: 1px solid #aaaaaa9c;
+    border-left: none;
+    border-right: none;
+
+}
+
+.BSATSRFSA {
+    margin: 10px 0;
+    display: flex;
+    justify-content: right;
+    
+}
+.BSATSRFSA button{
+    outline: none;
+    border: 0px solid #aaa;
+    background-color: transparent;
+}
+.Default:hover, .Edit span:nth-child(2):hover{
+    text-decoration: underline;
+    cursor: pointer;
+    border: none;
+}
+.Edit span:nth-child(2) {
+    font-size: 16px;
+}
+.Edit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+#ADdddressssss {
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    display: none;
+
+    position: absolute;
+    top: 0px;
+    background-color: #e2e2e26c;
+    
+}
+#ADdddressssss_I1 {
+    
+    position: relative;
+    top: 60px;
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.boxxAddddd {
+    width: 300px;
+    /* height: 300px; */
+    background-color: white;
+    border: 1px solid #9c9c9c;
+    padding: 6px 9px;
+    box-shadow: 0 0 10px #aaaaaa;
+    
+}
+
+
+.boxxAddddd_Top {
+    padding: 8px 12px;
+    border-bottom: 1px solid #aaa;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0px;
+    padding-right: 6px;
+    margin-bottom: 10px;
+}
+    
+.boxxAddddd_Top span:nth-child(1){
+    padding: 7px;
+    position: relative;
+    top: 2px;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+#CLOSE_ADDRESS {
+    border-radius: 50%;
+    padding: 7px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#CLOSE_ADDRESS:hover {
+    background-color: #bebebe9c;
+    cursor: pointer;
+
+}
+
+
+.MSDSADSASADSDSDSADSADD {
+    width: 97%;
+    margin: auto;
+    /* border: 1px solid red; */
+}
+
+.MSDSADSASADSDSDSADSADD input{
+    margin: 3px 0;
+    width: 100px;
+    padding: 6px 8px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #bebebe9c;
+    /* border: 1px solid #bebebe9c; */
+    
+}
+
+.MSDSADSASADSDSDSADSADD > div {
+    position: relative;
+    left: -3px;
+    display: flex;
+    justify-content: center;
+}
+
+#State_Name, #District_Name {
+    cursor: pointer;
+    margin: 8px 0;
+    color: #919191;
+    width: 116px;
+    /* padding: 6px 8px; */
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #bebebe9c;
+}
+
+#State_Name option, #District_Name option{
+    color: black;
+}
+
+
+.SBTNN {
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    padding: 7px 13px;
+    cursor: pointer;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid rgb(253,186,255);
+    background-color: rgb(253,186,255);
+    margin-bottom: 15px;
+}
+
+.SBTNN:hover {
+    background-color: rgba(253, 186, 255, 0.637);
+}
+.SBTNN:active {
+    background-color: rgb(252, 172, 255);
+}
+
+
+.De {
+    padding: 13px;
+    padding-bottom: 7px;
+}
+
+.Addaddress {
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    padding: 7px 13px;
+    cursor: pointer;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid rgb(253,186,255);
+    background-color: rgb(253,186,255);
+    /* margin-bottom: 15px; */
+}
+
+
+.Addaddress:hover {
+    background-color: rgba(253, 186, 255, 0.637);
+}
+.Addaddress:active {
+    background-color: rgb(252, 172, 255);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 920px) {
+    .Main_Par {
+        width: 90%;
+    }
+    
+
+}
+
+
+@media screen and (max-width: 1250px) {
+    main {
+        margin-top: 40px;
+    }
+}
+@media screen and (max-width: 750px) {
+    .Main_Par {
+        width: 90%;
+    }
+    .List_SS{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .Lists {
+        width: 80%;
+    }
+    .ITEM {
+        
+        width: 80%;
+        
+    }
+    
+}
+
+@media screen and (max-width: 540px) {
+    .Lists {
+        width: 100%;
+        padding: 0;
+    }
+    .ITEM {
+        
+        width: 100%;
+        
+    }
+    .Main_Par {
+        padding: 0;
+        margin: 15px;
+    }
+    
+    .Adddsss label{
+        
+        position: relative;
+        bottom: 0px;
+    }
+    
+    .BAN label{
+        position: relative;
+        bottom: 0px;
+    }
+    .BAN_D {
+        width: 190px;
+    }
+
+}
+
+
+
+
+
+
+
+
+

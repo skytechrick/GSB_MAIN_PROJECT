@@ -83,14 +83,36 @@ const Signup_Schema = new mongoose.Schema({
     Email: {
         type: String
     },
-    User_Password: {
-        type: String
-    },
     Verified: {
         type: String
     },
+    Cart: {
+        type: Object
+    },
+    
+    Addresses:{
+        type:Object
+    },
+    Bank: {
+        type:Object
+    },
+    Order_Ids:{
+        type:Object
+    },
+    Favorite:{
+        type:Object
+    },
+    Notification:{
+        type:Object
+    },
+    SB_Coins:{
+        type:Object
+    },
     Created_Account: {
         type: Date,
+    },
+    User_Password: {
+        type: String
     },
     createdAt: {
         type: Date,
@@ -99,10 +121,7 @@ const Signup_Schema = new mongoose.Schema({
     Authentication: {
         type: Object
     },
-    Cart: {
-        type: Object
 
-    }
 });
 
 

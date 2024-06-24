@@ -1017,7 +1017,7 @@ body {
     .NEXT_HEAD {
         z-index: 149;
         position: absolute;
-        top: 62px;
+        top: 60px;
         height: 40px;
         max-width: 1570px;
         width: 100%;
@@ -1025,6 +1025,7 @@ body {
         display: flex;
         background-color: white;
         border-bottom: 1px solid #aaa;
+        border-top: 1px solid #aaa;
         justify-content: space-between;
     }
     

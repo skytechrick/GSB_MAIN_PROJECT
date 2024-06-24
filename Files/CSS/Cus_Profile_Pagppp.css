@@ -38,6 +38,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items:flex-start;
+    flex-wrap: wrap;
     
 }
 
@@ -76,18 +77,6 @@ main {
 }
 
 
-.Top_Ite {
-    background-color: aqua;
-}
-
-
-
-
-
-
-
-
-
 
 
 
@@ -104,6 +93,282 @@ main {
 .ITEM {
     /* width: 200px; */
     /* height: 200px; */
-    border: 1px solid #aaa;
+    border: 1px solid #c4c4c49c;
 
 }
+
+
+
+
+.Top_Ite {
+    display: block;
+    /* background-color: aqua; */
+}
+
+.Top_Ite_1 {
+    background-color: #d8d8d89c;
+}
+
+.Main1 {
+    padding: 15px 10px;
+    border-bottom: 1px solid #c4c4c49c;
+}
+.Main2 {
+    padding: 7px 10px;
+    background-color: white;
+}
+.Main2 label {
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+.Main2 label, .Main2 input{
+    padding: 8px 13px;
+}
+.Main2 input{
+    font-size: 14px;
+}
+
+.Proi {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 0px;
+    /* background-color: aqua; */
+    padding: 5px 10px;
+}
+
+.Proi div{
+    height: 60px;
+}
+
+.Proi_ICON {
+    display: flex;
+    align-items: center;
+}
+.Proi_ICON span{
+    border-radius: 50%;
+    /* background-color: rgb(131, 189, 255); */
+    font-size: 50px;
+    color: #505050;
+}
+
+
+.Proi_ICON_Side {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 8px;
+}
+
+
+
+.Proi_ICON_Side span{
+    /* background-color: beige; */
+    width: 100%;
+    text-align: left;
+}
+
+.Proi_ICON_Side span:nth-child(1){
+    font-weight: bold;
+}
+
+.Proi_ICON_Side span:nth-child(2){
+    font-size: 14px;
+}
+
+
+
+.SDSDASDERSDS {
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    /* border-bottom: 1px solid #c4c4c49c; */
+}
+
+.Main2 > div label {
+    display: inline-block;
+    width: 100px;
+}
+
+.CCOOIJNJ {
+    display: inline-block;
+    
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    /* display: flex; */
+    
+}
+.CCOOIJNJ div{
+    display: inline-block;
+}
+.CCOOIJNJ div:nth-child(1){
+    padding: 8px 13px;
+    width: 100px;
+}
+
+.CCOOIJNJ div:nth-child(2){
+    color: #505050;
+    padding: 8px 13px;
+}
+
+.CCOOIJNJ div:nth-child(2) img{
+    width: 15px;
+    position: relative;
+    top: 2px;
+}
+
+.Adddsss label{
+    
+    position: relative;
+    bottom: 40px;
+}
+.Adddsss {
+    /* display: flex; */
+    /* justify-content: center; */
+    align-items: center;
+}
+.Adddsss address{
+    color: #505050;
+    display: inline-block;
+    font-weight: bold;
+    padding: 8px 13px;
+}
+
+.BAN label{
+    position: relative;
+    bottom: 27px;
+}
+.BAN_D {
+    color: #505050;
+    font-weight: bold;
+    padding: 8px 13px;
+    display: inline-block;
+}
+
+
+
+.XDXDXD label{
+    position: relative;
+    bottom: 0px;
+}
+.XDXDXD a{
+    /* margin: 50px 0px; */
+    display: inline-block;
+    margin-bottom: 4px;
+    color: #505050;
+    background-color: #dfdfdf;
+    text-decoration: none;
+    
+    padding: 8px 13px;
+    margin-left: 13px;
+    border-radius: 4px;
+}
+.XDXDXD a:hover{
+    background-color: #ececec;
+}
+.XDXDXD a:active{
+    background-color: #bbbbbb;
+}
+
+
+
+.CFCF label{
+    position: relative;
+    bottom: 0px;
+}
+.CFCF a{
+    /* margin: 50px 0px; */
+    display: inline-block;
+    margin-bottom: 4px;
+    color: #505050;
+    background-color: #dfdfdf;
+    text-decoration: none;
+    
+    padding: 8px 13px;
+    margin-left: 13px;
+    border-radius: 4px;
+}
+.CFCF a:hover{
+    background-color: #ececec;
+}
+.CFCF a:active{
+    background-color: #bbbbbb;
+}
+
+@media screen and (max-width: 920px) {
+    .Main_Par {
+        width: 90%;
+    }
+    
+
+}
+
+
+@media screen and (max-width: 1250px) {
+    main {
+        margin-top: 40px;
+    }
+}
+@media screen and (max-width: 750px) {
+    .Main_Par {
+        width: 90%;
+    }
+    .List_SS{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .Lists {
+        width: 80%;
+    }
+    .ITEM {
+        
+        width: 80%;
+        
+    }
+    
+}
+
+@media screen and (max-width: 540px) {
+    .Lists {
+        width: 100%;
+        padding: 0;
+    }
+    .ITEM {
+        
+        width: 100%;
+        
+    }
+    .Main_Par {
+        padding: 0;
+        margin: 15px;
+    }
+    
+    .Adddsss label{
+        
+        position: relative;
+        bottom: 0px;
+    }
+    
+    .BAN label{
+        position: relative;
+        bottom: 0px;
+    }
+    .BAN_D {
+        width: 190px;
+    }
+
+}
+
+
+
+
+
+
+
+
+

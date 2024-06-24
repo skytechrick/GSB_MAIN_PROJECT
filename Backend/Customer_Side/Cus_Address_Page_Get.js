@@ -1,6 +1,6 @@
 const User_Auth = require("../User_Auth.js");
 
-Cus_Profile_Page = async (req, res) => {
+Cus_Address_Page = async (req, res) => {
     let COOK = req.cookies.U_ID;
     Auths = await User_Auth(COOK);
     if (Auths != null) {
@@ -28,26 +28,33 @@ Cus_Profile_Page = async (req, res) => {
             
         };
         let D = {
-            Full_Name: Auths.First_Name + " "+ Auths.Last_Name,
+            Full_Name: Auths.First_Name + " " + Auths.Last_Name,
             Email: Auths.Email,
-            Mobile_Number: Auths.Mobile_Number,
-            Createed_Date: Joined_Date,
-            SB_Coins: Auths.SB_Coins.Value,
-            Address: AD,
-            CLASSS_1:CLASSS_1,
-            Bank:Bank,
-            CLASSS_2:CLASSS_2,
+
+
+
+
+
+
+            
+            // Mobile_Number: Auths.Mobile_Number,
+            // Createed_Date: Joined_Date,
+            // SB_Coins: Auths.SB_Coins.Value,
+            // Address: AD,
+            // CLASSS_1:CLASSS_1,
+            // Bank:Bank,
+            // CLASSS_2:CLASSS_2,
 
             Name: Auths.First_Name,
             Cart_No: Auths.Cart.length,
             Login:"",
             Logout1: `<a href="/logout" class="Profile_Options_Nav2">Logout</a>`,
         };
-        res.status(200).render("Cus_Profile_Page", D);
+        res.status(200).render("Cus_Address", D);
     }else{
         res.clearCookie("U_ID");
         res.status(200).redirect("http://192.168.0.44/login");
     };
 }
 
-module.exports = Cus_Profile_Page;
+module.exports = Cus_Address_Page;

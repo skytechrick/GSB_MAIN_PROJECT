@@ -177,6 +177,15 @@ async function Signup_Post(req, res) {
                                 Verified: "No",
                                 Profile_Id: 0,
                                 Cart:[],
+                                Addresses:[],
+                                Bank:[],
+                                Order_Ids:[],
+                                Favorite:[],
+                                Notification:[],
+                                SB_Coins:{
+                                    Value:0,
+                                    History:[]
+                                },
                             };
                             res.cookie("New_User", "No",{httpOnly: true, path: "/signup", expires: new Date(Date.now() + 86400000), secure: false});
                             let OTP_Mail = Signup_Details.Email;
