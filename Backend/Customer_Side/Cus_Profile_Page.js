@@ -10,11 +10,30 @@ Cus_Profile_Page = async (req, res) => {
         let Joined_Date = Createed_Date.getDate()+ " " + `${Month_List[N]}` + ", "+ Createed_Date.getFullYear();
         let AD;
         let CLASSS_1;
-        if(Auths.Addresses.length == 0){
+        if(Auths.Addresses.Address.length == 0){
             AD = `<a href="/address">Add your address</a>`;
             CLASSS_1 = "XDXDXD";
         }else{
-            AD = `<address>Loknath Nagar, B.P Road<br>Bagdogra, Loknath Nagar,<br>PIN: 734014,  <br>Dist: Darjeeling <br>West Bengal, India </address>`;
+
+            let d = "";
+            let Ass = Auths.Addresses.Active_ID;
+
+            for (let index = 0; index < Auths.Addresses.Address.length; index++) {
+                const element = Auths.Addresses.Address[index];
+                if (Ass == element.ID) {
+                    d = d+`<address>${element.Locality}, ${element.Landmark}<br>${element.Town}, ${element.City},<br>PIN: ${element.PIN},  <br>Dist: ${element.District_Name} <br>${element.State_Name}, India </address>`
+
+                    
+                }else{
+                    d = ""
+                }
+                
+            }
+
+
+
+
+            AD = d;
             CLASSS_1 = "";
         };
         let Bank;

@@ -4,32 +4,59 @@ Cus_Address_Page = async (req, res) => {
     let COOK = req.cookies.U_ID;
     Auths = await User_Auth(COOK);
     if (Auths != null) {
-        let Createed_Date = new Date(Auths.Created_Account);
-        let N = Number(Createed_Date.getMonth()+1);
-        let Month_List = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-        let Joined_Date = Createed_Date.getDate()+ " " + `${Month_List[N]}` + ", "+ Createed_Date.getFullYear();
-        let AD;
-        let CLASSS_1;
-        if(Auths.Addresses.length == 0){
-            AD = `<a href="/address">Add your address</a>`;
-            CLASSS_1 = "XDXDXD";
+        
+        let Add1 = Auths.Addresses;
+
+        let Add;
+        if (Add1.Address.length == 0) {
+            Add = "";
         }else{
-            AD = `<address>Loknath Nagar, B.P Road<br>Bagdogra, Loknath Nagar,<br>PIN: 734014,  <br>Dist: Darjeeling <br>West Bengal, India </address>`;
-            CLASSS_1 = "";
-        };
-        let Bank;
-        let CLASSS_2;
-        if(Auths.Bank.length == 0){
-            Bank = `<a href="/bank">Add your Bank Account</a>`;
-            CLASSS_2 = "CFCF";
-        }else{
-            Bank = `<div class="BAN_D">State Bank of India <br>Rick Sarkar <br>42094200655 <br>SBIN0007148</div>`;
-            CLASSS_2 = "";
+            let Pass = Add1.Active_ID
+            let a = Add1.Address;
+            let D = "";
             
-        };
+
+            let aap;
+            for (let r = 0; r < a.length; r++) {
+                const element = a[r];
+
+                if(Pass == element.ID){
+                    aap = `<div class="Addresssss">
+                    <div class="Addd">${element.Name} - (Default)</div>
+                    <address>${element.Locality}, ${element.Landmark}<br>${element.City}, ${element.Town},<br>PIN: ${element.PIN},  <br>Dist: ${element.District_Name} <br>${element.State_Name}, India <br>+91 ${element.Mobile} <br> +91 ${element.Alt} <br></address>
+                    <div class="BSATSRFSA">
+                        <button style="padding: 0 8px" class="Edit"><span class="material-symbols-outlined">edit</span></button>
+                        
+                        
+                        </div></div>`                    
+                        // <button class="Default" style="font-size:16px;">Active</button>
+                }else{
+                    D = D + `<div class="Addresssss">
+                    <div class="Addd">${element.Name}</div>
+                    <address>${element.Locality}, B.P Road<br>Bagdogra, Loknath Nagar,<br>PIN: 734014,  <br>Dist: Darjeeling <br>West Bengal, India <br>+91 8436431656 <br> +91 9832459014 <br></address>
+                    <div class="BSATSRFSA">
+                        <button class="Del" onclick="DeleteAd(${element.ID});"><span class="material-symbols-outlined">delete</span></button>
+                        <button class="Edit"><span class="material-symbols-outlined">edit</span></button>
+                        <button class="Default" type="button" onclick="Set_Default(${element.ID});">Set as default</button>
+                    </div></div>`
+                }
+                    
+            }
+            Add = aap + D;
+            
+
+        }
+
+
+
+
+
+
+
         let D = {
             Full_Name: Auths.First_Name + " " + Auths.Last_Name,
             Email: Auths.Email,
+            Addresses:Add,
 
 
 

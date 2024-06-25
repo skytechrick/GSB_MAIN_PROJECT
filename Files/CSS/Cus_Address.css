@@ -250,18 +250,74 @@ main {
     cursor: pointer;
     border: none;
 }
-.Edit span:nth-child(2) {
-    font-size: 16px;
-}
 .Edit {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.Edit span:nth-child(1) {
+    font-size: 16px;
+}
 
 
+.Del {
+    padding: 0px;
+    cursor: pointer;
+}
+.Del span{
+    border-radius: 50%;
+    padding: 6px;
+    font-size: 15px;
+}
+.Del span:hover{
+    background-color: #d4d4d49c;
+}
+.Del span:active{
+    background-color: #d4d4d4c9;
+}
+.Edit {
+    padding: 0px;
+    cursor: pointer;
+}
+.Edit span{
+    border-radius: 50%;
+    padding: 6px;
+    font-size: 15px;
+}
+.Edit span:hover{
+    background-color: #d4d4d49c;
+}
+.Edit span:active{
+    background-color: #d4d4d4c9;
+}
 
+
+@keyframes fade{
+    0%{
+        display: flex;
+        opacity: 1;
+        
+    }
+    100%{
+        display: none;
+        opacity: 0;
+    }
+}
+#Message_Main{
+    /* opacity: 1; */
+    animation-duration: 2s;
+    animation-name: f;
+    animation-delay: 100ms;
+    animation-fill-mode: forwards;
+}
+#Message_Back{
+    /* opacity: 1; */
+    animation-duration: 2s;
+    animation-name: f;
+    animation-delay: 100ms;
+    animation-fill-mode: forwards;
+}
 
 
 

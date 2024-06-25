@@ -290,7 +290,6 @@ document.getElementById("District_Name").addEventListener('change', () => {
 
 
 function Add_Address() {
-    let ID = String(Date.now());
     let Name = document.getElementById("Name");
     let PIN = document.getElementById("PIN");
     let Locality = document.getElementById("Locality");
@@ -351,31 +350,143 @@ function Add_Address() {
     Alt == null ||
     Alt == " " ||
     Alt.length != 10){
+        
         document.getElementById("Message").style.display = "block";
+        document.getElementById("Message").innerHTML = "Enter valid details / Blanks cann't be empty.";
         
-
-
+        
     }else{
+        document.getElementById("Message").style.display = "none";
         
+        let jjso = {
+            Name:Name,
+            PIN:PIN,
+            Locality:Locality,
+            Landmark:Landmark,
+            Town:Town,
+            City:City,
+            Mobile:Mobile,
+            Alt:Alt,
+            District_Name:District_Name,
+            State_Name:State_Name,
+        }
+
+        let d = document.getElementById("SBTNN");
+        d.onclick = "";
+
+        fetch("/address_add",{
+            method:"Post",
+            body:JSON.stringify(jjso),
+            headers:{
+                "Content-Type":"application/json"
+            }
+        }).then(response => {
+            return response.json();
+        }).then(data => {
+            let mes = data.Message
+            if (mes == "Empty") {
+                
+                document.getElementById("Message").style.display = "block";
+                document.getElementById("Message").innerHTML = "Enter valid details / Blanks cann't be empty.";
+        
+            }else{
+                
+                document.getElementById("Message").style.display = "block";
+                document.getElementById("Message").style.color = "green";
+                document.getElementById("Message").innerHTML = "Added successfully.";
+                setTimeout(() => {
+                    document.getElementById("Message").style.display = "none";
+                    location.reload();
+                    
+                }, 2000);
+                
+            }
+            // console.log(data);
+
+        }).catch(e => {
+            
+            document.getElementById("Message").innerHTML = "Cann't connect to server";
+            document.getElementById("Message").style.display = "block";
+            
+            let d = document.getElementById("SBTNN");
+            d.onclick = "Add_Address();";
+        })
+        // console.log(jjso);
+
     }
-    let jjso = {
-        ID:ID,
-        Name:Name,
-        PIN:PIN,
-        Locality:Locality,
-        Landmark:Landmark,
-        Town:Town,
-        City:City,
-        Mobile:Mobile,
-        Alt:Alt,
-        District_Name:District_Name,
-        State_Name:State_Name,
-    }
-    console.log(jjso);
     
 }
 
+function Message(Message){
+    let Message_Back = document.getElementById("Message_Back")
+    let Message_Main = document.getElementById("Message_Main")
+    let Me = document.getElementById("Me")
+    Me.innerHTML = Message;
+    Message_Main.style.display = "flex";
+    Message_Back.style.display = "flex";
+    
+    setTimeout(() => {
+        // Message_Main.style.display = "none";
+        // Message_Back.style.display = "none";
+        Message_Main.style.animationName = "fade";
+        Message_Back.style.animationName = "fade";
+        
+    }, 1000);
 
+
+}
+
+
+
+function DeleteAd(ID) {
+    if (confirm("You are about to delete the address.")) {
+        fetch("/address_del",{
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify({ID:ID}),
+
+        }).then(response=>{return response.json()}).then(data => {
+            if(data.Message == "Deleted successfully."){
+                Message(data.Message);
+                setTimeout(() => {
+                    location.reload();
+                }, 3000);
+            }else{
+                Message(data.Message);
+
+            }
+
+        }).catch(e =>{
+            Message("Connection error...");
+        })
+    }
+    
+}
+
+function Set_Default(ID) {
+    if (confirm("You are about to set the address as default.")) {
+        fetch("/address_set_default",{
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify({ID:ID}),
+
+        }).then(response=>{return response.json()}).then(data => {
+            if(data.Message == "Default address selected."){
+                Message(data.Message);
+                setTimeout(() => {
+                    location.reload();
+                }, 3000);
+            }else{
+                Message(data.Message);
+
+            }
+
+        }).catch(e =>{
+            Message("Connection error...");
+        })
+    }
+    
+}
 
 
 

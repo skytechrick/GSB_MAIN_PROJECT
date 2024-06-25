@@ -23,6 +23,8 @@ const Cus_Profile_Page = require("./Customer_Side/Cus_Profile_Page.js");
 const Cus_Cart_Page = require("./Customer_Side/Cus_Cart_Page.js");
 const Cus_Address_Page = require("./Customer_Side/Cus_Address_Page_Get.js");
 const Cus_Address_Page_Post = require("./Customer_Side/Cus_Address_Page_Post.js");
+const Cus_Address_Del_Post = require("./Customer_Side/Cus_Address_Del_Post.js");
+const Cus_Address_Default_Post = require("./Customer_Side/Cus_Address_Default_Post.js");
 
 // _______________________________________________________________________________________________________
 // _______________________________________________________________________________________________________
@@ -256,6 +258,9 @@ app.post("/input_search", async (req, res) => {Product_Search(req,res)});
 app.get('/profile', async (req, res) => {Cus_Profile_Page(req, res)});
 app.get('/cart', async (req, res) => {Cus_Cart_Page(req, res)});
 app.get('/address', async (req, res) => {Cus_Address_Page(req, res)});
+app.post('/address_add', async (req, res) => {Cus_Address_Page_Post(req, res)});
+app.post('/address_del', async (req, res) => {Cus_Address_Del_Post(req, res)});
+app.post('/address_set_default', async (req, res) => {Cus_Address_Default_Post(req, res)});
 
 
 
