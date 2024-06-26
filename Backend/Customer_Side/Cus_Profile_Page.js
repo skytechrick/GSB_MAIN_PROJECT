@@ -21,11 +21,13 @@ Cus_Profile_Page = async (req, res) => {
             for (let index = 0; index < Auths.Addresses.Address.length; index++) {
                 const element = Auths.Addresses.Address[index];
                 if (Ass == element.ID) {
+
                     d = d+`<address>${element.Locality}, ${element.Landmark}<br>${element.Town}, ${element.City},<br>PIN: ${element.PIN},  <br>Dist: ${element.District_Name} <br>${element.State_Name}, India </address>`
+                    break;
 
                     
                 }else{
-                    d = ""
+                    d = "";
                 }
                 
             }

@@ -331,12 +331,36 @@ main {
     height: 100%;
     display: none;
 
-    position: absolute;
+    /* position: absolute; */
+    position: fixed;
     top: 0px;
     background-color: #e2e2e26c;
     
 }
 #ADdddressssss_I1 {
+    
+    position: relative;
+    top: 60px;
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#Edit_ADdddressssss {
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    display: none;
+
+    position: fixed;
+    top: 0px;
+    background-color: #e2e2e26c;
+    
+}
+#Edit_ADdddressssss_I1 {
     
     position: relative;
     top: 60px;
@@ -391,6 +415,19 @@ main {
     cursor: pointer;
 
 }
+#Edit_CLOSE_ADDRESS {
+    border-radius: 50%;
+    padding: 7px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#Edit_CLOSE_ADDRESS:hover {
+    background-color: #bebebe9c;
+    cursor: pointer;
+
+}
 
 
 .MSDSADSASADSDSDSADSADD {
@@ -433,6 +470,22 @@ main {
 }
 
 #State_Name option, #District_Name option{
+    color: black;
+}
+#Edit_State_Name, #Edit_District_Name {
+    cursor: pointer;
+    margin: 8px 0;
+    color: #919191;
+    width: 116px;
+    /* padding: 6px 8px; */
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #bebebe9c;
+}
+
+#Edit_State_Name option, #Edit_District_Name option{
     color: black;
 }
 

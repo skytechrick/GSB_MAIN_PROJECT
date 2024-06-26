@@ -23,9 +23,9 @@ Cus_Address_Page = async (req, res) => {
                 if(Pass == element.ID){
                     aap = `<div class="Addresssss">
                     <div class="Addd">${element.Name} - (Default)</div>
-                    <address>${element.Locality}, ${element.Landmark}<br>${element.City}, ${element.Town},<br>PIN: ${element.PIN},  <br>Dist: ${element.District_Name} <br>${element.State_Name}, India <br>+91 ${element.Mobile} <br> +91 ${element.Alt} <br></address>
+                    <address>${element.Locality}, ${element.Landmark}<br>${element.Town}, ${element.City},<br>PIN: ${element.PIN},  <br>Dist: ${element.District_Name} <br>${element.State_Name}, India <br>+91 ${element.Mobile} <br> +91 ${element.Alt} <br></address>
                     <div class="BSATSRFSA">
-                        <button style="padding: 0 8px" class="Edit"><span class="material-symbols-outlined">edit</span></button>
+                        <button style="padding: 0 8px" onclick="Edit_Ad(${element.ID})" class="Edit"><span class="material-symbols-outlined">edit</span></button>
                         
                         
                         </div></div>`                    
@@ -33,10 +33,10 @@ Cus_Address_Page = async (req, res) => {
                 }else{
                     D = D + `<div class="Addresssss">
                     <div class="Addd">${element.Name}</div>
-                    <address>${element.Locality}, B.P Road<br>Bagdogra, Loknath Nagar,<br>PIN: 734014,  <br>Dist: Darjeeling <br>West Bengal, India <br>+91 8436431656 <br> +91 9832459014 <br></address>
+                    <address>${element.Locality}, ${element.Landmark}<br>${element.Town}, ${element.City},<br>PIN: ${element.PIN},  <br>Dist: ${element.District_Name} <br>${element.State_Name}, India <br>+91 ${element.Mobile} <br> +91 ${element.Alt} <br></address>
                     <div class="BSATSRFSA">
                         <button class="Del" onclick="DeleteAd(${element.ID});"><span class="material-symbols-outlined">delete</span></button>
-                        <button class="Edit"><span class="material-symbols-outlined">edit</span></button>
+                        <button class="Edit" onclick="Edit_Ad(${element.ID});"><span class="material-symbols-outlined">edit</span></button>
                         <button class="Default" type="button" onclick="Set_Default(${element.ID});">Set as default</button>
                     </div></div>`
                 }
