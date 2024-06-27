@@ -202,10 +202,10 @@ PRODUCT_ROW = async (req, res) => {
                 <div class="Prize_P">
                     <span class="sym">&#8377;</span>
                     <span class="selP">${SELL}</span>
-                    <button title="Add to Cart" class="CART_ADDDD" type="button" onclick="Cart_Add("${PRO_ID}");">
+                    <button title="Add to Cart" class="CART_ADDDD" type="button" onclick="Cart_Add('${PRO_ID}');">
                         <span class="material-symbols-outlined">add_shopping_cart</span>
                     </button>
-                    <button title="Buy Now" class="CART_BUYYY" type="button" onclick="Cart_Buy("${PRO_ID}");">
+                    <button title="Buy Now" class="CART_BUYYY" type="button" onclick="Buy_Now('${PRO_ID}');">
                         <span class="material-symbols-outlined">shopping_bag</span>
                     </button>
                 </div>

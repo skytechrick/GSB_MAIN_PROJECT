@@ -7,6 +7,18 @@ const Cus_Address_Edit_Req_Post = async (req, res) => {
     let COOK = req.cookies.U_ID;
     Auths = await User_Auth(COOK);
     if (Auths != null) {
+        let d = Auths.Addresses.Address;
+        let element;
+        for (let q = 0; q < d.length; q++) {
+            element = d[q];
+            if(element.ID == req.body.ID){
+                break;
+
+            }else{
+                element = [];
+            }
+            
+        }
         let innder = `<div id="Edit_ADdddressssss_I1">
             <div class="boxxAddddd">
                 <div class="boxxAddddd_Top">
@@ -16,16 +28,16 @@ const Cus_Address_Edit_Req_Post = async (req, res) => {
                 </div>
                 <div class="MSDSADSASADSDSDSADSADD">
                     <div>
-                        <input id="Edit_Name" placeholder="Name" type="text">
-                        <input id="Edit_PIN" placeholder="PIN" autocomplete="off" spellcheck="false" type="text" maxlength="6">
+                        <input value="${element.Name}" id="Edit_Name" placeholder="Name" type="text">
+                        <input value="${element.PIN}" id="Edit_PIN" placeholder="PIN" autocomplete="off" spellcheck="false" type="text" maxlength="6">
                     </div>
                     <div>
-                        <input id="Edit_Locality" placeholder="Locality" autocomplete="off" spellcheck="false" type="text">
-                        <input id="Edit_Landmark" placeholder="Landmark/road" autocomplete="off" spellcheck="false" type="text">
+                        <input value="${element.Locality}" id="Edit_Locality" placeholder="Locality" autocomplete="off" spellcheck="false" type="text">
+                        <input value="${element.Landmark}" id="Edit_Landmark" placeholder="Landmark/road" autocomplete="off" spellcheck="false" type="text">
                     </div>
                     <div>
-                        <input id="Edit_Town" placeholder="Town" autocomplete="off" spellcheck="false" type="text">
-                        <input id="Edit_City" placeholder="City" autocomplete="off" spellcheck="false" type="text">
+                        <input value="${element.Town}" id="Edit_Town" placeholder="Town" autocomplete="off" spellcheck="false" type="text">
+                        <input value="${element.City}" id="Edit_City" placeholder="City" autocomplete="off" spellcheck="false" type="text">
                     </div>
                     <div>
                         <select name="Edit_State_Name" id="Edit_State_Name">
@@ -78,8 +90,8 @@ const Cus_Address_Edit_Req_Post = async (req, res) => {
                     </div>
                     <div>
 
-                        <input id="Edit_Mobile" placeholder="Mobile Number" autocomplete="off" spellcheck="false" type="text" maxlength="10">
-                        <input id="Edit_Alt" placeholder="Alt. Number" autocomplete="off" spellcheck="false" type="text" maxlength="10">
+                        <input value="${element.Mobile}" id="Edit_Mobile" placeholder="Mobile Number" autocomplete="off" spellcheck="false" type="text" maxlength="10">
+                        <input value="${element.Alt}" id="Edit_Alt" placeholder="Alt. Number" autocomplete="off" spellcheck="false" type="text" maxlength="10">
                     </div>
                     <div>
                         <center >

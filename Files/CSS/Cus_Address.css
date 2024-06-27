@@ -258,6 +258,8 @@ main {
 
 .Edit span:nth-child(1) {
     font-size: 16px;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 
@@ -268,6 +270,9 @@ main {
 .Del span{
     border-radius: 50%;
     padding: 6px;
+    
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
     font-size: 15px;
 }
 .Del span:hover{

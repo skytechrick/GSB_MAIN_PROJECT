@@ -5,7 +5,7 @@ const {JWTV} = require("./JWT_.js");
 
 
 
-User_Auth = async (Auths) => {
+const User_Auth = async (Auths) => {
 
     let COOK = Auths;
 

@@ -1,6 +1,6 @@
 const User_Auth = require("../User_Auth.js");
 
-Cus_Profile_Page = async (req, res) => {
+const Cus_Profile_Page = async (req, res) => {
     let COOK = req.cookies.U_ID;
     Auths = await User_Auth(COOK);
     if (Auths != null) {

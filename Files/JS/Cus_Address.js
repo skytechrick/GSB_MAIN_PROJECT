@@ -418,47 +418,44 @@ function Add_Box(){
     document.getElementById("ADdddressssss").style.display = "block";
 
 }
+
+
 document.addEventListener("DOMContentLoaded", ()=>{
     let d = document.getElementById("Edit_ADdddressssss")
-    STATE_DISTRICT1();
-    
-    document.getElementById("Edit_CLOSE_ADDRESS").addEventListener('click', ()=>{
-        document.getElementById("ADdddressssss").style.display = "none";
-    });
     if (window.getComputedStyle(d).display == "block") {
-        
+        // STATE_DISTRICT1();
         
         document.getElementById("Edit_Name").addEventListener('input', () => {
-        document.getElementById("Message").style.display = "none";
-    });
-    document.getElementById("Edit_PIN").addEventListener('input', () => {
-        document.getElementById("Message").style.display = "none";
-    });
-    document.getElementById("Edit_Locality").addEventListener('input', () => {
-        document.getElementById("Message").style.display = "none";
-    });
-    document.getElementById("Edit_Landmark").addEventListener('input', () => {
-        document.getElementById("Message").style.display = "none";
-    });
-    document.getElementById("Edit_Town").addEventListener('input', () => {
-        document.getElementById("Message").style.display = "none";
-    });
-    document.getElementById("Edit_City").addEventListener('input', () => {
-        document.getElementById("Message").style.display = "none";
-    });
-    document.getElementById("Edit_Mobile").addEventListener('input', () => {
-        document.getElementById("Message").style.display = "none";
-    });
-    document.getElementById("Edit_Alt").addEventListener('input', () => {
-        document.getElementById("Message").style.display = "none";
-    });
-    document.getElementById("Edit_State_Name").addEventListener('change', () => {
-        document.getElementById("Message").style.display = "none";
-    });
-    document.getElementById("Edit_District_Name").addEventListener('change', () => {
-        document.getElementById("Message").style.display = "none";
-    });
-}
+            document.getElementById("Edit_Message").style.display = "none";
+        });
+        document.getElementById("Edit_PIN").addEventListener('input', () => {
+            document.getElementById("Edit_Message").style.display = "none";
+        });
+        document.getElementById("Edit_Locality").addEventListener('input', () => {
+            document.getElementById("Edit_Message").style.display = "none";
+        });
+        document.getElementById("Edit_Landmark").addEventListener('input', () => {
+            document.getElementById("Edit_Message").style.display = "none";
+        });
+        document.getElementById("Edit_Town").addEventListener('input', () => {
+            document.getElementById("Edit_Message").style.display = "none";
+        });
+        document.getElementById("Edit_City").addEventListener('input', () => {
+            document.getElementById("Edit_Message").style.display = "none";
+        });
+        document.getElementById("Edit_Mobile").addEventListener('input', () => {
+            document.getElementById("Edit_Message").style.display = "none";
+        });
+        document.getElementById("Edit_Alt").addEventListener('input', () => {
+            document.getElementById("Edit_Message").style.display = "none";
+        });
+        document.getElementById("Edit_State_Name").addEventListener('change', () => {
+            document.getElementById("Edit_Message").style.display = "none";
+        });
+        document.getElementById("Edit_District_Name").addEventListener('change', () => {
+            document.getElementById("Edit_Message").style.display = "none";
+        });
+    }
 })
 
 
@@ -731,7 +728,7 @@ function Edit_Address(ID) {
                     document.getElementById("Edit_Message").style.display = "none";
                     location.reload();
                     
-                }, 2000);
+                }, 1800);
                 
             }
             // console.log(data);
@@ -797,7 +794,7 @@ function DeleteAd(ID) {
 }
 
 function Set_Default(ID) {
-    if (confirm("You are about to set the address as default.")) {
+    // if (confirm("You are about to set the address as default.")) {
         fetch("/address_set_default",{
             method:"POST",
             headers:{"Content-Type":"application/json"},
@@ -805,10 +802,10 @@ function Set_Default(ID) {
 
         }).then(response=>{return response.json()}).then(data => {
             if(data.Message == "Default address selected."){
-                Message(data.Message);
-                setTimeout(() => {
+                // Message(data.Message);
+                // setTimeout(() => {
                     location.reload();
-                }, 3000);
+                // }, 3000);
             }else{
                 Message(data.Message);
 
@@ -817,7 +814,7 @@ function Set_Default(ID) {
         }).catch(e =>{
             Message("Connection error...");
         })
-    }
+    // }
     
 }
 
@@ -833,6 +830,11 @@ function Edit_Ad(ID) {
         document.getElementById("Edit_ADdddressssss").innerHTML = data.innder;
         document.getElementById("Edit_ADdddressssss").style.display = "block";
 
+        document.getElementById("Edit_CLOSE_ADDRESS").addEventListener('click', ()=>{
+            document.getElementById("Edit_ADdddressssss").style.display = "none";
+        });
+        
+    STATE_DISTRICT1();
     }).catch(e =>{
         Message("Connection error...");
     })

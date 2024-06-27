@@ -92,6 +92,8 @@ Product_Page = async (req, res) =>{
                                 MRP:PG.Prize.MRP,
                                 IMAGES: FILES,
 
+                                Product_ID:elem.Product_ID,
+
                                 OFFFER: Offer_Per (PG.Prize.MRP, PG.Prize.Our_Prize),
 
                                 Des: PG.Description,
