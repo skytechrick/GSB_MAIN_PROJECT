@@ -13,6 +13,7 @@ const Cart_Page_Get = async (req, res) => {
         let zz = Auths.Cart;
         let All = await Product.find({});
         let l;
+        let Total = 0;
         let SubTotal = 0;
         let TotalProducts = zz.length;
         let TotalQuantity = 0;
@@ -39,6 +40,7 @@ const Cart_Page_Get = async (req, res) => {
 
 
                 SubTotal += (Number(element.Quantity)*cc.Prize.Our_Prize)
+                Total += (Number(element.Quantity)*cc.Prize.MRP)
 
                 let ds = `
                     <div id="Productstart${x}" class="Productstart">
@@ -77,7 +79,7 @@ const Cart_Page_Get = async (req, res) => {
                                     <button onclick="Plus(${x});" class="plus" aria-label="Increase">&plus;</button>
                                 </div>
                                 <div class="Submit_Qua">
-                                    <button id="Updatebtn${x}" onclick="Update_Stock('${id}', ${x});">Update</button>
+                                    <button id="Updatebtn${x}" onclick="Update_Stock('A${id}', ${x});">Update</button>
                                 </div>
                             </div>
                             <div id="Quantity00${x}" class="Quantity2">
@@ -100,6 +102,7 @@ const Cart_Page_Get = async (req, res) => {
         let d = {
             Products:l,
             TotalQuantity:TotalQuantity,
+            Total:NumToINR(Total),
             TotalProducts:TotalProducts,
             SubTotal:NumToINR(SubTotal),
             Name: Auths.First_Name,
@@ -108,6 +111,8 @@ const Cart_Page_Get = async (req, res) => {
             Logout1: `<a href="/logout" class="Profile_Options_Nav2">Logout</a>`,
 
         }
+        d["OFF"] = NumToINR(Total-SubTotal);
+        d["DIS"] = Offer_Per(Total, SubTotal);
 
         res.status(200).render("Cus_Cart_Page", d);
 

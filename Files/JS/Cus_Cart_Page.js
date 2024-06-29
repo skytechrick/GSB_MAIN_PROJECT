@@ -122,7 +122,7 @@ function Update_Stock(n, z) {
         ID:x,
         Quantity:val,
     }
-    fetch("/cart/update",{
+    fetch("/cart_update",{
         method:"POST",
         headers:{"Content-Type":"application/json"},
         body: JSON.stringify(Send),
@@ -138,7 +138,10 @@ function Update_Stock(n, z) {
             let q = data.Num;
             
             document.getElementById(`Selecteds${z}`).innerHTML = q;
-            
+            setTimeout(() => {
+                
+                location.reload();
+            }, 700);
             
         }else{
             let xx = `Quantity${z}`;
@@ -146,11 +149,19 @@ function Update_Stock(n, z) {
             document.getElementById(xx).style.display = "none";
             document.getElementById(yy).style.display = "flex";
             document.getElementById(zz).disabled = false;
-            console.log("Unable to ");
-
+            // console.log("Unable to ");
+            setTimeout(() => {
+                
+                location.reload();
+            }, 700);
+            
         }
     }).catch(e=>{
-        console.log("Error...");
+        setTimeout(() => {
+            
+            location.reload();
+        }, 700);
+        // console.log("Error...");
 
     })
 
@@ -181,13 +192,24 @@ function Delete_Cart(ID,x) {
             let Productstart = `Productstart${x}`;
             document.getElementById(Productstart).innerHTML = "";
             document.getElementById(Productstart).style.display = "none";
+            
+            setTimeout(() => {
+                
+                location.reload();
+            }, 700);
         }else{
             document.getElementById(Delete_Cart).disabled = false;
             document.getElementById(Delete_Cart).style.backgroundColor = "rgb(251, 131, 255)";
 
         }
-    }).catch(e=>{console.log("Error")})
-    console.log("s");
+    }).catch(e=>{
+        
+        setTimeout(() => {
+            
+            location.reload();
+        }, 700);
+    });
+    // console.log("s");
     
     
 }
@@ -211,5 +233,5 @@ function Delete_Cart(ID,x) {
 
 
 function ProccedToCheckOut(){
-    
-}
+    window.location.replace("http://192.168.0.12/cart/checkout");
+}; 

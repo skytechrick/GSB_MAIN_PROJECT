@@ -507,6 +507,221 @@ section {
 
 
 
+@media screen and (max-width:1500px) {
+    .section{
+        width: 90%;
+    }
+    
+}
+
+@media screen and (max-width:1350px) {
+    .section{
+        width: 95%;
+    }
+    
+}
+
+@media screen and (max-width:1350px) {
+    .section{
+        margin-top: 65px;
+    }
+    
+}
+
+@media screen and (max-width:1150px) {
+    .section{
+        flex-direction: column;
+    }
+    .section >div{
+        width: calc(100%);
+        border: none;
+    }
+    .Shopping_Cart_Div {
+        /* width: calc(100%); */
+        border: none;
+        /* width: calc(100%-40px); */
+    }
+    /* .main_Prpductsfsffsafs */
+    
+}
+
+
+
+@media screen and (max-width:828px) {
+    .section{
+        margin-top: 20px;
+    }
+    .Productstart{
+        flex-direction: column;
+    }
+    .Product_Sdsdf {
+        width: 100%;
+    }
+    .QuantityTT{
+        width: 100%;
+        
+    }
+    .Quantity2{
+        display: flex;
+        margin-right: 20px;
+        justify-content: right;
+        width: 100%;
+        align-items: initial;
+    }
+    .Quantity1{
+        /* display: flex; */
+        
+        margin-right: 20px;
+        justify-content: right;
+        width: 100%;
+        flex-direction: row;
+        align-items: initial;
+    }
+    .Submit_Qua{
+        display: flex;
+        justify-content: right;
+        align-items: initial;
+        margin: 0;
+        margin-left: 10px;
+        /* width: 100%; */
+        
+    }
+    .Submit_Qua button{
+        border-radius: 4px;
+    }
+    
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 570px) {
+
+    .Product_Sdsdf {
+        flex-direction: column;
+    }
+    .Product_Sdsdf > div{
+        width: 100%;
+    }
+    .Imgsgs a{
+        width: 100%;
+
+    }
+    .Imgsgs a img{
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -38,6 +38,7 @@ const Cus_Address_Edit_Req_Post = require("./Customer_Side/Cus_Address_Edit_Req_
 const Cart_Page_Get = require("./Cart/Cart_Page_Get.js");
 const Cart_Button_Anywhere = require("./Cart/Cart_Button_Anywhere.js");
 const Cart_Delete = require("./Cart/Cart_Delete.js");
+const Cart_Stock_Update = require("./Cart/Cart_Stock_Update.js");
 
 // _______________________________________________________________________________________________________
 // _______________________________________________________________________________________________________
@@ -278,6 +279,7 @@ app.post('/address_set_default', async (req, res) => {Cus_Address_Default_Post(r
 app.get('/cart', async (req, res) => {Cart_Page_Get(req, res)});
 app.post('/cart_add', async (req, res) => {Cart_Button_Anywhere(req, res)});
 app.post('/cart_delete', async (req, res) => {Cart_Delete(req, res)});
+app.post('/cart_update', async (req, res) => {Cart_Stock_Update(req, res)});
 
 
 

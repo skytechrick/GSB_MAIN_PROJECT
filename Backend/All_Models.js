@@ -25,6 +25,7 @@ let PP = {
     Options: { type: Object },
     Brand_Name: { type: String },
     HashTags: { type: Object },
+    Delivery_Charge:{type:Number},
     Prize: {
         MRP: { type: String },
         Cost_Price: { type: String },
