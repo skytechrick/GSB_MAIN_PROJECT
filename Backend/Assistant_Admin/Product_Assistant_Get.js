@@ -52,21 +52,21 @@ Product_Assistant_Get = async (req, res) =>{
             }else{
                 res.clearCookie("AS_PRO",{"path":"/assistant/product"});
                 res.clearCookie("NOP",{"path":"/assistant/product"});
-                res.redirect("http://192.168.0.44/assistant/product/login");
+                res.redirect("http://192.168.0.12/assistant/product/login");
             }
             
         }else{
             res.clearCookie("AS_PRO",{"path":"/assistant/product"});
             res.clearCookie("NOP",{"path":"/assistant/product"});
             
-            res.redirect("http://192.168.0.44/assistant/product/login");
+            res.redirect("http://192.168.0.12/assistant/product/login");
 
         }
         
     }else{
         res.clearCookie("AS_PRO",{"path":"/assistant/product"});
         res.clearCookie("NOP",{"path":"/assistant/product"});
-        res.status(200).redirect("http://192.168.0.44/assistant/product/login");
+        res.status(200).redirect("http://192.168.0.12/assistant/product/login");
     }
 
 

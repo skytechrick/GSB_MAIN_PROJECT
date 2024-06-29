@@ -1,0 +1,515 @@
+main {
+    margin-top: 40px;
+    width: 100%;
+}
+
+
+section {
+    background-color: white;
+
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 10px #aaaaaa90;
+}
+
+.Mainssss {
+    border-right: 1px solid #aaa;
+
+    width: 70%;
+    /* background-color: antiquewhite; */
+    display: inline-block;
+
+}
+
+
+.Shopping_Cart_Div {
+
+    /* border-left: 1px solid #aaa; */
+    padding: 0px 20px;
+}
+
+.Shopping_Cart_Div a {
+    color: black;
+    text-decoration: none;
+}
+
+.Shopping_Cart_Div a h2 {
+    margin: 0px;
+    padding: 15px 0;
+    /* padding-left: 0px; */
+    /* display: inline-block; */
+    border-bottom: 1px solid #aaa;
+}
+
+.Shopping_Cart_Div a h2:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+.main_Prpductsfsffsafs {
+    padding: 10px 20px;
+}
+
+
+#Main_Productssdsfasf {display: block;}
+
+.Productstart {
+    /* background-color: aqua; */
+    border-radius: 3px;
+    display: flex;
+    border: 1px solid #c2c2c296;
+    padding: 15px;
+    padding-right: 0;
+    margin: 3px 0;
+}
+
+.Product_Sdsdf {
+    display: flex;
+    
+    width: 80%;
+
+}
+
+.QuantityTT {
+    width: 20%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+
+
+
+
+.quantity {
+    max-width: 120px;
+    height: 30px;
+    display: flex;
+    border: 2px solid rgb(251, 131, 255);;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quantity button {
+    background-color: rgb(251, 131, 255);;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    width: 30px;
+    height: auto;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.quantity button:hover {
+    background-color: rgb(252, 164, 255);;
+}
+
+.input-box {
+    width: 40px;
+    text-align: center;
+    border: none;
+    padding: 8px 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Hide the number input spin buttons */
+.input-box::-webkit-inner-spin-button,
+.input-box::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.input-box[type="number"] {
+    appearance: textfield;
+}
+
+
+
+.Submit_Qua {
+    margin-top: 8px;
+
+}
+.Submit_Qua button {
+    padding: 6px 9px;
+    display: block;
+    background-color: rgb(251, 131, 255);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 200ms background-color;
+}
+.Submit_Qua button:hover {
+    background-color: rgba(249, 85, 255, 0.856);
+
+}
+
+.Quantity1 {
+    display: none;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.Quantity2 {
+    display: flex;
+    /* display: none; */
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.Quantity2 button {
+    padding: 6px 9px;
+    /* display: block; */
+    background-color: rgb(251, 131, 255);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 200ms background-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px #3636369c;
+}
+.Quantity2 button:hover {
+    background-color: rgba(249, 85, 255, 0.856);
+
+
+}
+
+.ChangeBTN {
+    position: relative;
+    top: -1px;
+    padding: 6px 9px;
+    /* display: block; */
+    /* background-color: rgb(251, 131, 255); */
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 200ms background-color;
+    display: inline-block;
+    color: black;
+    font-weight: bold;
+    /* text-shadow: 1px 1px 4px #3636369c; */
+}
+.ChangeBTN:hover {
+    text-decoration: underline;
+    /* background-color: rgba(249, 85, 255, 0.856); */
+
+}
+
+.tn_edit {
+    position: relative;
+    top: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Imgsgs {
+    width: 200px;
+}
+.Imgsgs a{
+    width: 200px;
+    height: 100%;
+    display: block;
+
+}
+
+.Imgsgs img{
+    width: 100%;
+}
+
+.P_Title{
+    /* border-right: 1px solid #c2c2c296; */
+    
+    display: block;
+
+    height: 100%;
+    
+}
+.P_Title > div{
+    padding: 6px 10px;
+    /* padding: 0 10px; */
+    width: auto;
+
+}
+
+/* .Title--a { */
+    /* border-bottom: 1px solid #c2c2c296; */
+/* } */
+.Title--a a{
+    color: black;
+    text-decoration: none;
+}
+.Title--a a:hover{
+    text-decoration: underline;
+
+}
+
+
+
+.rupe_symb{
+    font-size: 12px;
+}
+
+.prisss {
+    position: relative;
+    top: 0;
+}
+
+
+.Prizessd{
+    font-size: 19px;
+}
+
+.MRSPS{
+    font-size: 14px;
+    text-decoration: line-through;
+}
+
+
+.OFFERRER {
+    display: flex;
+    color: white;
+    position: absolute;
+    background-color: red;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    top: 10px;
+    left: 130px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.Stock {
+    border-radius: 6px ;
+    background-color: rgb(0, 179, 0);
+    color: white;
+    padding: 5px 9px;
+    margin-top: 4px;
+    display: inline-block;
+}
+.Stock_Quantity {
+    border-radius: 6px ;
+    background-color: white;
+    color: rgb(235, 3, 220);
+    padding: 5px 9px;
+    margin-top: 4px;
+    display: inline-block;
+
+}
+
+.P_Title > div:nth-child(3){
+
+    padding: 5px 10px;
+}
+
+
+
+
+
+
+
+.Deliveryefe {
+    /* padding: 0 10px; */
+    font-size: 13px;
+}
+
+.Note_cart {
+    /* padding: 0 10px; */
+    font-size: 13px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Prizinggg {
+    width: 30%;
+    display: inline-block;
+}
+
+.Subtotaoldlsldasl {
+
+    padding: 20px;
+
+}
+
+.Medd {
+    padding: 10px 10px;
+}
+
+.BOXXXX {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 5px 0;
+    border-bottom: 1px solid black;
+}
+
+.Taa_Div {
+    margin: 10px 0;
+    width: 100%;
+    /* background-color: yellow; */
+
+}
+
+.Tab {
+    width: 100%;
+    font-size: 14px;
+    border-collapse: collapse;
+    /* border: 1px solid #aaa; */
+}
+.Tab tr{
+    width: 100%;
+    
+}
+
+.Tab tr td{
+    padding: 5px 10px;
+    width: 50%;
+}
+.Tab tr td:nth-child(1){
+    text-align: right;
+}
+
+.Tab tr td:nth-child(2){
+    text-align: right;
+}
+
+
+.red {
+    color: red;
+}
+
+
+
+#sdasdssdfas {
+    border: 1px solid black;
+
+    /* display: block; */
+}
+
+.Checkoutttt {
+    width: 100%;
+
+}
+
+
+.NextBTn {
+    display: flex;
+    justify-content: right;
+}
+
+
+#ProccedToCheckOut {
+    margin: 8px 0px;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: rgb(251, 131, 255);
+    padding: 8px 12px;
+    transition: 200ms background-color;
+    cursor: pointer;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.623);
+}
+
+#ProccedToCheckOut:hover {
+    /* border: 1px solid #aaa; */
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.47); */
+    background-color: rgb(243, 83, 249);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -86,6 +86,7 @@ Product_Page = async (req, res) =>{
                         
                         
                             let p = {
+                                P_ID:PG.Product_ID,
                                 Title: PG.Title,
                                 Store_Name:"GSB - Store",
                                 Selling_P:PG.Prize.Our_Prize,
@@ -138,6 +139,7 @@ Product_Page = async (req, res) =>{
 
                             
                             let p = {
+                                P_ID:PG.Product_ID,
                                 Title: PG.Title,
                                 Store_Name:"GSB - Store",
                                 Selling_P:PG.Prize.Our_Prize,
@@ -180,6 +182,7 @@ Product_Page = async (req, res) =>{
 
                             
                         let p = {
+                            P_ID:PG.Product_ID,
                             Title: PG.Title,
                             Store_Name:"GSB - Store",
                             Selling_P:PG.Prize.Our_Prize,
@@ -222,6 +225,7 @@ Product_Page = async (req, res) =>{
 
                             
                     let p = {
+                        P_ID:PG.Product_ID,
                         Title: PG.Title,
                         Store_Name:"GSB - Store",
                         Selling_P:PG.Prize.Our_Prize,
@@ -264,6 +268,7 @@ Product_Page = async (req, res) =>{
             res.clearCookie("U_ID");
 
             let p = {
+                P_ID:PG.Product_ID,
                 Title: PG.Title,
                 Store_Name:"GSB - Store",
                 Selling_P:PG.Prize.Our_Prize,
