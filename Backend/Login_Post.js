@@ -89,9 +89,9 @@ async function Login_Post(req, res) {
                             if (elem.User_Password === Ps) {
                                 let ele;
                                 let DD = await Signup_Model.find({});
-                                console.log(Email);
-                                console.log('Email');
-                                console.log('Email');
+                                // console.log(Email);
+                                // console.log('Email');
+                                // console.log('Email');
                                 for (let x = 0; x < DD.length; x++) {
                                     ele = DD[x];
                                     if (ele.Email == Email.trim().toLowerCase()) {
