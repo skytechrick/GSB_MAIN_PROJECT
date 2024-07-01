@@ -13,77 +13,87 @@ document.getElementById("CashOnDelivert_1").addEventListener("input", ()=>{
 });
 
 
-let Paymentsss = document.getElementById("Paymentsss");
+function Payment_Confirm(response) {
+    fetch("/cart_confirm_response",{
+        headers:{"Content-Type":"application/json"},
+        method:"POST",
+        body: JSON.stringify(response)
+    }).then(response=>{return response.json()}).then(data=>{
+        if(data.Message == 1){
+            Message1(1);
+            
+        }else{
+            Message1(2);
+
+        }
+
+    }).catch(e=>{
+        console.log("Error verification.");
+
+    })
+    console.log(response);
+    
+}
+
+function Payment_Failed(response) {
+    alert(response.error.code);
+    alert(response.error.description);
+    alert(response.error.source);
+    alert(response.error.step);
+    alert(response.error.reason);
+    alert(response.error.metadata.order_id);
+    alert(response.error.metadata.payment_id);
+    // console.log(response);
+    
+}
+    
 
 
 
-    // let CashOnDelivert_1 = document.getElementById("CashOnDelivert_1");
-    // let PrePaid = document.getElementById("PrePaid");
-    // let Paymentsss = document.getElementById("Paymentsss");
-    // let Confim_Btn = document.getElementById("Confim_Btn");
+
 
 
 function Confirm_Payment(n){
-    console.log(n);
+
     document.getElementById("Confim_Btn").style.display = "none";
     let Sent;
-    
-    if (n == 1) {
-        Sent = {
-            Payment:true
-        }
-        
-    }else if(n == 2){
-        Sent = {
-            Payment:true
-        }
-        
-    }else{
-        Message("Unable to procced");
-    }
-
+    if (n == 1) {Sent = {Payment:true}}else if(n == 2){Sent = {Payment:true}}else{Message1(2);}
     if ( n == 2) {
-        
         fetch("/cart_confirm_Post",{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify(Sent),
-            
-            
         }).then(response=>{return response.json()}).then(data=>{
             console.log(data.Message);
-
+            if (data.Message == true){
+                Message1(1);
+            }else if (data.Message == false){
+                Message1(2);
+            }else{
+                Message1(2);
+            }
         }).catch(e=>{
             document.getElementById("Confim_Btn").style.display = "flex";
+            Message1(2);
         });
-    }else if( n == 1) {
-        
-        
+    }else if(n == 1) {
         fetch("/cart_confirm_Post/payment",{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify(Sent),
-            
-            
         }).then(response=>{return response.json()}).then(data=>{
             console.log(data.Message);
             if(data.Message){
-
-
-
-
-                let options;
-
-
-                options = {
+                let options = {
                     "key": "rzp_test_DBekxO3l7UI6ie",
                     "amount": data.Amount,
                     "currency": "INR",
                     "name": "GET SKY BUY",
                     "description": data.Des,
-                    "image": "https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihYStn2gT4IEn00YDco16ZlGRJRvQqRByQhM-bomnWE1T5ZQdAYGE8x9n14W-VyvYusr2J1VjAQuCnglBu3Jnh2MMqPfNBSLWHw=w1920-h911-rw-v1",
+                    "image": "https://skytechrick.github.io/GSB_MAIN_PROJECT/Files/Img/GSB_logo.png",
                     "order_id": data.Or_ID,
-                    "callback_url":"http://192.168.0.12/cart",
+                    // "callback_url":"http://192.168.0.12/cart",
+                    "handler": Payment_Confirm,
                     "prefill": {
                         "name": data.Name,
                         "email": data.Email,
@@ -97,7 +107,8 @@ function Confirm_Payment(n){
                     }
                 };
                 
-                var rzp1s = new Razorpay(options);
+                let rzp1s = new Razorpay(options);
+                rzp1s.on('payment.failed', Payment_Failed);
                 document.getElementById('rzp-button1').onclick = function(e){
                     rzp1s.open();
                     e.preventDefault();
@@ -132,7 +143,41 @@ function Confirm_Payment(n){
 
 
 
+function Message1(n){
 
+    if(n==1){
+        let a = "Order Placed Successfully.";
+        let b = "You will get a mail for order confirmation, that if order is confirmed or not. <br>Thank You for placing order.";
+        let Messages = document.getElementById("Messages");
+        let Messagesmall = document.getElementById("Messagesmall");
+        Messages.innerHTML = a;
+        Messagesmall.innerHTML = b;
+        let Yes_No = document.getElementById("Yes_No");
+        Yes_No.innerHTML = `<span  id="Yes_No_Sp" class="material-symbols-outlined">check</span>`
+        document.getElementById("Message1").style.display = "block";
+        document.getElementById("Yes_No_Sp").style.backgroundColor = "rgb(154, 255, 199)";
+        
+        setTimeout(() => {
+            window.location.replace("http://192.168.0.12/orders");
+        }, 5000);
+    }else{
+        let a = "Unable to place order.";
+        let b = "Please try again after some time";
+        let Messages = document.getElementById("Messages");
+        let Messagesmall = document.getElementById("Messagesmall");
+        let Yes_No = document.getElementById("Yes_No");
+        Messages.innerHTML = a;
+        Messagesmall.innerHTML = b;
+        Yes_No.innerHTML = `<span  id="Yes_No_Sp" class="material-symbols-outlined">close</span>`
+        document.getElementById("Message1").style.display = "block";
+        document.getElementById("Yes_No_Sp").style.backgroundColor = "rgb(255, 153, 153)";
+        setTimeout(() => {
+            document.getElementById("Message1").style.display = "none";
+            document.getElementById("Confim_Btn").style.display = "flex";
+        }, 2000);
+
+    }
+}
 
 
 

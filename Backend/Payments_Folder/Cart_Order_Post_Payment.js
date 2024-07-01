@@ -61,6 +61,8 @@ const Cart_Order_Post_Payment = async (req, res) => {
                         await Product.updateOne({Product_ID:element.Product_ID},{
                             Quantity_Available: String(Number(element.Quantity_Available)-Number(element11.Quantity)),
                         })
+                        // console.log(String(Number(element.Quantity_Available)-Number(element11.Quantity)));
+                        // console.log("SS");
                         let ZZZ = await Orders.find({});
                         let cc = {
                             Product_ID: element.Product_ID,
@@ -128,7 +130,7 @@ const Cart_Order_Post_Payment = async (req, res) => {
 
 
 
-            instance.orders.create(options, function(err, order) {
+            instance.orders.create(options, async function(err, order) {
                 let Order = order;
                 // console.log(order.notes);
                 
@@ -139,6 +141,7 @@ const Cart_Order_Post_Payment = async (req, res) => {
                     for (let PrePa = 0; PrePa < ALLLLL.length; PrePa++) {
                         let element = ALLLLL[PrePa];
                         element = {
+                            Order_ID_Payment: Z,
                             User_ID: element.User_ID,
                             Order_ID: element.Order_ID,
                             Date: element.Date,
@@ -147,60 +150,10 @@ const Cart_Order_Post_Payment = async (req, res) => {
                             Payment_Method: element.Payment_Method,
                             Payment_Confirmed: element.Payment_Confirmed,
                             Order_Confirmed: element.Order_Confirmed,
-                            Order_ID_Payment: Z,
                         }
                         
                         let xxxxxxx = new Orders(element);
-                        xxxxxxx.save().then(async()=>{
-                            let aa = await Product.find({});
-                            let Prod;
-                            for (let index = 0; index < aa.length; index++) {
-                                Prod = aa[index];
-                                if(Prod.Product_ID == element.Product_List.Product_ID){
-                                    break;
-                                }
-                                
-                            }
-                            const Mail_Option = {
-                                from: 'New Order <getskybuy@gmail.com>',
-                                to: `ricksarkar2005@gmail.com`,
-                                subject: 'New Order - Take Fast Action | GET SKY BUY', 
-                                html: `
-                                    <!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><style>
-                                    body{font-family: Arial, sans-serif;}.conatainer{margin: 5px auto;box-sizing: border-box;box-shadow: 0 0 10px #aaa;max-width: 650px;background-color: white;}.box {padding: 15px 20px;padding-top: 0;}.conatainer h2{margin: 0;padding: 20px;background-color: rgb(97, 165, 255);border-bottom: 1px solid #aaa;}table{width: 70%;margin: auto;}table tr td:nth-child(1){font-weight: bold;}table tr td{padding: 5px;}</style></head><body>    <div class="conatainer">        <h2>New Order - Take Action Fast within 5-8 minutes | GSB - Alert</h2>        <div class="box">            <p><strong>Congratulations,</strong></p>            <p>                You have a <strong>New Order</strong>, Please take Quick Action, Either Accept or Cancel the order.            </p>     <h4>Order Details are below:</h4> <table>
-                                    <tr>
-                                        <td>Order ID:</td>
-                                        <td>${element.Order_ID}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product ID:</td>
-                                        <td>${element.Product_List.Product_ID}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Product URL:</td>
-                                        <td><a href="http://192.168.0.12/product/${Prod.Product_URL}">Link</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Quantity:</td>
-                                        <td>${element.Product_List.Quantity}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Seller Mobile Number:</td>
-                                        <td><a href="tel:+918436431656">Link</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Customer Mobile Number:</td>
-                                        <td><a href="tel:+91${element.Address.Mobile}">Link</a></td>
-                                    </tr>
-                                </table>            <p>Please take quick action. You are requested to call the seller of the product and ask if the product is available or out of stock. If available, ask the seller not to sell the product and to keep it separate from the shop so that no other customer can purchase it. Then, log in to your account and confirm the order. This must be done within 5-8 minutes.</p> <p>If the seller is not answering your phone, keep trying every few minutes. Wait until the call gets connected within 30 minutes. After that, if you still cannot reach the seller, reject the order and write a short note explaining why the order was rejected.</p>      <p>Thank You</p><p>Rick Sarkar <br>CEO</p></div>    </div></body></html>
-                                                            
-                                
-                                
-                                `
-                            };
-                            Transporter.sendMail(Mail_Option, (error, info) => { });
-
-                        })
+                        await xxxxxxx.save();
                         
                     } 
                     let XX = {
@@ -232,7 +185,44 @@ const Cart_Order_Post_Payment = async (req, res) => {
     }
 
 
-
+    // const Mail_Option = {
+    //     from: 'New Order <getskybuy@gmail.com>',
+    //     to: `ricksarkar2005@gmail.com`,
+    //     subject: 'New Order - Take Fast Action | GET SKY BUY', 
+    //     html: `
+    //         <!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><style>
+    //         body{font-family: Arial, sans-serif;}.conatainer{margin: 5px auto;box-sizing: border-box;box-shadow: 0 0 10px #aaa;max-width: 650px;background-color: white;}.box {padding: 15px 20px;padding-top: 0;}.conatainer h2{margin: 0;padding: 20px;background-color: rgb(97, 165, 255);border-bottom: 1px solid #aaa;}table{width: 70%;margin: auto;}table tr td:nth-child(1){font-weight: bold;}table tr td{padding: 5px;}</style></head><body>    <div class="conatainer">        <h2>New Order - Take Action Fast within 5-8 minutes | GSB - Alert</h2>        <div class="box">            <p><strong>Congratulations,</strong></p>            <p>                You have a <strong>New Order</strong>, Please take Quick Action, Either Accept or Cancel the order.            </p>     <h4>Order Details are below:</h4> <table>
+    //         <tr>
+    //             <td>Order ID:</td>
+    //             <td>${element.Order_ID}</td>
+    //         </tr>
+    //         <tr>
+    //             <td>Product ID:</td>
+    //             <td>${element.Product_List.Product_ID}</td>
+    //         </tr>
+    //         <tr>
+    //             <td>Product URL:</td>
+    //             <td><a href="http://192.168.0.12/product/${Prod.Product_URL}">Link</a></td>
+    //         </tr>
+    //         <tr>
+    //             <td>Quantity:</td>
+    //             <td>${element.Product_List.Quantity}</td>
+    //         </tr>
+    //         <tr>
+    //             <td>Seller Mobile Number:</td>
+    //             <td><a href="tel:+918436431656">Link</a></td>
+    //         </tr>
+    //         <tr>
+    //             <td>Customer Mobile Number:</td>
+    //             <td><a href="tel:+91${element.Address.Mobile}">Link</a></td>
+    //         </tr>
+    //     </table>            <p>Please take quick action. You are requested to call the seller of the product and ask if the product is available or out of stock. If available, ask the seller not to sell the product and to keep it separate from the shop so that no other customer can purchase it. Then, log in to your account and confirm the order. This must be done within 5-8 minutes.</p> <p>If the seller is not answering your phone, keep trying every few minutes. Wait until the call gets connected within 30 minutes. After that, if you still cannot reach the seller, reject the order and write a short note explaining why the order was rejected.</p>      <p>Thank You</p><p>Rick Sarkar <br>CEO</p></div>    </div></body></html>
+                                    
+        
+        
+    //     `
+    // };
+    // Transporter.sendMail(Mail_Option, (error, info) => { });
 
 
 

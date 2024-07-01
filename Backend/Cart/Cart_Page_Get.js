@@ -17,9 +17,12 @@ const Cart_Page_Get = async (req, res) => {
         let SubTotal = 0;
         let TotalProducts = zz.length;
         let TotalQuantity = 0;
+        let PROBTN = "";
         if(zz.length < 1){
             l = `<center style="margin:20px; text-align:center; display:block;">Your cart is empty.</center>`
+            PROBTN = ``;
         }else{
+            PROBTN = `<button id="ProccedToCheckOut" type="button" onclick="ProccedToCheckOut()">Checkout</button>;`;
             let daaa = "";
 
             for (let x = 0; x < zz.length; x++) {
@@ -105,6 +108,7 @@ const Cart_Page_Get = async (req, res) => {
             Total:NumToINR(Total),
             TotalProducts:TotalProducts,
             SubTotal:NumToINR(SubTotal),
+            PROBTN:PROBTN,
             
             Name: Auths.First_Name,
             Cart_No: Auths.Cart.length,

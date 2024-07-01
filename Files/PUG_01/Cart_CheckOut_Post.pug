@@ -385,6 +385,8 @@
 
 
                 <div id="Confim_Btn">
+                    
+                    
                     <button id="SDSFSAFSFFSFAS" onclick="Confirm_Payment(1);" type="button">Confirm Order</button>
                 </div>
 
@@ -397,6 +399,18 @@
 
 
 
+    <div id="Message1">
+        <div id="MessageTop">
+            <div id="MessageCenter">
+                <div id="Yes_No">
+                    <span id="Yes_No_Sp" class="material-symbols-outlined"></span>
+                </div>
+                <div id="Messages"></div>
+                <div id="Messagesmall"></div>
+
+            </div>
+        </div>
+    </div>
 
 
 
@@ -409,8 +423,6 @@
     <script src="/files/js/Product_Search_Box.js"></script>    
     <script src="/files/js/Cart_CheckOut_Post.js"></script>  
     
-    <!-- <script>function Confirm_Payment(n){    document.getElementById("Confim_Btn").style.display = "none";    let Sent;        if (n == 1) {        Sent = {            Payment:true        }            }else if(n == 2){        Sent = {            Payment:true        }            }else{        Message("Unable to procced");    }    if ( n == 2) {                fetch("/cart_confirm_Post",{            method:"POST",            headers:{"Content-Type":"application/json"},            body:JSON.stringify(Sent),                                }).then(response=>{return response.json()}).then(data=>{            console.log(data.Message);        }).catch(e=>{            document.getElementById("Confim_Btn").style.display = "flex";        });    }else if( n == 1) {                fetch("/cart_confirm_Post/payment",{            method:"POST",            headers:{"Content-Type":"application/json"},            body:JSON.stringify(Sent),                                }).then(response=>{return response.json()}).then(data=>{            console.log(data.Message);            if(data.Message){                document.getElementById("rzp-button1").click();                var options = {                    "key": "rzp_test_DBekxO3l7UI6ie",                    "amount": data.Amount,                    "currency": "INR",                    "name": "GET SKY BUY",                    "description": data.Des,                    "image": "http://192.168.0.12/files/img/GSB_logo.png",                    "order_id": data.Or_ID,                    "handler": function (response){                        alert(response.razorpay_payment_id);                        alert(response.razorpay_order_id);                        alert(response.razorpay_signature)                    },                    "prefill": {                        "name": data.Name,                        "email": data.Email,                        "contact": data.Mobile                    },                    "notes": {                        "address": "Razorpay Corporate Office--"                    },                    "theme": {                        "color": "#fb83ff"                    }                };                console.log(options);                var rzp1 = new Razorpay(options);                rzp1.on('payment.failed', function (response){                        alert(response.error.code);                        alert(response.error.description);                        alert(response.error.source);                        alert(response.error.step);                        alert(response.error.reason);                        alert(response.error.metadata.order_id);                        alert(response.error.metadata.payment_id);                });                document.getElementById('rzp-button1').onclick = function(e){                    rzp1.open();                    e.preventDefault();                }            }        }).catch(e=>{            document.getElementById("Confim_Btn").style.display = "flex";        });    }};</script> -->
-
 
     
 </body>

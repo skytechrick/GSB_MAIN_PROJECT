@@ -52,6 +52,8 @@ const Cart_Order_Post = async (req, res) => {
                         await Product.updateOne({Product_ID:element.Product_ID},{
                             Quantity_Available: String(Number(element.Quantity_Available)-Number(element11.Quantity)),
                         })
+                        // console.log(String(Number(element.Quantity_Available)-Number(element11.Quantity)));
+                        // console.log("SS");
                         let ZZZ = await Orders.find({});
                         let cc = {
                             Product_ID: element.Product_ID,
@@ -102,11 +104,13 @@ const Cart_Order_Post = async (req, res) => {
 
             
 
+            let xd;
             for (let PrePa = 0; PrePa < ALLLLL.length; PrePa++) {
                 const element = ALLLLL[PrePa];
                 
-                let xxxxxxx = new Orders(element);
-                xxxxxxx.save().then(async()=>{
+                let zx = new Orders(element);
+                await zx.save().then(async()=>{
+                    // console.log(element);
                     let aa = await Product.find({});
                     let Prod;
                     for (let index = 0; index < aa.length; index++) {
@@ -154,22 +158,34 @@ const Cart_Order_Post = async (req, res) => {
                         `
                     };
                     Transporter.sendMail(Mail_Option, (error, info) => { });
-
-                })
+                    xd = 1;
+                }).catch(error => {
+                    xd = 2;
+                    
+                });
             }
+            
+            if(xd == 1){
+                await Signup_Model.updateOne({Email:Auths.Email},{
+                    Cart:[],
+                });
+                res.status(200).json({Message:true});
+                // setTimeout(() => {
+                //     console.log(2143243452);
+                // }, 5000);
+            }else if(xd == 2){
 
-
-            res.status(200).json({Message:false});
+                res.status(200).json({Message:false});
+                
+            }else {
+                res.status(200).json({Message:false});
+            }
         }else{
             res.status(200).redirect("http://192.168.0.12/login");
-            
         }
-    
     } else {
         res.status(200).redirect("http://192.168.0.12/login");
     }
-
-
 }
 
 

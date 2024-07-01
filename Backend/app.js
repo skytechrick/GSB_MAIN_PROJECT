@@ -60,6 +60,7 @@ const Cart_Order_Post = require("./OrderS/Cart_Order_Post.js");
 // _______________________________________________________________________________________________________
 
 const Cart_Order_Post_Payment = require("./Payments_Folder/Cart_Order_Post_Payment.js");
+const cart_confirm_response = require("./Payments_Folder/cart_confirm_response.js");
 // _______________________________________________________________________________________________________
 // _______________________________________________________________________________________________________
 // _______________________________________________________________________________________________________
@@ -309,6 +310,7 @@ app.post('/cart/checkout', async (req, res) => {Cart_CheckOut_Post(req, res)});
 
 app.post('/cart_confirm_Post', async (req, res) => {Cart_Order_Post(req, res)});
 app.post("/cart_confirm_Post/payment", async (req, res) => {Cart_Order_Post_Payment(req,res)});
+app.post("/cart_confirm_response", async (req, res) => {cart_confirm_response(req,res)});
 
 
 
