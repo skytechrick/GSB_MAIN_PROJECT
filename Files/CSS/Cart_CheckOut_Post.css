@@ -1,0 +1,743 @@
+main {
+    width: 100%;
+
+}
+
+.section {
+    background-color: white;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    width: 90%;
+    box-shadow: 0 0 10px #aaa;
+    display: flex;
+
+    
+
+}
+
+.Mainssss {
+    width: 70%;
+    border-right: 1px solid #aaa;
+    padding: 10px 20px;
+
+    
+}
+.Mainssss h3{
+    padding: 10px 0;
+    
+    margin: 0;
+    border-bottom: 1px solid #aaa;
+
+}
+
+
+
+.FInalCheck {
+    padding: 20px;
+    
+    width: 30%;
+}
+
+.ProtT {
+    margin-top: 10px;
+    /* border: 1px solid #aaa; */
+}
+
+.ProtTitle {
+    width: 100%;
+    /* border: 1px solid #aaa; */
+    border-collapse: collapse;
+    
+}
+.ProtTitle th,.ProtTitle td{
+    text-align: center;
+    padding: 6px;
+}
+
+.Products td{
+    padding: 13px 10px;
+}
+
+.Products td:nth-child(1) {
+    text-align: left;
+
+}
+
+thead{
+    background-color: rgb(226, 226, 226);
+}
+tfoot{
+    border-top: 1px solid black;
+}
+tfoot tr td:nth-child(1){
+    text-align: right;
+    font-weight: bold;
+}
+
+tfoot tr td:nth-child(2){
+    text-align: left;
+
+}
+
+
+
+
+.Taa_Div {
+    margin: 10px 0;
+    width: 100%;
+    font-weight: bold;
+
+}
+
+.Tab {
+    width: 100%;
+    font-size: 14px;
+    border-collapse: collapse;
+    /* border: 1px solid #aaa; */
+}
+.Tab tr{
+    width: 100%;
+    
+}
+
+.Tab tr td{
+    padding: 5px 10px;
+    width: 50%;
+}
+.Tab tr td:nth-child(1){
+    text-align: right;
+}
+
+.Tab tr td:nth-child(2){
+    text-align: left;
+}
+
+#sdasdssdfas {
+    font-size: 18px;
+    border-top: 1px solid black;
+}
+
+
+.red {
+    color: red;
+}
+
+
+
+.Adresssss {
+    /* border: 1px solid #aaa; */
+    
+    /* padding-left: 10px; */
+    display: block;
+    /* background-color: aqua; */
+}
+
+
+
+
+.cha {
+    padding: 7px 0;
+}
+
+.HeaAd {
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.HeaAd a{
+    text-decoration: none;
+}
+.HeaAd a:hover{
+    text-decoration: underline;
+}
+
+
+.Addddrsess11 {
+    padding-left: 20px;
+    padding-bottom: 15px;
+}
+
+
+.Paymentsss {
+    padding-left: 25px;
+}
+
+
+
+.Payment {
+    display: block;
+}
+
+.PaymentOptions h3{
+    border-bottom: 1px solid #aaa;
+
+}
+
+
+
+.Oppt {
+    padding: 10px ;
+
+}
+
+.Oppt input {
+    outline: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+
+}
+.Oppt label {
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    font-weight: bold;
+    font-size: 17px;
+    outline: none;
+    cursor: pointer;
+    
+}
+.Oppt label:hover{
+    text-decoration: underline;
+}
+
+
+
+
+#Confim_Btn {
+    /* border: 1px solid #aaa; */
+    display: flex;
+    justify-content: center;
+}
+#Confim_Btn button{
+    padding: 10px 15px;
+    border-radius: 6px;
+    outline: none;
+    border: none;
+    background-color: rgb(251, 131, 255);
+    font-weight: bold;
+    text-shadow: 0 0 5px #444444;
+
+    font-size: 14px;
+    /* color: rgb(66, 66, 66); */
+    color: white;
+    cursor: pointer;
+    transition: 200ms background-color;
+}
+
+#Confim_Btn button:hover{
+    /* text-decoration: underline; */
+    background-color: rgb(252, 164, 255);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -67,7 +67,7 @@ const Cart_Page_Get = async (req, res) => {
                                 </div>
                                 <div class="Bottomm">
                                     <div class="Deliveryefe">Delivery within 5-10 days after placing order</div>
-                                    <div class="Note_cart"><strong>NOTE: </strong>You will receive an order confirmation mail, after placing your order Within 5-10 minutes.</div>
+                                    <div class="Note_cart"><strong>NOTE: </strong>You will receive an order confirmation mail, after placing your order Within 15-25 minutes.</div>
                                 </div>
                             </div>
                         </div>
@@ -105,6 +105,7 @@ const Cart_Page_Get = async (req, res) => {
             Total:NumToINR(Total),
             TotalProducts:TotalProducts,
             SubTotal:NumToINR(SubTotal),
+            
             Name: Auths.First_Name,
             Cart_No: Auths.Cart.length,
             Login: "",
@@ -117,7 +118,7 @@ const Cart_Page_Get = async (req, res) => {
         res.status(200).render("Cus_Cart_Page", d);
 
     } else {
-        res.status(200).redirect("192.168.0.12/login");
+        res.status(200).redirect("http://192.168.0.12/login");
     }
 
 

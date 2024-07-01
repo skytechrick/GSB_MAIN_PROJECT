@@ -22,7 +22,7 @@ const Cart_Stock_Update = async (req, res) => {
             if(ID == req.body.ID){
 
                 // console.log(Number(element.Quantity_Available) +"  "+ Number(req.body.Quantity));
-                if (Number(element.Quantity_Available) >= Number(req.body.Quantity) && Number(req.body.Quantity) >1) {
+                if (Number(element.Quantity_Available) >= Number(req.body.Quantity) && Number(req.body.Quantity) >=1) {
                     pp = 1;
                     // console.log("element1");
                     break;

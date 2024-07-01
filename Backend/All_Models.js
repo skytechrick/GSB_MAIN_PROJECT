@@ -13,6 +13,19 @@ db.once('open',() => {
 
 
 
+const CreateOrder = {
+    User_ID:{type: String},
+    Order_ID:{type: String},
+    Date: {type: Date},
+    Address:{type: Object},
+    Product_List:{type: Object},
+    Payment_Method:{type: String},
+    Payment_Confirmed:{type: String},
+    Order_Confirmed:{type: String},
+    Order_ID_Payment:{type: String},
+
+}
+
 
 
 
@@ -245,6 +258,7 @@ const New_Worker_Mode = mongoose.model("Workers", New_Worker);
 const New_Products_Mofule = mongoose.model("Seller", New_);
 const a_ = mongoose.model("Assistants_Confirmation", a);
 const Sign_Mol = mongoose.model("Main_User", Signup_Schema);
+const CreateOrdera = mongoose.model("Orders", CreateOrder);
 
 module.exports = {
     Signup_Model: Sign_Mol,
@@ -252,6 +266,7 @@ module.exports = {
     Assistant_Confirmation: a_,
     Seller: New_Products_Mofule,
     Product: Product,
+    Orders: CreateOrdera,
 };
 
 

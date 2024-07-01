@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart | GET SKY BUY</title>
     <link rel="stylesheet" href="/files/css/Home2.css">
-    <link rel="stylesheet" href="/files/css/Cus_Cart_Page.css">
+    <link rel="stylesheet" href="/files/css/Cart_CheckOut_Post.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -228,94 +228,168 @@
     </header>
 
 
-
-
-
-
-
-
-
-
     <main>
         <section class="section">
+
             <div class="Mainssss">
-                <div class="Shopping_Cart_Div">
-                    <a href="/cart"><h2>Shopping Cart</h2></a>
+                <div>
+                    <h3>Checkout Cart <a href="/cart">(Modify Cart)</a></h3>
                 </div>
+                <div class="Adresssss">
+                    <div class="HeaAd">1. Address
+                    
+                        <a href="http://192.168.0.12/address?Checkout=Yes" target="_blank">(Change Address)</a>
+                    </div>
 
-                <div class="main_Prpductsfsffsafs">
-                    <div id="Main_Productssdsfasf">
-                        | !{Products}
-
-                        
-                        
-
-
-
+                    <div class="Addddrsess11">
+                        <!-- <address>Loknath Nagar , B.P Road<br>Bagdogra, Siliguri,<br>PIN: 734014,  <br>Dist: Darjeeling <br>West Bengal, India <br>+91 8436431656 <br> +91 9832459014 <br></address> -->
+                        | !{ADDRESS}
                     </div>
 
                 </div>
-                
-            </div>
 
 
 
 
 
 
+                <div class="Payment">
+                    <div class="PaymentOptions">
+                        <h3>2. Payment Method</h3>
+                        <div id="Paymentsss">
 
-            <div class="Prizinggg">
-                
-                <div class="Subtotaoldlsldasl">
-                    <div class="Medd">
-                        <div class="BOXXXX">Procced to checkout</div>
-
-                        <div class="Taa_Div">
-                            <table class="Tab">
-                                <tr>
-                                    <td>Total:</td>
-                                    <td>+Rs. #{Total}</td>
-                                </tr>
-                                <tr>
-                                    <td class="red">#{DIS} discount:</td>
-                                    <td>-Rs. #{OFF}</td>
-                                </tr>
-                                <tr>
-                                    <td>Subtotal:</td>
-                                    <td>+Rs. #{SubTotal}</td>
-                                </tr>
-                                <tr>
-                                    <td>Additional discount:</td>
-                                    <td>-Rs. 0</td>
-                                </tr>
-                                
-                                <tr id="sdasdssdfas">
-                                    <td><strong>Final Total:</strong></td>
-                                    <td><strong>Rs. #{SubTotal}</strong></td>
-                                </tr>
-                                
-                            </table>
-
-                        </div>
-
-
-
-                        <div class="Checkoutttt">
-                            <div class="NextBTn">
-                                <button id="ProccedToCheckOut" type="button" onclick="ProccedToCheckOut()">Checkout</button>
+                            <div class="Oppt">
+                                <input type="radio" id="PrePaid" name="Option" checked>
+                                <label for="PrePaid">Net Banking / UPI / Credit Card / Debit Card</label>
                             </div>
-
+                            <div class="Oppt">
+                                <input type="radio" id="CashOnDelivert_1" name="Option">
+                                <label for="CashOnDelivert_1">Cash On Delivery</label>
+                                
+                            </div>
+                            
                         </div>
-                        <form style="display: none;" action="/cart/checkout" method="post">
-                            <input type="text" name="Verified" value="Yes">
-                            <button id="SUBSDSD" type="submit"></button>
+                        
+                        <!-- <input type="radio" name="Option">
+                        <input type="radio" name="Option">
+                        <input type="radio" name="Option"> -->
 
-                        </form>
                     </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="ProtT">
+                    <h3>3. Products</h3>
+
+                    <table class="ProtTitle">
+                        <thead>
+
+                            <tr class="Heeee">
+                                <th>Title</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            |!{Products}
+                            <!-- <tr class="Products">
+                                <td>Samsung galaxy S50 Pro 5G | 108MP Camera | 5000mAh | 144Hz refresh rate | AmoLED display</td>
+                                <td>Rs.80,999</td>
+                                <td>×1</td>
+                                <td>Rs.80,999</td>
+                            </tr>
+                            <tr class="Products">
+                                <td>Samsung galaxy S50 Pro 5G | 108MP Camera | 5000mAh | 144Hz refresh rate | AmoLED display</td>
+                                <td>Rs.80,999</td>
+                                <td>×1</td>
+                                <td>Rs.80,999</td>
+                            </tr> -->
+                        </tbody>
+                        <tfoot>
+                            <tr>
+
+                                <td colspan="3">Subtotal:</td>
+                                <td>Rs.#{Subtotal}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">Total Quantity:</td>
+                                <td>#{Quantitiii} Items</td>
+
+                            </tr>
+                        </tfoot>
+                            
+
+
+
+                    </table>
+
+
+
+
 
                 </div>
 
+                
+
             </div>
+            
+            <div class="FInalCheck">
+                
+                <div class="Taa_Div">
+                    <h3 style="text-align: center;">4. Billing</h3>
+                    <table class="Tab">
+                        <tr>
+                            <td>Total:</td>
+                            <td>+Rs. #{MRPP}</td>
+                        </tr>
+                        <tr>
+                            <td class="red">#{Off} discount:</td>
+                            <td>-Rs. #{discountMrp}</td>
+                        </tr>
+                        <tr>
+                            <td>Subtotal:</td>
+                            <td>+Rs.#{Subtotal}</td>
+                        </tr>
+                        <tr>
+                            <td>Additional discount:</td>
+                            <td>-Rs. 0</td>
+                        </tr>
+                        <tr>
+                            <td>Delivery Charge:</td>
+                            <td>+Rs.#{Deli}</td>
+                        </tr>
+                        
+                        <tr id="sdasdssdfas">
+                            <td><strong>Grand Total:</strong></td>
+                            <td><strong>Rs. #{Grand_Total}</strong></td>
+                        </tr>
+                        
+                    </table>
+
+                </div>
+
+
+
+                <div id="Confim_Btn">
+                    <button id="SDSFSAFSFFSFAS" onclick="Confirm_Payment(1);" type="button">Confirm Order</button>
+                </div>
+
+            </div>
+
 
 
         </section>
@@ -327,23 +401,17 @@
 
 
 
+    <!-- <button id="rzp-button1">Pay with Razorpay</button> -->
+    <button id="rzp-button1" style="display: none;">Pay with Razorpay</button>
 
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="/files/js/Home2.js"></script>    
+    <script src="/files/js/Product_Search_Box.js"></script>    
+    <script src="/files/js/Cart_CheckOut_Post.js"></script>  
+    
+    <!-- <script>function Confirm_Payment(n){    document.getElementById("Confim_Btn").style.display = "none";    let Sent;        if (n == 1) {        Sent = {            Payment:true        }            }else if(n == 2){        Sent = {            Payment:true        }            }else{        Message("Unable to procced");    }    if ( n == 2) {                fetch("/cart_confirm_Post",{            method:"POST",            headers:{"Content-Type":"application/json"},            body:JSON.stringify(Sent),                                }).then(response=>{return response.json()}).then(data=>{            console.log(data.Message);        }).catch(e=>{            document.getElementById("Confim_Btn").style.display = "flex";        });    }else if( n == 1) {                fetch("/cart_confirm_Post/payment",{            method:"POST",            headers:{"Content-Type":"application/json"},            body:JSON.stringify(Sent),                                }).then(response=>{return response.json()}).then(data=>{            console.log(data.Message);            if(data.Message){                document.getElementById("rzp-button1").click();                var options = {                    "key": "rzp_test_DBekxO3l7UI6ie",                    "amount": data.Amount,                    "currency": "INR",                    "name": "GET SKY BUY",                    "description": data.Des,                    "image": "http://192.168.0.12/files/img/GSB_logo.png",                    "order_id": data.Or_ID,                    "handler": function (response){                        alert(response.razorpay_payment_id);                        alert(response.razorpay_order_id);                        alert(response.razorpay_signature)                    },                    "prefill": {                        "name": data.Name,                        "email": data.Email,                        "contact": data.Mobile                    },                    "notes": {                        "address": "Razorpay Corporate Office--"                    },                    "theme": {                        "color": "#fb83ff"                    }                };                console.log(options);                var rzp1 = new Razorpay(options);                rzp1.on('payment.failed', function (response){                        alert(response.error.code);                        alert(response.error.description);                        alert(response.error.source);                        alert(response.error.step);                        alert(response.error.reason);                        alert(response.error.metadata.order_id);                        alert(response.error.metadata.payment_id);                });                document.getElementById('rzp-button1').onclick = function(e){                    rzp1.open();                    e.preventDefault();                }            }        }).catch(e=>{            document.getElementById("Confim_Btn").style.display = "flex";        });    }};</script> -->
 
 
     
-
-
-
-
-
-
-
-
-
-
-
-    <script src="/files/js/Home2.js"></script>    
-    <script src="/files/js/Product_Search_Box.js"></script>    
-    <script src="/files/js/Cus_Cart_Page.js"></script>    
 </body>
 </html>
