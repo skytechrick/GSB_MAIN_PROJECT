@@ -1,0 +1,448 @@
+
+
+
+.Sec {
+    position: relative;
+    top: 30px;
+    width: 100%;   
+
+}
+
+
+
+.Section {
+    
+    width: 90%;
+    /* height: 10px; */
+    margin: auto;
+    background-color: white;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px #aaa;
+}
+
+.Heading {
+    
+    display: block;
+    padding: 20px 20px;
+}
+
+.Heading h2{
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #aaa;
+    
+}
+
+.Heading h2 a{
+    text-decoration: none;
+    color: black;
+}
+.Heading h2 a:hover{
+    text-decoration: underline;
+    /* color: black; */
+}
+
+.NAvv {
+    padding: 10px 20px;
+}
+
+.NAvv ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    list-style: none;
+    margin: 0px;
+    
+    border-bottom: 1px solid #aaa;
+}
+
+
+.NAvv ul li{
+    width: 25%;
+    text-align: center;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.NAvv ul li{
+    color: black;
+    text-decoration: none;
+}
+.NAvv ul li:hover{
+    text-decoration: underline;
+}
+
+.NAvv ul li:nth-child(1){
+    background-color: rgb(255, 170, 251);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.Order1 {
+    padding: 10px 20px;
+}
+
+
+.Product_his {
+    display: block;
+}
+
+
+.ProTitle {
+    font-size: 18px;
+}
+
+.ProTitle a{
+    color: black;
+    text-decoration: none;
+}
+
+.ProTitle a:hover{
+    text-decoration: underline;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Productstart {
+    border: 1px solid #aaaaaa91;
+    padding: 10px;
+    border-radius: 5px;
+    /* background-color: aquamarine; */
+    display: flex;
+    /* flex-direction: column; */
+}
+
+
+.Product_Sdsdf{
+    /* width: calc(100% - 250px); */
+    display: flex;
+    
+    /* justify-content: ; */
+}
+
+
+
+
+
+.Imgsgs {
+    display: inline-block;
+    width: 200px;
+}
+
+.Imgsgs a{
+    height: 100%;
+    text-decoration: none;
+}
+.Imgsgs img{
+    width: 100%;
+}
+
+
+
+.P_Title {
+    width: calc(100% - 220px);
+    display: inline-block;
+    padding: 10px;
+    padding-bottom: 0px;
+    /* background-color: aqua; */
+}
+
+
+.Title--a a {
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.Title--a a:hover {
+    text-decoration: underline;
+
+}
+
+
+.MRSPS {
+    text-decoration: line-through;
+}
+
+
+
+.prisss {
+    position: relative;
+    top: 0px;
+}
+
+.OFFERRER {
+    position: absolute;
+    left: 150px;
+    bottom: 24px;
+    font-size: 12px;
+    background-color: red;
+    color: white;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 50%;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.DeliveryefeAdd {
+    border: 1px solid #aaaaaa91;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+
+
+.Sidee {
+    /* padding-left: 30px; */
+    /* width: 300px; */
+    display: block;
+    margin: 0 auto;
+    
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.Sidee table{
+    width: 100%;
+}
+
+.Sidee table tr td{
+    
+    padding: 3px 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

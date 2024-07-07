@@ -22,7 +22,7 @@ const Cart_Page_Get = async (req, res) => {
             l = `<center style="margin:20px; text-align:center; display:block;">Your cart is empty.</center>`
             PROBTN = ``;
         }else{
-            PROBTN = `<button id="ProccedToCheckOut" type="button" onclick="ProccedToCheckOut()">Checkout</button>;`;
+            PROBTN = `<button id="ProccedToCheckOut" type="button" onclick="ProccedToCheckOut()">Checkout</button>`;
             let daaa = "";
 
             for (let x = 0; x < zz.length; x++) {

@@ -24,9 +24,9 @@ function Payment_Confirm(response) {
             
         }else{
             Message1(2);
-
+            
         }
-
+        
     }).catch(e=>{
         console.log("Error verification.");
 
@@ -36,15 +36,7 @@ function Payment_Confirm(response) {
 }
 
 function Payment_Failed(response) {
-    alert(response.error.code);
-    alert(response.error.description);
-    alert(response.error.source);
-    alert(response.error.step);
-    alert(response.error.reason);
-    alert(response.error.metadata.order_id);
-    alert(response.error.metadata.payment_id);
-    // console.log(response);
-    
+    Message1(2);
 }
     
 
@@ -165,19 +157,23 @@ function Message1(n){
         let b = "Please try again after some time";
         let Messages = document.getElementById("Messages");
         let Messagesmall = document.getElementById("Messagesmall");
-        let Yes_No = document.getElementById("Yes_No");
         Messages.innerHTML = a;
         Messagesmall.innerHTML = b;
+        let Yes_No = document.getElementById("Yes_No");
         Yes_No.innerHTML = `<span  id="Yes_No_Sp" class="material-symbols-outlined">close</span>`
         document.getElementById("Message1").style.display = "block";
         document.getElementById("Yes_No_Sp").style.backgroundColor = "rgb(255, 153, 153)";
         setTimeout(() => {
-            document.getElementById("Message1").style.display = "none";
-            document.getElementById("Confim_Btn").style.display = "flex";
+            // document.getElementById("Message1").style.display = "none";
+            document.getElementById("Message1").addEventListener("click",()=>{
+                document.getElementById("Message1").style.display = "none";
+                document.getElementById("Confim_Btn").style.display = "flex";
+            })
         }, 2000);
 
     }
 }
+
 
 
 

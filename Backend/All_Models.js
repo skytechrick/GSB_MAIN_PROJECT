@@ -23,6 +23,7 @@ const CreateOrder = {
     Payment_Confirmed:{type: String},
     Order_Confirmed:{type: String},
     Order_ID_Payment:{type: String},
+    Payment_ID_Payment:{type: String},
 
 }
 
