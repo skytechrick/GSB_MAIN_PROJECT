@@ -80,6 +80,17 @@ const Order_Get = require("./Orders_Refunds/Orders_Refunds.js")
 
 
 
+const privacy_and_policy = require("./Company_Related/privacy_and_policy_Get.js");
+const terms_and_conditions = require("./Company_Related/terms_and_conditions_Get.js");
+// _______________________________________________________________________________________________________
+// _______________________________________________________________________________________________________
+// _______________________________________________________________________________________________________
+// _______________________________________________________________________________________________________
+// _______________________________________________________________________________________________________
+// _______________________________________________________________________________________________________
+
+
+
 
 const Home = require("./Home.js");
 
@@ -325,6 +336,28 @@ app.get("/orders", async (req, res) => {Order_Get(req,res)});
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+app.get("/privacy_and_policy", privacy_and_policy);
+app.get("/terms_and_conditions", terms_and_conditions);
 
 app.get('*', (req, res) => {
     res.status(404).send('<h1><center>Page Not Found</h1></center>');

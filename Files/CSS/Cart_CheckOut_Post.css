@@ -311,11 +311,54 @@ tfoot tr td:nth-child(2){
     text-align: center;
 }
 
+.Taa_Div h3 {
+    text-align: center;
+}
 
 
 
 
+@media screen and (max-width: 1250px) {
+    .section {
+        margin-top: 60px;
+    }    
+}
 
+
+@media screen and (max-width: 1000px) {
+    .section {
+        flex-direction: column;
+    }    
+    .Mainssss {
+        width: calc(100% - 40px);
+    }
+    
+    .FInalCheck {
+        width: calc(100% - 40px);
+    }
+    .Taa_Div {
+        border-top: 1px solid #aaa;
+    }
+    
+    .ProtTitle {
+        font-size: 14px;
+    }
+    /* .Taa_Div h3 {
+        text-align: left;
+        } */
+}
+    
+    
+@media screen and (max-width: 550px) {
+    .section {
+        margin-top: 30px;
+    }    
+}
+@media screen and (max-width: 370px) {
+    .ProtTitle {
+        font-size: 12px;
+    }
+}
 
 
 
