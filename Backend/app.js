@@ -82,6 +82,7 @@ const Order_Get = require("./Orders_Refunds/Orders_Refunds.js")
 
 const privacy_and_policy = require("./Company_Related/privacy_and_policy_Get.js");
 const terms_and_conditions = require("./Company_Related/terms_and_conditions_Get.js");
+const Contact_Us = require("./Company_Related/Contact_Us.js");
 // _______________________________________________________________________________________________________
 // _______________________________________________________________________________________________________
 // _______________________________________________________________________________________________________
@@ -337,6 +338,7 @@ app.get("/orders", async (req, res) => {Order_Get(req,res)});
 
 
 
+app.get("/contact_us", async (req, res) => {Contact_Us(req,res)});
 
 
 

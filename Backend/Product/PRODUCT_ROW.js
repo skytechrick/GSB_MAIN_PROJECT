@@ -183,6 +183,7 @@ PRODUCT_ROW = async (req, res) => {
             SELL = NumToINR(Number(SELL));
             let URL = Product1.Product_URL;
             let PRO_ID = Product1.Product_ID;
+            // let PRO_ID = Product1.Quantity_;
             // let IMG = Image_Locaitons[0];
             let IMG = Product1.Image_Locaitons[0];
 

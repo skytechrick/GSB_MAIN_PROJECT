@@ -1,0 +1,124 @@
+
+
+.Main {
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+
+    
+}
+
+
+
+.box {
+    width: 85%;
+    height: 100%;
+    margin: auto;
+}
+
+.H11 {
+    display: block;
+    margin: 70px auto;
+}
+
+.H11 h1{
+    font-size: 60px;
+    font-weight: normal;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.Descrip {
+    font-size: 28px;
+    padding-bottom: 30px;
+    text-align: center;
+    font-family: "Dancing Script", Arial;
+    border-bottom: 1px solid #aaa;
+}
+
+
+
+
+
+
+.InpuDiv {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.Inputs {
+    outline: none;
+    background-color: transparent;
+    padding: 8px 15px;
+    border-radius: 5px;
+    /* border: 1px solid #aaa; */
+    font-size: 15px;
+    border: 1px solid rgb(228, 25, 255);
+    margin: 10px;
+    width: 280px;
+    
+}
+
+.Inputs:hover {
+    background-color: #ffffff;
+
+}
+.Inputs:focus {
+    background-color: #ffffff;
+
+}
+.Inputs:active {
+    border: 1px solid rgb(200, 0, 226);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
