@@ -22,7 +22,7 @@ Seller_Assistant_Get_Login = async (req, res) => {
         };
         if (p == 1) {
             if(element.LOG_AUTH == COOK){
-                res.redirect("http://192.168.0.12/assistant/seller");
+                res.redirect("http://192.168.0.44/assistant/seller");
             }else{
                 res.clearCookie("AS_SEL",{"path":"/assistant/seller"});
                 res.clearCookie("NO",{"path":"/assistant/seller"});

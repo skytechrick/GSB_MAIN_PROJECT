@@ -59,8 +59,8 @@ Send_Ass = async (req, res) => {
     //                     </p>
             
     //                     <div style="font-size: 16px;">
-    //                         Home: <a style="position: relative; top: -1px;" href="http://192.168.0.12/">Home</a>
-    //                         Assistant: <a style="position: relative; top: -1px;" href="http://192.168.0.12/assistant">Assistant Pannel</a>
+    //                         Home: <a style="position: relative; top: -1px;" href="http://192.168.0.44/">Home</a>
+    //                         Assistant: <a style="position: relative; top: -1px;" href="http://192.168.0.44/assistant">Assistant Pannel</a>
     //                     </div>
             
     //                     <p>
@@ -76,7 +76,7 @@ Send_Ass = async (req, res) => {
     //                     <div class="cc">
             
     //                         <ul>
-    //                             <li><a href="http://192.168.0.12/">Home</a></li>
+    //                             <li><a href="http://192.168.0.44/">Home</a></li>
     //                             <li><a href="https://wa.me/8436431656">Contact us</a></li>
     //                         </ul>
             
@@ -121,7 +121,7 @@ Send_Ass = async (req, res) => {
 
     // }
 
-    res.status(200).redirect("http://192.168.0.12");
+    res.status(200).redirect("http://192.168.0.44");
 
 }
 

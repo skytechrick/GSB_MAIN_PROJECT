@@ -259,21 +259,62 @@
             </div>
 
 
-            <div>
+            <div class="Sdasdssadsad">
 
-                <div class="InpuDiv">
-                    <input placeholder="Enter your name" id="Name_Input" class="Inputs" type="text" name="" id="">
-                </div>
-                <div class="InpuDiv">
-                    <input placeholder="Mobile Number" id="Contact_Input" class="Inputs" type="text" name="" id="">
-                </div>
-                <div class="InpuDiv">
-                    <select id="" class="Inputs">
-                        <option value="">Male</option>
-                    </select>
-                </div>
+
                 
+                <div id="SideImg" class="SideImg">
+                    <img src="/files/img/Contat-Sdsds.webp" alt="Contact Us image">
+                </div>
+                <div id="centerss" class="centerss">
+                    
+                    
+                    <div class="InpuDiv">
+                        <label for="Name_Input">Name: <span class="red">*</span></label>
+                        <input placeholder="Enter your name" id="Name_Input" class="Inputs" type="text" name="" id="">
+                    </div>
+                    <div class="InpuDiv">
+                        <label for="Contact_Input">Mobile Number: <span class="red">*</span></label>
+                        <input maxlength="10" placeholder="Mobile Number" id="Contact_Input" class="Inputs" type="text" name="" id="">
+                    </div>
+                    <div class="InpuDiv">
+                        <label for="Gender_Input">Gender: <span class="red">*</span></label>
+                        <select id="Gender_Input" class="Inputs">
+                            <option value="" selected>-- Select Gender --</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="InpuDiv">
+                        <label for="Reason_Input">Reason for contacting: <span class="red">*</span></label>
+                        <select id="Reason_Input" class="Inputs">
+                            <option value="" selected>-- Select Reason  --</option>
+                            <option value="Order Related">Order Related</option>
+                            <option value="Refund Related">Refund Related</option>
+                            <option value="Product Related">Product Related</option>
+                            <option value="Delivery Related">Delivery Related</option>
+                            <option value="Payment Related">Payment Related</option>
+                            <option value="Technical Related">Technical Related</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="InpuDiv">
+                        <label for="Brief_Description">Explain your problem in brief: <span class="red">*</span></label>
+                        <textarea id="Brief_Description" class="Inputs" placeholder="Explain your problem in Brief."></textarea>
+                    </div>
+                    <div class="InpuDiv">
+                        <!-- <textarea id="Brief_Description" class="Inputs" placeholder="Explain your problem in Brief."></textarea> -->
+                        <button class="Inputs" type="button">Submit</button>
+                    </div>
+                    
+                    <p class="red InpuDiv" style="padding-left: 10px;">* Can not be empty.</p>
+                    
+                </div>
             </div>
+
+            
 
 
         </div>

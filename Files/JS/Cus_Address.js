@@ -54,7 +54,7 @@ function LIST_BTN(Z) {
 
     if (Z == "Notification") {
         window.location.replace("/notification");
-        // window.location.href = "http://192.168.0.12/notification";
+        // window.location.href = "http://192.168.0.44/notification";
     } else if (Z == "Order") {
         window.location.replace("/order");
     } else if (Z == "Profile") {

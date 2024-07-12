@@ -102,7 +102,7 @@ const cart_confirm_response = async(req, res) => {
                             </tr>
                             <tr>
                                 <td>Product URL:</td>
-                                <td><a href="http://192.168.0.12/product/${ZX}">Link</a></td>
+                                <td><a href="http://192.168.0.44/product/${ZX}">Link</a></td>
                             </tr>
                             <tr>
                                 <td>Quantity:</td>
@@ -154,7 +154,7 @@ const cart_confirm_response = async(req, res) => {
         
     } else {
         res.clearCookie("U_ID");
-        res.status(200).redirect("http://192.168.0.12/login");
+        res.status(200).redirect("http://192.168.0.44/login");
     }
 
 

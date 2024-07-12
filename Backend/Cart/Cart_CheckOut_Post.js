@@ -162,16 +162,16 @@ const Cart_CheckOut_Post = async (req, res) => {
 
 
             }else{
-                res.status(200).redirect("http://192.168.0.12/cart");
+                res.status(200).redirect("http://192.168.0.44/cart");
             }
         }else{
-            res.status(200).redirect("http://192.168.0.12/cart");
+            res.status(200).redirect("http://192.168.0.44/cart");
         }
 
 
     } else {
         res.clearCookie("U_ID");
-        res.status(200).redirect("http://192.168.0.12/login");
+        res.status(200).redirect("http://192.168.0.44/login");
     }
 
 }

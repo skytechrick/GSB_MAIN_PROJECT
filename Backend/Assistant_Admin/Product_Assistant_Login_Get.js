@@ -5,7 +5,7 @@ Product_Assistant_Login_Get = async (req, res) => {
     // if (!COOK && !NOPP) {
     //     res.render("Product_Assis_Login");
     // }else{
-    //     res.redirect("http://192.168.0.12/assistant/product");
+    //     res.redirect("http://192.168.0.44/assistant/product");
     // }
     let COOK = req.cookies.AS_PRO;
     let NOP = req.cookies.NOP;
@@ -28,7 +28,7 @@ Product_Assistant_Login_Get = async (req, res) => {
         };
         if (p == 1) {
             if(element.LOG_AUTH == COOK){
-                res.redirect("http://192.168.0.12/assistant/product");
+                res.redirect("http://192.168.0.44/assistant/product");
             }else{
                 res.clearCookie("AS_PRO",{"path":"/assistant/product"});
                 res.clearCookie("NOP",{"path":"/assistant/product"});

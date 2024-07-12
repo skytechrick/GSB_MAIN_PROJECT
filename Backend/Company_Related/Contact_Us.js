@@ -20,7 +20,7 @@ const Contact_Us = async (req, res) => {
 
     }else{
         
-        res.status(200).render("Terms_Conditions",{
+        res.status(200).render("Contact_Us",{
             Name: "Guest",
             Cart_No: 0,
             Login: `<a href="/login" class="Profile_Options_Nav2">Login</a>`,
