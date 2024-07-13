@@ -85,6 +85,12 @@ const terms_and_conditions = require("./Company_Related/terms_and_conditions_Get
 const Contact_Us = require("./Company_Related/Contact_Us.js");
 const Complaint_Us = require("./Company_Related/Complaint_Us.js");
 const setting = require("./Customer_Side/setting.js");
+const setting_post = require("./Customer_Side/setting_post.js");
+const change_Password_PUT = require("./Customer_Side/change_Password_PUT.js");
+const forgot_passworrd_GET = require("./Customer_Side/forgot_passworrd_GET.js");
+const forgot_passworrd_PUT = require("./Customer_Side/forgot_passworrd_PUT.js");
+const forgot_passworrd_PUT_OTP = require("./Customer_Side/forgot_passworrd_PUT_OTP.js");
+const forgot_passworrd_PUT_Change = require("./Customer_Side/forgot_passworrd_PUT_Change.js");
 // _______________________________________________________________________________________________________
 // _______________________________________________________________________________________________________
 // _______________________________________________________________________________________________________
@@ -365,6 +371,13 @@ app.get("/terms_and_conditions", terms_and_conditions);
 app.get("/contact_us", Contact_Us);
 app.get("/register_a_complaint", Complaint_Us);
 app.get("/setting", setting);
+app.put("/setting", setting_post);
+app.put("/change_Password", change_Password_PUT);
+
+app.get("/forgot_password", forgot_passworrd_GET);
+app.put("/forgot_password", forgot_passworrd_PUT);
+app.post("/forgot_password/otp", forgot_passworrd_PUT_OTP);
+app.post("/forgot_password/change", forgot_passworrd_PUT_Change);
 
 app.get("/favorite", (req, res)=>{res.send(`<div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;"><div style="color: rgb(59, 59, 59); font-size: 30px; font-family: Arial; font-weight: bold; padding: 10px; border: 1px solid #aaa;">Coming soon</div></div>`)});
 app.get("/notification", (req, res)=>{res.send(`<div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;"><div style="color: rgb(59, 59, 59); font-size: 30px; font-family: Arial; font-weight: bold; padding: 10px; border: 1px solid #aaa;">Coming soon</div></div>`)});

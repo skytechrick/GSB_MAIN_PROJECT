@@ -16,7 +16,11 @@
 
 </head>
 <body>
-    <div id="Background_Blue"></div>
+    <div id="Background_Blue">
+        <div id="Mes">Hello World!
+
+        </div>
+    </div>
     <header class="Header">
         <div class="Header_c">
             <div id="Logo_Search_Part" class="Logo_Search_Part">
@@ -314,12 +318,12 @@
                                     <input class="SDSDASDERSDS" id="lNameA" value="#{Last_Name}" type="text" placeholder="Last Name" title="Last Name"disabled>
                                 </div>
                                 <div>
-                                    <label for="NameaA">Email:</label>
-                                    <input class="SDSDASDERSDS" id="NameaA" value="#{Email}" type="text" placeholder="Email" title="Email"disabled>
-                                </div>
-                                <div>
                                     <label for="NameAAA">Mobile:</label>
                                     <input class="SDSDASDERSDS" id="NameAAA" value="+91 #{Mobile_Number}" type="text" placeholder="Mobile Number" title="Mobile number"disabled>
+                                </div>
+                                <div>
+                                    <label for="NameAAA">Password:</label>
+                                    <button id="change_Pasw" type="button">Change Password</button>
                                 </div>
                                 
                                 
@@ -358,6 +362,22 @@
 
 
 
+    <div id="ChangePassword">
+        <div class="Boss">
+            <div class="Headedsadasdasdasdasdas">
+                <span>Change Password</span> <span id="Clissds" class="material-symbols-outlined">close</span>
+            </div>
+            <div class="fo">
+                <input id="Current_Change" placeholder="Current Password" type="password" spellcheck="none" autocomplete="off">
+                <input id="Create_Change" placeholder="Create Password" type="password" spellcheck="none" autocomplete="off">
+                <input id="Confirm_Change" placeholder="Confirm Password" type="password" spellcheck="none" autocomplete="off">
+                <button id="ChangePasswordFInalBtn" type="button">Change password</button>
+                
+                <a id="Forget" href="/forgot_password"><center>Forgot Password?</center></a>
+            </div>
+
+        </div>        
+    </div>
 
 
 

@@ -414,3 +414,173 @@ main {
         
 }
     
+
+
+
+
+
+
+#Background_Blue {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation-name: a;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+
+}
+
+@keyframes Hide {
+    0%{
+        opacity: 1;
+    }    
+    100%{
+        opacity: 0;
+        display: none;
+    }
+}
+#Mes {
+    background-color: #505050;
+    border: 1px solid white;
+    padding: 8px 12px;
+    color: white;
+}
+
+
+
+#change_Pasw {
+    padding: 8px 12px;
+    cursor: pointer;
+    background-color: rgb(255, 175, 248);
+    outline: none;
+    border: none;
+    transition: 200ms background-color;
+
+
+}
+#change_Pasw:hover {
+    background-color: rgb(255, 132, 245);
+}
+#change_Pasw:active {
+    background-color: rgb(255, 92, 241);
+}
+
+
+
+
+
+
+
+
+
+
+#ChangePassword {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    z-index: 99px;
+    background-color: #e2e2e24d;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.Boss {
+    width: 280px;
+    /* height: 10px; */
+    background-color: white;
+    box-shadow: 0 0 10px #aaa;
+    border-radius: 10px;
+}
+
+.Headedsadasdasdasdasdas {
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #e0e0e0;
+    align-items: center;
+
+}
+
+.fo {
+    width: 100%;
+    /* height: 100px; */
+}
+
+.fo input{
+    width: 180px;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    border: 1px solid rgb(255, 92, 241);
+    margin: 5px auto;
+    display: block;
+    padding: 5px 10px;
+}
+
+
+
+
+
+
+#Clissds {
+    cursor: pointer;
+    border-radius: 56%;
+    padding: 5px;
+    font-size: 20px;
+    background-color: #cacaca;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+#Clissds:active {
+    background-color: #a7a5a5;
+}
+#Clissds:hover, #Clissds:focus {
+    background-color: #afafaf;
+}
+
+
+
+
+#ChangePasswordFInalBtn {
+    cursor: pointer;
+    user-select: none;
+    display: block;
+    margin: 10px auto;
+    outline: none;
+    border: none;
+    padding: 8px 12px;
+    -webkit-tap-highlight-color: transparent;
+    width: 180px;
+    background-color: rgb(255, 175, 248);
+}
+
+#ChangePasswordFInalBtn:hover {
+    background-color: rgb(255, 132, 245);    
+}
+#ChangePasswordFInalBtn:active {
+    background-color: rgb(255, 92, 241);
+    
+}
+#ChangePasswordFInalBtn:focus {
+    background-color: rgb(255, 132, 245);    
+    
+}
+
+
+#Forget {
+    display: block;
+    font-size: 13px;
+    margin: 10px auto;
+}
+
+
+
+
+
+
+
+
+
+

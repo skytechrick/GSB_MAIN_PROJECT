@@ -1,9 +1,9 @@
 const Auth_Token = require("./Auth_Token.js");
 const {Signup_Model} = require("./All_Models.js");
 const Profile_ID = require("./Profile_ID.js");
+const Pass_Hash = require("./Password_Hashing");
 const nodemailer = require("nodemailer");
 const GET_OTP = require("./OTP_Generator.js");
-const Pass_Hash = require("./Password_Hashing");
 
 const Transporter = nodemailer.createTransport({
     service: 'gmail',
