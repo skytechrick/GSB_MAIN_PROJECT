@@ -83,6 +83,8 @@ const Order_Get = require("./Orders_Refunds/Orders_Refunds.js")
 const privacy_and_policy = require("./Company_Related/privacy_and_policy_Get.js");
 const terms_and_conditions = require("./Company_Related/terms_and_conditions_Get.js");
 const Contact_Us = require("./Company_Related/Contact_Us.js");
+const Complaint_Us = require("./Company_Related/Complaint_Us.js");
+const setting = require("./Customer_Side/setting.js");
 // _______________________________________________________________________________________________________
 // _______________________________________________________________________________________________________
 // _______________________________________________________________________________________________________
@@ -334,11 +336,11 @@ app.post("/cart_confirm_response", async (req, res) => {cart_confirm_response(re
 
 
 app.get("/orders", async (req, res) => {Order_Get(req,res)});
+app.get("/order", async (req, res) => {res.status(301).redirect("http://192.168.0.44/orders")});
 
 
 
 
-app.get("/contact_us", async (req, res) => {Contact_Us(req,res)});
 
 
 
@@ -360,6 +362,18 @@ app.get("/contact_us", async (req, res) => {Contact_Us(req,res)});
 
 app.get("/privacy_and_policy", privacy_and_policy);
 app.get("/terms_and_conditions", terms_and_conditions);
+app.get("/contact_us", Contact_Us);
+app.get("/register_a_complaint", Complaint_Us);
+app.get("/setting", setting);
+
+app.get("/favorite", (req, res)=>{res.send(`<div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;"><div style="color: rgb(59, 59, 59); font-size: 30px; font-family: Arial; font-weight: bold; padding: 10px; border: 1px solid #aaa;">Coming soon</div></div>`)});
+app.get("/notification", (req, res)=>{res.send(`<div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;"><div style="color: rgb(59, 59, 59); font-size: 30px; font-family: Arial; font-weight: bold; padding: 10px; border: 1px solid #aaa;">Coming soon</div></div>`)});
+app.get("/download_app", (req, res)=>{res.send(`<div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;"><div style="color: rgb(59, 59, 59); font-size: 30px; font-family: Arial; font-weight: bold; padding: 10px; border: 1px solid #aaa;">Coming soon</div></div>`)});
+app.get("/customer_care", (req, res)=>{res.send(`<div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;"><div style="color: rgb(59, 59, 59); font-size: 30px; font-family: Arial; font-weight: bold; padding: 10px; border: 1px solid #aaa;">Coming soon</div></div>`)});
+app.get("/help_center", (req, res)=>{res.send(`<div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;"><div style="color: rgb(59, 59, 59); font-size: 30px; font-family: Arial; font-weight: bold; padding: 10px; border: 1px solid #aaa;">Coming soon</div></div>`)});
+app.get("/sb_coins", (req, res)=>{res.send(`<div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;"><div style="color: rgb(59, 59, 59); font-size: 30px; font-family: Arial; font-weight: bold; padding: 10px; border: 1px solid #aaa;">Coming soon</div></div>`)});
+app.get("/improve_us", (req, res)=>{res.send(`<div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;"><div style="color: rgb(59, 59, 59); font-size: 30px; font-family: Arial; font-weight: bold; padding: 10px; border: 1px solid #aaa;">Coming soon</div></div>`)});
+app.get("/report_a_problem", (req, res)=>{res.send(`<div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;"><div style="color: rgb(59, 59, 59); font-size: 30px; font-family: Arial; font-weight: bold; padding: 10px; border: 1px solid #aaa;">Coming soon</div></div>`)});
 
 app.get('*', (req, res) => {
     res.status(404).send('<h1><center>Page Not Found</h1></center>');

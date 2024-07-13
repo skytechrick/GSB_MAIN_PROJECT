@@ -3,24 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | GET SKY BUY</title>
-
-    
+    <title>Setting | GET SKY BUY</title>
     <link rel="stylesheet" href="/files/css/Home2.css">
-    <link rel="stylesheet" href="/files/css/Contact_Us.css">
+    <link rel="stylesheet" href="/files/css/setting.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap" rel="stylesheet">
     
     <link rel="shortcut icon" href="/files/img/GSB_logo.png" type="image/x-icon">
 
 </head>
 <body>
-    
-    
     <div id="Background_Blue"></div>
     <header class="Header">
         <div class="Header_c">
@@ -251,79 +246,112 @@
 
 
 
-    <main class="Main">
-        <div class="box">
-            <div class="H11">
-                <h1>CONTACT US</h1>
-                <div class="Descrip">Feel free to contact us</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <main>
+        <section class="Main_Par">
+            <div class="HEadere">
+                <a title="Profile" href="/profile">Profile:</a>
             </div>
 
+            <div id="List_SS" class="List_SS">
 
-            <div class="Sdasdssadsad">
 
-
-                
-                <div id="SideImg" class="SideImg">
-                    <img src="/files/img/Contat-Sdsds.webp" alt="Contact Us image">
+                <div id="Lists" class="Lists">
+                    <button class="List_Btn" onclick="LIST_BTN('Profile')">Profile</button>
+                    <button class="List_Btn" onclick="LIST_BTN('Order')">Orders</button>
+                    <button class="List_Btn" onclick="LIST_BTN('Cart')">Cart</button>
+                    <button class="List_Btn" onclick="LIST_BTN('Address')">Address</button>
+                    <button class="List_Btn" onclick="LIST_BTN('Favorite')">Favorite</button>
+                    <button class="List_Btn" onclick="LIST_BTN('SB Coins')">SB Coins</button>
+                    <button class="List_Btn" onclick="LIST_BTN('Notification')">Notification</button>
+                    <button class="List_Btn">Setting</button>
                 </div>
-                <div id="centerss" class="centerss">
-                    
-                    
-                    <div class="InpuDiv">
-                        <label for="Name_Input">Name: <span class="red">*</span></label>
-                        <input placeholder="Enter your name" id="Name_Input" class="Inputs" type="text" name="" id="">
-                    </div>
-                    <div class="InpuDiv">
-                        <label for="Contact_Input">Mobile Number: <span class="red">*</span></label>
-                        <input maxlength="10" placeholder="Mobile Number" id="Contact_Input" class="Inputs" type="text" name="" id="">
-                    </div>
-                    <div class="InpuDiv">
-                        <label for="Gender_Input">Gender: <span class="red">*</span></label>
-                        <select id="Gender_Input" class="Inputs">
-                            <option value="" selected>-- Select Gender --</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-                    
-                    <div class="InpuDiv">
-                        <label for="Reason_Input">Reason for contacting: <span class="red">*</span></label>
-                        <select id="Reason_Input" class="Inputs">
-                            <option value="" selected>-- Select Reason  --</option>
-                            <option value="Order Related">Order Related</option>
-                            <option value="Refund Related">Refund Related</option>
-                            <option value="Product Related">Product Related</option>
-                            <option value="Delivery Related">Delivery Related</option>
-                            <option value="Payment Related">Payment Related</option>
-                            <option value="Technical Related">Technical Related</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-                    <div class="InpuDiv">
-                        <label for="Brief_Description">Explain your problem in brief: <span class="red">*</span></label>
-                        <textarea id="Brief_Description" class="Inputs" placeholder="Explain your problem in Brief."></textarea>
-                    </div>
-                    <div class="InpuDiv">
-                        <!-- <textarea id="Brief_Description" class="Inputs" placeholder="Explain your problem in Brief."></textarea> -->
-                        <button class="Inputs" type="button">Submit</button>
-                    </div>
-                    
-                    <p class="red InpuDiv" style="font-size: 14px; padding-left: 10px;">* Can not be empty.</p>
-                    
+
+
+
+
+
+
+
+
+                <div id="ITEM" class="ITEM">
+                   <div class="Top_Ite">
+                        <div class="Top_Ite_1">
+                            <div class="Main1">Profile:</div>
+                            <div class="Main2">
+
+
+                                <div class="Proi">
+                                    <div class="Proi_ICON">
+                                        <span class="material-symbols-outlined">account_circle</span>
+                                    </div>
+                                    <div class="Proi_ICON_Side">
+                                        <span>#{Full_Name}</span>
+                                        <span>#{Email}</span>
+                                    </div>
+
+                                </div>
+                                <div>
+                                    <label for="FNameA">First Name:</label>
+                                    <input class="SDSDASDERSDS" id="FNameA" value="#{First_Name}" type="text" placeholder="First Name" title="First Name" disabled>
+                                </div>
+                                <div>
+                                    <label for="lNameA">Last Name:</label>
+                                    <input class="SDSDASDERSDS" id="lNameA" value="#{Last_Name}" type="text" placeholder="Last Name" title="Last Name"disabled>
+                                </div>
+                                <div>
+                                    <label for="NameaA">Email:</label>
+                                    <input class="SDSDASDERSDS" id="NameaA" value="#{Email}" type="text" placeholder="Email" title="Email"disabled>
+                                </div>
+                                <div>
+                                    <label for="NameAAA">Mobile:</label>
+                                    <input class="SDSDASDERSDS" id="NameAAA" value="+91 #{Mobile_Number}" type="text" placeholder="Mobile Number" title="Mobile number"disabled>
+                                </div>
+                                
+                                
+                                
+                                
+                                <div class="BAN #{CLASSS_2}">
+                                    <label>Bank details:</label>
+                                    <!-- <div class="BAN_D">State Bank of India <br>Rick Sarkar <br>42094200655 <br>SBIN0007148</div> -->
+                                     | !{Bank}
+                                     
+                                </div>
+                                
+                                
+                                <div id="Btnnssdsads">
+                                    <button type="button" onclick="SaveEdit(1);">Edit</button>
+                                </div>
+                                
+
+
+
+
+                            </div>
+
+                        </div>
+                   </div>
+
                 </div>
+
             </div>
 
-            
-
-
-        </div>
+        </section>
     </main>
-
-
-
-
-
     
 
 
@@ -333,8 +361,11 @@
 
 
 
-    
+
+
+
     <script src="/files/js/Home2.js"></script>    
     <script src="/files/js/Product_Search_Box.js"></script>    
+    <script src="/files/js/setting.js"></script>    
 </body>
 </html>

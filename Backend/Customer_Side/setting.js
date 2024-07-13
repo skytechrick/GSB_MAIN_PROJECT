@@ -1,6 +1,11 @@
 const User_Auth = require("../User_Auth.js");
 
-const Cus_Profile_Page = async (req, res) => {
+
+
+
+
+const setting = async (req, res) =>{
+
     let COOK = req.cookies.U_ID;
     Auths = await User_Auth(COOK);
     if (Auths != null) {
@@ -41,7 +46,7 @@ const Cus_Profile_Page = async (req, res) => {
         let Bank;
         let CLASSS_2;
         if(Auths.Bank.length == 0){
-            Bank = `<a href="/setting">Add your Bank Account</a>`;
+            Bank = `<button type="button" id="AddBank" onclick="AddBank(1)">Add Bank Account</button>`;
             CLASSS_2 = "CFCF";
         }else{
             Bank = `<div class="BAN_D">State Bank of India <br>Rick Sarkar <br>42094200655 <br>SBIN0007148</div>`;
@@ -49,6 +54,8 @@ const Cus_Profile_Page = async (req, res) => {
             
         };
         let D = {
+            First_Name:Auths.First_Name,
+            Last_Name: Auths.Last_Name,
             Full_Name: Auths.First_Name + " "+ Auths.Last_Name,
             Email: Auths.Email,
             Mobile_Number: Auths.Mobile_Number,
@@ -64,11 +71,11 @@ const Cus_Profile_Page = async (req, res) => {
             Login:"",
             Logout1: `<a href="/logout" class="Profile_Options_Nav2">Logout</a>`,
         };
-        res.status(200).render("Cus_Profile_Page", D);
+        res.status(200).render("setting", D);
     }else{
         res.clearCookie("U_ID");
         res.status(200).redirect("http://192.168.0.44/login");
     };
-}
 
-module.exports = Cus_Profile_Page;
+}
+module.exports = setting;
