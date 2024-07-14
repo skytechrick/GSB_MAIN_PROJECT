@@ -108,7 +108,7 @@ Li = (n) => {
         
         
     } else if(n == 4){
-        window.location.href = "http://192.168.0.12/assistant/seller/logout";
+        window.location.href = "http://192.168.0.44/assistant/seller/logout";
 
     } else if(n == 100){
         document.getElementById("Homieo").style.display = "block";
@@ -252,7 +252,7 @@ document.getElementById('SUDUSAD').addEventListener('click', function() {
         if(data.Message == "Unable to add."){
             Message(data.Message);
             setTimeout(() => {
-                window.location.href = "http://192.168.0.12/assistant/seller/login";
+                window.location.href = "http://192.168.0.44/assistant/seller/login";
             }, 2000);
             
         }else{

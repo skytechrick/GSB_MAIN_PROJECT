@@ -197,7 +197,7 @@ Seller_Assistant_Post_Login = async (req, res) =>{
         });
         res.clearCookie("AS_SEL",{"path":"/assistant/seller"});
         res.clearCookie("NO",{"path":"/assistant/seller"});
-        res.status(200).redirect("http://192.168.0.12/assistant/seller/login");
+        res.status(200).redirect("http://192.168.0.44/assistant/seller/login");
     }
         
 }

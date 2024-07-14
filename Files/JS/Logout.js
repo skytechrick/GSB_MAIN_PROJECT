@@ -18,7 +18,7 @@ if(aaa == true){
     })
     .then(data => {
         if(data.M == "Yes"){
-            window.location.href = "http://192.168.0.12/login";
+            window.location.href = "http://192.168.0.44/login";
         }
         
         
@@ -27,6 +27,6 @@ if(aaa == true){
     })
 }
 else{
-    window.location.href = "http://192.168.0.12/";
+    window.location.href = "http://192.168.0.44/";
     
 }

@@ -157,7 +157,7 @@ function Submit_S() {
                         document.getElementById("Submit_Button").innerHTML = "Login";
                         document.getElementById("Submit_Button").onclick = "";
                         setTimeout(() => {
-                            window.location.href = "http://192.168.0.12";
+                            window.location.href = "http://192.168.0.44";
                             
                         }, 800);
                         
@@ -174,7 +174,7 @@ function Submit_S() {
                         document.getElementById("OTP_SENT_Y_N").style.display = "none";
                         document.getElementById("Submit_Button_DIV").innerHTML = `<button id="Submit_Button" title="Login" type="button">Login</button>`;
                         document.getElementById("Password").value = "";
-                        window.location.href = "http://192.168.0.12/signup/";
+                        window.location.href = "http://192.168.0.44/signup/";
                         
                     }, 3200);
 
@@ -191,7 +191,7 @@ function Submit_S() {
                         document.getElementById("OTP_SENT_Y_N").style.display = "none";
                         document.getElementById("Submit_Button_DIV").innerHTML = `<button id="Submit_Button" title="Login" type="button">Login</button>`;
                         document.getElementById("Password").value = "";
-                        window.location.href = "http://192.168.0.12/login/";
+                        window.location.href = "http://192.168.0.44/login/";
 
                         
                         
@@ -210,7 +210,7 @@ function Submit_S() {
                         document.getElementById("OTP_SENT_Y_N").style.display = "none";
                         document.getElementById("Submit_Button_DIV").innerHTML = `<button id="Submit_Button" title="Login" type="button">Login</button>`;
                         document.getElementById("Password").value = "";
-                        // window.location.href = "http://192.168.0.12/login/";
+                        // window.location.href = "http://192.168.0.44/login/";
                         Timer();
 
                         document.getElementsByClassName("container")[0].style.display = "none";
@@ -360,7 +360,7 @@ function Submitt(){
                     document.getElementById("OTP_SENT_Y_N").style.display = "none";
                     // document.getElementById("Submit_Button_DIV").innerHTML = `<button id="Submit_Button" title="Login" type="button">Login</button>`;
                     document.getElementById("Password").value = "";
-                    window.location.href = "http://192.168.0.12";
+                    window.location.href = "http://192.168.0.44";
                 }, 3200);
 
 
@@ -377,7 +377,7 @@ function Submitt(){
                     document.getElementById("OTP_SENT_Y_N").style.display = "none";
                     // document.getElementById("Submit_Button_DIV").innerHTML = `<button id="Submit_Button" title="Login" type="button">Login</button>`;
                     // document.getElementById("Password").value = "";
-                    // window.location.href = "http://192.168.0.12";
+                    // window.location.href = "http://192.168.0.44";
                     document.getElementById("OTPBTN").innerHTML = `<button class="OTP_SUBMIT" type="button" onclick="Submitt();">Submit</button>`;
                     document.getElementById("OTPP_INT").value = "";
                 }, 3200);
@@ -397,7 +397,7 @@ function Submitt(){
                         // document.getElementById("Submit_Button_DIV").innerHTML = `<button id="Submit_Button" title="Login" type="button">Login</button>`;
                         document.getElementById("Password").value = "";
                         setTimeout(() => {
-                            window.location.href = "http://192.168.0.12";
+                            window.location.href = "http://192.168.0.44";
                         }, 1000);
                     }, 3200);
                 }else{
@@ -412,7 +412,7 @@ function Submitt(){
                         // document.getElementById("Submit_Button_DIV").innerHTML = `<button id="Submit_Button" title="Login" type="button">Login</button>`;
                         document.getElementById("Password").value = "";
                         setTimeout(() => {
-                            window.location.href = "http://192.168.0.12";
+                            window.location.href = "http://192.168.0.44";
                         }, 1000);
                     }, 3200);
                 }
@@ -428,5 +428,5 @@ function Submitt(){
 
 
 function Resend() {
-    window.location.href = "http://192.168.0.12/login";
+    window.location.href = "http://192.168.0.44/login";
 }

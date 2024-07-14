@@ -7,6 +7,6 @@ Open the project in the terminal
 
 Then go inside the directory in the backend using "cd Backend" command
 
-Then run the server using "npm run server" and check go to the 192.168.0.12 or http://127.0.0.1:80 to any browser
+Then run the server using "npm run server" and check go to the 192.168.0.44 or http://127.0.0.1:80 to any browser
 
 Then you can check the files.

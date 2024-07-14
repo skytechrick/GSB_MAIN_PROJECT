@@ -28,7 +28,7 @@ function Cart_Add(IDS) {
 
         }else{
 
-            window.location.replace("http://192.168.0.12/login");
+            window.location.replace("http://192.168.0.44/login");
             // cann't add to cart
         }
     }).catch(e=>{

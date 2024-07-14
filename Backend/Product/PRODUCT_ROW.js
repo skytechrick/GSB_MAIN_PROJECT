@@ -183,11 +183,26 @@ PRODUCT_ROW = async (req, res) => {
             SELL = NumToINR(Number(SELL));
             let URL = Product1.Product_URL;
             let PRO_ID = Product1.Product_ID;
+
+            let Quantityss = Product1.Quantity_Available;
+            // console.log(Quantityss);
             // let PRO_ID = Product1.Quantity_;
             // let IMG = Image_Locaitons[0];
             let IMG = Product1.Image_Locaitons[0];
-
-
+            let Color_Red ="";
+            
+            let INSTOCKC ="In Stock";
+            let XCCCC = `<button title="Add to Cart" class="CART_ADDDD" type="button" onclick="Cart_Add('${PRO_ID}');">
+                        <span class="material-symbols-outlined">add_shopping_cart</span>
+                    </button>
+                    <button title="Buy Now" class="CART_BUYYY" type="button" onclick="Buy_Now('${PRO_ID}');">
+                        <span class="material-symbols-outlined">shopping_bag</span>
+                        </button>`;
+            if (Quantityss < 1) {
+                Color_Red ="color: color; background-color: red";
+                INSTOCKC ="Out Of Stock";
+                XCCCC = ``;
+            }
             Final_Send = `<div class="Products_1">
                 <div class="IMG_P">
                     <a target="__blank" href="/product/${URL}">
@@ -203,18 +218,13 @@ PRODUCT_ROW = async (req, res) => {
                 <div class="Prize_P">
                     <span class="sym">&#8377;</span>
                     <span class="selP">${SELL}</span>
-                    <button title="Add to Cart" class="CART_ADDDD" type="button" onclick="Cart_Add('${PRO_ID}');">
-                        <span class="material-symbols-outlined">add_shopping_cart</span>
-                    </button>
-                    <button title="Buy Now" class="CART_BUYYY" type="button" onclick="Buy_Now('${PRO_ID}');">
-                        <span class="material-symbols-outlined">shopping_bag</span>
-                    </button>
+                ${XCCCC}
                 </div>
                 <div class="Mark_P">
                     <span class="Mark_P_Sp">M.R.P: </span>
                     <span class="Mark_P_Sp_P">&#8377;${MRP}</span>
                 </div>
-                <div class="Msg_C">In stock</div>
+                <div class="Msg_C" style="${Color_Red}">${INSTOCKC}</div>
                 <div class="Veri_P">
                     <span>Verified Seller</span>
                 </div>
@@ -222,10 +232,7 @@ PRODUCT_ROW = async (req, res) => {
         }
         return Final_Send;
     }
-
     let LEM = FINAL_D.IDs;
-    
-
     let VV = "";
     let XX = await Product.find({});
     for (let index = 0; index < LEM.length; index++) {
@@ -235,20 +242,6 @@ PRODUCT_ROW = async (req, res) => {
     }
     // console.log(VV);
     res.json({ INSERT: VV, IDs: LEM });
-
-    // Already_Present.forEach(element => {
-    //     let c = 1;
-    //     for (let index = 0; index < data.length; index++) {
-    //         const element1 = data[index];
-    //         if (element1.Product_ID == element) {
-    //             c = 2;
-    //         }
-            
-    //     }
-    // });
-
-    
-
 }
     
 

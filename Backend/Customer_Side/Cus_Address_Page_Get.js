@@ -80,7 +80,7 @@ const Cus_Address_Page = async (req, res) => {
         res.status(200).render("Cus_Address", D);
     }else{
         res.clearCookie("U_ID");
-        res.status(200).redirect("http://192.168.0.12/login");
+        res.status(200).redirect("http://192.168.0.44/login");
     };
 }
 
