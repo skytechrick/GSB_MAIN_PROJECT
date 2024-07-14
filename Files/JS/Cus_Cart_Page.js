@@ -185,5 +185,5 @@ function Delete_Cart(ID,x) {
 
 function ProccedToCheckOut(){
     document.getElementById("SUBSDSD").click();
-    // window.location.replace("http://192.168.0.44/cart/checkout");
+    // window.location.replace("http://192.168.0.12/cart/checkout");
 }; 

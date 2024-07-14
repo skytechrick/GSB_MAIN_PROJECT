@@ -13,12 +13,12 @@ Loog = (d) => {
             fetch("/admin/login", { method: "POST", headers: { "Content-Type": "application/json", }, body: JSON.stringify(s), }).then(response => { if (!response.ok) { throw new Error('Network response was not ok'); } return response.json(); }).then(data => {
                 
                 if (data.GOT == "Yes") {
-                    window.location.replace("http://192.168.0.44/admin");
+                    window.location.replace("http://192.168.0.12/admin");
                 
                 
                 }else{
                     
-                    window.location.replace("http://192.168.0.44/admin/login");
+                    window.location.replace("http://192.168.0.12/admin/login");
                 }
     
             }).catch(error => { console.log("Unable to get...") })
