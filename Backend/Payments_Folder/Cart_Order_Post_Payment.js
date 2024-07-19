@@ -173,13 +173,13 @@ const Cart_Order_Post_Payment = async (req, res) => {
             });
 
         }else {
-            res.status(200).redirect("http://192.168.0.44/login");
+            res.status(200).redirect("http://192.168.0.12/login");
         }
 
 
         
     } else {
-        res.status(200).redirect("http://192.168.0.44/login");
+        res.status(200).redirect("http://192.168.0.12/login");
     }
 
 
