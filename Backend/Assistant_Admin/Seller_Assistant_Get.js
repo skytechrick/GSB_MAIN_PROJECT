@@ -51,21 +51,21 @@ Seller_Assistant_Get = async (req, res) => {
             }else{
                 res.clearCookie("AS_SEL",{"path":"/assistant/seller"});
                 res.clearCookie("NO",{"path":"/assistant/seller"});
-                res.redirect("http://192.168.0.12/assistant/seller/login");
+                res.redirect("http://localhost/assistant/seller/login");
             }
             
         }else{
             res.clearCookie("AS_SEL",{"path":"/assistant/seller"});
             res.clearCookie("NO",{"path":"/assistant/seller"});
             
-            res.redirect("http://192.168.0.12/assistant/seller/login");
+            res.redirect("http://localhost/assistant/seller/login");
 
         }
         
     }else{
         res.clearCookie("AS_SEL",{"path":"/assistant/seller"});
         res.clearCookie("NO",{"path":"/assistant/seller"});
-        res.status(200).redirect("http://192.168.0.12/assistant/seller/login");
+        res.status(200).redirect("http://localhost/assistant/seller/login");
     }
 
     

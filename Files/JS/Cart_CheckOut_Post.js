@@ -84,7 +84,7 @@ function Confirm_Payment(n){
                     "description": data.Des,
                     "image": "https://skytechrick.github.io/GSB_MAIN_PROJECT/Files/Img/GSB_logo.png",
                     "order_id": data.Or_ID,
-                    // "callback_url":"http://192.168.0.12/cart",
+                    // "callback_url":"http://localhost/cart",
                     "handler": Payment_Confirm,
                     "prefill": {
                         "name": data.Name,
@@ -150,7 +150,7 @@ function Message1(n){
         document.getElementById("Yes_No_Sp").style.backgroundColor = "rgb(154, 255, 199)";
         
         setTimeout(() => {
-            window.location.replace("http://192.168.0.12/orders");
+            window.location.replace("http://localhost/orders");
         }, 5000);
     }else{
         let a = "Unable to place order.";

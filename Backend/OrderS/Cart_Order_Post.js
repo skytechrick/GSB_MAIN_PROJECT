@@ -137,7 +137,7 @@ const Cart_Order_Post = async (req, res) => {
                             </tr>
                             <tr>
                                 <td>Product URL:</td>
-                                <td><a href="http://192.168.0.12/product/${Prod.Product_URL}">Link</a></td>
+                                <td><a href="http://localhost/product/${Prod.Product_URL}">Link</a></td>
                             </tr>
                             <tr>
                                 <td>Quantity:</td>
@@ -181,10 +181,10 @@ const Cart_Order_Post = async (req, res) => {
                 res.status(200).json({Message:false});
             }
         }else{
-            res.status(200).redirect("http://192.168.0.12/login");
+            res.status(200).redirect("http://localhost/login");
         }
     } else {
-        res.status(200).redirect("http://192.168.0.12/login");
+        res.status(200).redirect("http://localhost/login");
     }
 }
 

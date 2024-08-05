@@ -1,5 +1,15 @@
 const mongoose = require("mongoose");
-mongoose.connect('mongodb+srv://skytechrick:1234Rick%40%23*@gsbdb.tyzbaqw.mongodb.net/User_Data');
+
+
+const uri = 'mongodb+srv://skytechrick:1234Rick%40%23*@gsbdb.tyzbaqw.mongodb.net/User_Data?retryWrites=true&w=majority&ssl=true&tlsAllowInvalidCertificates=true';
+
+mongoose.connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    ssl: true,
+    tlsAllowInvalidCertificates: true
+});
+// mongoose.connect('mongodb+srv://skytechrick:1234Rick%40%23*@gsbdb.tyzbaqw.mongodb.net/User_Data');
 
 const db = mongoose.connection;
 db.on('error',(error) => {

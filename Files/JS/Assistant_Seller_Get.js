@@ -108,7 +108,7 @@ Li = (n) => {
         
         
     } else if(n == 4){
-        window.location.href = "http://192.168.0.12/assistant/seller/logout";
+        window.location.href = "http://localhost/assistant/seller/logout";
 
     } else if(n == 100){
         document.getElementById("Homieo").style.display = "block";

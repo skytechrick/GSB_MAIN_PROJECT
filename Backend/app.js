@@ -324,7 +324,7 @@ app.post('/cart_add', async (req, res) => {Cart_Button_Anywhere(req, res)});
 app.post('/cart_delete', async (req, res) => {Cart_Delete(req, res)});
 app.post('/cart_update', async (req, res) => {Cart_Stock_Update(req, res)});
 
-app.get('/cart/checkout', (req, res) => {res.status(301).redirect("http://192.168.0.12/cart")});
+app.get('/cart/checkout', (req, res) => {res.status(301).redirect("http://localhost/cart")});
 
 app.post('/cart/checkout', async (req, res) => {Cart_CheckOut_Post(req, res)});
 
@@ -338,7 +338,7 @@ app.post("/cart_confirm_response", async (req, res) => {cart_confirm_response(re
 
 
 app.get("/orders", async (req, res) => {Order_Get(req,res)});
-app.get("/order", async (req, res) => {res.status(301).redirect("http://192.168.0.12/orders")});
+app.get("/order", async (req, res) => {res.status(301).redirect("http://localhost/orders")});
 
 
 
@@ -391,6 +391,6 @@ app.get('*', (req, res) => {
 let a = 80;
 app.listen(a, () => {
     console.log("We are connected to server at port 80");
-    console.log("Link: http://192.168.0.12/");
+    console.log("Link: http://localhost/");
 });
 

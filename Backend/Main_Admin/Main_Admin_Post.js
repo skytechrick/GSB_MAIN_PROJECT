@@ -125,7 +125,7 @@ Main_Admin_Post = (req, res) =>{
     }
 
 
-    // res.redirect("http://192.168.0.12/admin");
+    // res.redirect("http://localhost/admin");
 
 }
 
