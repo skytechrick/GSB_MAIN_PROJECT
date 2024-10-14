@@ -202,7 +202,7 @@ const Cart_Page_Get = async (req, res) => {
         res.status(200).render("Cus_Cart_Page", d);
 
     } else {
-        res.status(200).redirect("http://192.168.0.12/login");
+        res.status(200).redirect("http://localhost/login");
     }
 
 

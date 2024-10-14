@@ -20,7 +20,7 @@ const Orders_Refunds = async (req, res) =>{
         
     } else {
         res.clearCookie("U_ID");
-        res.status(200).redirect("http://192.168.0.12/login");
+        res.status(200).redirect("http://localhost/login");
     }
     
     

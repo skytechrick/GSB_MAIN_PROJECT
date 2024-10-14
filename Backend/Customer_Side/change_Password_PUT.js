@@ -44,7 +44,7 @@ const change_Password_PUT = async (req, res) =>{
         }
     }else{
         res.clearCookie("U_ID");
-        res.status(200).redirect("http://192.168.0.12/login");
+        res.status(200).redirect("http://localhost/login");
     };
 }
 module.exports = change_Password_PUT;

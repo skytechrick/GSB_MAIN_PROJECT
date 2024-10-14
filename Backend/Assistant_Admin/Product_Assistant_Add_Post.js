@@ -246,7 +246,7 @@ const Product_Assistant_Add_Post = async (req, res) => {
                                     <p style="text-align: center;">Product Details are:</p>
                                     <hr>
                                     <p style="padding:5px; margin:5px; text-align: center;">Product ID: ${PP.Product_ID}</p>
-                                    <p style="padding:5px; margin:5px; text-align: center;">Product URL: http://192.168.0.12/product/${PP.Product_URL} . It will be visible after it is validate by the CEO or Senior.</p>
+                                    <p style="padding:5px; margin:5px; text-align: center;">Product URL: http://localhost/product/${PP.Product_URL} . It will be visible after it is validate by the CEO or Senior.</p>
                                     <hr>
                                     <p style="text-align: center;">GET SKY BUY</p>
                                 </div>

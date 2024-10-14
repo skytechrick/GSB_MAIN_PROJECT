@@ -60,7 +60,7 @@ Product_Assistant_Login_Post = async (req, res) => {
     }else{
         res.clearCookie("AS_PRO",{"path":"/assistant/product"});
         res.clearCookie("NOP",{"path":"/assistant/product"});
-        res.status(200).redirect("http://192.168.0.12/assistant/product/login");
+        res.status(200).redirect("http://localhost/assistant/product/login");
     }
 }
 
