@@ -245,4 +245,4 @@ PRODUCT_ROW = async (req, res) => {
 }
     
 
-module.exports = PRODUCT_ROW;
+// module.exports = PRODUCT_ROW;
